@@ -109,6 +109,42 @@ nav .btn{padding:10px 16px;font-size:13.5px}
 .nt-it{display:flex;gap:12px;align-items:center;padding:10px 4px;border-top:1px solid var(--line)} .nt-av{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--card);border:1px solid var(--line2);font:700 11px var(--mono);color:var(--tx2)} .nt-it div{flex:1;min-width:0} .nt-it p{font-size:14px;color:var(--tx)} .nt-it em{font-style:normal;font:600 11.5px var(--mono);color:var(--tx3);white-space:nowrap} .nt-it em.up{color:var(--up)} .nt-it em.dn{color:var(--dn)}
 .nt-live{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line2);font-size:13.5px} .nt-live span:not(.nt-dot){color:var(--tx2)} .nt-dot{width:8px;height:8px;border-radius:50%;background:#ff4d55} .nt-live i{margin-left:auto;font-style:normal;font:700 11px var(--mono);color:#ff6b70}
 .nt-pie{font:500 11px var(--mono);color:var(--tx3);text-align:center}
+/* ===== animación: intro, títulos por palabra, imágenes con cortina, progreso de scroll ===== */
+#intro{position:fixed;inset:0;z-index:200;background:#03060a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:clip-path 1.1s cubic-bezier(.77,0,.18,1);clip-path:inset(0 0 0 0)}
+#intro.fuera{clip-path:inset(0 0 100% 0)} #intro.oculto{display:none}
+#intro:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 50%,rgba(95,211,214,.12),transparent 70%);opacity:0;animation:inGlow 2.4s .3s ease forwards}
+@keyframes inGlow{to{opacity:1}}
+.in-logo{position:relative;display:flex;gap:.06em;font:800 clamp(34px,7.5vw,96px) Inter,sans-serif;letter-spacing:.14em;color:#fff}
+.in-logo span{display:inline-block;opacity:0;transform:translateY(60%) rotateX(-70deg);filter:blur(8px);animation:inLet .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(.08s * var(--i) + .25s)}
+@keyframes inLet{to{opacity:1;transform:none;filter:none}}
+.in-linea{position:relative;width:min(360px,70vw);height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.in-linea i{position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--ac),#fff);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.in-txt{position:relative;display:flex;justify-content:space-between;width:min(360px,70vw);font:600 11px "JetBrains Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:#6b7783}
+.in-txt b{color:var(--ac);font-weight:600}
+.in-frase{position:relative;font:500 clamp(15px,1.6vw,19px) Inter,sans-serif;color:#9aa6b2;opacity:0;transform:translateY(10px);animation:inLet .8s 1.2s cubic-bezier(.16,1,.3,1) forwards}
+.in-salta{position:absolute;bottom:28px;font:600 11px "JetBrains Mono",monospace;letter-spacing:.16em;color:#4c5762;text-transform:uppercase}
+body.intro-on{overflow:hidden}
+/* títulos palabra por palabra */
+.sp .pw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.sp .pw>span{display:inline-block;transform:translateY(105%);transition:transform 1s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i) * 55ms)}
+.sp.ok .pw>span{transform:none}
+/* imágenes con cortina */
+.ft .img{clip-path:inset(0 0 100% 0 round 16px);transition:clip-path 1.3s cubic-bezier(.77,0,.18,1)} .ft .img.ok{clip-path:inset(0 0 0 0 round 16px)}
+.ft .img img{transform:scale(1.12);transition:transform 1.8s cubic-bezier(.16,1,.3,1)} .ft .img.ok img{transform:scale(1)}
+.ft .rv:not(.img){transform:translateX(-36px)} .ft.r .rv:not(.img){transform:translateX(36px)} .ft .rv.ok:not(.img){transform:none}
+/* tarjetas en cascada */
+.dolor>.rv,.extra>.rv,.pasos>.rv,.precios>.rv,.com-g>div{transform:translateY(40px) scale(.97)} .dolor>.rv.ok,.extra>.rv.ok,.pasos>.rv.ok,.precios>.rv.ok{transform:none}
+/* progreso y nav */
+#prog{position:fixed;left:0;top:0;height:2px;width:100%;z-index:60;background:linear-gradient(90deg,var(--ac),#fff);transform:scaleX(0);transform-origin:left}
+nav{transition:background .3s,border-color .3s,transform .45s cubic-bezier(.16,1,.3,1)} nav.esc{transform:translateY(-100%)}
+/* hero: entrada después de la intro */
+.hero .pill,.hero .lead,.hero .ctas,.hero .fine{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+body.listo .hero .pill{opacity:1;transform:none;transition-delay:.05s} body.listo .hero .lead{opacity:1;transform:none;transition-delay:.55s} body.listo .hero .ctas{opacity:1;transform:none;transition-delay:.7s} body.listo .hero .fine{opacity:1;transform:none;transition-delay:.85s}
+.devs{transform-origin:50% 0;will-change:transform}
+.devs.ok{transform:perspective(1800px) rotateX(var(--rx,0deg)) scale(var(--sc,1)) translateY(var(--ty,0px))!important;transition:opacity 1.2s cubic-bezier(.16,1,.3,1)}
+/* brillo que sigue al mouse en tarjetas */
+.dolor>div,.extra>div,.plan,.ac-card{position:relative} .glow:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(95,211,214,.12),transparent 60%);opacity:0;transition:opacity .3s} .glow:hover:after{opacity:1}
+@media (prefers-reduced-motion:reduce){#intro{display:none} .sp .pw>span,.ft .img,.ft .img img,.ft .rv,.hero .pill,.hero .lead,.hero .ctas,.hero .fine{transform:none!important;opacity:1!important;clip-path:none!important;transition:none!important} .devs.ok{transform:none!important}}
 /* brokers */
 .brk{padding:70px 0 30px;text-align:center}
 .brk p{color:var(--tx3);font-size:13px;margin-bottom:18px}
@@ -225,6 +261,9 @@ footer p{max-width:720px}
 </style>
 </head>
 <body>
+<div id="intro" aria-hidden="true"><div class="in-logo"><span style="--i:0">N</span><span style="--i:1">O</span><span style="--i:2">R</span><span style="--i:3">T</span><span style="--i:4">H</span><span style="--i:5">P</span><span style="--i:6">O</span><span style="--i:7">I</span><span style="--i:8">N</span><span style="--i:9">T</span></div>
+  <p class="in-frase">El diario de trading que te dice la verdad.</p>
+  <div class="in-linea"><i id="inBar"></i></div><div class="in-txt"><span>Cargando el mundo</span><b id="inPct">000</b></div><span class="in-salta">clic para entrar</span></div>
 <script>
 /* ===== CONFIGURACIÓN DE VENTA: pega aquí el link de checkout de Lemon Squeezy de cada plan (suscripción mensual con clave de licencia) =====
    Mientras estén vacíos, los botones de compra abren la prueba gratis (descarga). */
@@ -510,6 +549,51 @@ window.NP_VENTA = {
   // reloj de la app simulada
   const rel = () => { const f = z => new Date().toLocaleTimeString('es-MX', { timeZone: z, hour: '2-digit', minute: '2-digit', hour12: false }); const a = document.getElementById('scNy'), b = document.getElementById('scMx'); if (a) a.textContent = f('America/New_York'); if (b) b.textContent = f('America/Mexico_City'); };
   rel(); setInterval(rel, 15000);
+})();
+</script>
+<script>
+/* ===== animación de la landing: intro, títulos, scroll ===== */
+(() => {
+  const red = matchMedia('(prefers-reduced-motion: reduce)').matches, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  // títulos en palabras
+  const partir = (el, base = 0) => { if (el.dataset.sp) return; el.dataset.sp = 1; let i = base; const rec = n => { [...n.childNodes].forEach(c => { if (c.nodeType === 3) { const fr = document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach(w => { if (!w) return; if (/^\s+$/.test(w)) fr.append(' '); else { const a = document.createElement('span'); a.className = 'pw'; const b = document.createElement('span'); b.textContent = w; b.style.setProperty('--i', i++); a.append(b); fr.append(a); } }); c.replaceWith(fr); } else if (c.nodeType === 1 && !c.classList.contains('pw')) rec(c); }); }; rec(el); el.classList.add('sp'); };
+  $$('h1, h2, .ft h3').forEach(h => partir(h));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('ok'); io.unobserve(e.target); } }), { threshold: .2, rootMargin: '0px 0px -60px 0px' });
+  $$('.sp:not(h1)').forEach(h => io.observe(h));
+  const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.img').forEach(x => x.classList.add('ok')); io2.unobserve(e.target); } }), { threshold: .15 });   // la cortina recorta la imagen: se observa la fila completa
+  $$('.ft').forEach(f => io2.observe(f));
+  // cascada en grupos
+  $$('.dolor,.extra,.pasos,.precios,.com-g').forEach(g => [...g.children].forEach((c, k) => c.style.transitionDelay = k * 110 + 'ms'));
+  // brillo con el mouse
+  $$('.dolor>div,.extra>div,.plan,.ac-card').forEach(c => { c.classList.add('glow'); c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', e.clientX - r.left + 'px'); c.style.setProperty('--my', e.clientY - r.top + 'px'); }); });
+  // scroll: barra de progreso, nav, MacBook, parallax, velocidad de la cinta
+  const prog = document.createElement('div'); prog.id = 'prog'; document.body.append(prog);
+  const nav = $('#nav'), devs = $('#shot'), mq = $('.marq div'), imgs = $$('.ft .img img');
+  let ultY = scrollY, vel = 0, tick = false;
+  const pinta = () => { tick = false; const y = scrollY, H = document.documentElement.scrollHeight - innerHeight;
+    prog.style.transform = `scaleX(${H > 0 ? y / H : 0})`;
+    if (Math.abs(y - ultY) > 4) { nav.classList.toggle('esc', y > ultY && y > 500); }
+    vel = vel * .85 + (y - ultY) * .15; ultY = y;
+    if (devs && !red) { const r = devs.getBoundingClientRect(), p = Math.max(0, Math.min(1, 1 - (r.top - innerHeight * .12) / (innerHeight * .75)));
+      devs.style.setProperty('--rx', (22 * (1 - p)).toFixed(2) + 'deg'); devs.style.setProperty('--sc', (.9 + .1 * p).toFixed(3)); devs.style.setProperty('--ty', (40 * (1 - p)).toFixed(1) + 'px'); }
+    if (!red) imgs.forEach(im => { const r = im.parentElement.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; const c = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; im.style.translate = `0 ${(c * -28).toFixed(1)}px`; });
+    if (mq && !red) { const a = mq.getAnimations()[0]; if (a) a.playbackRate = Math.min(6, 1 + Math.abs(vel) * .08); } };
+  addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(pinta); } }, { passive: true }); pinta();
+  // intro: una vez por visita
+  const entra = () => { document.body.classList.add('listo'); partir($('.hero h1')); requestAnimationFrame(() => $('.hero h1').classList.add('ok')); };
+  let visto = false; try { visto = sessionStorage.getItem('np.intro') === '1'; } catch (_) {}
+  if (red || visto) { $('#intro')?.classList.add('oculto'); entra(); return; }
+  try { sessionStorage.setItem('np.intro', '1'); } catch (_) {}
+  const ov = $('#intro'), bar = $('#inBar'), pct = $('#inPct'); document.body.classList.add('intro-on');
+  let n = 0, listo = false; const imgsTierra = ['img/tierra-dia.jpg', 'img/tierra-noche.jpg'].map(src => new Promise(ok => { const i = new Image(); i.onload = i.onerror = ok; i.src = src; }));
+  Promise.all(imgsTierra).then(() => listo = true);
+  const t0 = performance.now();
+  const sube = () => { const t = performance.now() - t0, meta = listo ? 100 : Math.min(90, t / 22); n += (meta - n) * .12; if (meta === 100 && n > 99.4) n = 100;
+    bar.style.transform = `scaleX(${n / 100})`; pct.textContent = String(Math.round(n)).padStart(3, '0');
+    if (n >= 100 && t > 2100) return cierra(); requestAnimationFrame(sube); };
+  const cierra = () => { if (ov.classList.contains('fuera')) return; ov.classList.add('fuera'); document.body.classList.remove('intro-on'); setTimeout(entra, 250); setTimeout(() => ov.classList.add('oculto'), 1200); };
+  ov.onclick = cierra; addEventListener('keydown', e => { if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') cierra(); }, { once: true });
+  requestAnimationFrame(sube);
 })();
 </script>
 </body>
