@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NORTHPOINT · Descargar</title>
+<meta name="description" content="NORTHPOINT: tu diario de trading. Dashboard, calendario y trades, con fondos animados que siguen la sesión. Para Mac y Windows.">
+<meta name="theme-color" content="#050607">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050607;--tx:#eef1f3;--tx2:#9aa3ab;--tx3:#5f6870;--line:rgba(255,255,255,.1);--ac:#8fd3cf}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;
+  background:radial-gradient(900px 500px at 50% -10%,rgba(143,211,207,.12),transparent 60%),var(--bg)}
+main{max-width:760px;margin:0 auto;padding:72px 20px 60px}
+.logo{font-weight:600;letter-spacing:.14em;font-size:15px;color:var(--tx)}
+h1{font-size:clamp(34px,6vw,54px);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin:34px 0 14px}
+.lead{color:var(--tx2);font-size:17px;line-height:1.55;max-width:560px}
+.bajar{display:grid;gap:10px;margin:40px 0 12px}
+.b{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--tx);text-decoration:none;transition:border-color .15s,background .15s}
+.b:hover{border-color:rgba(143,211,207,.5);background:rgba(143,211,207,.06)}
+.b.tuyo{border-color:var(--ac);background:rgba(143,211,207,.08)}
+.b svg{width:26px;height:26px;flex:none}
+.b b{display:block;font-size:16px;font-weight:600}
+.b small{display:block;color:var(--tx3);font-size:13px;margin-top:2px}
+.b .fl{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ac)}
+.web{display:inline-block;margin-top:8px;color:var(--tx2);font-size:14px}
+.web a{color:var(--ac)}
+h2{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin:52px 0 16px;font-family:'JetBrains Mono',monospace}
+ol{padding-left:20px;display:grid;gap:10px;color:var(--tx2);line-height:1.55;font-size:15px}
+ol b{color:var(--tx);font-weight:600}
+.caja{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:rgba(255,255,255,.02)}
+.caja + .caja{margin-top:12px}
+.caja h3{font-size:15px;font-weight:600;margin-bottom:10px}
+.lista{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;color:var(--tx2);font-size:14.5px;line-height:1.5}
+.lista b{color:var(--tx);font-weight:600;display:block}
+footer{margin-top:60px;color:var(--tx3);font-size:13px}
+@media (max-width:600px){.lista{grid-template-columns:1fr}main{padding-top:48px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="logo">NORTHPOINT</div>
+  <h1>Tu diario de trading.</h1>
+  <p class="lead">Registras cada trade y ves cómo vas: dashboard, calendario del mes y tus mejores horarios. El fondo sigue la sesión del mercado y te avisa cuando rompes tus reglas.</p>
+
+  <div class="bajar">
+    <a class="b" id="mac" href="https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Mac.dmg">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+      <span><b>Mac</b><small>macOS 11.3 o superior · Intel y Apple Silicon</small></span><span class="fl">.dmg ↓</span>
+    </a>
+    <a class="b" id="win" href="https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Instalador.exe">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.5v7H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>
+      <span><b>Windows · instalador</b><small>Windows 10 y 11 · crea el acceso directo en el escritorio</small></span><span class="fl">.exe ↓</span>
+    </a>
+    <a class="b" href="https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Portable.exe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M9 11h6"/></svg>
+      <span><b>Windows · portable</b><small>Sin instalar: lo abres directo (útil en compus del trabajo)</small></span><span class="fl">.exe ↓</span>
+    </a>
+  </div>
+  <p class="web">¿Sin descargar? <a href="app/">Ábrela en el navegador</a> (tus datos se quedan en ese navegador).</p>
+
+  <h2>La primera vez que la abres</h2>
+  <div class="caja">
+    <h3>En Mac</h3>
+    <ol>
+      <li>Abre el <b>.dmg</b> y arrastra <b>NORTHPOINT</b> a la carpeta <b>Aplicaciones</b>.</li>
+      <li>Ábrela. Como no viene de la App Store, macOS dirá que no puede verificarla: dale <b>Aceptar</b>.</li>
+      <li>Ve a <b>Configuración del Sistema → Privacidad y seguridad</b>, baja hasta el aviso de NORTHPOINT y dale <b>Abrir de todas formas</b>. Solo se hace una vez.</li>
+    </ol>
+  </div>
+  <div class="caja">
+    <h3>En Windows</h3>
+    <ol>
+      <li>Abre el <b>.exe</b>. Si sale la pantalla azul de <b>“Windows protegió tu PC”</b>, da clic en <b>Más información → Ejecutar de todas formas</b>.</li>
+      <li>Sigue el instalador. Te deja un acceso directo <b>NORTHPOINT</b> en el escritorio.</li>
+    </ol>
+  </div>
+  <div class="caja">
+    <h3>Después</h3>
+    <ol>
+      <li>Escribe tu nombre y <b>crea tu perfil</b>. Si quieres, ponle PIN en Configuración.</li>
+      <li>En <b>Configuración</b> pon cuánto vale tu 1R en dólares, tus reglas (horario, entradas, máximo de trades) y tus metas.</li>
+      <li>Registra tus trades con <b>+ Trade</b>. Tus datos se guardan en tu compu, nadie más los ve. Para pasarlos a otra compu: <b>Descargar respaldo</b> e <b>Importar</b>.</li>
+    </ol>
+  </div>
+
+  <h2>Qué trae</h2>
+  <div class="lista">
+    <div><b>Dashboard</b>R del mes, win rate, expectancy, max DD, curva y disciplina.</div>
+    <div><b>Calendario</b>Cada día con su R y todos sus trades.</div>
+    <div><b>Mejores horarios</b>En qué ventana ganas y en cuál pierdes, hora por día.</div>
+    <div><b>Trades con fotos</b>Pega tu captura con ⌘V / Ctrl+V.</div>
+    <div><b>Fondo por sesión</b>Tokio, Londres, Nueva York o el jet cuando cierra el mercado.</div>
+    <div><b>Tus reglas</b>Si operas fuera de horario o haces overtrading, te lo hace saber.</div>
+  </div>
+
+  <footer>NORTHPOINT · 2026</footer>
+</main>
+<script>
+  // resalta la descarga de tu sistema
+  const w = /Win/i.test(navigator.userAgent), m = /Mac/i.test(navigator.userAgent) && !/iPhone|iPad/.test(navigator.userAgent);
+  document.getElementById(w ? 'win' : m ? 'mac' : '')?.classList.add('tuyo');
+</script>
+</body>
+</html>

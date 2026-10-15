@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NORTHPOINT · El diario de trading que te dice la verdad</title>
+<meta name="description" content="Tus trades entran solos desde tu broker y te enseña qué estrategia, qué hora y qué regla rota te está costando dinero. Con comunidad en Discord: daily bias, lives y cursos. Mac y Windows, desde $9 al mes.">
+<meta name="theme-color" content="#060a10">
+<meta property="og:title" content="NORTHPOINT · El diario de trading que te dice la verdad">
+<meta property="og:description" content="Diario automático, calendario con eventos en vivo, challenges de fondeo y tu camino al primer millón. Mac y Windows.">
+<meta property="og:image" content="https://studioamr.github.io/northpoint-trading/img/dash.jpg">
+<meta property="og:url" content="https://studioamr.github.io/northpoint-trading/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060a10;--bg2:#0b121b;--card:#0e1722;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);--tx:#eef2f5;--tx2:#a1acb7;--tx3:#66727e;--ac:#5fd3d6;--acd:#0f3f43;--up:#3ccf8e;--dn:#f06a6f;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.w{max-width:1180px;margin:0 auto;padding:0 20px}
+.eyebrow{font:700 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.04}
+h2{font-size:clamp(30px,4.6vw,52px);font-weight:800;margin:14px 0 16px}
+.lead{color:var(--tx2);font-size:clamp(16px,1.6vw,19px);max-width:620px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:12px;font-weight:700;font-size:15px;border:1px solid var(--line2);transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,border-color .25s;cursor:pointer;background:none;color:var(--tx);font-family:inherit}
+.btn:hover{transform:translateY(-2px);border-color:var(--tx3)}
+.btn.pri{background:var(--tx);color:#05080c;border-color:var(--tx)}
+.btn.pri:hover{background:#fff}
+.btn small{font:500 12px var(--mono);opacity:.6}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.s{background:rgba(6,10,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+nav .w{display:flex;align-items:center;gap:28px;height:68px}
+.logo{font-weight:700;letter-spacing:.18em;font-size:14px}
+nav .lk{display:flex;gap:24px;font-size:14px;color:var(--tx2);margin-left:auto}
+nav .lk a:hover{color:var(--tx)}
+nav .btn{padding:10px 16px;font-size:13.5px}
+@media(max-width:760px){nav .lk{display:none} nav .btn{margin-left:auto}}
+/* hero */
+.hero{padding:150px 0 40px;position:relative}
+.hero:before{content:"";position:absolute;inset:-200px 0 auto;height:900px;background:radial-gradient(700px 420px at 50% 30%,rgba(95,211,214,.14),transparent 70%);pointer-events:none}
+.hero .w{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;border:1px solid var(--line2);font-size:13px;color:var(--tx2)}
+.pill b{color:var(--tx);font-weight:600}
+@media(max-width:560px){.pill .pl2{display:none}}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 0 4px rgba(60,207,142,.15)}
+.hero h1{font-size:clamp(42px,7.4vw,92px);font-weight:800;margin:26px 0 22px;max-width:980px}
+.hero h1 em{font-style:normal;color:var(--ac)}
+.hero .lead{margin:0 auto}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:34px 0 14px}
+.fine{font:500 12px var(--mono);color:var(--tx3);letter-spacing:.04em}
+.shot{margin:64px auto 0;max-width:1100px;border-radius:18px;padding:8px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.02));box-shadow:0 60px 140px -40px rgba(0,0,0,.9),0 0 0 1px var(--line);transform:perspective(1800px) rotateX(14deg) scale(.96);transform-origin:50% 0;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.shot.ok{transform:none}
+.shot img{border-radius:12px;width:100%}
+.shot-cap{margin-top:14px;font:500 11.5px var(--mono);color:var(--tx3)}
+/* brokers */
+.brk{padding:70px 0 30px;text-align:center}
+.brk p{color:var(--tx3);font-size:13px;margin-bottom:18px}
+.marq{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq div{display:flex;gap:12px;width:max-content;animation:mq 40s linear infinite}
+.marq span{padding:10px 18px;border-radius:999px;border:1px solid var(--line);color:var(--tx2);font-weight:600;font-size:14px;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* sections */
+section.s{padding:120px 0}
+.cab{max-width:760px}
+.cab.c{margin:0 auto;text-align:center}.cab.c .lead{margin:0 auto}
+/* dolor */
+.dolor{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.dolor div{padding:28px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.dolor small{font:700 11px var(--mono);color:var(--dn);letter-spacing:.12em}
+.dolor h3{font-size:21px;margin:12px 0 10px}
+.dolor p{color:var(--tx2);font-size:15px}
+.dolor p b{color:var(--tx)}
+@media(max-width:860px){.dolor{grid-template-columns:1fr}}
+/* features */
+.ft{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center;padding:56px 0}
+.ft.r{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)} .ft.r .tx{order:2}
+.ft h3{font-size:clamp(26px,3.2vw,38px);font-weight:800;margin:12px 0 14px}
+.ft .tx p{color:var(--tx2);font-size:16.5px}
+.ft ul{list-style:none;margin-top:22px;display:grid;gap:12px}
+.ft li{display:flex;gap:12px;font-size:15px;color:var(--tx2)} .ft li b{color:var(--tx);font-weight:600}
+.ft li:before{content:"";flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%;background:var(--acd) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235fd3d6' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.img{border-radius:16px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 40px 90px -30px rgba(0,0,0,.85);background:var(--bg2)}
+.dato{display:inline-flex;align-items:baseline;gap:10px;margin-top:22px;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:var(--bg2);font-size:14px;color:var(--tx2)}
+.dato b{font:700 22px var(--mono);color:var(--up)}
+@media(max-width:900px){.ft,.ft.r{grid-template-columns:1fr;gap:28px} .ft.r .tx{order:0}}
+/* grid of extras */
+.extra{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px}
+.extra div{padding:24px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(180deg,var(--card),transparent)}
+.extra svg{width:26px;height:26px;color:var(--ac)}
+.extra h4{font-size:16.5px;margin:16px 0 6px;letter-spacing:-.01em}
+.extra p{font-size:14px;color:var(--tx2)}
+@media(max-width:960px){.extra{grid-template-columns:1fr 1fr}} @media(max-width:560px){.extra{grid-template-columns:1fr}}
+/* pasos */
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px;counter-reset:p}
+.pasos div{padding:30px;border-radius:18px;border:1px solid var(--line);position:relative}
+.pasos div:before{counter-increment:p;content:"0" counter(p);font:700 13px var(--mono);color:var(--ac)}
+.pasos h4{font-size:20px;margin:14px 0 8px}
+.pasos p{color:var(--tx2);font-size:15px}
+@media(max-width:860px){.pasos{grid-template-columns:1fr}}
+/* vs */
+.vs{margin-top:52px;border-radius:18px;border:1px solid var(--line);overflow:hidden}
+.vs .f{display:grid;grid-template-columns:1.4fr 1fr 1fr;border-top:1px solid var(--line)} .vs .f:first-child{border-top:0;background:var(--bg2)}
+.vs .f>*{padding:16px 20px;font-size:15px}
+.vs .f>*:not(:first-child){text-align:center;border-left:1px solid var(--line)}
+.vs .h{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--tx3)} .vs .h.np{color:var(--ac)}
+.si{color:var(--up);font-weight:700} .no{color:var(--tx3)}
+@media(max-width:600px){.vs .f>*{padding:12px 10px;font-size:13px}}
+/* precios */
+.precios{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;align-items:stretch}
+.plan{display:flex;flex-direction:column;padding:32px;border-radius:20px;border:1px solid var(--line);background:var(--card);position:relative}
+.plan.top{border-color:var(--ac);background:linear-gradient(180deg,rgba(95,211,214,.09),var(--card) 40%);box-shadow:0 30px 80px -30px rgba(95,211,214,.25)}
+.plan .tag{position:absolute;top:-12px;left:32px;padding:4px 12px;border-radius:999px;background:var(--ac);color:#04161a;font:700 11px var(--mono);letter-spacing:.08em}
+.plan h3{font-size:22px}
+.plan .para{color:var(--tx2);font-size:14px;margin:6px 0 22px;min-height:42px}
+.precio{display:flex;align-items:baseline;gap:6px}
+.precio b{font-size:54px;font-weight:800;letter-spacing:-.04em}
+.precio>span{color:var(--tx3);font-size:15px}
+.plan ul{list-style:none;display:grid;gap:11px;margin:24px 0 28px;font-size:14.5px;color:var(--tx2)}
+.plan li{display:flex;gap:10px} .plan li:before{content:"✓";color:var(--ac);font-weight:700}
+.plan li.x{color:var(--tx3)} .plan li.x:before{content:"–";color:var(--tx3)}
+.plan .btn{margin-top:auto;width:100%}
+.garantia{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:28px;color:var(--tx2);font-size:14px}
+.garantia>span:before{content:"✓ ";color:var(--up);font-weight:700}
+@media(max-width:960px){.precios{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
+/* faq */
+.faq{max-width:820px;margin:48px auto 0}
+.faq details{border-top:1px solid var(--line);padding:22px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-size:18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font:500 22px var(--mono);color:var(--tx3);transition:transform .3s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{color:var(--tx2);margin-top:12px;font-size:15.5px;max-width:720px}
+/* final */
+.final{padding:130px 0;text-align:center;position:relative;overflow:hidden}
+.final:before{content:"";position:absolute;inset:auto 0 -300px;height:700px;background:radial-gradient(600px 360px at 50% 60%,rgba(95,211,214,.13),transparent 70%)}
+.final .w{position:relative}
+.final h2{font-size:clamp(36px,6vw,72px);max-width:900px;margin:16px auto 18px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--tx3);font-size:13px}
+footer .w{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
+footer p{max-width:720px}
+.com{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;padding:56px;border-radius:26px;border:1px solid var(--line2);background:radial-gradient(600px 400px at 90% 0%,rgba(88,101,242,.16),transparent 70%),var(--bg2)}
+.com h2{margin-top:12px}
+.com-g{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.com-g div{padding:18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.com-g b{display:block;font-size:16px;margin-bottom:4px} .com-g span{font-size:14px;color:var(--tx2)}
+.com-card{border-radius:18px;background:#1e1f24;border:1px solid rgba(255,255,255,.08);padding:18px;box-shadow:0 40px 90px -30px rgba(0,0,0,.8);font-size:14px}
+.cc-h{display:flex;align-items:center;gap:8px;color:#dbdee1;font-weight:700;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:14px} .cc-h i{width:10px;height:10px;border-radius:3px;background:#5865f2}
+.cc-m{display:flex;gap:12px;margin-bottom:16px} .cc-av{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#0e1722;border:1px solid var(--line2);font:700 11px var(--mono);color:var(--ac)}
+.cc-m b{color:#f2f3f5;font-size:14px} .cc-m em{font-style:normal;color:#949ba4;font-size:11.5px;font-weight:400;margin-left:6px} .cc-m p{color:#dbdee1;margin-top:3px;line-height:1.45} .cc-m .up{color:var(--up);font-weight:700} .cc-m u{color:#c9cdfb;text-decoration:none;background:rgba(88,101,242,.3);padding:0 3px;border-radius:3px}
+.cc-live{display:inline-block;padding:1px 6px;margin-right:4px;border-radius:4px;background:#ed4245;color:#fff;font:700 10px var(--mono);letter-spacing:.06em;vertical-align:1px}
+.cc-pie{font:500 11px var(--mono);color:#6d7480;margin-top:4px}
+@media(max-width:900px){.com{grid-template-columns:1fr;padding:28px 20px;gap:30px} .com-g{grid-template-columns:1fr}}
+.mid{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:44px;padding:26px;border-radius:18px;border:1px dashed var(--line2)} .mid p{font-size:18px;font-weight:600}
+.sticky{display:none}
+@media(max-width:760px){.sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:space-between;align-items:center;padding:14px 18px;border-radius:14px;background:var(--tx);color:#05080c;font-weight:700;box-shadow:0 20px 50px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .4s cubic-bezier(.16,1,.3,1)} .sticky.on{transform:none} .sticky small{font:500 12px var(--mono);opacity:.65} footer{padding-bottom:96px}}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.rv.ok{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv,.shot{opacity:1;transform:none;transition:none}.marq div{animation:none}}
+/* modal de prueba */
+.ov{position:fixed;inset:0;z-index:80;background:rgba(3,6,10,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.md{width:100%;max-width:460px;padding:30px;border-radius:20px;background:var(--bg2);border:1px solid var(--line2)}
+.md h3{font-size:24px} .md p{color:var(--tx2);font-size:14.5px;margin:8px 0 20px}
+.md .btn{width:100%;margin-top:10px;justify-content:space-between}
+.md .x{float:right;background:none;border:0;color:var(--tx3);font-size:24px;cursor:pointer}
+</style>
+</head>
+<body>
+<script>
+/* ===== CONFIGURACIÓN DE VENTA: pega aquí tus links de pago (Stripe Payment Links, uno por plan, cobro mensual) =====
+   Mientras estén vacíos, los botones de compra abren la prueba gratis (descarga). */
+window.NP_VENTA = {
+  pagos: { starter: '', pro: '', mesa: '' },
+  precios: { starter: 9, pro: 19, mesa: 49 },   // USD al mes
+  pruebaDias: 7,
+  descargas: { mac: 'descargas/NORTHPOINT-Mac.dmg', win: '' },   // el instalador de Windows pesa ~86 MB: súbelo a Releases y pega el link
+  contacto: ''   // WhatsApp de ventas, ej. 'https://wa.me/52XXXXXXXXXX'
+};
+</script>
+
+<nav id="nav"><div class="w">
+  <a href="#" class="logo">NORTHPOINT</a>
+  <div class="lk"><a href="#funciones">Funciones</a><a href="#comunidad">Comunidad</a><a href="#fondeo">Fondeo</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></div>
+  <a href="#precios" class="btn pri">Prueba gratis</a>
+</div></nav>
+
+<header class="hero"><div class="w">
+  <span class="pill"><i></i><b>Mac y Windows</b><span class="pl2"> · tus trades entran solos desde tu broker</span></span>
+  <h1>El diario de trading que te dice <em>la verdad</em>.</h1>
+  <p class="lead">NORTHPOINT junta tus trades, tu calendario, el mercado en vivo y tus metas en una sola app. Te enseña, con tus propios números, qué estrategia, qué hora y qué regla rota te está costando dinero. Y te mete a una comunidad con daily bias, lives y cursos.</p>
+  <div class="ctas"><a href="#precios" class="btn pri"><span>Prueba <span data-dias>7</span> días gratis</span></a><a href="#funciones" class="btn">Ver cómo funciona</a></div>
+  <p class="fine">Sin tarjeta para probar · cancelas cuando quieras</p>
+  <div class="shot" id="shot"><img src="img/dash.jpg" alt="Dashboard de NORTHPOINT: R del mes, win rate, expectancy, curva de capital y disciplina" width="1290" height="1000"></div>
+  <p class="shot-cap">Captura real de la app · datos de ejemplo</p>
+</div></header>
+
+<div class="brk"><div class="w"><p>Importa automático o por archivo desde</p></div>
+  <div class="marq"><div id="mq"></div></div></div>
+
+<section class="s"><div class="w">
+  <div class="cab rv"><span class="eyebrow">El problema</span><h2>No pierdes por la estrategia. Pierdes por lo que no ves.</h2>
+  <p class="lead">Un Excel no te dice que tus pérdidas salen siempre a la misma hora, ni cuánto te cuesta romper tus reglas. NORTHPOINT sí.</p></div>
+  <div class="dolor">
+    <div class="rv"><small>ANTES</small><h3>Apuntas a mano (cuando te acuerdas)</h3><p>Y el día malo es justo el que no apuntas. <b>NORTHPOINT lee tus trades de Exness, Tradeify o MT5 solo</b>; tú solo completas estrategia y emociones.</p></div>
+    <div class="rv"><small>ANTES</small><h3>Sientes que “casi” vas bien</h3><p>Sin números todo es sensación. <b>Ves tu R, win rate, expectancy y drawdown</b> por mes, estrategia, instrumento y hora.</p></div>
+    <div class="rv"><small>ANTES</small><h3>Rompes reglas y no lo pagas</h3><p>Hasta que la cuenta lo paga. <b>La app te dice cuánto R te costó cada regla rota</b> y dónde estarías si las hubieras respetado.</p></div>
+  </div>
+</div></section>
+
+<section class="s" id="funciones" style="padding-top:20px"><div class="w">
+  <div class="cab c rv"><span class="eyebrow">Funciones</span><h2>Todo tu trading, en un solo lugar.</h2><p class="lead">Lo que antes eran cinco pestañas, un Excel y una libreta.</p></div>
+
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Dashboard</span><h3>Tu disciplina, en números.</h3>
+    <p>Cada mes ves lo que de verdad importa: R, win rate, expectancy, drawdown y la curva de tu cuenta. Debajo, la verdad incómoda: cuánto te cuestan las reglas rotas.</p>
+    <ul><li><span><b>Por estrategia e instrumento:</b> deja de operar lo que no te paga.</span></li><li><span><b>Mejores horarios:</b> tu ventana ganadora y la hora que debes evitar.</span></li><li><span><b>Por día de la semana:</b> el día que más te cuesta, en números.</span></li></ul>
+    <div class="dato">Con reglas <b>+1.27R</b> por trade · rompiéndolas −0.84R</div></div>
+    <div class="img rv"><img src="img/dash.jpg" alt="Dashboard de NORTHPOINT" loading="lazy"></div></div>
+
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Trades automáticos</span><h3>Tus trades entran solos.</h3>
+    <p>Conecta tu cuenta una vez y cada operación aparece con hora, instrumento, dirección, duración, R y P&L. Tú solo eliges la estrategia y cómo te sentiste.</p>
+    <ul><li><span><b>Exness, Tradeify y MT5</b> en automático; <b>Interactive Brokers</b> cada 30 min.</span></li><li><span><b>NinjaTrader, Tradovate, TopstepX, Rithmic</b> y 10 más por archivo.</span></li><li><span><b>Capturas por trade:</b> pegas, arrastras, y quedan con el trade.</span></li></ul></div>
+    <div class="img rv"><img src="img/trades.jpg" alt="Lista de trades con estrategia, R y P&L" loading="lazy"></div></div>
+
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Calendario</span><h3>Cada día, verde o rojo, de un vistazo.</h3>
+    <p>Tu mes como calendario: R por día y cada trade dentro. Y en Mercado, el calendario económico de EE. UU. con la Fed, Trump y los datos rojos: qué esperar de cada uno y, cuando están pasando, la transmisión en vivo con un clic.</p>
+    <ul><li><span><b>Eventos con cuenta regresiva</b> y escenarios si sale arriba o abajo.</span></li><li><span><b>En vivo:</b> Bloomberg, CNBC, Casa Blanca y la Fed dentro de la app.</span></li><li><span><b>Noticias y tweets</b> que mueven el NASDAQ, filtrados.</span></li></ul></div>
+    <div class="img rv"><img src="img/cal.jpg" alt="Calendario de trades por día" loading="lazy"></div></div>
+</div></section>
+
+<section class="s" id="fondeo" style="padding-top:40px"><div class="w">
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Challenges de fondeo</span><h3>De la evaluación a tu primer payout.</h3>
+    <p>Elige tu reto y la app lleva la cuenta por ti: cuánto colchón te queda, cuántos días ganadores llevas y cuánto puedes retirar.</p>
+    <ul><li><span><b>1 cuenta · primer payout:</b> evaluación, drawdown de cierre y 5 días ganadores.</span></li><li><span><b>Plan $100 → $15,000:</b> fases con riesgo fijo, meta del día y depósitos de domingo.</span></li><li><span><b>Escopetazo · 2 cuentas:</b> lleva el reto con tu socio, los dos balances a la vista.</span></li></ul></div>
+    <div class="img rv"><img src="img/prog.jpg" alt="Challenges de fondeo en NORTHPOINT" loading="lazy"></div></div>
+
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Patrimonio</span><h3>Tu camino al primer millón, por rangos.</h3>
+    <p>Pon cuánto ahorras y cada cuándo. La app te dice cuándo llegas, sin inventar rendimientos, y sube tu rango: Cobre, Bronce, Plata, Oro, Platino, Esmeralda, Diamante, Maestro, Gran Maestro y Campeón.</p>
+    <ul><li><span><b>Cartera completa:</b> broker, banco, acciones, ETFs, cripto.</span></li><li><span><b>Ingresos y gastos</b> del mes, sin hojas de cálculo.</span></li><li><span><b>Proyección honesta:</b> solo lo que aportas; lo que ganes operando, encima.</span></li></ul></div>
+    <div class="img rv"><img src="img/pat.jpg" alt="Patrimonio con rangos de Cobre a Campeón" loading="lazy"></div></div>
+
+  <div class="extra">
+    <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10M9 21V4M15 21v-7M21 21V8"/></svg><h4>Comunidad con ranking</h4><p>Tu grupo ve el balance real de cada quien, rachas e insignias. Competir sube el nivel.</p></div>
+    <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-2-7-5-7-9a7 7 0 0 1 14 0c0 4-3 7-7 9z"/><path d="M9 11h6M12 8v6"/></svg><h4>Registro de emociones</h4><p>Ánimo, sueño y estrés antes de operar. Descubre con qué estado ganas y con cuál pierdes.</p></div>
+    <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Tu sesión y tu ventana</h4><p>Reloj de Nueva York y tu hora, cuenta regresiva a tu ventana de entradas y al cierre.</p></div>
+    <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h4>Capturas y notas</h4><p>Pega la captura de tu entrada y escribe qué viste. Tu diario se vuelve tu mejor maestro.</p></div>
+  </div>
+  <div class="mid rv"><p>Pruébala con tus propios trades.</p><a href="#precios" class="btn pri"><span>Empezar <span data-dias>7</span> días gratis</span></a></div>
+</div></section>
+
+<section class="s" id="comunidad" style="padding-top:40px"><div class="w">
+  <div class="com rv"><div class="com-tx"><span class="eyebrow">Comunidad en Discord · incluida en Pro</span><h2>No vuelvas a operar solo.</h2>
+    <p class="lead">Tu suscripción incluye la comunidad de NORTHPOINT en Discord: el sesgo del día antes de la campana, lives de cada sesión y cursos de trading y finanzas personales.</p>
+    <div class="com-g">
+      <div><b>Daily bias</b><span>Antes de la apertura: dirección, niveles de liquidez y eventos del día.</span></div>
+      <div><b>Lives diarios</b><span>Sesión de Nueva York en vivo: preparación, ejecución y cierre.</span></div>
+      <div><b>Cursos de trading y finanzas</b><span>De cero a tu primer payout, y qué hacer con lo que ganas: ahorro, inversión y patrimonio.</span></div>
+      <div><b>Ranking y retos</b><span>Tu balance real contra el de la comunidad, rachas e insignias dentro de la app.</span></div>
+    </div>
+    <a href="#precios" class="btn pri" style="margin-top:30px">Quiero entrar a la comunidad</a></div>
+    <div class="com-card" aria-hidden="true"><div class="cc-h"><i></i># daily-bias</div>
+      <div class="cc-m"><span class="cc-av">NP</span><div><b>NORTHPOINT <em>hoy 7:05</em></b><p><span class="up">Sesgo: alcista</span> mientras se respete la zona de descuento de Londres. Evento rojo a las 6:30 (CPI): sin entradas 2 min antes.</p></div></div>
+      <div class="cc-m"><span class="cc-av">NP</span><div><b>NORTHPOINT <em>hoy 7:28</em></b><p><span class="cc-live">EN VIVO</span> La apertura empieza en 2 minutos en <u>#en-vivo</u></p></div></div>
+      <p class="cc-pie">Ejemplo de formato · no es recomendación de inversión</p></div>
+  </div>
+</div></section>
+
+<section class="s" style="padding-top:40px"><div class="w">
+  <div class="cab c rv"><span class="eyebrow">Cómo funciona</span><h2>Listo en 5 minutos.</h2></div>
+  <div class="pasos">
+    <div class="rv"><h4>Descarga la app</h4><p>Para Mac o Windows. Creas tu perfil con tu nombre y tu riesgo por trade.</p></div>
+    <div class="rv"><h4>Conecta tu cuenta</h4><p>Exness, Tradeify o MT5 en automático, o sube el reporte de tu plataforma.</p></div>
+    <div class="rv"><h4>Opera y revisa</h4><p>Tus trades entran solos. Al cierre ves qué funcionó, qué no y qué cambiar mañana.</p></div>
+  </div>
+  <div class="vs rv">
+    <div class="f"><span class="h">Lo que necesitas</span><span class="h">Excel / libreta</span><span class="h np">NORTHPOINT</span></div>
+    <div class="f"><span>Trades automáticos desde tu broker</span><span class="no">—</span><span class="si">✓</span></div>
+    <div class="f"><span>Cuánto te cuestan las reglas rotas</span><span class="no">—</span><span class="si">✓</span></div>
+    <div class="f"><span>Mejores horarios y estrategias</span><span class="no">a mano</span><span class="si">✓</span></div>
+    <div class="f"><span>Calendario económico y en vivo</span><span class="no">—</span><span class="si">✓</span></div>
+    <div class="f"><span>Seguimiento de challenges de fondeo</span><span class="no">a mano</span><span class="si">✓</span></div>
+    <div class="f"><span>Tu patrimonio y rango</span><span class="no">—</span><span class="si">✓</span></div>
+    <div class="f"><span>Daily bias, lives y cursos</span><span class="no">—</span><span class="si">✓</span></div>
+  </div>
+</div></section>
+
+<section class="s" id="precios"><div class="w">
+  <div class="cab c rv"><span class="eyebrow">Precios</span><h2>Menos que un trade perdido al mes.</h2><p class="lead">Empieza con <span data-dias>7</span> días gratis. Después, un pago mensual. Cancelas cuando quieras.</p></div>
+  <div class="precios">
+    <div class="plan rv"><h3>Starter</h3><p class="para">Tu diario, ordenado y con números.</p>
+      <div class="precio"><b>$<span data-precio="starter">9</span></b><span>USD / mes</span></div>
+      <ul><li>Diario de trades ilimitado</li><li>Dashboard y calendario</li><li>1 broker conectado</li><li>Registro de emociones</li><li class="x">Comunidad en Discord</li><li class="x">Mercado, Challenges y Patrimonio</li></ul>
+      <button class="btn" data-plan="starter">Empezar mis <span data-dias>7</span> días gratis</button></div>
+    <div class="plan top rv"><span class="tag">RECOMENDADO</span><h3>Pro</h3><p class="para">La app completa + la comunidad que opera contigo cada mañana.</p>
+      <div class="precio"><b>$<span data-precio="pro">19</span></b><span>USD / mes</span></div>
+      <ul><li>Todo lo de Starter</li><li>Todos los brokers (auto y archivo)</li><li>Mercado: calendario, noticias y en vivo</li><li>Challenges de fondeo</li><li>Patrimonio y rangos</li><li><b>Comunidad en Discord</b>: daily bias, lives y cursos</li></ul>
+      <button class="btn pri" data-plan="pro">Empezar mis <span data-dias>7</span> días gratis</button></div>
+    <div class="plan rv"><h3>Mesa</h3><p class="para">Para grupos, mentores y equipos de fondeo.</p>
+      <div class="precio"><b>$<span data-precio="mesa">49</span></b><span>USD / mes</span></div>
+      <ul><li>Todo lo de Pro</li><li>Hasta 5 traders con Discord</li><li>Comunidad privada con ranking</li><li>Escopetazo y retos en pareja</li><li>Soporte directo</li></ul>
+      <button class="btn" data-plan="mesa">Empezar mis <span data-dias>7</span> días gratis</button></div>
+  </div>
+  <div class="garantia rv"><span><span data-dias>7</span> días gratis</span><span>Cancelas en un clic</span><span>Tus datos se quedan en tu computadora</span></div>
+</div></section>
+
+<section class="s" id="faq" style="padding-top:20px"><div class="w">
+  <div class="cab c rv"><span class="eyebrow">Preguntas</span><h2>Lo que nos preguntan.</h2></div>
+  <div class="faq">
+    <details class="rv"><summary>¿NORTHPOINT me dice qué operar?</summary><p>No. No da señales ni asesoría de inversión. Te muestra tus propios números para que tomes mejores decisiones tú.</p></details>
+    <details class="rv"><summary>¿Me garantiza ganar dinero?</summary><p>No, y desconfía de quien te lo prometa. Lo que sí hace es enseñarte dónde estás perdiendo para que dejes de repetirlo.</p></details>
+    <details class="rv"><summary>¿Con qué brokers funciona?</summary><p>Exness, Tradeify y cualquier broker de MetaTrader 5 en automático; Interactive Brokers con tu Flex Query. NinjaTrader, Tradovate, TradeStation, Thinkorswim, Webull, Binance, Bybit, OANDA, TopstepX y Rithmic subiendo su reporte.</p></details>
+    <details class="rv"><summary>¿Dónde quedan mis datos?</summary><p>En tu computadora. Tus trades y capturas no se suben a ningún servidor. La Comunidad es opcional: solo comparte lo que tú decides publicar.</p></details>
+    <details class="rv"><summary>¿Funciona en Mac y en Windows?</summary><p>Sí, hay app para los dos. Con la misma suscripción puedes usarla en tus computadoras.</p></details>
+    <details class="rv"><summary>¿Qué incluye la comunidad de Discord?</summary><p>El daily bias antes de la apertura, lives de la sesión de Nueva York y cursos de trading y finanzas personales. Es contenido educativo: tú decides cada operación.</p></details>
+    <details class="rv"><summary>¿Por qué pagar si hay diarios gratis?</summary><p>Porque un Excel no importa tus trades, no te dice cuánto te cuestan tus reglas rotas ni trae una comunidad que opera contigo cada mañana. Si un solo error que dejas de repetir vale más de $19, ya se pagó.</p></details>
+    <details class="rv"><summary>¿Cómo cancelo?</summary><p>Desde el link de tu suscripción, en un clic. No hay contratos ni permanencia: pagas mes a mes.</p></details>
+  </div>
+</div></section>
+
+<section class="final"><div class="w">
+  <span class="eyebrow rv">Empieza hoy</span>
+  <h2 class="rv">Tu próximo mes de trading, con los números en la mano.</h2>
+  <div class="ctas rv"><a href="#precios" class="btn pri"><span>Prueba <span data-dias>7</span> días gratis</span></a></div>
+  <p class="fine rv">Desde $<span data-precio="starter">9</span> USD al mes después de la prueba</p>
+</div></section>
+
+<footer><div class="w"><span class="logo">NORTHPOINT</span>
+  <p>NORTHPOINT es una herramienta de registro y análisis. No es asesoría financiera ni de inversión; el daily bias, los lives y los cursos son contenido educativo. Operar futuros, forex y CFDs conlleva riesgo alto de pérdida; los resultados pasados no garantizan resultados futuros. Las capturas usan datos de ejemplo.</p>
+  <span>© <span id="anio">2026</span> NORTHPOINT</span></div></footer>
+
+<a href="#precios" class="sticky" id="sticky"><span>Prueba <span data-dias>7</span> días gratis</span><small>desde $<span data-precio="starter">9</span>/mes</small></a>
+
+<div class="ov" id="ov"><div class="md"><button class="x" data-cerrar>×</button><h3>Empieza tu prueba</h3>
+  <p id="ovTxt">Descarga NORTHPOINT y úsalo completo <span data-dias>7</span> días. Si te sirve, eliges tu plan.</p>
+  <div id="ovBtns"></div></div></div>
+
+<script>
+(() => {
+  const V = window.NP_VENTA, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  $$('[data-dias]').forEach(x => x.textContent = V.pruebaDias);
+  $$('[data-precio]').forEach(x => x.textContent = V.precios[x.dataset.precio]);
+  $('#anio').textContent = new Date().getFullYear();
+  // brokers
+  const B = ['Exness', 'Tradeify', 'MetaTrader 5', 'Interactive Brokers', 'NinjaTrader', 'Tradovate', 'TopstepX', 'Rithmic', 'TradeStation', 'Thinkorswim', 'Webull', 'Binance', 'Bybit', 'OANDA'];
+  $('#mq').innerHTML = [...B, ...B].map(b => `<span>${b}</span>`).join('');
+  // nav
+  const nav = $('#nav'); addEventListener('scroll', () => nav.classList.toggle('s', scrollY > 20), { passive: true });
+  // aparecer al hacer scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('ok'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  $$('.rv').forEach((x, i) => { x.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(x); });
+  setTimeout(() => $('#shot').classList.add('ok'), 350);
+  const st = $('#sticky'), pr = $('#precios'); addEventListener('scroll', () => { const r = pr.getBoundingClientRect(); st.classList.toggle('on', scrollY > 600 && (r.top > innerHeight || r.bottom < 0)); }, { passive: true });
+  // compra: link de pago si existe; si no, la prueba gratis
+  const ov = $('#ov');
+  const prueba = () => { const d = V.descargas, b = [];
+    if (d.mac) b.push(`<a class="btn pri" href="${d.mac}" download>Descargar para Mac <small>.dmg</small></a>`);
+    if (d.win) b.push(`<a class="btn" href="${d.win}">Descargar para Windows <small>.exe</small></a>`);
+    if (V.contacto) b.push(`<a class="btn" href="${V.contacto}" target="_blank" rel="noopener">Hablar con ventas <small>WhatsApp</small></a>`);
+    if (!b.length) b.push('<p class="fine">Las descargas se activan muy pronto.</p>');
+    $('#ovBtns').innerHTML = b.join(''); ov.classList.add('on'); };
+  $$('[data-plan]').forEach(b => b.onclick = () => { const url = V.pagos[b.dataset.plan]; if (url) location.href = url; else prueba(); });
+  ov.onclick = e => { if (e.target === ov || e.target.closest('[data-cerrar]')) ov.classList.remove('on'); };
+  addEventListener('keydown', e => { if (e.key === 'Escape') ov.classList.remove('on'); });
+})();
+</script>
+</body>
+</html>
