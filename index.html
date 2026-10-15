@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NORTHPOINT · El diario de trading que te dice la verdad</title>
+<title>RYŪ · El pergamino del dragón · by NORTHPOINT</title>
 <meta name="description" content="Tus trades entran solos desde tu broker y te enseña qué estrategia, qué hora y qué regla rota te está costando dinero. Con comunidad en Discord: daily bias, lives y cursos. Mac y Windows, desde $9 al mes.">
 <meta name="theme-color" content="#060a10">
-<meta property="og:title" content="NORTHPOINT · El diario de trading que te dice la verdad">
+<meta property="og:title" content="RYŪ · El pergamino del dragón · by NORTHPOINT">
 <meta property="og:description" content="Diario automático, calendario con eventos en vivo, challenges de fondeo y tu camino al primer millón. Mac y Windows.">
 <meta property="og:image" content="https://studioamr.github.io/northpoint-trading/img/dash.jpg">
 <meta property="og:url" content="https://studioamr.github.io/northpoint-trading/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Shippori+Mincho:wght@500;700;800&family=Zen+Antique&display=swap" rel="stylesheet">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('np_theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
 <style>
 :root{--bg:#060a10;--bg2:#0b121b;--card:#0e1722;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);--tx:#eef2f5;--tx2:#a1acb7;--tx3:#66727e;--ac:#5fd3d6;--acd:#0f3f43;--up:#3ccf8e;--dn:#f06a6f;--mono:'JetBrains Mono',ui-monospace,monospace}
@@ -307,6 +307,51 @@ body.en-pres nav{opacity:0;pointer-events:none} nav{transition:opacity .5s,backg
 .fd-c>p{font-size:13.5px;color:var(--tx2);line-height:1.5} .fd-lv{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:12px} .fd-lv div{padding:8px 10px;border:1px solid var(--line);border-radius:2px;background:var(--glass2)} .fd-lv span{display:block;font:500 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tx3)} .fd-lv b{font:600 14px var(--mono)}
 .fd-svg{width:100%;height:auto;display:block;margin:2px 0 4px} .fd-u{fill:var(--tx)} .fd-d{fill:none;stroke:var(--tx2);stroke-width:1} .fd-w{stroke:var(--tx2);stroke-width:1} .fd-e{stroke:var(--tx);stroke-width:1.3} .fd-tp{fill:rgba(var(--acrgb),.08)} .fd-sl{fill:rgba(var(--acrgb),.03);stroke:var(--line);stroke-dasharray:3 3}
 .fd-liq{stroke:var(--tx3);stroke-dasharray:4 4} .fd-t{font:600 9px var(--mono);fill:var(--tx)} .fd-t2{font:500 8.5px var(--mono);fill:var(--tx3)} .fd-por{margin-top:10px} .fd-por b{color:var(--tx)} .fd-pie{font:500 10.5px var(--mono);color:var(--tx3);text-align:center;letter-spacing:.06em}
+/* ===================== RYŪ · manga / pergamino (tinta, papel washi, sello bermellón) ===================== */
+:root{--sello:#c8312a;--washi:#f3ecdf;--mincho:"Shippori Mincho","Zen Antique",serif}
+.logo{display:flex;align-items:center;gap:9px} .logo b{font:800 17px var(--mincho);letter-spacing:.16em} .logo small{font:500 9px var(--mono);letter-spacing:.18em;color:var(--tx3)}
+.sello{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:5px;background:var(--sello);color:#fff6e9;font:900 15px "Zen Antique",var(--mincho);transform:rotate(-4deg);box-shadow:0 4px 14px -4px var(--sello)}
+.kj{font-style:normal;font-family:var(--mincho);font-weight:700;color:var(--sello);letter-spacing:.12em;margin-left:8px}
+/* tramado manga y líneas de velocidad */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(rgba(var(--acrgb),.13) 1px,transparent 1.5px) 0 0/9px 9px;-webkit-mask:radial-gradient(circle at 100% 0,#000,transparent 42%),radial-gradient(circle at 0 100%,#000,transparent 38%);mask:radial-gradient(circle at 100% 0,#000,transparent 42%),radial-gradient(circle at 0 100%,#000,transparent 38%)}
+.hero:after{content:"";position:absolute;inset:-10% -20% 30%;pointer-events:none;background:repeating-conic-gradient(from 0deg at 50% 38%,rgba(var(--acrgb),.07) 0deg .6deg,transparent .6deg 5deg);-webkit-mask:radial-gradient(circle at 50% 38%,transparent 22%,#000 60%,transparent 85%);mask:radial-gradient(circle at 50% 38%,transparent 22%,#000 60%,transparent 85%)}
+.hero .w{z-index:1}
+h2{font-family:var(--mincho);font-weight:800;letter-spacing:-.01em}
+.hero h1{font-family:var(--mincho);font-weight:800;letter-spacing:-.02em}
+/* el pergamino de la presentación */
+.rollo{display:flex;align-items:center;justify-content:center;will-change:transform,opacity,filter}
+.r-palo{position:relative;flex:none;width:24px;height:min(66vh,560px);border-radius:12px;background:linear-gradient(90deg,#0b0b0b,#3a3a3a 35%,#141414 70%,#050505);box-shadow:0 18px 40px -12px rgba(0,0,0,.6);z-index:2}
+.r-palo:before,.r-palo:after{content:"";position:absolute;left:50%;width:40px;height:30px;transform:translateX(-50%);border-radius:10px;background:linear-gradient(90deg,#6b4f12,#e6c35a 35%,#fff1b8 50%,#c9a23b 65%,#5c420e);box-shadow:inset 0 0 0 2px rgba(0,0,0,.15)}
+.r-palo:before{top:-22px} .r-palo:after{bottom:-22px}
+.r-papel{position:relative;height:calc(min(66vh,560px) - 30px);width:0;overflow:hidden;background:var(--washi);background-image:repeating-linear-gradient(90deg,rgba(120,90,40,.035) 0 1px,transparent 1px 7px),radial-gradient(circle at 30% 20%,rgba(160,120,60,.08),transparent 60%),radial-gradient(circle at 80% 90%,rgba(160,120,60,.08),transparent 60%);box-shadow:inset 0 12px 18px -14px rgba(0,0,0,.4),inset 0 -12px 18px -14px rgba(0,0,0,.4);animation:desenrolla 1.6s .2s cubic-bezier(.77,0,.18,1) forwards}
+@keyframes desenrolla{to{width:min(880px,74vw)}}
+.r-tinta{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#0c0c0c;min-width:min(880px,74vw);left:50%;transform:translateX(-50%)}
+.r-kanji{font:400 clamp(120px,22vh,230px) "Zen Antique",var(--mincho);line-height:.95;color:#0c0c0c;opacity:0;filter:blur(6px);animation:tinta 1.2s 1.3s cubic-bezier(.16,1,.3,1) forwards;text-shadow:2px 2px 0 rgba(0,0,0,.08)}
+@keyframes tinta{to{opacity:1;filter:none}}
+.pres-mark{font:800 clamp(38px,6.5vw,92px) var(--mincho);letter-spacing:.32em;margin-right:-.32em;color:#0c0c0c;background:none;-webkit-background-clip:initial;background-clip:initial;animation:presIn 1.2s 1.6s cubic-bezier(.16,1,.3,1) both}
+.r-tinta .pres-sub{color:#6b6255;margin-top:10px;animation:presIn 1.2s 1.9s cubic-bezier(.16,1,.3,1) both}
+.r-sello{position:absolute;right:9%;bottom:12%;width:64px;height:64px;display:grid;place-items:center;border-radius:6px;background:var(--sello);color:#fff6e9;font:900 36px "Zen Antique",var(--mincho);opacity:0;transform:scale(2.2) rotate(-14deg);animation:sella .5s 2.4s cubic-bezier(.3,1.6,.5,1) forwards;mix-blend-mode:multiply}
+@keyframes sella{to{opacity:.92;transform:scale(1) rotate(-6deg)}}
+.r-vert{position:absolute;left:8%;top:14%;writing-mode:vertical-rl;font:700 15px var(--mincho);letter-spacing:.4em;color:#6b6255;opacity:0;animation:tinta 1s 2s forwards}
+@media(max-width:700px){.r-palo{height:52vh;width:18px} .r-papel{height:calc(52vh - 24px)} @keyframes desenrolla{to{width:84vw}} .r-tinta{min-width:84vw} .r-sello,.r-vert{display:none}}
+/* pergaminos en la landing (mismo foil que la app) */
+.pg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;perspective:1100px} @media(max-width:860px){.pg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.nc{position:relative;aspect-ratio:3/4.1;display:block;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);--mx:50%;--my:50%;--rx:0deg;--ry:0deg;--o:0;transform:rotateX(var(--rx)) rotateY(var(--ry))}
+.nc-fr{position:absolute;inset:0;border-radius:12px;overflow:hidden;background:#111;box-shadow:0 24px 60px -24px rgba(0,0,0,.7),0 0 0 1px #ffffff1a}
+.nc img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform .6s}
+.nc:hover img{transform:scale(1.09)}
+.nc-holo{position:absolute;inset:0;mix-blend-mode:color-dodge;opacity:calc(var(--o)*.55);transition:opacity .3s;background:repeating-linear-gradient(115deg,#ff5f6d 0%,#ffc371 7%,#f3f7a1 14%,#7af0c8 21%,#65a8ff 28%,#c58cff 35%,#ff5f6d 42%);background-size:300% 300%;background-position:var(--mx) var(--my)}
+.nc-glare{position:absolute;inset:0;mix-blend-mode:overlay;opacity:var(--o);transition:opacity .3s;background:radial-gradient(circle at var(--mx) var(--my),#fffffff0 0%,#ffffff55 18%,transparent 55%)}
+.nc-sw{position:absolute;inset:-40%;background:linear-gradient(105deg,transparent 42%,#ffffff2e 48%,#ffffffa0 50%,#ffffff2e 52%,transparent 58%);animation:ncSw 5.5s ease-in-out infinite;animation-delay:var(--d,0s);mix-blend-mode:screen;pointer-events:none} @keyframes ncSw{0%,62%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+.nc-sh{position:absolute;inset:0;background:linear-gradient(transparent 52%,#000d)}
+.nc-ring{position:absolute;inset:-2px;border-radius:14px;padding:2px;background:conic-gradient(from var(--ang,0deg),var(--c1),var(--c2),var(--c1),var(--c2),var(--c1));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:ncGira 4s linear infinite;filter:drop-shadow(0 0 10px var(--c1))}
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false} @keyframes ncGira{to{--ang:360deg}}
+.nc[data-r=Legendary]{--c1:#f3c22f;--c2:#fff4c2} .nc[data-r=Epic]{--c1:#c06bff;--c2:#f0d6ff} .nc[data-r=Rare]{--c1:#4fa3ff;--c2:#d8ecff}
+.nc-jt{position:absolute;top:12px;right:12px;writing-mode:vertical-rl;font:700 16px "Zen Antique",var(--mincho);color:#fff;text-shadow:0 1px 6px #000a;letter-spacing:.1em}
+.nc-inf{position:absolute;left:14px;right:12px;bottom:14px;color:#fff;text-shadow:0 1px 6px #0009} .nc-inf b{display:block;font:800 19px var(--mincho);line-height:1.1} .nc-inf small{font:500 10.5px var(--mono);opacity:.85}
+.nc-rar{position:absolute;left:12px;top:12px;font:700 9.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:5px 8px;border-radius:99px;background:#0009;border:1px solid var(--c1);color:var(--c2);box-shadow:0 0 14px -2px var(--c1)}
+.pg-usos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:40px} .pg-usos div{padding:20px;border-radius:4px;background:var(--card);border:1px solid var(--line);box-shadow:inset 0 1px 0 var(--edge)} .pg-usos b{display:block;font:800 17px var(--mincho);margin-bottom:6px} .pg-usos span{font-size:14px;color:var(--tx2)} .pg-usos i{font-style:normal;font:700 22px "Zen Antique",var(--mincho);color:var(--sello);float:right}
+@media(max-width:860px){.pg-usos{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -323,23 +368,23 @@ window.NP_VENTA = {
 </script>
 
 <nav id="nav"><div class="w">
-  <a href="#" class="logo">NORTHPOINT</a>
-  <div class="lk"><a href="#funciones">Funciones</a><a href="#comunidad">Comunidad</a><a href="#fondeo">Fondeo</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></div>
+  <a href="#" class="logo"><span class="sello">竜</span><b>RYŪ</b><small>by NORTHPOINT</small></a>
+  <div class="lk"><a href="#funciones">Funciones</a><a href="#pergaminos">Pergaminos</a><a href="#comunidad">Comunidad</a><a href="#fondeo">Fondeo</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></div>
   <a href="#precios" class="btn pri">Prueba gratis</a>
 </div></nav>
 
-<section class="pres" id="pres" aria-label="NORTHPOINT"><div class="pres-in"><div class="pres-mark">NORTHPOINT</div><p class="pres-sub">El diario de trading que te dice la verdad</p>
+<section class="pres" id="pres" aria-label="RYŪ · El pergamino del dragón"><div class="pres-in"><div class="rollo"><span class="r-palo"></span><div class="r-papel"><div class="r-tinta"><span class="r-vert">龍の巻物 · 北点</span><span class="r-kanji">竜</span><div class="pres-mark">RYŪ</div><p class="pres-sub">El pergamino del dragón · by NORTHPOINT</p><span class="r-sello">竜</span></div></div><span class="r-palo"></span></div>
   <div class="pres-exp"><span>Baja para explorar</span><i>↓</i></div><span class="pres-lin"></span></div></section>
 <header class="hero" id="inicio"><div class="w">
   <span class="pill"><i></i><b>Mac y Windows</b><span class="pl2"> · tus trades entran solos desde tu broker</span></span>
   <h1>El diario de trading que te dice <em>la verdad</em>.</h1>
-  <p class="lead">NORTHPOINT junta tus trades, tu calendario, el mercado en vivo y tus metas en una sola app. Te enseña, con tus propios números, qué estrategia, qué hora y qué regla rota te está costando dinero. Y te mete a una comunidad con daily bias, lives y cursos.</p>
+  <p class="lead">RYŪ junta tus trades, tu calendario, el mercado en vivo y tus metas en una sola app. Te enseña, con tus propios números, qué estrategia, qué hora y qué regla rota te está costando dinero. Y te mete a una comunidad con daily bias, lives y cursos.</p>
   <div class="ctas"><a href="#precios" class="btn pri"><span>Prueba <span data-dias>7</span> días gratis</span></a><a href="#funciones" class="btn">Ver cómo funciona</a></div>
   <p class="fine">Sin tarjeta para probar · cancelas cuando quieras</p>
   <div class="devs" id="shot">
     <div class="mbp"><div class="mbp-scr"><i class="mbp-notch"></i><div class="sc" role="img" aria-label="NORTHPOINT en una MacBook Pro con El mundo en vivo: globo girando con bolsas, rutas y eventos">
       <canvas id="globo"></canvas>
-      <div class="sc-nav"><b>NORTHPOINT</b><span class="on">Mercado</span><span>Dashboard</span><span>Trades</span><span>Calendario</span><span>Estrategias</span><span>Academia</span><span>Patrimonio</span><i>Emociones</i></div>
+      <div class="sc-nav"><b>竜 RYŪ</b><span class="on">Mercado</span><span>Dashboard</span><span>Trades</span><span>Calendario</span><span>Estrategias</span><span>Academia</span><span>Patrimonio</span><i>Emociones</i></div>
       <div class="sc-izq"><div class="sc-p"><small><i class="g"></i>Hora de Nueva York</small><div class="sc-reloj"><b id="scNy">09:41</b><span>NY</span></div><div class="sc-fila"><span>México</span><b id="scMx">07:41</b></div><div class="sc-fila"><span>Tu ventana</span><b class="ac">9:45–11:00</b></div></div>
         <div class="sc-p"><small>HOY</small><div class="sc-fila"><span>Resultado</span><b class="up">+1.8R</b></div><div class="sc-fila"><span>Meta del día</span><b>2R</b></div><div class="sc-bar"><i></i></div></div></div>
       <div class="sc-der"><div class="sc-p"><small><i class="r"></i>En vivo · ahora</small><p><b>Fed · conferencia</b><span>Casa Blanca · Bloomberg</span></p></div>
@@ -354,35 +399,35 @@ window.NP_VENTA = {
   <div class="marq"><div id="mq"></div></div></div>
 
 <section class="s"><div class="w">
-  <div class="cab rv"><span class="eyebrow">El problema</span><h2>No pierdes por la estrategia. Pierdes por lo que no ves.</h2>
-  <p class="lead">Un Excel no te dice que tus pérdidas salen siempre a la misma hora, ni cuánto te cuesta romper tus reglas. NORTHPOINT sí.</p></div>
+  <div class="cab rv"><span class="eyebrow">El problema<i class="kj">問題</i></span><h2>No pierdes por la estrategia. Pierdes por lo que no ves.</h2>
+  <p class="lead">Un Excel no te dice que tus pérdidas salen siempre a la misma hora, ni cuánto te cuesta romper tus reglas. RYŪ sí.</p></div>
   <div class="dolor">
-    <div class="rv"><small>ANTES</small><h3>Apuntas a mano (cuando te acuerdas)</h3><p>Y el día malo es justo el que no apuntas. <b>NORTHPOINT lee tus trades de Exness, Tradeify o MT5 solo</b>; tú solo completas estrategia y emociones.</p></div>
+    <div class="rv"><small>ANTES</small><h3>Apuntas a mano (cuando te acuerdas)</h3><p>Y el día malo es justo el que no apuntas. <b>RYŪ lee tus trades de Exness, Tradeify o MT5 solo</b>; tú solo completas estrategia y emociones.</p></div>
     <div class="rv"><small>ANTES</small><h3>Sientes que “casi” vas bien</h3><p>Sin números todo es sensación. <b>Ves tu R, win rate, expectancy y drawdown</b> por mes, estrategia, instrumento y hora.</p></div>
     <div class="rv"><small>ANTES</small><h3>Rompes reglas y no lo pagas</h3><p>Hasta que la cuenta lo paga. <b>La app te dice cuánto R te costó cada regla rota</b> y dónde estarías si las hubieras respetado.</p></div>
   </div>
 </div></section>
 
 <section class="s" id="funciones" style="padding-top:20px"><div class="w">
-  <div class="cab c rv"><span class="eyebrow">Funciones</span><h2>Todo tu trading, en un solo lugar.</h2><p class="lead">Lo que antes eran cinco pestañas, un Excel y una libreta.</p></div>
+  <div class="cab c rv"><span class="eyebrow">Funciones<i class="kj">機能</i></span><h2>Todo tu trading, en un solo lugar.</h2><p class="lead">Lo que antes eran cinco pestañas, un Excel y una libreta.</p></div>
 
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Dashboard</span><h3>Tu disciplina, en números.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Dashboard<i class="kj">数字</i></span><h3>Tu disciplina, en números.</h3>
     <p>Cada mes ves lo que de verdad importa: R, win rate, expectancy, drawdown y la curva de tu cuenta. Debajo, la verdad incómoda: cuánto te cuestan las reglas rotas.</p>
     <ul><li><span><b>Por estrategia e instrumento:</b> deja de operar lo que no te paga.</span></li><li><span><b>Mejores horarios:</b> tu ventana ganadora y la hora que debes evitar.</span></li><li><span><b>Por día de la semana:</b> el día que más te cuesta, en números.</span></li></ul>
     <div class="dato">Con reglas <b>+1.27R</b> por trade · rompiéndolas −0.84R</div></div>
     <div class="img rv"><img src="img/dash.jpg" alt="Dashboard de NORTHPOINT" loading="lazy"></div></div>
 
-  <div class="ft r"><div class="tx rv"><span class="eyebrow">Trades automáticos</span><h3>Tus trades entran solos.</h3>
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Trades automáticos<i class="kj">取引</i></span><h3>Tus trades entran solos.</h3>
     <p>Conecta tu cuenta una vez y cada operación aparece con hora, instrumento, dirección, duración, R y P&L. Tú solo eliges la estrategia y cómo te sentiste.</p>
     <ul><li><span><b>Exness, Tradeify y MT5</b> en automático; <b>Interactive Brokers</b> cada 30 min.</span></li><li><span><b>NinjaTrader, Tradovate, TopstepX, Rithmic</b> y 10 más por archivo.</span></li><li><span><b>Capturas por trade:</b> pegas, arrastras, y quedan con el trade.</span></li></ul></div>
     <div class="img rv"><img src="img/trades.jpg" alt="Lista de trades con estrategia, R y P&L" loading="lazy"></div></div>
 
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Calendario</span><h3>Cada día, verde o rojo, de un vistazo.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Calendario<i class="kj">暦</i></span><h3>Cada día, verde o rojo, de un vistazo.</h3>
     <p>Tu mes como calendario: R por día y cada trade dentro. Y en Mercado, el calendario económico de EE. UU. con la Fed, Trump y los datos rojos: qué esperar de cada uno y, cuando están pasando, la transmisión en vivo con un clic.</p>
     <ul><li><span><b>Eventos con cuenta regresiva</b> y escenarios si sale arriba o abajo.</span></li><li><span><b>En vivo:</b> Bloomberg, CNBC, Casa Blanca y la Fed dentro de la app.</span></li><li><span><b>Noticias y tweets</b> que mueven el NASDAQ, filtrados.</span></li></ul></div>
     <div class="img rv"><img src="img/cal.jpg" alt="Calendario de trades por día" loading="lazy"></div></div>
 
-  <div class="ft r"><div class="tx rv"><span class="eyebrow">Mercado en vivo</span><h3>Todas las noticias que mueven tu trade, en un solo panel.</h3>
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Mercado en vivo<i class="kj">市場</i></span><h3>Todas las noticias que mueven tu trade, en un solo panel.</h3>
     <p>Titulares, tweets de las cuentas que mueven el mercado, alertas de última hora y las transmisiones en vivo de Bloomberg, CNBC, la Casa Blanca y la Fed. Filtras por índices, cripto o acciones y dejas de tener diez pestañas abiertas.</p>
     <ul><li><span><b>Última hora:</b> conflictos, rutas comerciales y sismos que pueden mover el mercado.</span></li><li><span><b>Tweets y noticias</b> filtrados por lo que operas.</span></li><li><span><b>En vivo</b> con un clic cuando habla la Fed o hay conferencia.</span></li></ul></div>
     <div class="rv"><div class="nt">
@@ -397,22 +442,22 @@ window.NP_VENTA = {
 </div></section>
 
 <section class="s" id="fondeo" style="padding-top:40px"><div class="w">
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Estrategias</span><h3>Cada estrategia, explicada con su gráfica.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Estrategias<i class="kj">戦略</i></span><h3>Cada estrategia, explicada con su gráfica.</h3>
     <p>OTE, Daily Bias, Kiss and goodbye, ORB: cada una con una gráfica animada que se arma vela por vela y te marca la liquidez, el Fibonacci, la entrada, el stop y el objetivo justo en el paso que toca.</p>
     <ul><li><span><b>Elige las que usas</b> y aparecen al registrar cada trade.</span></li><li><span><b>Crea las tuyas</b> con tus pasos y su gráfica de ejemplo.</span></li><li><span><b>Tus números por estrategia:</b> trades, R y % de acierto.</span></li></ul></div>
     <div class="img rv"><img src="img/estrategias.jpg" alt="Estrategias con gráficas animadas" loading="lazy"></div></div>
 
-  <div class="ft r"><div class="tx rv"><span class="eyebrow">Academia</span><h3>Aprende con rutas, quizzes y certificado.</h3>
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Academia<i class="kj">道場</i></span><h3>Aprende con rutas, quizzes y certificado.</h3>
     <p>Ocho rutas dentro de la app: el Bootcamp de day trading de cero a payout, finanzas personales, inversión a largo plazo, acciones, crypto, memecoins, quant e IA para traders. Lecciones cortas, un quiz en cada módulo y un examen final.</p>
     <ul><li><span><b>Bootcamp 0 → Hero:</b> estructura, liquidez, las 5 confluencias, daily bias, OTE, riesgo y psicología.</span></li><li><span><b>Quizzes con explicación</b> de cada respuesta.</span></li><li><span><b>Certificado</b> al aprobar el examen final de cada ruta.</span></li></ul></div>
     <div class="img rv"><img src="img/academia.jpg" alt="Academia NORTHPOINT con 8 rutas" loading="lazy"></div></div>
 
-  <div class="ft r"><div class="tx rv"><span class="eyebrow">Challenges de fondeo</span><h3>De la evaluación a tu primer payout.</h3>
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Challenges de fondeo<i class="kj">資金</i></span><h3>De la evaluación a tu primer payout.</h3>
     <p>Elige tu reto y la app lleva la cuenta por ti: cuánto colchón te queda, cuántos días ganadores llevas y cuánto puedes retirar.</p>
     <ul><li><span><b>1 cuenta · primer payout:</b> evaluación, drawdown de cierre y 5 días ganadores.</span></li><li><span><b>Plan $100 → $15,000:</b> fases con riesgo fijo, meta del día y depósitos de domingo.</span></li><li><span><b>Escopetazo · 2 cuentas:</b> lleva el reto con tu socio, los dos balances a la vista.</span></li><li><span><b>Crea el tuyo:</b> saldo inicial, meta, días y reglas; la app lleva el ritmo.</span></li></ul></div>
     <div class="img rv"><img src="img/prog.jpg" alt="Challenges de fondeo en NORTHPOINT" loading="lazy"></div></div>
 
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Patrimonio</span><h3>Tu camino al primer millón, por rangos.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Patrimonio<i class="kj">財産</i></span><h3>Tu camino al primer millón, por rangos.</h3>
     <p>Pon cuánto ahorras y cada cuándo. La app te dice cuándo llegas, sin inventar rendimientos, y sube tu rango: Cobre, Bronce, Plata, Oro, Platino, Esmeralda, Diamante, Maestro, Gran Maestro y Campeón.</p>
     <ul><li><span><b>Cartera completa:</b> broker, banco, acciones, ETFs, cripto.</span></li><li><span><b>Ingresos y gastos</b> del mes, sin hojas de cálculo.</span></li><li><span><b>Proyección honesta:</b> solo lo que aportas; lo que ganes operando, encima.</span></li></ul></div>
     <div class="img rv"><img src="img/pat.jpg" alt="Patrimonio con rangos de Cobre a Campeón" loading="lazy"></div></div>
@@ -424,6 +469,15 @@ window.NP_VENTA = {
     <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h4>Capturas y notas</h4><p>Pega la captura de tu entrada y escribe qué viste. Tu diario se vuelve tu mejor maestro.</p></div>
   </div>
   <div class="mid rv"><p>Pruébala con tus propios trades.</p><a href="#precios" class="btn pri"><span>Empezar <span data-dias>7</span> días gratis</span></a></div>
+</div></section>
+
+<section class="s" id="pergaminos" style="padding-top:40px"><div class="w">
+  <div class="cab c rv"><span class="eyebrow">Los pergaminos<i class="kj">巻物</i></span><h2>Colecciona el camino del dragón.</h2><p class="lead">Treinta pergaminos dentro de la app. Los RONIN de día son las virtudes del trader; los ONI de noche, sus siete pecados: soberbia, ira, FOMO, avaricia, envidia, sobre-trading y pereza. Cada uno trae su lección.</p></div>
+  <div class="pg-grid" style="margin-top:52px"><div class="nc rv" data-r="Legendary" style="--d:0.0s"><span class="nc-ring"></span><span class="nc-fr"><img src="img/nft/spec-pride.webp" alt="Soberbia" loading="lazy"><span class="nc-holo"></span><span class="nc-glare"></span><span class="nc-sw"></span><span class="nc-sh"></span><span class="nc-jt">傲慢</span><span class="nc-rar">Legendaria</span><span class="nc-inf"><b>Soberbia</b><small>ONI · noche</small></span></span></div><div class="nc rv" data-r="Epic" style="--d:0.7s"><span class="nc-ring"></span><span class="nc-fr"><img src="img/nft/first-light.webp" alt="Primera luz" loading="lazy"><span class="nc-holo"></span><span class="nc-glare"></span><span class="nc-sw"></span><span class="nc-sh"></span><span class="nc-jt">初光</span><span class="nc-rar">Épica</span><span class="nc-inf"><b>Primera luz</b><small>RONIN · día</small></span></span></div><div class="nc rv" data-r="Legendary" style="--d:1.4s"><span class="nc-ring"></span><span class="nc-fr"><img src="img/nft/spec-wrath.webp" alt="Ira" loading="lazy"><span class="nc-holo"></span><span class="nc-glare"></span><span class="nc-sw"></span><span class="nc-sh"></span><span class="nc-jt">憤怒</span><span class="nc-rar">Legendaria</span><span class="nc-inf"><b>Ira</b><small>ONI · noche</small></span></span></div><div class="nc rv" data-r="Epic" style="--d:2.1s"><span class="nc-ring"></span><span class="nc-fr"><img src="img/nft/spring-dream.webp" alt="Sueño de primavera" loading="lazy"><span class="nc-holo"></span><span class="nc-glare"></span><span class="nc-sw"></span><span class="nc-sh"></span><span class="nc-jt">春の夢</span><span class="nc-rar">Épica</span><span class="nc-inf"><b>Sueño de primavera</b><small>RONIN · día</small></span></span></div><div class="nc rv" data-r="Epic" style="--d:2.8s"><span class="nc-ring"></span><span class="nc-fr"><img src="img/nft/spec-greed.webp" alt="Avaricia" loading="lazy"><span class="nc-holo"></span><span class="nc-glare"></span><span class="nc-sw"></span><span class="nc-sh"></span><span class="nc-jt">強欲</span><span class="nc-rar">Épica</span><span class="nc-inf"><b>Avaricia</b><small>ONI · noche</small></span></span></div><div class="nc rv" data-r="Epic" style="--d:3.5s"><span class="nc-ring"></span><span class="nc-fr"><img src="img/nft/spec-lust.webp" alt="Lujuria" loading="lazy"><span class="nc-holo"></span><span class="nc-glare"></span><span class="nc-sw"></span><span class="nc-sh"></span><span class="nc-jt">色欲</span><span class="nc-rar">Épica</span><span class="nc-inf"><b>Lujuria</b><small>ONI · noche</small></span></span></div></div>
+  <div class="pg-usos"><div class="rv"><i>得</i><b>Gánalos</b><span>Tirada diaria del dojo, quizzes y certificados de la Academia, y rachas de días verdes sin romper reglas.</span></div>
+    <div class="rv"><i>用</i><b>Úsalos</b><span>Como foto de perfil, en tu vitrina de la Comunidad y como poder en el ranking. Entre más raros, más poder.</span></div>
+    <div class="rv"><i>換</i><b>Cámbialos</b><span>Ofrece un pergamino y pide otro: los intercambios se cierran entre usuarios de RYŪ, dentro de la app.</span></div></div>
+  <p class="fine" style="text-align:center;margin-top:18px">Coleccionables dentro de la app · no son criptomonedas ni tienen valor de inversión</p>
 </div></section>
 
 <section class="s" id="comunidad" style="padding-top:40px"><div class="w">
@@ -447,14 +501,14 @@ window.NP_VENTA = {
 </div></section>
 
 <section class="s" style="padding-top:40px"><div class="w">
-  <div class="cab c rv"><span class="eyebrow">Cómo funciona</span><h2>Listo en 5 minutos.</h2></div>
+  <div class="cab c rv"><span class="eyebrow">Cómo funciona<i class="kj">方法</i></span><h2>Listo en 5 minutos.</h2></div>
   <div class="pasos">
     <div class="rv"><h4>Descarga la app</h4><p>Para Mac o Windows. Creas tu perfil con tu nombre y tu riesgo por trade.</p></div>
     <div class="rv"><h4>Conecta tu cuenta</h4><p>Exness, Tradeify o MT5 en automático, o sube el reporte de tu plataforma.</p></div>
     <div class="rv"><h4>Opera y revisa</h4><p>Tus trades entran solos. Al cierre ves qué funcionó, qué no y qué cambiar mañana.</p></div>
   </div>
   <div class="vs rv">
-    <div class="f"><span class="h">Lo que necesitas</span><span class="h">Excel / libreta</span><span class="h np">NORTHPOINT</span></div>
+    <div class="f"><span class="h">Lo que necesitas</span><span class="h">Excel / libreta</span><span class="h np">RYŪ</span></div>
     <div class="f"><span>Trades automáticos desde tu broker</span><span class="no">—</span><span class="si">✓</span></div>
     <div class="f"><span>Cuánto te cuestan las reglas rotas</span><span class="no">—</span><span class="si">✓</span></div>
     <div class="f"><span>Mejores horarios y estrategias</span><span class="no">a mano</span><span class="si">✓</span></div>
@@ -467,7 +521,7 @@ window.NP_VENTA = {
 </div></section>
 
 <section class="s" id="precios"><div class="w">
-  <div class="cab c rv"><span class="eyebrow">Precios</span><h2>Menos que un trade perdido al mes.</h2><p class="lead">Empieza con <span data-dias>7</span> días gratis. Después, un pago mensual. Cancelas cuando quieras.</p></div>
+  <div class="cab c rv"><span class="eyebrow">Precios<i class="kj">価格</i></span><h2>Menos que un trade perdido al mes.</h2><p class="lead">Empieza con <span data-dias>7</span> días gratis. Después, un pago mensual. Cancelas cuando quieras.</p></div>
   <div class="precios">
     <div class="plan rv"><h3>Starter</h3><p class="para">Tu diario, ordenado y con números.</p>
       <div class="precio"><b>$<span data-precio="starter">9</span></b><span>USD / mes</span></div>
@@ -486,35 +540,35 @@ window.NP_VENTA = {
 </div></section>
 
 <section class="s" id="faq" style="padding-top:20px"><div class="w">
-  <div class="cab c rv"><span class="eyebrow">Preguntas</span><h2>Lo que nos preguntan.</h2></div>
+  <div class="cab c rv"><span class="eyebrow">Preguntas<i class="kj">質問</i></span><h2>Lo que nos preguntan.</h2></div>
   <div class="faq">
-    <details class="rv"><summary>¿NORTHPOINT me dice qué operar?</summary><p>No. No da señales ni asesoría de inversión. Te muestra tus propios números para que tomes mejores decisiones tú.</p></details>
+    <details class="rv"><summary>¿RYŪ me dice qué operar?</summary><p>No. No da señales ni asesoría de inversión. Te muestra tus propios números para que tomes mejores decisiones tú.</p></details>
     <details class="rv"><summary>¿Me garantiza ganar dinero?</summary><p>No, y desconfía de quien te lo prometa. Lo que sí hace es enseñarte dónde estás perdiendo para que dejes de repetirlo.</p></details>
     <details class="rv"><summary>¿Con qué brokers funciona?</summary><p>Exness, Tradeify y cualquier broker de MetaTrader 5 en automático; Interactive Brokers con tu Flex Query. NinjaTrader, Tradovate, TradeStation, Thinkorswim, Webull, Binance, Bybit, OANDA, TopstepX y Rithmic subiendo su reporte.</p></details>
     <details class="rv"><summary>¿Dónde quedan mis datos?</summary><p>En tu computadora. Tus trades y capturas no se suben a ningún servidor. La Comunidad es opcional: solo comparte lo que tú decides publicar.</p></details>
     <details class="rv"><summary>¿Funciona en Mac y en Windows?</summary><p>Sí, hay app para los dos. Con la misma suscripción puedes usarla en tus computadoras.</p></details>
     <details class="rv"><summary>¿Qué incluye la comunidad de Discord?</summary><p>El daily bias antes de la apertura, lives de la sesión de Nueva York y cursos de trading y finanzas personales. Es contenido educativo: tú decides cada operación.</p></details>
     <details class="rv"><summary>¿Por qué pagar si hay diarios gratis?</summary><p>Porque un Excel no importa tus trades, no te dice cuánto te cuestan tus reglas rotas ni trae una comunidad que opera contigo cada mañana. Si un solo error que dejas de repetir vale más de $19, ya se pagó.</p></details>
-    <details class="rv"><summary>¿Cómo activo la app después de pagar?</summary><p>Al pagar te llega por correo tu clave de licencia. La pegas en NORTHPOINT y listo. Si cancelas, la app sigue funcionando hasta el final de tu periodo pagado.</p></details>
+    <details class="rv"><summary>¿Cómo activo la app después de pagar?</summary><p>Al pagar te llega por correo tu clave de licencia. La pegas en RYŪ y listo. Si cancelas, la app sigue funcionando hasta el final de tu periodo pagado.</p></details>
     <details class="rv"><summary>¿Cómo cancelo?</summary><p>Desde el link de tu suscripción, en un clic. No hay contratos ni permanencia: pagas mes a mes.</p></details>
   </div>
 </div></section>
 
 <section class="final"><div class="w">
-  <span class="eyebrow rv">Empieza hoy</span>
+  <span class="eyebrow rv">Empieza hoy<i class="kj">始</i></span>
   <h2 class="rv">Tu próximo mes de trading, con los números en la mano.</h2>
   <div class="ctas rv"><a href="#precios" class="btn pri"><span>Prueba <span data-dias>7</span> días gratis</span></a></div>
   <p class="fine rv">Desde $<span data-precio="starter">9</span> USD al mes después de la prueba</p>
 </div></section>
 
-<footer><div class="w"><span class="logo">NORTHPOINT</span>
-  <p>NORTHPOINT es una herramienta de registro y análisis. No es asesoría financiera ni de inversión; el daily bias, los lives y los cursos son contenido educativo. Operar futuros, forex y CFDs conlleva riesgo alto de pérdida; los resultados pasados no garantizan resultados futuros. Las capturas usan datos de ejemplo.</p>
+<footer><div class="w"><span class="logo"><span class="sello">竜</span><b>RYŪ</b><small>by NORTHPOINT</small></span>
+  <p>RYŪ (by NORTHPOINT) es una herramienta de registro y análisis. No es asesoría financiera ni de inversión; el daily bias, los lives y los cursos son contenido educativo. Operar futuros, forex y CFDs conlleva riesgo alto de pérdida; los resultados pasados no garantizan resultados futuros. Las capturas usan datos de ejemplo.</p>
   <span>© <span id="anio">2026</span> NORTHPOINT</span></div></footer>
 
 <a href="#precios" class="sticky" id="sticky"><span>Prueba <span data-dias>7</span> días gratis</span><small>desde $<span data-precio="starter">9</span>/mes</small></a>
 
 <div class="ov" id="ov"><div class="md"><button class="x" data-cerrar>×</button><h3>Empieza tu prueba</h3>
-  <p id="ovTxt">Descarga NORTHPOINT y úsalo completo <span data-dias>7</span> días. Si te sirve, eliges tu plan.</p>
+  <p id="ovTxt">Descarga RYŪ y úsalo completo <span data-dias>7</span> días. Si te sirve, eliges tu plan.</p>
   <div id="ovBtns"></div></div></div>
 
 <script>
@@ -612,6 +666,7 @@ window.NP_VENTA = {
   // cascada en grupos
   $$('.dolor,.extra,.pasos,.precios,.com-g').forEach(g => [...g.children].forEach((c, k) => c.style.transitionDelay = k * 110 + 'ms'));
   // brillo con el mouse
+  $$('.pg-grid .nc').forEach(c => { c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height; c.style.setProperty('--mx', x * 100 + '%'); c.style.setProperty('--my', y * 100 + '%'); c.style.setProperty('--rx', ((.5 - y) * 14).toFixed(1) + 'deg'); c.style.setProperty('--ry', ((x - .5) * 16).toFixed(1) + 'deg'); c.style.setProperty('--o', 1); }); c.addEventListener('pointerleave', () => { c.style.setProperty('--rx', '0deg'); c.style.setProperty('--ry', '0deg'); c.style.setProperty('--o', 0); }); });
   $$('.dolor>div,.extra>div,.plan,.ac-card').forEach(c => { c.classList.add('glow'); c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', e.clientX - r.left + 'px'); c.style.setProperty('--my', e.clientY - r.top + 'px'); }); });
   // scroll: barra de progreso, nav, MacBook, parallax, velocidad de la cinta
   const prog = document.createElement('div'); prog.id = 'prog'; document.body.append(prog);
@@ -631,23 +686,23 @@ window.NP_VENTA = {
   if (red) entra(); else { const ioH = new IntersectionObserver(es => { if (es[0].isIntersecting) { entra(); ioH.disconnect(); } }, { threshold: .2 }); ioH.observe($('.hero')); }
 })();
 </script>
-<div class="deck"><b>NORTHPOINT</b><em id="dkSec">// Presentación /0.0</em><span class="dk-sp"></span><button type="button" id="dkTema">◐ Oscuro</button><a href="#precios" class="dk-cta">Prueba gratis →</a></div>
+<div class="deck"><b>竜 RYŪ</b><em id="dkSec">// Pergamino /0.0</em><span class="dk-sp"></span><button type="button" id="dkTema">◐ Oscuro</button><a href="#precios" class="dk-cta">Prueba gratis →</a></div>
 <script>
 /* ===== presentación que se disuelve con el scroll + barra inferior con sección y tema ===== */
 (() => {
-  const $ = s => document.querySelector(s), pres = $('#pres'), mark = $('.pres-mark'), sub = $('.pres-sub'), exp = $('.pres-exp'), red = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = s => document.querySelector(s), pres = $('#pres'), mark = $('.rollo'), sub = $('.pres-sub'), exp = $('.pres-exp'), red = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let tk = false;
   const pinta = () => { tk = false; const tot = pres.offsetHeight - innerHeight, p = Math.max(0, Math.min(1, scrollY / Math.max(1, tot)));
     document.body.classList.toggle('en-pres', p < .92);
     if (red) return;
-    mark.style.transform = `scale(${1 + p * 1.6})`; mark.style.opacity = Math.max(0, 1 - p * 1.35); mark.style.filter = `blur(${(p * 14).toFixed(1)}px)`; mark.style.letterSpacing = (-.035 + p * .12).toFixed(3) + 'em';
-    sub.style.opacity = Math.max(0, 1 - p * 3); exp.style.opacity = Math.max(0, 1 - p * 4); };
+    mark.style.transform = `translateY(${(-p * 12).toFixed(1)}vh) scale(${1 + p * .9})`; mark.style.opacity = Math.max(0, 1 - p * 1.4); mark.style.filter = `blur(${(p * 12).toFixed(1)}px)`;
+     exp.style.opacity = Math.max(0, 1 - p * 4); };
   addEventListener('scroll', () => { if (!tk) { tk = true; requestAnimationFrame(pinta); } }, { passive: true }); pinta();
   // tema claro / oscuro (mismo guardado que NORTHPOINT: np_theme)
   const btn = $('#dkTema'), pon = t => { document.documentElement.dataset.theme = t; btn.textContent = t === 'light' ? '◐ Oscuro' : '◐ Claro'; try { localStorage.setItem('np_theme', t); } catch (_) {} };
   pon(document.documentElement.dataset.theme || 'light'); btn.onclick = () => pon(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
   // sección en la que vas
-  const secs = [['pres', 'Presentación'], ['inicio', 'Inicio'], ['funciones', 'Funciones'], ['fondeo', 'Fondeo'], ['comunidad', 'Comunidad'], ['precios', 'Precios'], ['faq', 'Preguntas']].map(([id, n], k) => [document.getElementById(id), n, k]).filter(x => x[0]);
+  const secs = [['pres', 'Pergamino'], ['inicio', 'Inicio'], ['funciones', 'Funciones'], ['fondeo', 'Fondeo'], ['pergaminos', 'Pergaminos'], ['comunidad', 'Comunidad'], ['precios', 'Precios'], ['faq', 'Preguntas']].map(([id, n], k) => [document.getElementById(id), n, k]).filter(x => x[0]);
   const lab = $('#dkSec'), io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const x = secs.find(s => s[0] === e.target); if (x) lab.textContent = `// ${x[1]} /0.${x[2]}`; } }), { rootMargin: '-45% 0px -50% 0px' });
   secs.forEach(s => io.observe(s[0]));
 })();
