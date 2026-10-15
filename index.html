@@ -57,6 +57,31 @@ nav .btn{padding:10px 16px;font-size:13.5px}
 .shot.ok{transform:none}
 .shot img{border-radius:12px;width:100%}
 .shot-cap{margin-top:14px;font:500 11.5px var(--mono);color:var(--tx3)}
+/* dispositivos del hero */
+.devs{position:relative;margin:70px auto 0;max-width:1120px;padding:0 6% 0 0;opacity:0;transform:translateY(40px);transition:opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1)}
+.devs.ok{opacity:1;transform:none}
+.mbp{position:relative;width:100%}
+.mbp-scr{position:relative;margin:0 6.5%;padding:1.6% 1.6% 2.4%;border-radius:2.2% 2.2% 0 0/3.3% 3.3% 0 0;background:#0b0c0e;box-shadow:0 0 0 1.5px #3a3d43,0 0 0 3px #17181b,0 50px 120px -30px rgba(0,0,0,.9)}
+.mbp-scr img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:4px}
+.mbp-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:13%;height:2.6%;min-height:12px;background:#0b0c0e;border-radius:0 0 8px 8px;z-index:2}
+.mbp-base{position:relative;height:clamp(12px,2.2vw,24px);background:linear-gradient(180deg,#d9dbe0 0%,#a9adb5 45%,#7d8189 100%);border-radius:0 0 18px 18px/0 0 60% 60%;box-shadow:0 30px 60px -20px rgba(0,0,0,.9)}
+.mbp-base:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:#eef0f3;opacity:.7}
+.mbp-base i{position:absolute;top:0;left:50%;transform:translateX(-50%);width:15%;height:45%;background:linear-gradient(180deg,#9a9ea6,#c3c6cc);border-radius:0 0 10px 10px}
+.iph{position:absolute;right:0;bottom:-4%;width:clamp(150px,21%,236px);aspect-ratio:9/19.3;padding:clamp(5px,.75vw,10px);border-radius:clamp(26px,3.6vw,42px);background:linear-gradient(145deg,#6f737b,#2d3036 40%,#55595f);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset,0 40px 90px -20px rgba(0,0,0,.95);text-align:left}
+.iph-scr{position:relative;height:100%;border-radius:clamp(21px,3vw,34px);background:#1e1f24;overflow:hidden;display:flex;flex-direction:column;font-size:clamp(7.5px,.9vw,10.5px);color:#dbdee1;padding:0 7%}
+.iph-isla{position:absolute;top:2.2%;left:50%;transform:translateX(-50%);width:32%;height:3.4%;background:#000;border-radius:99px}
+.ip-top{display:flex;justify-content:space-between;align-items:center;padding:5.5% 3% 0;font-weight:700;color:#fff;font-size:1.05em}
+.ip-sig{display:flex;gap:2px;align-items:flex-end}.ip-sig b{width:3px;background:#fff;border-radius:1px}.ip-sig b:nth-child(1){height:4px}.ip-sig b:nth-child(2){height:6px}.ip-sig b:nth-child(3){height:8px}.ip-sig b:nth-child(4){height:10px}
+.ip-ch{display:flex;align-items:center;gap:6px;margin:9% 0 7%;padding-bottom:6%;border-bottom:1px solid rgba(255,255,255,.07)} .ip-ch i{width:8px;height:8px;border-radius:2px;background:#5865f2} .ip-ch b{color:#fff;font-size:1.15em} .ip-ch span{margin-left:auto;color:#949ba4;font-size:.9em}
+.ip-msg{display:flex;gap:7px;margin-bottom:9%} .ip-av{flex:none;width:2.4em;height:2.4em;border-radius:50%;display:grid;place-items:center;background:#0e1722;border:1px solid rgba(255,255,255,.14);color:var(--ac);font:700 .75em var(--mono)}
+.ip-msg b{color:#f2f3f5} .ip-msg em{font-style:normal;color:#949ba4;font-weight:400;font-size:.85em;margin-left:4px} .ip-msg p{margin-top:2px;line-height:1.4} .ip-msg .up{color:var(--up);font-weight:700}
+.ip-card{margin-top:7px;padding:7px 8px;border-radius:7px;background:#2b2d31;border-left:3px solid var(--ac)} .ip-card small{display:block;font:700 .75em var(--mono);color:#949ba4;letter-spacing:.08em;margin-bottom:3px} .ip-card div{display:flex;justify-content:space-between;padding:1px 0} .ip-card span{color:#b5bac1} .ip-card div b{font-family:var(--mono)}
+.ip-u{text-decoration:none;color:#c9cdfb;background:rgba(88,101,242,.3);padding:0 2px;border-radius:2px}
+.ip-live{display:inline-block;padding:0 4px;margin-right:3px;border-radius:3px;background:#ed4245;color:#fff;font:700 .75em var(--mono)}
+.ip-in{margin-top:auto;margin-bottom:12%;padding:7% 8%;border-radius:99px;background:#383a40;color:#949ba4}
+.ip-home{position:absolute;bottom:2.5%;left:50%;transform:translateX(-50%);width:36%;height:4px;border-radius:9px;background:#fff;opacity:.8}
+@media(max-width:700px){.devs{padding:0 14% 0 0}.iph{width:34%;bottom:-8%}}
+.shot-cap{margin-top:48px}
 /* brokers */
 .brk{padding:70px 0 30px;text-align:center}
 .brk p{color:var(--tx3);font-size:13px;margin-bottom:18px}
@@ -162,7 +187,7 @@ footer p{max-width:720px}
 /* reveal */
 .rv{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
 .rv.ok{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv,.shot{opacity:1;transform:none;transition:none}.marq div{animation:none}}
+@media (prefers-reduced-motion:reduce){.rv,.shot,.devs{opacity:1;transform:none;transition:none}.marq div{animation:none}}
 /* modal de prueba */
 .ov{position:fixed;inset:0;z-index:80;background:rgba(3,6,10,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px}
 .ov.on{display:flex}
@@ -174,13 +199,13 @@ footer p{max-width:720px}
 </head>
 <body>
 <script>
-/* ===== CONFIGURACIÓN DE VENTA: pega aquí tus links de pago (Stripe Payment Links, uno por plan, cobro mensual) =====
+/* ===== CONFIGURACIÓN DE VENTA: pega aquí el link de checkout de Lemon Squeezy de cada plan (suscripción mensual con clave de licencia) =====
    Mientras estén vacíos, los botones de compra abren la prueba gratis (descarga). */
 window.NP_VENTA = {
   pagos: { starter: '', pro: '', mesa: '' },
   precios: { starter: 9, pro: 19, mesa: 49 },   // USD al mes
   pruebaDias: 7,
-  descargas: { mac: 'descargas/NORTHPOINT-Mac.dmg', win: '' },   // el instalador de Windows pesa ~86 MB: súbelo a Releases y pega el link
+  descargas: { mac: 'descargas/NORTHPOINT-Mac.dmg', win: 'https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Instalador.exe' },
   contacto: ''   // WhatsApp de ventas, ej. 'https://wa.me/52XXXXXXXXXX'
 };
 </script>
@@ -197,8 +222,18 @@ window.NP_VENTA = {
   <p class="lead">NORTHPOINT junta tus trades, tu calendario, el mercado en vivo y tus metas en una sola app. Te enseña, con tus propios números, qué estrategia, qué hora y qué regla rota te está costando dinero. Y te mete a una comunidad con daily bias, lives y cursos.</p>
   <div class="ctas"><a href="#precios" class="btn pri"><span>Prueba <span data-dias>7</span> días gratis</span></a><a href="#funciones" class="btn">Ver cómo funciona</a></div>
   <p class="fine">Sin tarjeta para probar · cancelas cuando quieras</p>
-  <div class="shot" id="shot"><img src="img/dash.jpg" alt="Dashboard de NORTHPOINT: R del mes, win rate, expectancy, curva de capital y disciplina" width="1290" height="1000"></div>
-  <p class="shot-cap">Captura real de la app · datos de ejemplo</p>
+  <div class="devs" id="shot">
+    <div class="mbp"><div class="mbp-scr"><i class="mbp-notch"></i><img src="img/mac.jpg" alt="NORTHPOINT en una MacBook Pro: dashboard con R del mes, win rate, expectancy y curva de capital" width="1600" height="1000"></div><div class="mbp-base"><i></i></div></div>
+    <div class="iph" aria-label="La comunidad de NORTHPOINT en Discord desde el iPhone"><div class="iph-scr"><i class="iph-isla"></i>
+      <div class="ip-top"><span>7:05</span><span class="ip-sig"><b></b><b></b><b></b><b></b></span></div>
+      <div class="ip-ch"><i></i><b># daily-bias</b><span>NORTHPOINT</span></div>
+      <div class="ip-msg"><span class="ip-av">NP</span><div><b>NORTHPOINT <em>7:02</em></b><p><span class="up">Sesgo: alcista</span> sobre la zona de descuento de Londres.</p>
+        <div class="ip-card"><small>NIVELES DEL DÍA</small><div><span>PDH</span><b>21,184</b></div><div><span>Londres L</span><b>21,032</b></div><div><span>CPI</span><b>6:30</b></div></div></div></div>
+      <div class="ip-msg"><span class="ip-av">NP</span><div><b>NORTHPOINT <em>7:28</em></b><p><span class="ip-live">EN VIVO</span> La apertura en 2 min</p></div></div>
+      <div class="ip-msg"><span class="ip-av">NP</span><div><b>NORTHPOINT <em>8:40</em></b><p>Nuevo en <u class="ip-u">#cursos</u>: Gestión de riesgo · módulo 3</p></div></div>
+      <div class="ip-in">Enviar mensaje a #daily-bias</div><i class="ip-home"></i></div></div>
+  </div>
+  <p class="shot-cap">App real en Mac y Windows · comunidad en Discord desde tu iPhone · datos de ejemplo</p>
 </div></header>
 
 <div class="brk"><div class="w"><p>Importa automático o por archivo desde</p></div>
@@ -319,6 +354,7 @@ window.NP_VENTA = {
     <details class="rv"><summary>¿Funciona en Mac y en Windows?</summary><p>Sí, hay app para los dos. Con la misma suscripción puedes usarla en tus computadoras.</p></details>
     <details class="rv"><summary>¿Qué incluye la comunidad de Discord?</summary><p>El daily bias antes de la apertura, lives de la sesión de Nueva York y cursos de trading y finanzas personales. Es contenido educativo: tú decides cada operación.</p></details>
     <details class="rv"><summary>¿Por qué pagar si hay diarios gratis?</summary><p>Porque un Excel no importa tus trades, no te dice cuánto te cuestan tus reglas rotas ni trae una comunidad que opera contigo cada mañana. Si un solo error que dejas de repetir vale más de $19, ya se pagó.</p></details>
+    <details class="rv"><summary>¿Cómo activo la app después de pagar?</summary><p>Al pagar te llega por correo tu clave de licencia. La pegas en NORTHPOINT y listo. Si cancelas, la app sigue funcionando hasta el final de tu periodo pagado.</p></details>
     <details class="rv"><summary>¿Cómo cancelo?</summary><p>Desde el link de tu suscripción, en un clic. No hay contratos ni permanencia: pagas mes a mes.</p></details>
   </div>
 </div></section>
