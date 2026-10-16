@@ -274,6 +274,25 @@ body.en-pres nav{opacity:0;pointer-events:none} nav{transition:opacity .5s,backg
 .feat span{padding:9px 15px;border-radius:999px;border:1px solid var(--line2);background:rgba(255,255,255,.03);font-size:14px;color:var(--tx2)}
 .feat span b{color:var(--tx);font-weight:600}
 @media (prefers-reduced-motion:reduce){.drg-svg,.drg-glow,.drg-ojo,.drg-bigote,.drg-melena,.drg-barba{animation:none!important}}
+/* ===== hero épico ===== */
+.hero{padding:170px 0 40px;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;-webkit-mask:radial-gradient(ellipse 70% 55% at 50% 30%,#000 30%,transparent 75%);mask:radial-gradient(ellipse 70% 55% at 50% 30%,#000 30%,transparent 75%)}
+.hero .w{z-index:1}
+.hero .w:before{content:"";position:absolute;left:50%;top:-170px;width:min(1100px,96vw);height:760px;transform:translateX(-50%);pointer-events:none;z-index:-1;background:conic-gradient(from 180deg at 50% 0%,transparent 160deg,rgba(95,211,214,.18) 175deg,rgba(255,255,255,.12) 180deg,rgba(95,211,214,.18) 185deg,transparent 200deg);filter:blur(30px);opacity:.9}
+.hx{font-size:clamp(50px,8.6vw,128px);font-weight:700;letter-spacing:-.05em;line-height:.94;margin:30px 0 26px;display:flex;flex-direction:column;align-items:center}
+.hx-l{display:block;background:linear-gradient(180deg,#ffffff 30%,#9fb0bd 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.04em}
+.hx em{font-style:normal;background:linear-gradient(100deg,#5fd3d6 0%,#bff6ee 45%,#5fd3d6 60%,#2f8f9a 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:hxBrillo 6s ease-in-out infinite}
+@keyframes hxBrillo{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.hx-marca{display:flex;align-items:center;gap:18px;font:700 13px var(--mono);letter-spacing:.55em;color:var(--tx);margin:4px 0 26px;padding-left:.55em}
+.hx-marca i{width:clamp(40px,8vw,90px);height:1px;background:linear-gradient(90deg,transparent,rgba(95,211,214,.8))} .hx-marca i:last-child{background:linear-gradient(90deg,rgba(95,211,214,.8),transparent)}
+.hx-sub{font-size:clamp(16px,1.5vw,19px);color:var(--tx2);max-width:560px;line-height:1.55}
+.hx-datos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:46px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);backdrop-filter:blur(10px);overflow:hidden;width:min(860px,100%)}
+.hx-datos div{padding:16px 18px;text-align:left;border-left:1px solid var(--line)} .hx-datos div:first-child{border-left:0}
+.hx-datos b{display:block;font-size:17px;font-weight:700;letter-spacing:-.01em} .hx-datos span{font:500 11px var(--mono);color:var(--tx3);letter-spacing:.04em}
+@media(max-width:760px){.hx-datos{grid-template-columns:1fr 1fr} .hx-datos div:nth-child(3){border-left:0} .hx-datos div:nth-child(n+3){border-top:1px solid var(--line)}}
+.hero .ctas{margin-top:30px}
+.hx .hx-l,.hx-marca,.hx-sub,.hx-datos{opacity:0;transform:translateY(26px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)} body.listo .hx .hx-l{opacity:1;transform:none} body.listo .hx .hx-l+.hx-l{transition-delay:.12s} body.listo .hx-marca{opacity:1;transform:none;transition-delay:.3s} body.listo .hx-sub{opacity:1;transform:none;transition-delay:.42s} body.listo .hx-datos{opacity:1;transform:none;transition-delay:.7s}
+@media (prefers-reduced-motion:reduce){.hx .hx-l,.hx-marca,.hx-sub,.hx-datos{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -346,11 +365,12 @@ window.NP_VENTA = {
   <div class="pres-exp"><span>Baja y entra por su ojo</span><i>↓</i></div>
 </div></section>
 <header class="hero" id="inicio"><div class="w">
-  <span class="pill"><i></i><b>Mac y Windows</b><span class="pl2"> · tus trades entran solos desde tu broker</span></span>
-  <h1 class="np-mark">NORTHPOINT</h1>
-  <div class="feat"><span><b>Trades</b> automáticos</span><span><b>Dashboard</b> y reglas</span><span><b>Calendario</b> en vivo</span><span><b>Mercado</b> y noticias</span><span><b>Blueprint</b> de estrategias</span><span><b>Challenges</b> de fondeo</span><span><b>Patrimonio</b></span></div>
-  <div class="ctas"><a href="#funciones" class="btn pri">Conoce NORTHPOINT</a><a href="#nosotros" class="btn">Quiénes somos</a></div>
-  <p class="fine">Para Mac y Windows · hecho por traders, para traders</p>
+  <span class="pill"><i></i><b>Nuevo</b><span class="pl2"> · Blueprint de estrategias con gráficas animadas</span></span>
+  <h1 class="hx"><span class="hx-l">The Smart</span><span class="hx-l"><em>Trading Journal.</em></span></h1>
+  <div class="hx-marca"><i></i><b>NORTHPOINT</b><i></i></div>
+  <p class="hx-sub">Tus trades, tu mercado y tu disciplina, en un solo sistema que te dice la verdad con datos.</p>
+  <div class="ctas"><a href="#funciones" class="btn pri">Explorar NORTHPOINT</a><a href="#descargar" class="btn">Descargar</a></div>
+  <div class="hx-datos"><div><b>14</b><span>brokers compatibles</span></div><div><b>Tiempo real</b><span>mercado, noticias y en vivo</span></div><div><b>Mac · Windows</b><span>app de escritorio</span></div><div><b>100% local</b><span>tus datos en tu equipo</span></div></div>
   <div class="devs" id="shot">
     <div class="mbp"><div class="mbp-scr"><i class="mbp-notch"></i><div class="sc" role="img" aria-label="NORTHPOINT en una MacBook Pro con El mundo en vivo: globo girando con bolsas, rutas y eventos">
       <canvas id="globo"></canvas>
@@ -369,35 +389,35 @@ window.NP_VENTA = {
   <div class="marq"><div id="mq"></div></div></div>
 
 <section class="s"><div class="w">
-  <div class="cab rv"><span class="eyebrow">Por qué existe</span><h2>El trading se aprende mirándote a ti mismo.</h2>
-  <p class="lead">Hicimos NORTHPOINT porque nos cansamos de llevar el trading en cinco pestañas, un Excel y una libreta. Queríamos un lugar donde cada trade quedara registrado, cada error tuviera nombre y cada avance se notara.</p></div>
+  <div class="cab rv"><span class="eyebrow">Por qué NORTHPOINT</span><h2>El trading profesional empieza con datos honestos.</h2>
+  <p class="lead">Cada trade, cada regla y cada emoción en un solo sistema, para que decidas con evidencia y no con intuición.</p></div>
   <div class="dolor">
-    <div class="rv"><small>REGISTRAR</small><h3>Que nada se quede sin apuntar</h3><p>Los trades entran solos desde tu broker; tú agregas la estrategia, la emoción y la captura.</p></div>
-    <div class="rv"><small>ENTENDER</small><h3>Que los números hablen</h3><p>R, win rate, horarios, estrategias y lo que te cuesta cada regla rota, con tus propios datos.</p></div>
-    <div class="rv"><small>CRECER</small><h3>Que el camino se vea</h3><p>Tu Blueprint de estrategias, retos de fondeo y tu patrimonio, para que veas cuánto has avanzado.</p></div>
+    <div class="rv"><small>REGISTRO</small><h3>Automático y completo</h3><p>Los trades entran solos desde tu broker; tú agregas la estrategia, la emoción y la captura.</p></div>
+    <div class="rv"><small>ANÁLISIS</small><h3>Lo que de verdad importa</h3><p>R, win rate, horarios, estrategias y lo que te cuesta cada regla rota, con tus propios datos.</p></div>
+    <div class="rv"><small>PROGRESO</small><h3>Medible, semana a semana</h3><p>Tu Blueprint de estrategias, retos de fondeo y tu patrimonio, para que veas cuánto has avanzado.</p></div>
   </div>
 </div></section>
 
 <section class="s" id="funciones" style="padding-top:20px"><div class="w">
-  <div class="cab c rv"><span class="eyebrow">Funciones</span><h2>Todo tu trading, en un solo lugar.</h2><p class="lead">Lo que antes eran cinco pestañas, un Excel y una libreta.</p></div>
+  <div class="cab c rv"><span class="eyebrow">Plataforma</span><h2>Una plataforma. Todo tu trading.</h2><p class="lead">Diario, análisis, mercado y crecimiento, conectados en una sola app.</p></div>
 
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Dashboard</span><h3>Tu disciplina, en números.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Dashboard</span><h3>Tu rendimiento, sin adornos.</h3>
     <p>Cada mes ves lo que de verdad importa: R, win rate, expectancy, drawdown y la curva de tu cuenta. Debajo, la verdad incómoda: cuánto te cuestan las reglas rotas.</p>
     <ul><li><span><b>Por estrategia e instrumento:</b> deja de operar lo que no te paga.</span></li><li><span><b>Mejores horarios:</b> tu ventana ganadora y la hora que debes evitar.</span></li><li><span><b>Por día de la semana:</b> el día que más te cuesta, en números.</span></li></ul>
     <div class="dato">Con reglas <b>+1.27R</b> por trade · rompiéndolas −0.84R</div></div>
     <div class="img rv"><img src="img/dash.jpg" alt="Dashboard de NORTHPOINT" loading="lazy"></div></div>
 
-  <div class="ft r"><div class="tx rv"><span class="eyebrow">Trades automáticos</span><h3>Tus trades entran solos.</h3>
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Trades automáticos</span><h3>Sincronización directa con tu broker.</h3>
     <p>Conecta tu cuenta una vez y cada operación aparece con hora, instrumento, dirección, duración, R y P&L. Tú solo eliges la estrategia y cómo te sentiste.</p>
     <ul><li><span><b>Exness, Tradeify y MT5</b> en automático; <b>Interactive Brokers</b> cada 30 min.</span></li><li><span><b>NinjaTrader, Tradovate, TopstepX, Rithmic</b> y 10 más por archivo.</span></li><li><span><b>Capturas por trade:</b> pegas, arrastras, y quedan con el trade.</span></li></ul></div>
     <div class="img rv"><img src="img/trades.jpg" alt="Lista de trades con estrategia, R y P&L" loading="lazy"></div></div>
 
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Calendario</span><h3>Cada día, verde o rojo, de un vistazo.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Calendario</span><h3>Tu mes, día por día.</h3>
     <p>Tu mes como calendario: R por día y cada trade dentro. Y en Mercado, el calendario económico de EE. UU. con la Fed, Trump y los datos rojos: qué esperar de cada uno y, cuando están pasando, la transmisión en vivo con un clic.</p>
     <ul><li><span><b>Eventos con cuenta regresiva</b> y escenarios si sale arriba o abajo.</span></li><li><span><b>En vivo:</b> Bloomberg, CNBC, Casa Blanca y la Fed dentro de la app.</span></li><li><span><b>Noticias y tweets</b> que mueven el NASDAQ, filtrados.</span></li></ul></div>
     <div class="img rv"><img src="img/cal.jpg" alt="Calendario de trades por día" loading="lazy"></div></div>
 
-  <div class="ft r"><div class="tx rv"><span class="eyebrow">Mercado en vivo</span><h3>Todas las noticias que mueven tu trade, en un solo panel.</h3>
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Mercado en vivo</span><h3>El mercado en tiempo real, sin cambiar de pestaña.</h3>
     <p>Titulares, tweets de las cuentas que mueven el mercado, alertas de última hora y las transmisiones en vivo de Bloomberg, CNBC, la Casa Blanca y la Fed. Filtras por índices, cripto o acciones y dejas de tener diez pestañas abiertas.</p>
     <ul><li><span><b>Última hora:</b> conflictos, rutas comerciales y sismos que pueden mover el mercado.</span></li><li><span><b>Tweets y noticias</b> filtrados por lo que operas.</span></li><li><span><b>En vivo</b> con un clic cuando habla la Fed o hay conferencia.</span></li></ul></div>
     <div class="rv"><div class="nt">
@@ -412,7 +432,7 @@ window.NP_VENTA = {
 </div></section>
 
 <section class="s" id="fondeo" style="padding-top:40px"><div class="w">
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Blueprint</span><h3>Cada estrategia, explicada con su gráfica.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Blueprint</span><h3>Tus estrategias, documentadas y animadas.</h3>
     <p>OTE, Daily Bias, Kiss and goodbye, ORB: cada una con una gráfica animada que se arma vela por vela y te marca la liquidez, el Fibonacci, la entrada, el stop y el objetivo justo en el paso que toca.</p>
     <ul><li><span><b>Elige las que usas</b> y aparecen al registrar cada trade.</span></li><li><span><b>Crea las tuyas</b> con tus pasos y su gráfica de ejemplo.</span></li><li><span><b>Tus números por estrategia:</b> trades, R y % de acierto.</span></li></ul></div>
     <div class="img rv"><img src="img/estrategias.jpg" alt="Estrategias con gráficas animadas" loading="lazy"></div></div>
@@ -421,12 +441,12 @@ window.NP_VENTA = {
 
 
 
-  <div class="ft r"><div class="tx rv"><span class="eyebrow">Challenges de fondeo</span><h3>De la evaluación a tu primer payout.</h3>
+  <div class="ft r"><div class="tx rv"><span class="eyebrow">Challenges de fondeo</span><h3>De la evaluación al payout, con control.</h3>
     <p>Elige tu reto y la app lleva la cuenta por ti: cuánto colchón te queda, cuántos días ganadores llevas y cuánto puedes retirar.</p>
     <ul><li><span><b>1 cuenta · primer payout:</b> evaluación, drawdown de cierre y 5 días ganadores.</span></li><li><span><b>Plan $100 → $15,000:</b> fases con riesgo fijo, meta del día y depósitos de domingo.</span></li><li><span><b>Escopetazo · 2 cuentas:</b> lleva el reto con tu socio, los dos balances a la vista.</span></li><li><span><b>Crea el tuyo:</b> saldo inicial, meta, días y reglas; la app lleva el ritmo.</span></li></ul></div>
     <div class="img rv"><img src="img/prog.jpg" alt="Challenges de fondeo en NORTHPOINT" loading="lazy"></div></div>
 
-  <div class="ft"><div class="tx rv"><span class="eyebrow">Patrimonio</span><h3>Tu camino al primer millón, por rangos.</h3>
+  <div class="ft"><div class="tx rv"><span class="eyebrow">Patrimonio</span><h3>Tu patrimonio, con un plan.</h3>
     <p>Pon cuánto ahorras y cada cuándo. La app te dice cuándo llegas, sin inventar rendimientos, y sube tu rango: Cobre, Bronce, Plata, Oro, Platino, Esmeralda, Diamante, Maestro, Gran Maestro y Campeón.</p>
     <ul><li><span><b>Cartera completa:</b> broker, banco, acciones, ETFs, cripto.</span></li><li><span><b>Ingresos y gastos</b> del mes, sin hojas de cálculo.</span></li><li><span><b>Proyección honesta:</b> solo lo que aportas; lo que ganes operando, encima.</span></li></ul></div>
     <div class="img rv"><img src="img/pat.jpg" alt="Patrimonio con rangos de Cobre a Campeón" loading="lazy"></div></div>
@@ -441,7 +461,7 @@ window.NP_VENTA = {
 </div></section>
 
 <section class="s" id="comunidad" style="padding-top:40px"><div class="w">
-  <div class="com rv"><div class="com-tx"><span class="eyebrow">La comunidad</span><h2>No vuelvas a operar solo.</h2>
+  <div class="com rv"><div class="com-tx"><span class="eyebrow">Comunidad</span><h2>Una comunidad que opera contigo.</h2>
     <p class="lead">Alrededor de NORTHPOINT está la comunidad de NORTHPOINT en Discord: traders que preparan el día juntos, operan la apertura de Nueva York y estudian lo mismo.</p>
     <div class="com-g">
       <div><b>Daily bias</b><span>Antes de la apertura: dirección, niveles de liquidez y eventos del día.</span></div>
@@ -454,7 +474,7 @@ window.NP_VENTA = {
 </div></section>
 
 <section class="s" style="padding-top:40px"><div class="w">
-  <div class="cab c rv"><span class="eyebrow">Cómo funciona</span><h2>Así se empieza.</h2></div>
+  <div class="cab c rv"><span class="eyebrow">Cómo empezar</span><h2>Listo en minutos.</h2></div>
   <div class="pasos">
     <div class="rv"><h4>Descarga la app</h4><p>Para Mac o Windows. Creas tu perfil con tu nombre y tu riesgo por trade.</p></div>
     <div class="rv"><h4>Conecta tu cuenta</h4><p>Exness, Tradeify o MT5 en automático, o sube el reporte de tu plataforma.</p></div>
@@ -465,7 +485,7 @@ window.NP_VENTA = {
 
 
 <section class="s" id="faq" style="padding-top:20px"><div class="w">
-  <div class="cab c rv"><span class="eyebrow">Preguntas</span><h2>Lo que nos preguntan.</h2></div>
+  <div class="cab c rv"><span class="eyebrow">Preguntas</span><h2>Preguntas frecuentes.</h2></div>
   <div class="faq">
     <details class="rv"><summary>¿NORTHPOINT me dice qué operar?</summary><p>No. No da señales ni asesoría de inversión. Te muestra tus propios números para que tomes mejores decisiones tú.</p></details>
     <details class="rv"><summary>¿Me garantiza ganar dinero?</summary><p>No, y desconfía de quien te lo prometa. Lo que sí hace es enseñarte dónde estás perdiendo para que dejes de repetirlo.</p></details>
@@ -583,7 +603,7 @@ window.NP_VENTA = {
   const red = matchMedia('(prefers-reduced-motion: reduce)').matches, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
   // títulos en palabras
   const partir = (el, base = 0) => { if (el.dataset.sp) return; el.dataset.sp = 1; let i = base; const rec = n => { [...n.childNodes].forEach(c => { if (c.nodeType === 3) { const fr = document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach(w => { if (!w) return; if (/^\s+$/.test(w)) fr.append(' '); else { const a = document.createElement('span'); a.className = 'pw'; const b = document.createElement('span'); b.textContent = w; b.style.setProperty('--i', i++); a.append(b); fr.append(a); } }); c.replaceWith(fr); } else if (c.nodeType === 1 && !c.classList.contains('pw')) rec(c); }); }; rec(el); el.classList.add('sp'); };
-  $$('h1, h2, .ft h3').forEach(h => partir(h));
+  $$('h1:not(.hx), h2, .ft h3').forEach(h => partir(h));
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('ok'); io.unobserve(e.target); } }), { threshold: .2, rootMargin: '0px 0px -60px 0px' });
   $$('.sp:not(h1)').forEach(h => io.observe(h));
   const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.img').forEach(x => x.classList.add('ok')); io2.unobserve(e.target); } }), { threshold: .15 });   // la cortina recorta la imagen: se observa la fila completa
