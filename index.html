@@ -390,12 +390,12 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
   const ponCap = n => { cap = n; bg.style.backgroundImage = `url(img/camino/${n + 1}.jpg)`; document.querySelectorAll('#fgCaps button').forEach((b, k) => b.classList.toggle('on', k === n)); };
   if (document.getElementById('fgCaps')) document.getElementById('fgCaps').innerHTML = C.map((c, n) => `<button type="button" style="background-image:url(img/camino/${n + 1}.jpg)" data-c="${n}"><em>${['I', 'II', 'III', 'IV', 'V', 'VI'][n]} · ${c}</em></button>`).join('');
   document.querySelectorAll('#fgCaps button').forEach(b => b.onclick = () => ponCap(+b.dataset.c));
-  pon(0); ponCap(0); setInterval(() => ponCap((cap + 1) % 6), 6000);
+  pon(0);
   const cv = document.getElementById('fgCv'), g = cv.getContext('2d'); let P = [];
   const tam = () => { cv.width = sec.offsetWidth; cv.height = sec.offsetHeight; }; tam(); addEventListener('resize', tam);
   const nuevo = ini => ({ x: Math.random() * cv.width, y: ini ? Math.random() * cv.height : cv.height + 10, r: .8 + Math.random() * 2.2, vy: -(.4 + Math.random() * 1.4), vx: (Math.random() - .5) * .6, a: Math.random() * 6 });
   for (let k = 0; k < 90; k++) P.push(nuevo(true));
-  const anim = t => { g.clearRect(0, 0, cv.width, cv.height); const col = getComputedStyle(sec).getPropertyValue('--kc').trim() || '#ff3b2f'; g.fillStyle = col; g.shadowColor = col; g.shadowBlur = 10;
+  const anim = t => { if (sec.getBoundingClientRect().bottom < 0 || sec.getBoundingClientRect().top > innerHeight) return requestAnimationFrame(anim); g.clearRect(0, 0, cv.width, cv.height); const col = getComputedStyle(sec).getPropertyValue('--kc').trim() || '#ff3b2f'; g.fillStyle = col; g.shadowColor = col; g.shadowBlur = 10;
     P.forEach((p, k) => { p.x += p.vx + Math.sin(t / 900 + p.a) * .4; p.y += p.vy; g.globalAlpha = Math.max(0, Math.min(1, p.y / cv.height)) * (.5 + Math.sin(t / 150 + p.a) * .3); g.beginPath(); g.arc(p.x, p.y, p.r, 0, 7); g.fill(); if (p.y < -10) P[k] = nuevo(false); });
     requestAnimationFrame(anim); }; requestAnimationFrame(anim);
 })();
@@ -411,7 +411,7 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
     if (ent) { const ye = y(ent); g.setLineDash([6, 6]); g.strokeStyle = '#4fc3ff'; g.beginPath(); g.moveTo(0, ye); g.lineTo(W, ye); g.stroke(); g.setLineDash([]); g.fillStyle = '#4fc3ff'; g.font = `700 ${11 * devicePixelRatio}px JetBrains Mono, monospace`; g.fillText('ENTRY', 8, ye - 6); }
     const u = V[V.length - 1]; document.getElementById('mbO').textContent = u.o.toFixed(2); document.getElementById('mbC').textContent = u.c.toFixed(2); };
   const nota = 'Entré con mi plan, sin prisa. Esperé confirmación.'; let ni = 0;
-  setInterval(() => { const u = V[V.length - 1], dr = fase === 1 ? .9 : 0; u.c += (Math.random() - .5 + dr * .08) * 3; u.h = Math.max(u.h, u.c); u.l = Math.min(u.l, u.c);
+  setInterval(() => { { const r = cv.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight || document.hidden) return; } const u = V[V.length - 1], dr = fase === 1 ? .9 : 0; u.c += (Math.random() - .5 + dr * .08) * 3; u.h = Math.max(u.h, u.c); u.l = Math.min(u.l, u.c);
     if (Math.random() < .12) V.push({ o: u.c, c: u.c, h: u.c, l: u.c }); dibuja();
     if (fase === 1) { const s = Math.floor((Date.now() - t0) / 1000) * 7, pl = (u.c - ent) * 4; document.getElementById('mbClk').textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); const e = document.getElementById('mbPl'); e.textContent = (pl >= 0 ? '+$' : '−$') + Math.abs(Math.round(pl)); e.className = 'mb-pl' + (pl < 0 ? ' dn' : '');
       if (ni < nota.length && Date.now() - t0 > 2500) document.getElementById('mbNota').textContent = nota.slice(0, ++ni); } }, 120);
@@ -428,13 +428,6 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
 </script>
 <script>
 (() => {
-  // fondo fijo que cambia de capítulo según la sección + fuego global
-  const F = document.createElement('div'); F.id = 'epFondo'; document.body.prepend(F); const cv = document.createElement('canvas'); cv.id = 'epFuego'; document.body.prepend(cv);
-  const secs = [...document.querySelectorAll('section.s')]; const ioF = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const k = secs.indexOf(e.target); F.style.backgroundImage = `url(img/camino/${(k % 6) + 1}.jpg)`; } }), { threshold: .35 }); secs.forEach(x => ioF.observe(x));
-  const g = cv.getContext('2d'); let W, H, P = []; const tam = () => { W = cv.width = innerWidth; H = cv.height = innerHeight; }; tam(); addEventListener('resize', tam);
-  const nu = ini => ({ x: Math.random() * W, y: ini ? Math.random() * H : H + 10, r: .6 + Math.random() * 2.2, vy: -(.5 + Math.random() * 1.8), vx: (Math.random() - .5) * .8, a: Math.random() * 6, c: ['#ff3b1f', '#ff8a1e', '#ffd25a'][Math.random() * 3 | 0] });
-  for (let i = 0; i < 110; i++) P.push(nu(true));
-  const an = t => { g.clearRect(0, 0, W, H); g.globalCompositeOperation = 'lighter'; P.forEach((p, i) => { p.x += p.vx + Math.sin(t / 700 + p.a) * .5; p.y += p.vy; const al = Math.max(0, Math.min(1, p.y / H)) * (.55 + Math.sin(t / 120 + p.a) * .35); g.globalAlpha = al; g.fillStyle = p.c; g.shadowColor = p.c; g.shadowBlur = 12; g.beginPath(); g.arc(p.x, p.y, p.r, 0, 7); g.fill(); if (p.y < -10) P[i] = nu(false); }); requestAnimationFrame(an); }; requestAnimationFrame(an);
   try {
   // hero: capítulos con fundido
   const bg = document.getElementById('epBg'), L = bg.querySelectorAll('i'), caps = document.getElementById('epCaps'); let k = 0, cur = 0; L[0].classList.add('on');
