@@ -145,6 +145,15 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
 .mb-lista{margin-top:auto;display:flex;flex-direction:column;gap:6px} .mb-lista div{display:flex;gap:8px;align-items:center;padding:8px 10px;border-radius:10px;border:1px solid var(--line);font:700 10.5px var(--mono);animation:mbIn .5s ease} .mb-lista span{margin-left:auto;color:var(--ve)} .mb-lista em{font-style:normal;color:var(--tx3)} .mb-lista .up{color:var(--ve)} .mb-lista .dn{color:var(--ro)}
 .tec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px} .tec div{padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--pan)} .tec b{display:block;font-size:16px;margin-bottom:6px} .tec span{color:var(--tx2);font-size:14px;line-height:1.55}
 @media(max-width:800px){.mb-tapa{margin:0 2%}.mb-pant{grid-template-columns:1fr;aspect-ratio:auto}.mb-graf{height:240px}.tec{grid-template-columns:1fr}}
+
+.cur{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px} .cur-c{position:relative;padding:30px;border-radius:22px;border:1px solid var(--line);background:var(--pan);overflow:hidden} .cur-c.vivo{background:radial-gradient(500px 220px at 100% 0,rgba(255,77,94,.12),transparent 70%),var(--pan)}
+.cur-tag{display:inline-flex;align-items:center;gap:8px;font:900 10.5px var(--mono);letter-spacing:.3em;color:var(--az)} .vivo .cur-tag{color:var(--ro)} .cur-tag i{width:8px;height:8px;border-radius:50%;background:var(--ro);box-shadow:0 0 0 5px rgba(255,77,94,.18);animation:curPul 1.2s infinite} @keyframes curPul{50%{opacity:.3}}
+.cur-c h3{margin:12px 0 8px;font-size:24px;letter-spacing:-.02em} .cur-c>p{margin:0 0 20px;color:var(--tx2)}
+.cur-c ol,.cur-c ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:m} .cur-c li{display:flex;flex-direction:column;padding:12px 14px 12px 48px;position:relative;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.2)} .cur-c li b{font-size:14px} .cur-c li span{color:var(--tx2);font-size:13px}
+.cur-c ol li:before{counter-increment:m;content:counter(m,decimal-leading-zero);position:absolute;left:14px;top:13px;font:900 13px var(--mono);color:var(--az)} .cur-c ul li:before{content:"";position:absolute;left:18px;top:18px;width:10px;height:10px;border-radius:50%;border:2px solid var(--ro)}
+.cur-live{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;margin-top:16px} .cur-pant{position:relative;border-radius:12px;border:1px solid var(--line);background:#0c1119;padding:26px 8px 8px} .cur-pant svg{width:100%;height:90px;display:block} .cur-rec{position:absolute;top:8px;left:8px;display:flex;gap:6px;align-items:center;padding:3px 8px;border-radius:6px;background:var(--ro);color:#fff;font:900 9px var(--mono);letter-spacing:.15em} .cur-rec i{width:6px;height:6px;border-radius:50%;background:#fff;animation:curPul 1s infinite}
+.cur-chat{display:flex;flex-direction:column;justify-content:flex-end;gap:5px;height:126px;overflow:hidden;padding:8px;border-radius:12px;border:1px solid var(--line);background:#0c1119} .cur-chat div{font-size:11.5px;color:var(--tx2);animation:curIn .4s ease} .cur-chat b{color:var(--az);margin-right:5px} @keyframes curIn{from{opacity:0;transform:translateY(6px)}}
+@media(max-width:860px){.cur{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -234,6 +243,16 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
   <div class="cab rv"><span class="k">Premios</span><h2>La disciplina se colecciona.</h2><p>Dentro de los retos, cada objetivo cumplido te da una carta. 30 en 4 rarezas.</p></div>
   <div class="gal" id="gal"></div>
   <div class="ley"><span style="--c:#9fb3c8"><i></i>Común</span><span style="--c:#4fa3ff"><i></i>Rara</span><span style="--c:#c06bff"><i></i>Épica</span><span style="--c:#ffc93d"><i></i>Legendaria</span></div>
+</div></section>
+<section class="s" id="cursos"><div class="w">
+  <div class="cab rv"><span class="k">Cursos · En vivo</span><h2>Aprende con el equipo.<br>Opera con el equipo.</h2><p>Cursos a tu ritmo y sesiones en vivo dentro de la comunidad NORTHPOINT. Lo que aprendes lo registras en tu journal el mismo día.</p></div>
+  <div class="cur rv">
+    <div class="cur-c"><span class="cur-tag">CURSOS</span><h3>De cero a tu primera cuenta fondeada</h3><p>Módulos cortos, en video, que ves cuando quieras y en el orden que quieras.</p>
+      <ol><li><b>Fundamentos</b><span>Cómo se mueve el mercado y cómo leer una gráfica</span></li><li><b>Riesgo</b><span>Tamaño de posición y cómo proteger tu cuenta</span></li><li><b>Psicología</b><span>Emociones, rachas y disciplina</span></li><li><b>Fondeo</b><span>Cómo pasar una evaluación y cobrar</span></li><li><b>Tu journal</b><span>Sacarle el máximo a NORTHPOINT</span></li></ol></div>
+    <div class="cur-c vivo"><span class="cur-tag"><i></i>EN VIVO</span><h3>Sesiones con el equipo</h3><p>Entras a la sala, ves el mercado con nosotros y preguntas en el momento.</p>
+      <ul><li><b>Antes de la apertura</b><span>Qué vigilar en la sesión</span></li><li><b>Mercado en vivo</b><span>Lectura en tiempo real, con chat</span></li><li><b>Revisión</b><span>Repasamos trades del día, con sus registros</span></li><li><b>Preguntas</b><span>Resuelve tus dudas directo con el equipo</span></li></ul>
+      <div class="cur-live"><div class="cur-pant"><span class="cur-rec"><i></i>LIVE</span><svg viewBox="0 0 300 120" preserveAspectRatio="none"><polyline points="0,90 20,84 40,88 60,70 80,74 100,58 120,62 140,40 160,48 180,34 200,42 220,26 240,30 260,18 280,24 300,12" fill="none" stroke="#2fe08a" stroke-width="2"/></svg></div><div class="cur-chat" id="curChat"></div></div></div>
+  </div>
 </div></section>
 <section class="s" id="planes"><div class="w">
   <div class="cab rv"><span class="k">Planes</span><h2>Elige tu plan.</h2><p>7 días gratis en la app. Después, un pago mensual. Cancelas cuando quieras.</p></div>
@@ -327,6 +346,10 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
       setTimeout(() => { fase = 2; const r = ((V[V.length - 1].c - ent) / 6).toFixed(1); const d = document.createElement('div'); d.innerHTML = `<b class="up">▲ NASDAQ</b><span class="${r < 0 ? 'dn' : ''}">${r >= 0 ? '+' : ''}${r}R</span><em>✓ plan</em>`; const l = document.getElementById('mbLista'); l.prepend(d); if (l.children.length > 3) l.lastChild.remove(); np.classList.remove('on'); document.getElementById('mbSt').lastChild.textContent = 'GUARDADO EN TU JOURNAL'; setTimeout(ciclo, 2600); }, 9000); }, 2200); };
   ciclo();
 })();
+</script>
+<script>
+(() => { const ch = document.getElementById('curChat'); if (!ch) return; const M = [['ana', '¿Qué estás vigilando hoy?'], ['luis', 'Registrado en mi journal ✓'], ['mau', 'Gracias, me quedó clarísimo'], ['sofi', '¿Puedes repetir lo del riesgo?'], ['dani', 'Hoy esperé y no forcé nada'], ['emi', 'Primera semana completa'], ['vale', '¿A qué hora es la revisión?']]; let i = 0;
+  setInterval(() => { const [u, t] = M[i++ % M.length], d = document.createElement('div'); d.innerHTML = `<b>${u}</b>${t}`; ch.appendChild(d); while (ch.children.length > 6) ch.firstChild.remove(); }, 1800); })();
 </script>
 </body>
 </html>
