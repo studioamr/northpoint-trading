@@ -241,6 +241,37 @@ nav,nav.s{background:rgba(0,0,0,.7)!important;border-color:rgba(255,255,255,.08)
 .hp-cris i{position:absolute;display:block;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.25) 35%,rgba(210,215,225,.7) 55%,rgba(255,255,255,.12) 80%,rgba(255,255,255,.6));clip-path:polygon(50% 0,100% 38%,78% 100%,22% 100%,0 38%);filter:drop-shadow(0 0 14px rgba(255,255,255,.35));animation:npCris 9s ease-in-out infinite;opacity:.9;mix-blend-mode:screen}
 .hp-cris i:nth-child(1){width:70px;height:90px;left:6%;top:18%} .hp-cris i:nth-child(2){width:38px;height:50px;left:44%;top:12%;animation-delay:-3s;opacity:.4} .hp-cris i:nth-child(3){width:54px;height:70px;right:4%;bottom:12%;animation-delay:-6s} .hp-cris i:nth-child(4){width:26px;height:34px;left:38%;bottom:16%;animation-delay:-1.5s;opacity:.35} .hp-cris i:nth-child(5){width:44px;height:58px;right:30%;top:6%;animation-delay:-4.5s;opacity:.3}
 @keyframes npCris{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(14deg)}}
+
+/* ===== versión BLANCA (23-oct-2026) ===== */
+:root{--bg:#fff;--pan:#fff;--line:rgba(0,0,0,.1);--tx:#0b0b0c;--tx2:#55555a;--tx3:#8a8a90}
+html,body{background:#fff!important;color:#0b0b0c!important}
+body:before{background:radial-gradient(35% 30% at 20% 15%,rgba(0,0,0,.035),transparent 70%),radial-gradient(30% 28% at 85% 25%,rgba(120,140,170,.06),transparent 70%)!important}
+body:after{opacity:.05!important;mix-blend-mode:multiply!important}
+h1,h2,h3,b,strong,.cab h2,.hp h1{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
+.hp h1{font-size:clamp(54px,6.4vw,104px)!important} .hp h1 em{background:none!important;-webkit-text-fill-color:#0b0b0c!important;color:#0b0b0c!important;font-style:italic!important}
+.hp-tx>p{font-size:20px!important;color:#55555a!important;margin-bottom:34px!important}
+p,span,li,.inc-c span,.cab p,.hp-tx>p,.tec span,.cur-c li span,.cur-c>p,.ga-cap,.hp-ok{color:#55555a!important}
+.k,.hp-k{color:#55555a!important} .hp-k{border-color:rgba(0,0,0,.14)!important;background:rgba(0,0,0,.03)!important} .hp-k i{background:#0b0b0c!important;box-shadow:none!important}
+.hp-glow{background:radial-gradient(40% 40% at 60% 40%,rgba(120,140,170,.14),transparent 70%)!important} .hp-grid{background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px)!important}
+.hp-cris i{mix-blend-mode:normal!important;opacity:.8!important;background:linear-gradient(135deg,#fff,rgba(220,228,240,.9) 35%,rgba(150,165,190,.55) 60%,#fff)!important;filter:drop-shadow(0 8px 18px rgba(30,40,60,.18))!important}
+.btn.pri,.btn.fuego{background:#0b0b0c!important;color:#fff!important;-webkit-text-fill-color:#fff!important;box-shadow:0 12px 30px -12px rgba(0,0,0,.5)!important} .btn.pri *{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.btn.pri:after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent)!important}
+.btn:not(.pri){color:#0b0b0c!important;border-color:rgba(0,0,0,.18)!important;background:rgba(255,255,255,.7)!important} .btn:not(.pri):hover{border-color:#0b0b0c!important}
+.inc-c,.paso,.plan,.cur-c,.tec div,.box,.feats>div,.cur-c.vivo{background:linear-gradient(160deg,rgba(255,255,255,.95),rgba(245,246,248,.8))!important;border:1px solid rgba(0,0,0,.08)!important;box-shadow:inset 0 1px 0 #fff,0 20px 50px -25px rgba(20,30,50,.25)!important}
+.inc-c:before,.paso:before,.plan:before,.cur-c:before,.tec div:before{background:linear-gradient(100deg,transparent,rgba(255,255,255,.9),transparent)!important}
+.inc-i{color:#0b0b0c!important;background:rgba(0,0,0,.05)!important;box-shadow:none!important}
+.plan.top{border-color:#0b0b0c!important;background:#fff!important;box-shadow:0 30px 70px -30px rgba(0,0,0,.35)!important}
+.cur-c li,.cur-chat,.cur-pant{background:rgba(0,0,0,.025)!important;border-color:rgba(0,0,0,.08)!important} .cur-c ol li:before{color:#0b0b0c!important} .cur-c ul li:before{border-color:#0b0b0c!important}
+.ga-tabs button{color:#55555a!important;border-color:rgba(0,0,0,.12)!important} .ga-tabs button.on{border-color:#0b0b0c!important;background:#0b0b0c!important;color:#fff!important}
+nav,nav.s{background:rgba(255,255,255,.8)!important;border-color:rgba(0,0,0,.06)!important;backdrop-filter:blur(14px)} nav a,.logo{color:#0b0b0c!important} .logo i{color:#8a8a90!important}
+.hp-win,.ga-win{box-shadow:0 50px 100px -40px rgba(10,20,40,.45),0 0 0 1px rgba(0,0,0,.08)!important}
+.hp-flo.f2{background:#fff!important;border-color:rgba(0,0,0,.08)!important;box-shadow:0 20px 50px -20px rgba(0,0,0,.25)!important} .hp-flo.f2 b{color:#1f9d5c!important;-webkit-text-fill-color:#1f9d5c!important}
+.fg,.fg .w,#forja{background:#0b0b0c} #forja h2,#forja .cab p{color:#fff!important;-webkit-text-fill-color:#fff!important} #forja .cab p{color:#bbb!important}
+.mb-np *,.mb-graf *,.hp-win *,.ga-win *{-webkit-text-fill-color:initial}
+.mb-np b,.mb-np span,.mb-np em,.mb-bar b,.mb-bar span,.mb-clk,.mb-dir,.mb-nota,.mb-lista *{-webkit-text-fill-color:currentColor!important}
+.mb-np span,.mb-np em{color:inherit!important} .mb-np b,.mb-clk{color:#e8eef6!important}
+footer{color:#8a8a90!important;border-color:rgba(0,0,0,.08)!important}
+.faq details{border-color:rgba(0,0,0,.08)!important}
 </style>
 </head>
 <body>
@@ -251,8 +282,8 @@ nav,nav.s{background:rgba(0,0,0,.7)!important;border-color:rgba(255,255,255,.08)
   <div class="w hp-w">
     <div class="hp-tx">
       <span class="hp-k"><i></i>NORTHPOINT · Smart Trading Journal</span>
-      <h1>Tú operas.<br><em>NORTHPOINT</em> registra todo.<br><span>El journal de trading que detecta tus trades y te dice qué mejorar.</span></h1>
-      <p>Conecta tu cuenta y cada entrada y salida queda registrada sola, con tus emociones, tu motivo y tu captura. Tus números, tu calendario, tu comunidad y tu reto en una sola app para Mac y Windows.</p>
+      <h1>Tú operas.<br><em>NORTHPOINT</em> registra.</h1>
+      <p>El journal que anota tus trades solo.</p>
       <div class="ctas"><a href="#descargar" class="btn pri">Pruébala gratis</a><a href="#app" class="btn">Ver la app</a></div>
       <ul class="hp-ok"><li>7 días gratis</li><li>Mac y Windows</li><li>Cancela cuando quieras</li></ul>
     </div>
