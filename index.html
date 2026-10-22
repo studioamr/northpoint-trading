@@ -234,7 +234,6 @@ h1,h2,h3,.cab h2,.hp h1{font-family:var(--serif)!important;font-weight:400!impor
 .hp-win,.ga-win{border-color:rgba(255,255,255,.16)!important;box-shadow:0 60px 120px -40px rgba(0,0,0,1),0 0 0 1px rgba(255,255,255,.06),0 0 80px -30px rgba(255,255,255,.18)!important}
 .ga-tabs button.on{border-color:#fff!important;background:rgba(255,255,255,.08)!important}
 .cur-tag,.vivo .cur-tag{color:#fff!important} .cur-c.vivo{background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02))!important} .cur-c ol li:before{color:#fff!important} .cur-c ul li:before{border-color:#fff!important}
-.fg{--kc:#e9e9e6!important;--kc2:#fff!important}
 nav,nav.s{background:rgba(0,0,0,.7)!important;border-color:rgba(255,255,255,.08)!important} .logo i{color:#8a8a86!important}
 /* cristales del hero */
 .hp-cris{position:absolute;inset:0;pointer-events:none}
@@ -272,13 +271,30 @@ nav,nav.s{background:rgba(255,255,255,.8)!important;border-color:rgba(0,0,0,.06)
 .mb-np span,.mb-np em{color:inherit!important} .mb-np b,.mb-clk{color:#e8eef6!important}
 footer{color:#8a8a90!important;border-color:rgba(0,0,0,.08)!important}
 .faq details{border-color:rgba(0,0,0,.08)!important}
+
+/* blanca: componentes que seguían oscuros */
+.sem div,.meses div,.ses div,.flujo div,.emos span{background:#fff!important;border:1px solid rgba(0,0,0,.09)!important;color:#0b0b0c!important;box-shadow:0 10px 30px -18px rgba(20,30,50,.25)!important}
+.sem b,.meses b,.ses b,.flujo b{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important} .sem span,.flujo div{color:#55555a!important}
+.emos span.ok{color:#1f9d5c!important;border-color:rgba(31,157,92,.35)!important;background:rgba(31,157,92,.06)!important} .emos span.mal{color:#c23b3b!important;border-color:rgba(194,59,59,.3)!important;background:rgba(194,59,59,.05)!important}
+.meses i{background:rgba(0,0,0,.08)!important} .meses div:first-child{border-color:#0b0b0c!important} .meses div:first-child i:first-child{outline-color:#0b0b0c!important;background:#0b0b0c!important}
+.riel{background:rgba(0,0,0,.06)!important;border-color:rgba(0,0,0,.08)!important} .riel>i{background:#0b0b0c!important;box-shadow:none!important} .riel span b{background:#fff!important;border-color:#0b0b0c!important} .riel span em{color:#55555a!important}
+.ses .as b{color:#c23b3b!important;-webkit-text-fill-color:#c23b3b!important} .ses .lo b{color:#2f6fd6!important;-webkit-text-fill-color:#2f6fd6!important} .ses .ny b{color:#1f9d5c!important;-webkit-text-fill-color:#1f9d5c!important}
+.arena *{-webkit-text-fill-color:currentColor!important} .arena b,.arena h3,.arena span{color:#fff!important}
+.dl{background:#fff!important;border:1px solid rgba(0,0,0,.08)!important;box-shadow:0 40px 90px -40px rgba(20,30,50,.35)!important} .dl h2{font-family:var(--serif)!important;font-weight:400!important;letter-spacing:-.02em!important} .dl p,.dl .fine{color:#55555a!important}
+#forja,.fg,.fg .w{background:#fff!important} #forja h2{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important} #forja .cab p{color:#55555a!important} .fg-vel,#fgCv{display:none!important}
+.fg-kat svg{filter:drop-shadow(0 18px 24px rgba(0,0,0,.25)) drop-shadow(0 0 30px var(--kc))!important} .fg-kat span{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important;text-shadow:none!important}
+.mb-np em{color:#a9b4c2!important} .mb-emo em.on{color:#2fe08a!important} .mb-nota{color:#e8eef6!important} .mb-lista span{color:#2fe08a!important} .mb-lista .dn{color:#ff6b6b!important} .mb-lista .up{color:#2fe08a!important} .mb-bar span,.mb-bar i{color:#d1d4dc!important}
+.mb-dir{color:#2fe08a!important} .mb-pl{color:#2fe08a!important} .mb-pl.dn{color:#ff6b6b!important} .mb-st{color:#a9b4c2!important} .mb-np-h span{color:#6f7f93!important}
+.cur-rec,.cur-rec *{color:#fff!important}
+.paso .r{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
+.ley span{color:#55555a!important}
 </style>
 </head>
 <body>
 <nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#app">La app</a><a href="#incluye">Funciones</a><a href="#comunidad">Comunidad</a><a href="#cursos">Cursos</a><a href="#reto">El reto</a><a href="#planes">Planes</a></div><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
 
 <header class="hp">
-  <div class="hp-glow"></div><div class="hp-grid"></div><div class="hp-cris"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="hp-glow"></div><div class="hp-grid"></div>
   <div class="w hp-w">
     <div class="hp-tx">
       <span class="hp-k"><i></i>NORTHPOINT · Smart Trading Journal</span>
