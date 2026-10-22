@@ -301,10 +301,13 @@ footer{color:#8a8a90!important;border-color:rgba(0,0,0,.08)!important}
 .esc-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px} .esc-lista div{padding:18px 20px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s;animation:mbIn .35s ease} .esc-lista div:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(20,30,50,.4)}
 .esc-lista span{font:800 10px var(--mono);letter-spacing:.2em} .esc-lista b{display:block;margin:6px 0 4px;font:500 19px var(--serif)} .esc-lista em{font-style:normal;font-size:12.5px;color:#8a8a90!important}
 @media(max-width:860px){.esc-dest{grid-template-columns:1fr}}
-.cur-tag,.vivo .cur-tag{color:#c23b3b!important;-webkit-text-fill-color:#c23b3b!important}</style>
+.cur-tag,.vivo .cur-tag{color:#c23b3b!important;-webkit-text-fill-color:#c23b3b!important}.gal{grid-template-columns:repeat(4,1fr)!important;gap:14px!important} .cc.nf{border-radius:18px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 24px 50px -24px rgba(20,30,50,.45);transition:transform .3s} .cc.nf:hover{transform:translateY(-6px) rotate(-1deg)} .cc.nf>div{width:100%;height:100%;background:center/cover} @media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr)!important}}.npl{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:rgba(10,10,12,.35);backdrop-filter:blur(8px)} .npl[hidden]{display:none} .npl-c{position:relative;width:min(440px,92vw);padding:34px;border-radius:24px;background:#fff;box-shadow:0 40px 100px -30px rgba(0,0,0,.45)}
+.npl-c h3{margin:8px 0 6px;font:400 34px var(--serif);color:#0b0b0c} .npl-c input{width:100%;box-sizing:border-box;margin:16px 0 12px;padding:14px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.15);font:700 16px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#0b0b0c;background:#fafafa} .npl-c .btn{width:100%}
+.npl-x{position:absolute;top:14px;right:16px;border:0;background:none;font-size:24px;color:#8a8a90;cursor:pointer} .npl-err{color:#c23b3b!important;min-height:1em;font-size:13px} .npl-dl{display:flex;flex-direction:column;gap:10px;margin:18px 0} .npl-out{border:0;background:none;color:#8a8a90;text-decoration:underline;cursor:pointer;font-size:13px}
+</style>
 </head>
 <body>
-<nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#app">La app</a><a href="#incluye">Funciones</a><a href="#comunidad">Comunidad</a><a href="#cursos">Cursos</a><a href="#reto">El reto</a><a href="#planes">Planes</a></div><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
+<nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#app">La app</a><a href="#incluye">Funciones</a><a href="#comunidad">Comunidad</a><a href="#cursos">Cursos</a><a href="#reto">El reto</a><a href="#planes">Planes</a></div><a href="#" class="btn sm" id="npEntrar">Iniciar sesión</a><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
 
 <header class="hp">
   <div class="hp-glow"></div><div class="hp-grid"></div>
@@ -393,9 +396,9 @@ footer{color:#8a8a90!important;border-color:rgba(0,0,0,.08)!important}
 </div></section>
 
 <section class="s" id="cartas"><div class="w">
-  <div class="cab rv"><span class="k">Premios</span><h2>La disciplina se colecciona.</h2><p>Dentro de los retos, cada objetivo cumplido te da una carta. 30 en 4 rarezas.</p></div>
+  <div class="cab rv"><span class="k">Premios</span><h2>La disciplina se colecciona.</h2><p>Cada objetivo cumplido del reto te da una carta.</p></div>
   <div class="gal" id="gal"></div>
-  <div class="ley"><span style="--c:#9fb3c8"><i></i>Común</span><span style="--c:#4fa3ff"><i></i>Rara</span><span style="--c:#c06bff"><i></i>Épica</span><span style="--c:#ffc93d"><i></i>Legendaria</span></div>
+  
 </div></section>
 <section class="s" id="cursos"><div class="w">
   <div class="cab rv"><span class="k">La escuela NORTHPOINT</span><h2>Aprende a operar.<br><b>Aprende a cobrar.</b></h2><p>Un curso completo en video, sesiones en vivo con el equipo y la app para practicar lo que aprendes el mismo día.</p></div>
@@ -468,7 +471,7 @@ const nom = k => NOM[k] || k.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperC
 const carta = ([k, r], inf) => `<div class="cc" style="--rc:${RC[r][1]}"><div style="background-image:url(img/cartas/${k}.jpg)"></div><i></i>${inf ? `<div class="inf"><span>${RC[r][0]}</span><b>${nom(k)}</b></div>` : ''}</div>`;
 if (document.getElementById('flota')) document.getElementById('flota').innerHTML = [0, 1, 2].map(f => { const L = CARTAS.slice(f * 10, f * 10 + 10).map(c => carta(c)).join(''); return `<div class="f${f}"><div class="tira">${L}${L}</div></div>`; }).join('');
 const destacadas = ['spec-wrath', 'summit', 'sakura-rain', 'spec-pride', 'the-duel', 'first-light', 'cosmos-walk', 'spec-envy', 'wanderer', 'above-clouds', 'spec-greed', 'seventh-fall'];
-document.getElementById('gal').innerHTML = destacadas.map(k => carta(CARTAS.find(c => c[0] === k), true)).join('');
+document.getElementById('gal').innerHTML = ['cedar-path', 'summit', 'sakura-rain', 'first-light', 'the-duel', 'above-clouds', 'wanderer', 'cosmos-walk'].map(k => `<div class="cc nf"><div style="background-image:url(img/nft/${k}.webp)"></div></div>`).join('');   // 23-oct-2026: 8 cartas, sin títulos ni rareza
 document.getElementById('meses').innerHTML = ['MES 1', 'MES 2', 'MES 3', 'MES 4', 'MES 5', 'MES 6'].map(m => `<div><b>${m}</b>${'<i></i>'.repeat(4)}</div>`).join('');
 document.getElementById('anio').textContent = new Date().getFullYear();
 document.querySelectorAll('[data-plan]').forEach(b => { const u = NP_PAGOS[b.dataset.plan]; b.onclick = () => { if (u) location.href = u; else document.getElementById('descargar').scrollIntoView(); }; if (!u) b.textContent = 'Prueba 7 días gratis'; });
@@ -549,6 +552,25 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
 (() => { const T = [[['0', 'Bienvenida y mentalidad', 3], ['1', 'La rutina del trader rentable', 3]], [['2', 'Tu estrategia de apertura', 3], ['3', 'Horarios de alta probabilidad', 2], ['4', 'Confluencias que sí importan', 3]], [['5', 'Gestión de riesgo', 3], ['6', 'El embudo: evaluación → payout', 3]], [['7', 'Psicología y disciplina', 3], ['8', 'De payout a patrimonio', 4]]];
   const L = document.getElementById('escLista'); if (!L) return; const pon = i => { L.innerHTML = T[i].map(([n, t, c]) => `<div><span>MÓDULO ${n}</span><b>${t}</b><em>${c} lecciones en video</em></div>`).join(''); document.querySelectorAll('#escTabs button').forEach(b => b.classList.toggle('on', +b.dataset.t === i)); };
   document.querySelectorAll('#escTabs button').forEach(b => b.onclick = () => pon(+b.dataset.t)); pon(0); })();
+</script>
+<div class="npl" id="npl" hidden><div class="npl-c"><button type="button" class="npl-x" id="nplX">×</button>
+  <div id="nplForm"><span class="k">MIEMBROS</span><h3>Iniciar sesión</h3><p>Entra con el código de acceso que te dio el equipo.</p>
+    <input id="nplCod" placeholder="NP-XXXX-XXXX" autocomplete="off" spellcheck="false"><button type="button" class="btn pri" id="nplOk">Entrar</button><p class="npl-err" id="nplErr"></p></div>
+  <div id="nplIn" hidden><span class="k">TU ACCESO</span><h3>Hola, <span id="nplNom"></span>.</h3><p>Descarga siempre la versión más reciente: <b id="nplVer">…</b></p>
+    <div class="npl-dl"><a class="btn pri" href="descargas/NORTHPOINT-Mac.dmg">Descargar para Mac</a><a class="btn" href="https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Instalador.exe">Descargar para Windows</a></div>
+    <button type="button" class="npl-out" id="nplOut">Cerrar sesión</button></div></div></div>
+<script>
+(() => { const H = {"a57696e736b81aa19c86ad2314acb6649eeb9f94b3642115446c9b4e48376c7e": "Pablo", "d725f4c2f4d3554b4ed1cb8a80a83bc31e197a298aca9f2287c85cf8c1c57fd6": "Gerardo", "a3fffaee28c45acc97268f4dac140b3f290879ae2e24bacd5a3908dfe1aa8855": "Goyo"};
+  const sha = async t => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)))].map(b => b.toString(16).padStart(2, '0')).join('');
+  const M = document.getElementById('npl'), F = document.getElementById('nplForm'), I = document.getElementById('nplIn'), get = () => { try { return localStorage.getItem('np.miembro'); } catch (_) { return null; } };
+  const pinta = () => { const n = get(); F.hidden = !!n; I.hidden = !n; if (n) document.getElementById('nplNom').textContent = n; document.getElementById('npEntrar').textContent = n ? 'Mi acceso' : 'Iniciar sesión'; };
+  fetch('version.json?' + Date.now()).then(r => r.json()).then(v => { document.getElementById('nplVer').textContent = v.version || v.v || ''; }).catch(() => {});
+  document.getElementById('npEntrar').onclick = e => { e.preventDefault(); pinta(); M.hidden = false; };
+  document.getElementById('nplX').onclick = () => { M.hidden = true; }; M.onclick = e => { if (e.target === M) M.hidden = true; };
+  const ok = async () => { const c = document.getElementById('nplCod').value.trim().toUpperCase(), n = H[await sha(c)]; if (!n) { document.getElementById('nplErr').textContent = 'Ese código no es válido.'; return; } try { localStorage.setItem('np.miembro', n); } catch (_) {} pinta(); };
+  document.getElementById('nplOk').onclick = ok; document.getElementById('nplCod').onkeydown = e => { if (e.key === 'Enter') ok(); };
+  document.getElementById('nplOut').onclick = () => { try { localStorage.removeItem('np.miembro'); } catch (_) {} pinta(); };
+  pinta(); })();
 </script>
 </body>
 </html>
