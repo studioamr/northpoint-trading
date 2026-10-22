@@ -126,6 +126,21 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
 .fg-tres{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px} .fg-tres div{padding:22px;border-radius:16px;border:1px solid var(--line);background:rgba(11,20,32,.75);backdrop-filter:blur(6px)} .fg-tres b{display:block;font-size:17px;margin-bottom:6px} .fg-tres span{color:var(--tx2);font-size:14px;line-height:1.55}
 .fg-caps{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:22px} .fg-caps button{position:relative;aspect-ratio:16/10;border-radius:10px;border:1px solid var(--line);background:center/cover;cursor:pointer;overflow:hidden;opacity:.6;transition:opacity .3s,transform .3s} .fg-caps button:hover,.fg-caps button.on{opacity:1;transform:translateY(-3px);border-color:var(--kc)} .fg-caps em{position:absolute;left:6px;bottom:5px;font:800 9px var(--mono);letter-spacing:.12em;color:#fff;text-shadow:0 1px 4px #000;font-style:normal}
 @media(max-width:800px){.fg-tres{grid-template-columns:1fr}.fg-caps{grid-template-columns:repeat(3,1fr)}}
+
+.mb{max-width:980px;margin:40px auto 0;perspective:1600px} .mb-tapa{position:relative;padding:14px 14px 18px;border-radius:22px 22px 8px 8px;background:linear-gradient(180deg,#2b2f36,#16191e);box-shadow:0 0 0 1px #3a3f48 inset,0 40px 90px -30px rgba(79,195,255,.25)}
+.mb-cam{position:absolute;top:5px;left:50%;width:7px;height:7px;margin-left:-3px;border-radius:50%;background:#0a0c10;box-shadow:0 0 0 1px #2a2e35}
+.mb-pant{position:relative;display:grid;grid-template-columns:1fr 290px;height:min(54vw,540px);border-radius:8px;overflow:hidden;background:#0c0f14}
+.mb-base{position:relative;height:16px;margin:0 -5%;border-radius:0 0 18px 18px;background:linear-gradient(180deg,#c9ced6,#8b919a);box-shadow:0 18px 30px -10px rgba(0,0,0,.8)} .mb-base i{position:absolute;left:50%;top:0;width:16%;height:6px;margin-left:-8%;border-radius:0 0 8px 8px;background:#7a8089}
+.mb-graf{position:relative;display:flex;flex-direction:column;background:#131722} .mb-bar{display:flex;gap:16px;align-items:center;padding:8px 12px;border-bottom:1px solid #222736;font:600 11px var(--mono);color:#8a93a6} .mb-bar b{color:#d1d4dc} .mb-bar i{font-style:normal;color:#d1d4dc} #mbCv{flex:1;width:100%;height:100%}
+.mb-np{display:flex;flex-direction:column;gap:10px;padding:14px;border-left:1px solid #1a2839;background:linear-gradient(180deg,#0b1420,#070c14);color:var(--tx);font-size:12px} .mb-np-h{display:flex;justify-content:space-between;align-items:center} .mb-np-h b{font:900 11px var(--mono);letter-spacing:.2em} .mb-np-h span{color:var(--tx3);font:700 10px var(--mono)}
+.mb-st{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:99px;border:1px solid var(--line);font:800 9.5px var(--mono);letter-spacing:.18em;color:var(--tx2)} .mb-st i{width:7px;height:7px;border-radius:50%;background:var(--ve);box-shadow:0 0 0 4px rgba(47,224,138,.15);animation:mbPul 1.4s infinite} @keyframes mbPul{50%{opacity:.3}}
+.mb-vivo{display:none;padding:14px;border-radius:14px;border:1px solid rgba(47,224,138,.55);background:radial-gradient(260px 120px at 100% 0,rgba(47,224,138,.16),transparent),#0c1522;animation:mbIn .5s ease} .mb-np.on .mb-vivo{display:block} @keyframes mbIn{from{opacity:0;transform:translateY(8px)}}
+.mb-dir{font:900 15px Inter,sans-serif;color:var(--ve)} .mb-clk{margin:8px 0 2px;font:900 34px var(--mono);font-variant-numeric:tabular-nums} .mb-pl{font:900 16px var(--mono);color:var(--ve)} .mb-pl.dn{color:var(--ro)}
+.mb-emo{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 8px} .mb-emo em{font-style:normal;padding:4px 9px;border-radius:99px;border:1px solid var(--line);color:var(--tx2);font-size:10.5px;transition:all .25s} .mb-emo em.on{border-color:var(--ve);color:var(--ve);background:rgba(47,224,138,.12)}
+.mb-nota{min-height:34px;padding:8px 10px;border-radius:8px;background:#050a12;border:1px solid var(--line);color:var(--tx);font-size:11.5px;line-height:1.4} .mb-nota i{font-style:normal;color:var(--az);animation:mbPul 1s infinite}
+.mb-lista{margin-top:auto;display:flex;flex-direction:column;gap:6px} .mb-lista div{display:flex;gap:8px;align-items:center;padding:8px 10px;border-radius:10px;border:1px solid var(--line);font:700 10.5px var(--mono);animation:mbIn .5s ease} .mb-lista span{margin-left:auto;color:var(--ve)} .mb-lista em{font-style:normal;color:var(--tx3)} .mb-lista .up{color:var(--ve)} .mb-lista .dn{color:var(--ro)}
+.tec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px} .tec div{padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--pan)} .tec b{display:block;font-size:16px;margin-bottom:6px} .tec span{color:var(--tx2);font-size:14px;line-height:1.55}
+@media(max-width:800px){.mb-pant{grid-template-columns:1fr;height:auto}.mb-graf{height:240px}.tec{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -160,6 +175,28 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
   </div>
   <div class="feats rv"><div><b>Exness en vivo</b><span>Tus cuentas y trades entran solos</span></div><div><b>Mercado</b><span>Calendario económico y volatilidad por hora</span></div><div><b>Comunidad</b><span>Ranking y trades del equipo</span></div><div><b>100% local</b><span>Tus datos en tu computadora</span></div></div>
 </div></section>
+<section class="s" id="enaccion"><div class="w">
+  <div class="cab rv"><span class="k">En acción</span><h2>Operas en tu gráfica.<br>NORTHPOINT anota por ti.</h2><p>Entras al trade y el journal se abre solo: reloj, P&L en vivo y tu registro. Cierras y queda guardado con tus emociones y tu captura.</p></div>
+  <div class="mb rv"><div class="mb-tapa"><div class="mb-cam"></div><div class="mb-pant">
+    <div class="mb-graf"><div class="mb-bar"><b>NQ1! · 1m</b><span>O <i id="mbO">0</i></span><span>C <i id="mbC">0</i></span></div><canvas id="mbCv"></canvas></div>
+    <div class="mb-np" id="mbNp"><div class="mb-np-h"><b>NORTHPOINT</b><span>Log trade</span></div>
+      <div class="mb-st" id="mbSt"><i></i>VIGILANDO</div>
+      <div class="mb-vivo" id="mbVivo"><span class="mb-dir">▲ LONG NASDAQ</span><div class="mb-clk" id="mbClk">00:00</div><div class="mb-pl" id="mbPl">+$0</div>
+        <div class="mb-emo" id="mbEmo"><em>Tranquilo</em><em>Enfocado</em><em>Confiado</em><em class="mal">Ansioso</em></div><div class="mb-nota"><span id="mbNota"></span><i>|</i></div></div>
+      <div class="mb-lista" id="mbLista"><div><b class="up">▲ NASDAQ</b><span>+1.4R</span><em>✓ plan</em></div><div><b class="dn">▼ S&P 500</b><span class="dn">−1.0R</span><em>✓ plan</em></div></div></div>
+  </div></div><div class="mb-base"><i></i></div></div>
+</div></section>
+<section class="s" id="tecnico" style="padding-top:30px"><div class="w">
+  <div class="cab rv"><span class="k">Lo técnico</span><h2>Hecha para tu escritorio.</h2></div>
+  <div class="tec rv">
+    <div><b>Mac y Windows</b><span>App nativa. Se instala en un minuto y se actualiza sola.</span></div>
+    <div><b>Detección automática</b><span>Conecta tu cuenta de Exness y tus entradas y salidas se registran solas.</span></div>
+    <div><b>Tus datos son tuyos</b><span>Tus trades y capturas se guardan en tu computadora, no en un servidor ajeno.</span></div>
+    <div><b>Capturas en un pegado</b><span>⌘V o Ctrl+V y tu gráfica queda dentro del trade.</span></div>
+    <div><b>Ligera</b><span>Corre fluida aunque tengas tu plataforma abierta al mismo tiempo.</span></div>
+    <div><b>Español e inglés</b><span>Cambias de idioma desde Configuración.</span></div>
+  </div>
+</div></section>
 <section class="s" id="bias"><div class="w">
   <div class="cab rv"><span class="k">Bias</span><h2>Toros contra osos.<br>Opera con la mesa.</h2><p>Antes de cada sesión, el equipo sube su bias: captura, dirección y análisis. Ves en vivo hacia dónde se inclina la mesa y qué espera cada quien.</p></div>
   <div class="arena rv"><div class="g a"></div><div class="g b"></div><div class="an t"></div><div class="an o"></div><div class="v"><b>LONGS ONLY</b><span>3 TOROS · 0 OSOS</span></div></div>
@@ -173,8 +210,8 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
 <section class="s" id="reto"><div class="w">
   <div class="cab rv"><span class="k">Retos · ALPHA KAIZEN WAY</span><h2>$100 → $15,000.<br>Con disciplina.</h2><p>Kaizen es mejorar un poco cada día. Aquí se mide: cada día tiene un objetivo, cada semana una meta y cada mes un hito.</p></div>
   <div class="pasos">
-    <div class="paso rv"><span class="n">PASO 1</span><h3>Doblar cada semana</h3><div class="r">$100 → $1,000</div><p>Cuatro semanas. Cada una termina al doble de como empezó, con un objetivo para cada día.</p><ul><li>Objetivo diario de +14.9%</li><li>1 trade por sesión</li><li>Riesgo máximo del 20%</li></ul></div>
-    <div class="paso rv"><span class="n">PASO 2</span><h3>Construir la cuenta</h3><div class="r">$1,000 → $15,000</div><p>Se desbloquea al llegar a $1,000. Las reglas del contrato NORTHPOINT, sin excepciones.</p><ul><li>Entrada al break, stop de 10–30 pts</li><li>Objetivo 1:1 a 1:2</li><li>Premarket 7:00 · entry 7:45 · cierre 10:00</li></ul></div>
+    <div class="paso rv"><span class="n">PASO 1</span><h3>Doblar cada semana</h3><div class="r">$100 → $1,000</div><p>Cuatro semanas con una meta clara cada semana y un objetivo para cada día.</p><ul><li>Objetivo del día, siempre a la vista</li><li>Tu avance semana por semana</li><li>Cartas al cumplir</li></ul></div>
+    <div class="paso rv"><span class="n">PASO 2</span><h3>Construir la cuenta</h3><div class="r">$1,000 → $15,000</div><p>Se desbloquea al llegar a $1,000. Reglas fijas que la app te recuerda en cada trade.</p><ul><li>Riesgo calculado por la app</li><li>Tus reglas en cada registro</li><li>Hitos rumbo a $15,000</li></ul></div>
     <div class="paso lock rv"><span class="n">LA META</span><h3>Cuenta live</h3><div class="r">$15,000</div><p>Seis meses de semanas limpias. La app lleva el camino semana por semana para que nunca pierdas de vista dónde vas.</p><ul><li>26 semanas, mes por mes</li><li>Hitos en $1k, $5k, $10k y $15k</li><li>Fecha meta desde el día que empiezas</li></ul></div>
   </div>
   <div class="sem rv"><div><span>SEMANA 1</span><b>$100 → $200</b></div><div><span>SEMANA 2</span><b>$200 → $400</b></div><div><span>SEMANA 3</span><b>$400 → $800</b></div><div><span>SEMANA 4</span><b>$800 → $1,000</b></div></div>
@@ -263,6 +300,28 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
   const anim = t => { g.clearRect(0, 0, cv.width, cv.height); const col = getComputedStyle(sec).getPropertyValue('--kc').trim() || '#ff3b2f'; g.fillStyle = col; g.shadowColor = col; g.shadowBlur = 10;
     P.forEach((p, k) => { p.x += p.vx + Math.sin(t / 900 + p.a) * .4; p.y += p.vy; g.globalAlpha = Math.max(0, Math.min(1, p.y / cv.height)) * (.5 + Math.sin(t / 150 + p.a) * .3); g.beginPath(); g.arc(p.x, p.y, p.r, 0, 7); g.fill(); if (p.y < -10) P[k] = nuevo(false); });
     requestAnimationFrame(anim); }; requestAnimationFrame(anim);
+})();
+</script>
+<script>
+(() => { const cv = document.getElementById('mbCv'); if (!cv) return; const g = cv.getContext('2d'), np = document.getElementById('mbNp');
+  let W, H, V = [], p = 21480, ent = null, t0 = 0, fase = 0;
+  const tam = () => { const r = cv.getBoundingClientRect(); W = cv.width = r.width * devicePixelRatio; H = cv.height = r.height * devicePixelRatio; }; tam(); addEventListener('resize', tam);
+  for (let i = 0; i < 70; i++) { const o = p; p += (Math.random() - .5) * 8; V.push({ o, c: p, h: Math.max(o, p) + Math.random() * 4, l: Math.min(o, p) - Math.random() * 4 }); }
+  const dibuja = () => { g.clearRect(0, 0, W, H); const L = V.slice(-60), mx = Math.max(...L.map(v => v.h)) + 6, mn = Math.min(...L.map(v => v.l)) - 6, y = v => (mx - v) / (mx - mn) * H * .9 + H * .05, w = W / 62;
+    g.strokeStyle = '#1e2433'; g.lineWidth = 1; for (let k = 1; k < 6; k++) { g.beginPath(); g.moveTo(0, H * k / 6); g.lineTo(W, H * k / 6); g.stroke(); }
+    L.forEach((v, k) => { const x = k * w + w / 2, up = v.c >= v.o; g.strokeStyle = g.fillStyle = up ? '#26a69a' : '#ef5350'; g.beginPath(); g.moveTo(x, y(v.h)); g.lineTo(x, y(v.l)); g.stroke(); g.fillRect(x - w * .35, Math.min(y(v.o), y(v.c)), w * .7, Math.max(1, Math.abs(y(v.o) - y(v.c)))); });
+    if (ent) { const ye = y(ent); g.setLineDash([6, 6]); g.strokeStyle = '#4fc3ff'; g.beginPath(); g.moveTo(0, ye); g.lineTo(W, ye); g.stroke(); g.setLineDash([]); g.fillStyle = '#4fc3ff'; g.font = `700 ${11 * devicePixelRatio}px JetBrains Mono, monospace`; g.fillText('ENTRY', 8, ye - 6); }
+    const u = V[V.length - 1]; document.getElementById('mbO').textContent = u.o.toFixed(2); document.getElementById('mbC').textContent = u.c.toFixed(2); };
+  const nota = 'Entré con mi plan, sin prisa. Esperé confirmación.'; let ni = 0;
+  setInterval(() => { const u = V[V.length - 1], dr = fase === 1 ? .9 : 0; u.c += (Math.random() - .5 + dr * .08) * 3; u.h = Math.max(u.h, u.c); u.l = Math.min(u.l, u.c);
+    if (Math.random() < .12) V.push({ o: u.c, c: u.c, h: u.c, l: u.c }); dibuja();
+    if (fase === 1) { const s = Math.floor((Date.now() - t0) / 1000) * 7, pl = (u.c - ent) * 4; document.getElementById('mbClk').textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); const e = document.getElementById('mbPl'); e.textContent = (pl >= 0 ? '+$' : '−$') + Math.abs(Math.round(pl)); e.className = 'mb-pl' + (pl < 0 ? ' dn' : '');
+      if (ni < nota.length && Date.now() - t0 > 2500) document.getElementById('mbNota').textContent = nota.slice(0, ++ni); } }, 120);
+  const ciclo = () => { fase = 0; np.classList.remove('on'); ent = null; document.getElementById('mbSt').lastChild.textContent = 'VIGILANDO'; document.querySelectorAll('#mbEmo em').forEach(e => e.classList.remove('on')); document.getElementById('mbNota').textContent = ''; ni = 0;
+    setTimeout(() => { fase = 1; t0 = Date.now(); ent = V[V.length - 1].c; np.classList.add('on'); document.getElementById('mbSt').lastChild.textContent = 'TRADE DETECTADO';
+      setTimeout(() => document.querySelectorAll('#mbEmo em')[1].classList.add('on'), 1200); setTimeout(() => document.querySelectorAll('#mbEmo em')[0].classList.add('on'), 1900);
+      setTimeout(() => { fase = 2; const r = ((V[V.length - 1].c - ent) / 6).toFixed(1); const d = document.createElement('div'); d.innerHTML = `<b class="up">▲ NASDAQ</b><span class="${r < 0 ? 'dn' : ''}">${r >= 0 ? '+' : ''}${r}R</span><em>✓ plan</em>`; const l = document.getElementById('mbLista'); l.prepend(d); if (l.children.length > 3) l.lastChild.remove(); np.classList.remove('on'); document.getElementById('mbSt').lastChild.textContent = 'GUARDADO EN TU JOURNAL'; setTimeout(ciclo, 2600); }, 9000); }, 2200); };
+  ciclo();
 })();
 </script>
 </body>
