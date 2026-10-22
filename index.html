@@ -9,7 +9,7 @@
 <meta property="og:title" content="NORTHPOINT · ALPHA KAIZEN WAY">
 <meta property="og:description" content="Journal, comunidad, bias del equipo y mercado en vivo. Mejorar un poco cada día.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#04070c;--pan:#0b1420;--line:#1a2839;--tx:#e8eef6;--tx2:#9aabbf;--tx3:#5d6e85;--az:#4fc3ff;--ve:#2fe08a;--ro:#ff4d5e;--oro:#ffc93d;--mor:#c06bff;--mono:'JetBrains Mono',ui-monospace,monospace}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -205,13 +205,49 @@ body{background:#05050a}
 .ga-win{max-width:1100px;margin:0 auto;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 50px 120px -40px rgba(0,0,0,.9)} .ga-img{position:relative;aspect-ratio:16/10;background:#0b111a} .ga-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .35s} .ga-img img.out{opacity:0}
 .ga-cap{max-width:640px;margin:18px auto 0;text-align:center;color:#9aabbf}
 @media(max-width:960px){.hp-w{grid-template-columns:1fr}.hp-win{transform:none}.hp-flo.f1{left:2%;bottom:-10%}.hp-flo.f2{right:2%}}
+
+/* ===== NORTHPOINT · blanco y negro, cristal (23-oct-2026) ===== */
+:root{--bg:#000;--pan:rgba(255,255,255,.035);--line:rgba(255,255,255,.12);--tx:#f4f4f2;--tx2:#a9a9a6;--tx3:#6d6d6a;--az:#fff;--ve:#8fd6a8;--ro:#e08a8a;--oro:#fff;--mor:#fff;--serif:'Newsreader',Georgia,'Times New Roman',serif}
+html,body{background:#000!important;color:var(--tx)}
+body:before{content:"";position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:radial-gradient(35% 30% at 20% 20%,rgba(255,255,255,.07),transparent 70%),radial-gradient(30% 28% at 80% 30%,rgba(255,255,255,.05),transparent 70%),radial-gradient(40% 35% at 50% 85%,rgba(255,255,255,.045),transparent 70%);animation:npLuz 22s ease-in-out infinite alternate}
+@keyframes npLuz{to{transform:translate(4%,-3%) rotate(6deg) scale(1.06)}}
+body:after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.cab h2,.hp h1{font-family:var(--serif)!important;font-weight:400!important;letter-spacing:-.02em!important}
+.cab h2{background:none!important;-webkit-text-fill-color:#fff!important;color:#fff!important;font-size:clamp(36px,4.6vw,64px)!important;line-height:1.04!important}
+.k,.hp-k{color:#cfcfcb!important;text-shadow:none!important;font-family:var(--mono)!important}
+.hp-k{border-color:rgba(255,255,255,.22)!important;background:rgba(255,255,255,.05)!important} .hp-k i{background:#fff!important;box-shadow:0 0 12px #fff!important}
+.hp h1{font-size:clamp(46px,5.4vw,82px)!important;line-height:1!important} .hp h1 em{font-style:italic!important;background:linear-gradient(180deg,#fff,#9a9a96)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important} .hp h1 span{font-family:Inter,sans-serif!important;font-weight:500!important;color:#9a9a96!important;font-size:.32em!important;letter-spacing:0!important;line-height:1.4}
+.hp-glow{background:radial-gradient(40% 40% at 60% 40%,rgba(255,255,255,.10),transparent 70%)!important}
+.btn{border-radius:999px!important;font-family:Inter,sans-serif!important;letter-spacing:.02em!important;text-transform:none!important;font-weight:600!important;font-size:14.5px!important}
+.btn.pri,.btn.fuego{background:#fff!important;color:#000!important;animation:none!important;box-shadow:0 0 0 1px rgba(255,255,255,.6),0 10px 40px -10px rgba(255,255,255,.45)!important}
+.btn.pri:after{background:linear-gradient(100deg,transparent,rgba(0,0,0,.18),transparent)!important}
+.btn.pri:hover{box-shadow:0 0 0 1px #fff,0 14px 50px -8px rgba(255,255,255,.7)!important}
+.btn:not(.pri){color:#fff!important;border-color:rgba(255,255,255,.22)!important;background:rgba(255,255,255,.04)!important;backdrop-filter:blur(10px)} .btn:not(.pri):hover{border-color:rgba(255,255,255,.5)!important;box-shadow:none!important}
+.inc-c,.paso,.plan,.cur-c,.tec div,.box,.feats>div,.ses>div,.mb-np,.ga-win,.hp-win{position:relative;overflow:hidden}
+.inc-c,.paso,.plan,.cur-c,.tec div,.box,.feats>div{background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02) 45%,rgba(255,255,255,.04))!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 30px 60px -30px rgba(0,0,0,.9)!important;backdrop-filter:blur(14px)}
+.inc-c:before,.paso:before,.plan:before,.cur-c:before,.tec div:before{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.09),transparent);transform:skewX(-18deg);animation:npSheen 7s ease-in-out infinite;pointer-events:none}
+@keyframes npSheen{0%,55%{left:-80%}100%{left:140%}}
+.inc-c:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 30px 70px -20px rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.3)!important}
+.inc-i{color:#fff!important;background:rgba(255,255,255,.07)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)!important} .inc-c b{font-family:var(--serif);font-weight:500;font-size:23px!important}
+.inc-c span,.cab p,.hp-tx>p{color:#a9a9a6!important}
+.plan.top{border-color:rgba(255,255,255,.55)!important;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.03))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 30px 80px -30px rgba(255,255,255,.2)!important}
+.hp-win,.ga-win{border-color:rgba(255,255,255,.16)!important;box-shadow:0 60px 120px -40px rgba(0,0,0,1),0 0 0 1px rgba(255,255,255,.06),0 0 80px -30px rgba(255,255,255,.18)!important}
+.ga-tabs button.on{border-color:#fff!important;background:rgba(255,255,255,.08)!important}
+.cur-tag,.vivo .cur-tag{color:#fff!important} .cur-c.vivo{background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02))!important} .cur-c ol li:before{color:#fff!important} .cur-c ul li:before{border-color:#fff!important}
+.fg{--kc:#e9e9e6!important;--kc2:#fff!important}
+nav,nav.s{background:rgba(0,0,0,.7)!important;border-color:rgba(255,255,255,.08)!important} .logo i{color:#8a8a86!important}
+/* cristales del hero */
+.hp-cris{position:absolute;inset:0;pointer-events:none}
+.hp-cris i{position:absolute;display:block;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.25) 35%,rgba(210,215,225,.7) 55%,rgba(255,255,255,.12) 80%,rgba(255,255,255,.6));clip-path:polygon(50% 0,100% 38%,78% 100%,22% 100%,0 38%);filter:drop-shadow(0 0 14px rgba(255,255,255,.35));animation:npCris 9s ease-in-out infinite;opacity:.9;mix-blend-mode:screen}
+.hp-cris i:nth-child(1){width:70px;height:90px;left:6%;top:18%} .hp-cris i:nth-child(2){width:38px;height:50px;left:44%;top:12%;animation-delay:-3s;opacity:.4} .hp-cris i:nth-child(3){width:54px;height:70px;right:4%;bottom:12%;animation-delay:-6s} .hp-cris i:nth-child(4){width:26px;height:34px;left:38%;bottom:16%;animation-delay:-1.5s;opacity:.35} .hp-cris i:nth-child(5){width:44px;height:58px;right:30%;top:6%;animation-delay:-4.5s;opacity:.3}
+@keyframes npCris{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(14deg)}}
 </style>
 </head>
 <body>
 <nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#app">La app</a><a href="#incluye">Funciones</a><a href="#comunidad">Comunidad</a><a href="#cursos">Cursos</a><a href="#reto">El reto</a><a href="#planes">Planes</a></div><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
 
 <header class="hp">
-  <div class="hp-glow"></div><div class="hp-grid"></div>
+  <div class="hp-glow"></div><div class="hp-grid"></div><div class="hp-cris"><i></i><i></i><i></i><i></i><i></i></div>
   <div class="w hp-w">
     <div class="hp-tx">
       <span class="hp-k"><i></i>NORTHPOINT · Smart Trading Journal</span>
