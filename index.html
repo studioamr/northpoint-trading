@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NORTHPOINT · Journal, comunidad y mesa de trading</title>
-<meta name="description" content="NORTHPOINT: el journal de trading con comunidad, bias del equipo por sesión, mercado en vivo y retos de disciplina. Para Mac y Windows.">
+<title>ALPHA KAIZEN WAY · NORTHPOINT</title>
+<meta name="description" content="ALPHA KAIZEN WAY: el reto de 6 meses de NORTHPOINT. De $100 a $15,000 con tu journal, tu comunidad, cursos y sesiones en vivo. No caminas solo.">
 <meta name="theme-color" content="#04070c">
 <meta property="og:title" content="NORTHPOINT · ALPHA KAIZEN WAY">
 <meta property="og:description" content="Journal, comunidad, bias del equipo y mercado en vivo. Mejorar un poco cada día.">
@@ -154,23 +154,87 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
 .cur-live{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;margin-top:16px} .cur-pant{position:relative;border-radius:12px;border:1px solid var(--line);background:#0c1119;padding:26px 8px 8px} .cur-pant svg{width:100%;height:90px;display:block} .cur-rec{position:absolute;top:8px;left:8px;display:flex;gap:6px;align-items:center;padding:3px 8px;border-radius:6px;background:var(--ro);color:#fff;font:900 9px var(--mono);letter-spacing:.15em} .cur-rec i{width:6px;height:6px;border-radius:50%;background:#fff;animation:curPul 1s infinite}
 .cur-chat{display:flex;flex-direction:column;justify-content:flex-end;gap:5px;height:126px;overflow:hidden;padding:8px;border-radius:12px;border:1px solid var(--line);background:#0c1119} .cur-chat div{font-size:11.5px;color:var(--tx2);animation:curIn .4s ease} .cur-chat b{color:var(--az);margin-right:5px} @keyframes curIn{from{opacity:0;transform:translateY(6px)}}
 @media(max-width:860px){.cur{grid-template-columns:1fr}}
+
+/* ===== ÉPICO (23-oct-2026): fuego, capítulos animados, 3D ===== */
+:root{--fu1:#ff3b1f;--fu2:#ff8a1e;--fu3:#ffd25a}
+body{background:#05050a}
+#epFondo{position:fixed;inset:0;z-index:-2;background:center/cover no-repeat;opacity:.22;transition:background-image 1.2s,opacity 1s;filter:saturate(1.2)} #epFondo:after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 50%,transparent,rgba(5,5,10,.85))}
+#epFuego{position:fixed;inset:0;z-index:-1;pointer-events:none;width:100%;height:100%}
+.ep{min-height:100vh} .ep-bg{position:absolute;inset:0} .ep-bg i{position:absolute;inset:-4%;background:center/cover no-repeat;opacity:0;transition:opacity 1.6s ease;animation:epKB 14s ease-in-out infinite alternate} .ep-bg i.on{opacity:1} @keyframes epKB{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.12) translate(-1.5%,-1%)}}
+.ep-vela{position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 45%,rgba(5,5,10,.15),rgba(5,5,10,.6) 85%),linear-gradient(180deg,rgba(5,5,10,.35),transparent 30%,transparent 75%,#05050a)}
+.ep-humo{position:absolute;left:-10%;right:-10%;bottom:-10%;height:45%;background:radial-gradient(50% 60% at 50% 100%,rgba(255,90,20,.35),transparent 70%);animation:epLat 3s ease-in-out infinite alternate;mix-blend-mode:screen} @keyframes epLat{to{opacity:.6;transform:scaleY(1.15)}}
+.ep-k{color:var(--fu3)!important;text-shadow:0 0 18px var(--fu2)}
+.ep-h1{font:900 clamp(48px,10vw,150px)/.95 Inter,sans-serif!important;letter-spacing:-.03em!important;margin:16px 0 10px!important;perspective:800px}
+.ep-h1 span{display:inline-block;background:linear-gradient(180deg,#fff 0%,#ffe6a8 35%,var(--fu2) 70%,var(--fu1));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px rgba(255,120,30,.55));animation:epLetra 1.2s cubic-bezier(.2,.9,.2,1) both}
+.ep-h1 span:nth-child(2){animation-delay:.15s} .ep-h1 span:nth-child(3){animation-delay:.3s} @keyframes epLetra{from{opacity:0;transform:rotateX(80deg) translateY(40px);filter:blur(10px)}}
+.ep-meta{display:flex;justify-content:center;align-items:center;gap:22px;font:900 clamp(30px,5vw,64px) var(--mono);margin:6px 0 18px;animation:epLetra 1.2s .45s both} .ep-meta b{color:#fff;text-shadow:0 0 30px rgba(255,140,40,.7)} .ep-meta i{font-style:normal;color:var(--fu2);animation:fl 1.4s ease-in-out infinite}
+.ep .sub{max-width:720px;margin:0 auto 26px;padding:12px 20px;border-radius:14px;background:rgba(5,5,10,.55);backdrop-filter:blur(6px);color:#e9ddd0;font-size:clamp(16px,1.6vw,19px);line-height:1.6;text-shadow:0 2px 12px #000} .ep .sub strong{color:var(--fu3)}
+.btn.pri,.btn.fuego{position:relative;overflow:hidden;border:0!important;color:#1a0700!important;background:linear-gradient(90deg,var(--fu1),var(--fu2),var(--fu3),var(--fu2),var(--fu1))!important;background-size:300% 100%!important;animation:epFlu 4s linear infinite;box-shadow:0 0 0 1px rgba(255,210,90,.5),0 10px 40px -6px rgba(255,90,20,.9),0 0 80px -10px rgba(255,140,30,.8)!important;font-weight:900!important}
+@keyframes epFlu{to{background-position:300% 0}} .btn.pri:hover{transform:translateY(-3px) scale(1.04)!important;box-shadow:0 0 0 1px #ffe08a,0 16px 50px -6px rgba(255,90,20,1),0 0 120px -10px rgba(255,160,40,1)!important}
+.btn.pri:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:epBrillo 2.6s ease-in-out infinite} @keyframes epBrillo{0%,60%{left:-60%}100%{left:130%}}
+.btn:not(.pri){border-color:rgba(255,160,60,.45)!important;color:#ffe2bf!important;background:rgba(20,8,4,.4);backdrop-filter:blur(6px)} .btn:not(.pri):hover{border-color:var(--fu3)!important;box-shadow:0 0 30px -6px rgba(255,140,30,.7)}
+.ep-caps{display:flex;justify-content:center;gap:8px;margin-top:34px} .ep-caps button{width:34px;height:6px;border-radius:9px;border:0;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s} .ep-caps button.on{width:60px;background:linear-gradient(90deg,var(--fu1),var(--fu3));box-shadow:0 0 14px var(--fu2)}
+.k{color:var(--fu2)!important;letter-spacing:.32em} .cab h2{background:linear-gradient(180deg,#fff 40%,#ffd9a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s{position:relative}
+.inc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;perspective:1200px}
+.inc-c{position:relative;padding:30px 26px;border-radius:22px;border:1px solid color-mix(in srgb,var(--c) 40%,transparent);background:radial-gradient(300px 160px at 0 0,color-mix(in srgb,var(--c) 22%,transparent),transparent 70%),rgba(12,10,16,.82);backdrop-filter:blur(8px);transform-style:preserve-3d;transition:transform .25s ease,box-shadow .3s;will-change:transform}
+.inc-c:hover{box-shadow:0 30px 60px -20px color-mix(in srgb,var(--c) 70%,transparent),0 0 0 1px var(--c)}
+.inc-i{width:58px;height:58px;display:grid;place-items:center;border-radius:16px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);box-shadow:0 0 30px -6px var(--c);transform:translateZ(40px);margin-bottom:18px} .inc-i svg{width:30px;height:30px}
+.inc-c b{display:block;font-size:20px;margin-bottom:8px;transform:translateZ(30px)} .inc-c span{color:#c9bfb4;line-height:1.55;font-size:14.5px;transform:translateZ(20px);display:block}
+.rv{opacity:0;transform:perspective(1000px) rotateX(18deg) translateY(70px) scale(.94);transform-origin:50% 100%;transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)} .rv.on{opacity:1;transform:none}
+.inc-c.rv{transform:perspective(1000px) rotateY(-35deg) translateX(60px) scale(.9)} .inc-c.rv:nth-child(3n+1){transition-delay:0s} .inc-c.rv:nth-child(3n+2){transition-delay:.12s} .inc-c.rv:nth-child(3n){transition-delay:.24s} .inc-c.rv.on{transform:none}
+.paso,.plan,.cur-c,.tec div,.box,.feats>div{transition:transform .25s ease,box-shadow .3s!important}
+.plan.top{border-color:var(--fu2)!important;background:radial-gradient(500px 240px at 50% -20%,rgba(255,120,30,.22),transparent 70%),var(--pan)!important;box-shadow:0 30px 80px -30px rgba(255,100,30,.6)!important}
+@media(max-width:900px){.inc{grid-template-columns:1fr 1fr}} @media(max-width:600px){.inc{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#journal">Journal</a><a href="#bias">Bias</a><a href="#comunidad">Comunidad</a><a href="#reto">Retos</a><a href="#planes">Planes</a></div><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
+<nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#reto">El reto</a><a href="#incluye">Qué incluye</a><a href="#enaccion">La app</a><a href="#cursos">Cursos</a><a href="#planes">Planes</a></div><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
 
-<header class="hero">
-  <div class="flota" id="flota"></div><div class="vela"></div>
+<header class="hero ep">
+  <div class="ep-bg" id="epBg"><i style="background-image:url(img/camino/1.jpg)"></i><i></i></div><div class="ep-vela"></div><div class="ep-humo"></div>
   <div class="w">
-    <span class="k">ALPHA KAIZEN WAY</span>
-    <h1 class="arco">NORTHPOINT</h1>
-    <div class="servs"><span>Journal</span><i>·</i><span>Comunidad</span><i>·</i><span>Bias</span><i>·</i><span>Mercado</span><i>·</i><span>Retos</span></div>
-    <p class="sub">Todo tu trading en un solo lugar: registra cada trade, opera con el bias de la mesa, sigue el mercado en vivo y mejora un poco cada día con tu comunidad.</p>
-    <div class="ctas"><a href="#descargar" class="btn pri">Empieza gratis</a><a href="#journal" class="btn">Ver todo</a></div>
+    <span class="k ep-k">NORTHPOINT PRESENTA</span>
+    <h1 class="ep-h1"><span>ALPHA</span> <span>KAIZEN</span> <span>WAY</span></h1>
+    <div class="ep-meta"><b>$100</b><i>⟶</i><b>$15,000</b></div>
+    <p class="sub">Un camino de 6 meses. Recibes tu katana, la app registra cada trade por ti y caminas con una comunidad, cursos y sesiones en vivo. <strong>No caminas solo.</strong></p>
+    <div class="ctas"><a href="#planes" class="btn pri fuego"><span>EMPIEZA EL CAMINO</span></a><a href="#incluye" class="btn ep-sec">Qué incluye</a></div>
     <small>Mac y Windows · 7 días gratis</small>
+    <div class="ep-caps" id="epCaps"></div>
   </div>
   <div class="baja">BAJA</div>
 </header>
+<section class="s" id="incluye"><div class="w">
+  <div class="cab rv"><span class="k">Todo el apoyo</span><h2>No es una app.<br>Es un camino completo.</h2><p>ALPHA KAIZEN WAY junta todo lo que necesitas para llegar: el reto, la herramienta, la gente y el entrenamiento.</p></div>
+  <div class="inc">
+    <div class="inc-c rv" style="--c:#ff3b2f"><div class="inc-i"><svg viewBox="0 0 48 48"><path d="M8 40 L34 14 M30 10l8 8M6 42l4-4" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="38" cy="10" r="3" fill="currentColor"/></svg></div><b>El reto</b><span>$100 a $15,000 en 6 meses, con una meta para cada día, cada semana y cada mes.</span></div>
+    <div class="inc-c rv" style="--c:#ffc93d"><div class="inc-i"><svg viewBox="0 0 48 48"><path d="M6 30 Q24 4 42 30" stroke="currentColor" stroke-width="3" fill="none"/><path d="M14 34h20M18 40h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><b>Tu katana</b><span>Te la entrega el herrero. Despierta 10 formas de respiración conforme avanzas.</span></div>
+    <div class="inc-c rv" style="--c:#4fc3ff"><div class="inc-i"><svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="4" stroke="currentColor" stroke-width="3" fill="none"/><path d="M15 16h18M15 24h18M15 32h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><b>Journal automático</b><span>Detecta tus trades y te pide emociones, motivo y captura. Tú solo operas.</span></div>
+    <div class="inc-c rv" style="--c:#2fe08a"><div class="inc-i"><svg viewBox="0 0 48 48"><circle cx="16" cy="18" r="6" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="32" cy="18" r="6" stroke="currentColor" stroke-width="3" fill="none"/><path d="M6 40c2-8 8-10 10-10s8 2 10 10M22 40c2-8 8-10 10-10s8 2 10 10" stroke="currentColor" stroke-width="3" fill="none"/></svg></div><b>Comunidad</b><span>Discord, ranking por balance real y el bias del equipo en cada sesión.</span></div>
+    <div class="inc-c rv" style="--c:#c06bff"><div class="inc-i"><svg viewBox="0 0 48 48"><path d="M6 14l18-8 18 8-18 8z" stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M14 18v12c0 3 4 6 10 6s10-3 10-6V18" stroke="currentColor" stroke-width="3" fill="none"/></svg></div><b>Cursos</b><span>Módulos en video: fundamentos, riesgo, psicología y fondeo.</span></div>
+    <div class="inc-c rv" style="--c:#ff4d5e"><div class="inc-i"><svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="24" rx="4" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="24" cy="22" r="5" fill="currentColor"/><path d="M16 42h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><b>Sesiones en vivo</b><span>Ves el mercado con el equipo, preguntas en el momento y revisas tus trades.</span></div>
+  </div>
+</div></section>
+<section class="s" id="reto"><div class="w">
+  <div class="cab rv"><span class="k">Retos · ALPHA KAIZEN WAY</span><h2>$100 → $15,000.<br>Con disciplina.</h2><p>Kaizen es mejorar un poco cada día. Aquí se mide: cada día tiene un objetivo, cada semana una meta y cada mes un hito.</p></div>
+  <div class="pasos">
+    <div class="paso rv"><span class="n">PASO 1</span><h3>Doblar cada semana</h3><div class="r">$100 → $1,000</div><p>Cuatro semanas con una meta clara cada semana y un objetivo para cada día.</p><ul><li>Objetivo del día, siempre a la vista</li><li>Tu avance semana por semana</li><li>Cartas al cumplir</li></ul></div>
+    <div class="paso rv"><span class="n">PASO 2</span><h3>Construir la cuenta</h3><div class="r">$1,000 → $15,000</div><p>Se desbloquea al llegar a $1,000. Reglas fijas que la app te recuerda en cada trade.</p><ul><li>Riesgo calculado por la app</li><li>Tus reglas en cada registro</li><li>Hitos rumbo a $15,000</li></ul></div>
+    <div class="paso lock rv"><span class="n">LA META</span><h3>Cuenta live</h3><div class="r">$15,000</div><p>Seis meses de semanas limpias. La app lleva el camino semana por semana para que nunca pierdas de vista dónde vas.</p><ul><li>26 semanas, mes por mes</li><li>Hitos en $1k, $5k, $10k y $15k</li><li>Fecha meta desde el día que empiezas</li></ul></div>
+  </div>
+  <div class="sem rv"><div><span>SEMANA 1</span><b>$100 → $200</b></div><div><span>SEMANA 2</span><b>$200 → $400</b></div><div><span>SEMANA 3</span><b>$400 → $800</b></div><div><span>SEMANA 4</span><b>$800 → $1,000</b></div></div>
+</div></section>
+<section class="s" style="padding-top:20px"><div class="w">
+  <div class="cab rv"><span class="k">6 meses</span><h2>El camino, semana por semana.</h2><p>Eliges el día en que empiezas y la app arma tus 26 semanas. Siempre sabes en qué semana del mes vas.</p></div>
+  <div class="meses rv" id="meses"></div>
+  <div class="riel rv"><i></i><span style="left:6.67%"><b></b><em>$1,000</em></span><span style="left:33.3%"><b></b><em>$5,000</em></span><span style="left:66.7%"><b></b><em>$10,000</em></span><span style="left:100%"><b></b><em>$15,000</em></span></div>
+</div></section>
+<section class="s fg" id="forja"><div class="fg-bg" id="fgBg"></div><div class="fg-vel"></div><canvas id="fgCv"></canvas><div class="w">
+  <div class="cab rv"><span class="k">La forja · El camino</span><h2>Tu reto tiene historia.</h2><p>Al empezar ALPHA KAIZEN WAY llega el herrero y te entrega tu katana. Al tocarla se enciende de un color, y ese color dice qué tipo de trader eres.</p></div>
+  <div class="fg-kat rv" id="fgKat" title="Tócala"><svg viewBox="0 0 1000 120"><defs><linearGradient id="fga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset=".45" stop-color="#9aa6b4"/><stop offset=".55" stop-color="#5b6573"/><stop offset="1" stop-color="#cfd7e1"/></linearGradient><linearGradient id="fgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--kc2)"/><stop offset=".5" style="stop-color:var(--kc)"/><stop offset="1" style="stop-color:var(--kc2)"/></linearGradient><clipPath id="fgh"><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z"/></clipPath><pattern id="fgi" width="22" height="26" patternUnits="userSpaceOnUse"><rect width="22" height="26" fill="#120a0a"/><path d="M0 0 L11 13 L0 26 M22 0 L11 13 L22 26" stroke="#7a1626" stroke-width="5"/><circle cx="11" cy="13" r="2.5" fill="#d9b25b"/></pattern></defs><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z" fill="url(#fga)"/><g clip-path="url(#fgh)"><rect class="fg-col" x="300" y="30" width="700" height="50" fill="url(#fgc)"/></g><path d="M310 64 Q340 58 370 64 T430 63 T490 62 T550 61 T610 60 T670 59 T730 58 T790 57 T850 56 T910 56 T960 58" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/><rect x="276" y="44" width="26" height="34" rx="4" fill="#c9a24e"/><ellipse cx="270" cy="61" rx="10" ry="44" fill="#1a1d24" stroke="#c9a24e" stroke-width="3"/><rect x="40" y="46" width="222" height="30" rx="12" fill="url(#fgi)"/><rect x="30" y="44" width="18" height="34" rx="6" fill="#c9a24e"/></svg><span id="fgNom">Toca la hoja</span></div>
+  <div class="fg-cols rv" id="fgCols"></div>
+</div></section>
+
 
 
 
@@ -220,25 +284,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
   <div class="feats rv" style="grid-template-columns:repeat(3,1fr)"><div><b>Ranking</b><span>Por balance real de Exness, sin inventos</span></div><div><b>Discord NORTHPOINT</b><span>Análisis, anuncios, lives y trades del equipo</span></div><div><b>Análisis a la mesa</b><span>Lo que el equipo publica en Discord aparece en el Bias</span></div></div>
   <div class="feats rv" style="grid-template-columns:repeat(3,1fr)"><div><b>Mercado en vivo</b><span>Calendario económico, noticias y lives</span></div><div><b>Volatilidad por hora</b><span>Cuándo se mueve el NQ y el ES</span></div><div><b>Revisión del día</b><span>Lo que dijo cada uno contra lo que operó</span></div></div>
 </div></section>
-<section class="s" id="reto"><div class="w">
-  <div class="cab rv"><span class="k">Retos · ALPHA KAIZEN WAY</span><h2>$100 → $15,000.<br>Con disciplina.</h2><p>Kaizen es mejorar un poco cada día. Aquí se mide: cada día tiene un objetivo, cada semana una meta y cada mes un hito.</p></div>
-  <div class="pasos">
-    <div class="paso rv"><span class="n">PASO 1</span><h3>Doblar cada semana</h3><div class="r">$100 → $1,000</div><p>Cuatro semanas con una meta clara cada semana y un objetivo para cada día.</p><ul><li>Objetivo del día, siempre a la vista</li><li>Tu avance semana por semana</li><li>Cartas al cumplir</li></ul></div>
-    <div class="paso rv"><span class="n">PASO 2</span><h3>Construir la cuenta</h3><div class="r">$1,000 → $15,000</div><p>Se desbloquea al llegar a $1,000. Reglas fijas que la app te recuerda en cada trade.</p><ul><li>Riesgo calculado por la app</li><li>Tus reglas en cada registro</li><li>Hitos rumbo a $15,000</li></ul></div>
-    <div class="paso lock rv"><span class="n">LA META</span><h3>Cuenta live</h3><div class="r">$15,000</div><p>Seis meses de semanas limpias. La app lleva el camino semana por semana para que nunca pierdas de vista dónde vas.</p><ul><li>26 semanas, mes por mes</li><li>Hitos en $1k, $5k, $10k y $15k</li><li>Fecha meta desde el día que empiezas</li></ul></div>
-  </div>
-  <div class="sem rv"><div><span>SEMANA 1</span><b>$100 → $200</b></div><div><span>SEMANA 2</span><b>$200 → $400</b></div><div><span>SEMANA 3</span><b>$400 → $800</b></div><div><span>SEMANA 4</span><b>$800 → $1,000</b></div></div>
-</div></section>
-<section class="s" style="padding-top:20px"><div class="w">
-  <div class="cab rv"><span class="k">6 meses</span><h2>El camino, semana por semana.</h2><p>Eliges el día en que empiezas y la app arma tus 26 semanas. Siempre sabes en qué semana del mes vas.</p></div>
-  <div class="meses rv" id="meses"></div>
-  <div class="riel rv"><i></i><span style="left:6.67%"><b></b><em>$1,000</em></span><span style="left:33.3%"><b></b><em>$5,000</em></span><span style="left:66.7%"><b></b><em>$10,000</em></span><span style="left:100%"><b></b><em>$15,000</em></span></div>
-</div></section>
-<section class="s fg" id="forja"><div class="fg-bg" id="fgBg"></div><div class="fg-vel"></div><canvas id="fgCv"></canvas><div class="w">
-  <div class="cab rv"><span class="k">La forja · El camino</span><h2>Tu reto tiene historia.</h2><p>Al empezar ALPHA KAIZEN WAY llega el herrero y te entrega tu katana. Al tocarla se enciende de un color, y ese color dice qué tipo de trader eres.</p></div>
-  <div class="fg-kat rv" id="fgKat" title="Tócala"><svg viewBox="0 0 1000 120"><defs><linearGradient id="fga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset=".45" stop-color="#9aa6b4"/><stop offset=".55" stop-color="#5b6573"/><stop offset="1" stop-color="#cfd7e1"/></linearGradient><linearGradient id="fgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--kc2)"/><stop offset=".5" style="stop-color:var(--kc)"/><stop offset="1" style="stop-color:var(--kc2)"/></linearGradient><clipPath id="fgh"><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z"/></clipPath><pattern id="fgi" width="22" height="26" patternUnits="userSpaceOnUse"><rect width="22" height="26" fill="#120a0a"/><path d="M0 0 L11 13 L0 26 M22 0 L11 13 L22 26" stroke="#7a1626" stroke-width="5"/><circle cx="11" cy="13" r="2.5" fill="#d9b25b"/></pattern></defs><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z" fill="url(#fga)"/><g clip-path="url(#fgh)"><rect class="fg-col" x="300" y="30" width="700" height="50" fill="url(#fgc)"/></g><path d="M310 64 Q340 58 370 64 T430 63 T490 62 T550 61 T610 60 T670 59 T730 58 T790 57 T850 56 T910 56 T960 58" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/><rect x="276" y="44" width="26" height="34" rx="4" fill="#c9a24e"/><ellipse cx="270" cy="61" rx="10" ry="44" fill="#1a1d24" stroke="#c9a24e" stroke-width="3"/><rect x="40" y="46" width="222" height="30" rx="12" fill="url(#fgi)"/><rect x="30" y="44" width="18" height="34" rx="6" fill="#c9a24e"/></svg><span id="fgNom">Toca la hoja</span></div>
-  <div class="fg-cols rv" id="fgCols"></div>
-</div></section>
+
 <section class="s" id="cartas"><div class="w">
   <div class="cab rv"><span class="k">Premios</span><h2>La disciplina se colecciona.</h2><p>Dentro de los retos, cada objetivo cumplido te da una carta. 30 en 4 rarezas.</p></div>
   <div class="gal" id="gal"></div>
@@ -293,7 +339,7 @@ const RC = { comun: ['Común', '#9fb3c8'], rara: ['Rara', '#4fa3ff'], epica: ['�
 const NOM = { 'spec-pride': 'Orgullo', 'spec-greed': 'Codicia', 'spec-wrath': 'Ira', 'spec-envy': 'Envidia', 'spec-lust': 'Deseo', 'spec-gluttony': 'Exceso', 'spec-sloth': 'Pereza' };
 const nom = k => NOM[k] || k.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 const carta = ([k, r], inf) => `<div class="cc" style="--rc:${RC[r][1]}"><div style="background-image:url(img/cartas/${k}.jpg)"></div><i></i>${inf ? `<div class="inf"><span>${RC[r][0]}</span><b>${nom(k)}</b></div>` : ''}</div>`;
-document.getElementById('flota').innerHTML = [0, 1, 2].map(f => { const L = CARTAS.slice(f * 10, f * 10 + 10).map(c => carta(c)).join(''); return `<div class="f${f}"><div class="tira">${L}${L}</div></div>`; }).join('');
+if (document.getElementById('flota')) document.getElementById('flota').innerHTML = [0, 1, 2].map(f => { const L = CARTAS.slice(f * 10, f * 10 + 10).map(c => carta(c)).join(''); return `<div class="f${f}"><div class="tira">${L}${L}</div></div>`; }).join('');
 const destacadas = ['spec-wrath', 'summit', 'sakura-rain', 'spec-pride', 'the-duel', 'first-light', 'cosmos-walk', 'spec-envy', 'wanderer', 'above-clouds', 'spec-greed', 'seventh-fall'];
 document.getElementById('gal').innerHTML = destacadas.map(k => carta(CARTAS.find(c => c[0] === k), true)).join('');
 document.getElementById('meses').innerHTML = ['MES 1', 'MES 2', 'MES 3', 'MES 4', 'MES 5', 'MES 6'].map(m => `<div><b>${m}</b>${'<i></i>'.repeat(4)}</div>`).join('');
@@ -350,6 +396,25 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
 <script>
 (() => { const ch = document.getElementById('curChat'); if (!ch) return; const M = [['ana', '¿Qué estás vigilando hoy?'], ['luis', 'Registrado en mi journal ✓'], ['mau', 'Gracias, me quedó clarísimo'], ['sofi', '¿Puedes repetir lo del riesgo?'], ['dani', 'Hoy esperé y no forcé nada'], ['emi', 'Primera semana completa'], ['vale', '¿A qué hora es la revisión?']]; let i = 0;
   setInterval(() => { const [u, t] = M[i++ % M.length], d = document.createElement('div'); d.innerHTML = `<b>${u}</b>${t}`; ch.appendChild(d); while (ch.children.length > 6) ch.firstChild.remove(); }, 1800); })();
+</script>
+<script>
+(() => {
+  // fondo fijo que cambia de capítulo según la sección + fuego global
+  const F = document.createElement('div'); F.id = 'epFondo'; document.body.prepend(F); const cv = document.createElement('canvas'); cv.id = 'epFuego'; document.body.prepend(cv);
+  const secs = [...document.querySelectorAll('section.s')]; const ioF = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const k = secs.indexOf(e.target); F.style.backgroundImage = `url(img/camino/${(k % 6) + 1}.jpg)`; } }), { threshold: .35 }); secs.forEach(x => ioF.observe(x));
+  const g = cv.getContext('2d'); let W, H, P = []; const tam = () => { W = cv.width = innerWidth; H = cv.height = innerHeight; }; tam(); addEventListener('resize', tam);
+  const nu = ini => ({ x: Math.random() * W, y: ini ? Math.random() * H : H + 10, r: .6 + Math.random() * 2.2, vy: -(.5 + Math.random() * 1.8), vx: (Math.random() - .5) * .8, a: Math.random() * 6, c: ['#ff3b1f', '#ff8a1e', '#ffd25a'][Math.random() * 3 | 0] });
+  for (let i = 0; i < 110; i++) P.push(nu(true));
+  const an = t => { g.clearRect(0, 0, W, H); g.globalCompositeOperation = 'lighter'; P.forEach((p, i) => { p.x += p.vx + Math.sin(t / 700 + p.a) * .5; p.y += p.vy; const al = Math.max(0, Math.min(1, p.y / H)) * (.55 + Math.sin(t / 120 + p.a) * .35); g.globalAlpha = al; g.fillStyle = p.c; g.shadowColor = p.c; g.shadowBlur = 12; g.beginPath(); g.arc(p.x, p.y, p.r, 0, 7); g.fill(); if (p.y < -10) P[i] = nu(false); }); requestAnimationFrame(an); }; requestAnimationFrame(an);
+  // hero: capítulos con fundido
+  const bg = document.getElementById('epBg'), L = bg.querySelectorAll('i'), caps = document.getElementById('epCaps'); let k = 0, cur = 0; L[0].classList.add('on');
+  caps.innerHTML = [1, 2, 3, 4, 5, 6].map(n => `<button type="button" aria-label="Capítulo ${n}" data-k="${n - 1}"></button>`).join('');
+  const ir = n => { k = n; const nxt = L[1 - cur]; nxt.style.backgroundImage = `url(img/camino/${n + 1}.jpg)`; nxt.style.animation = 'none'; void nxt.offsetWidth; nxt.style.animation = ''; nxt.classList.add('on'); L[cur].classList.remove('on'); cur = 1 - cur; caps.querySelectorAll('button').forEach((b, j) => b.classList.toggle('on', j === n)); };
+  caps.querySelectorAll('button').forEach(b => b.onclick = () => { ir(+b.dataset.k); clearInterval(tm); tm = setInterval(() => ir((k + 1) % 6), 6500); });
+  caps.firstChild.classList.add('on'); let tm = setInterval(() => ir((k + 1) % 6), 6500);
+  // tarjetas con giro 3D al mover el mouse
+  document.querySelectorAll('.inc-c,.paso,.plan,.cur-c,.tec div').forEach(c => { c.addEventListener('mousemove', e => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = `perspective(900px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateZ(10px)`; }); c.addEventListener('mouseleave', () => { c.style.transform = ''; }); });
+})();
 </script>
 </body>
 </html>
