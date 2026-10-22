@@ -186,24 +186,53 @@ body{background:#05050a}
 .paso,.plan,.cur-c,.tec div,.box,.feats>div{transition:transform .25s ease,box-shadow .3s!important}
 .plan.top{border-color:var(--fu2)!important;background:radial-gradient(500px 240px at 50% -20%,rgba(255,120,30,.22),transparent 70%),var(--pan)!important;box-shadow:0 30px 80px -30px rgba(255,100,30,.6)!important}
 @media(max-width:900px){.inc{grid-template-columns:1fr 1fr}} @media(max-width:600px){.inc{grid-template-columns:1fr}}
+
+/* ===== PRO (23-oct-2026): hero con la app real, sin fondos ilustrados ===== */
+#epFondo,#epFuego{display:none!important}
+.hp{position:relative;overflow:hidden;padding:150px 0 90px} .hp-glow{position:absolute;left:50%;top:-20%;width:1400px;height:900px;transform:translateX(-30%);background:radial-gradient(40% 40% at 60% 40%,rgba(255,120,30,.16),transparent 70%),radial-gradient(35% 35% at 30% 60%,rgba(79,195,255,.10),transparent 70%);pointer-events:none}
+.hp-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;-webkit-mask:radial-gradient(70% 60% at 50% 30%,#000,transparent);mask:radial-gradient(70% 60% at 50% 30%,#000,transparent);pointer-events:none}
+.hp-w{position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;max-width:1280px}
+.hp-k{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:99px;border:1px solid rgba(255,140,40,.35);background:rgba(255,120,30,.08);font:800 11px var(--mono);letter-spacing:.18em;color:#ffb86b} .hp-k i{width:7px;height:7px;border-radius:50%;background:#ff8a1e;box-shadow:0 0 10px #ff8a1e}
+.hp h1{margin:22px 0 18px;font:800 clamp(38px,4.6vw,64px)/1.05 Inter,sans-serif;letter-spacing:-.035em;color:#fff} .hp h1 em{font-style:normal;background:linear-gradient(180deg,#ffe2a8,#ff8a1e);-webkit-background-clip:text;background-clip:text;color:transparent} .hp h1 span{display:block;margin-top:10px;font-size:.48em;font-weight:700;color:#9aabbf;letter-spacing:-.02em}
+.hp-tx>p{margin:0 0 30px;max-width:560px;color:#b6c2d0;font-size:18px;line-height:1.6} .hp .ctas{justify-content:flex-start}
+.hp-ok{display:flex;flex-wrap:wrap;gap:18px;margin:22px 0 0;padding:0;list-style:none;color:#8697ab;font-size:13.5px} .hp-ok li:before{content:"✓";margin-right:7px;color:#2fe08a;font-weight:900}
+.hp-vis{position:relative;perspective:1600px} .hp-win{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#0b111a;box-shadow:0 50px 120px -30px rgba(0,0,0,.9),0 0 0 1px rgba(0,0,0,.5),0 30px 80px -40px rgba(255,120,30,.35);transform:rotateY(-12deg) rotateX(4deg);transform-origin:left center;transition:transform .8s cubic-bezier(.16,1,.3,1)} .hp-vis:hover .hp-win{transform:rotateY(-4deg) rotateX(1deg)}
+.hp-win img{display:block;width:100%} .hp-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#121822;border-bottom:1px solid rgba(255,255,255,.06)} .hp-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57} .hp-bar i:nth-child(2){background:#febc2e} .hp-bar i:nth-child(3){background:#28c840} .hp-bar span{margin-left:12px;font:700 11px var(--mono);letter-spacing:.14em;color:#6f7f93}
+.hp-flo{position:absolute;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.9);animation:hpFlo 6s ease-in-out infinite} .hp-flo img{display:block;width:100%}
+.hp-flo.f1{left:-10%;bottom:-14%;width:62%} .hp-flo.f2{right:-4%;top:-9%;padding:14px 16px;background:rgba(11,17,26,.92);backdrop-filter:blur(10px);animation-delay:-3s} .hp-flo.f2 b{display:block;font:900 22px var(--mono);color:#2fe08a} .hp-flo.f2 span{font-size:11.5px;color:#8697ab} .hp-flo.f2 svg{display:block;width:120px;height:34px;margin-top:6px}
+@keyframes hpFlo{50%{transform:translateY(-10px)}}
+.ga{margin-top:40px} .ga-tabs{display:flex;justify-content:center;gap:6px;margin-bottom:18px} .ga-tabs button{padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:transparent;color:#9aabbf;font:700 13px Inter,sans-serif;cursor:pointer;transition:all .2s} .ga-tabs button.on{border-color:#ff8a1e;color:#fff;background:rgba(255,120,30,.12)}
+.ga-win{max-width:1100px;margin:0 auto;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 50px 120px -40px rgba(0,0,0,.9)} .ga-img{position:relative;aspect-ratio:16/10;background:#0b111a} .ga-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .35s} .ga-img img.out{opacity:0}
+.ga-cap{max-width:640px;margin:18px auto 0;text-align:center;color:#9aabbf}
+@media(max-width:960px){.hp-w{grid-template-columns:1fr}.hp-win{transform:none}.hp-flo.f1{left:2%;bottom:-10%}.hp-flo.f2{right:2%}}
 </style>
 </head>
 <body>
-<nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#reto">El reto</a><a href="#incluye">Qué incluye</a><a href="#enaccion">La app</a><a href="#cursos">Cursos</a><a href="#planes">Planes</a></div><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
+<nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#reto">El reto</a><a href="#incluye">Qué incluye</a><a href="#app">La app</a><a href="#cursos">Cursos</a><a href="#planes">Planes</a></div><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
 
-<header class="hero ep">
-  <div class="ep-bg" id="epBg"><i style="background-image:url(img/camino/1.jpg)"></i><i></i></div><div class="ep-vela"></div><div class="ep-humo"></div>
-  <div class="w">
-    <span class="k ep-k">NORTHPOINT PRESENTA</span>
-    <h1 class="ep-h1"><span>ALPHA</span> <span>KAIZEN</span> <span>WAY</span></h1>
-    <div class="ep-meta"><b>$100</b><i>⟶</i><b>$15,000</b></div>
-    <p class="sub">Un camino de 6 meses. Recibes tu katana, la app registra cada trade por ti y caminas con una comunidad, cursos y sesiones en vivo. <strong>No caminas solo.</strong></p>
-    <div class="ctas"><a href="#planes" class="btn pri fuego"><span>EMPIEZA EL CAMINO</span></a><a href="#incluye" class="btn ep-sec">Qué incluye</a></div>
-    <small>Mac y Windows · 7 días gratis</small>
-    <div class="ep-caps" id="epCaps"></div>
+<header class="hp">
+  <div class="hp-glow"></div><div class="hp-grid"></div>
+  <div class="w hp-w">
+    <div class="hp-tx">
+      <span class="hp-k"><i></i>ALPHA KAIZEN WAY · por NORTHPOINT</span>
+      <h1>De <em>$100</em> a <em>$15,000</em> en 6 meses.<br><span>Con método, con app y con equipo.</span></h1>
+      <p>El reto de NORTHPOINT: una meta para cada día, una app que registra tus trades por ti, y una comunidad con cursos y sesiones en vivo que te acompaña todo el camino.</p>
+      <div class="ctas"><a href="#planes" class="btn pri">Empieza el reto</a><a href="#app" class="btn">Ver la app</a></div>
+      <ul class="hp-ok"><li>7 días gratis</li><li>Mac y Windows</li><li>Cancela cuando quieras</li></ul>
+    </div>
+    <div class="hp-vis">
+      <div class="hp-win"><div class="hp-bar"><i></i><i></i><i></i><span>NORTHPOINT</span></div><img src="img/app/log.jpg" alt="NORTHPOINT · Log trade" loading="eager"></div>
+      <div class="hp-flo f1"><img src="img/app/katana.jpg" alt="Tu katana y tus formas"></div>
+      <div class="hp-flo f2"><b>+17.86R</b><span>Octubre · 20 trades</span><svg viewBox="0 0 120 34"><polyline points="0,30 15,26 30,28 45,20 60,22 75,14 90,16 105,8 120,4" fill="none" stroke="#2fe08a" stroke-width="2.5"/></svg></div>
+    </div>
   </div>
-  <div class="baja">BAJA</div>
 </header>
+<section class="s" id="app"><div class="w">
+  <div class="cab rv"><span class="k">La app</span><h2>Así se ve por dentro.</h2><p>Todo tu reto en una sola app: el registro de cada trade, tus números, tu calendario y tu avance.</p></div>
+  <div class="ga rv"><div class="ga-tabs" id="gaTabs"><button type="button" class="on" data-g="log">Log trade</button><button type="button" data-g="dash">Dashboard</button><button type="button" data-g="cal">Calendario</button></div>
+    <div class="ga-win"><div class="hp-bar"><i></i><i></i><i></i><span id="gaTit">Log trade</span></div><div class="ga-img"><img id="gaImg" src="img/app/log.jpg" alt="NORTHPOINT"></div></div>
+    <div class="ga-cap" id="gaCap">Detecta tus trades, te pide emociones, motivo y captura, y te dice qué emociones te hacen ganar.</div></div>
+</div></section>
 <section class="s" id="incluye"><div class="w">
   <div class="cab rv"><span class="k">Todo el apoyo</span><h2>No es una app.<br>Es un camino completo.</h2><p>ALPHA KAIZEN WAY junta todo lo que necesitas para llegar: el reto, la herramienta, la gente y el entrenamiento.</p></div>
   <div class="inc">
@@ -229,7 +258,7 @@ body{background:#05050a}
   <div class="meses rv" id="meses"></div>
   <div class="riel rv"><i></i><span style="left:6.67%"><b></b><em>$1,000</em></span><span style="left:33.3%"><b></b><em>$5,000</em></span><span style="left:66.7%"><b></b><em>$10,000</em></span><span style="left:100%"><b></b><em>$15,000</em></span></div>
 </div></section>
-<section class="s fg" id="forja"><div class="fg-bg" id="fgBg"></div><div class="fg-vel"></div><canvas id="fgCv"></canvas><div class="w">
+<section class="s fg" id="forja"><div class="fg-bg" id="fgBg" style="display:none"></div><div class="fg-vel"></div><canvas id="fgCv"></canvas><div class="w">
   <div class="cab rv"><span class="k">La forja · El camino</span><h2>Tu reto tiene historia.</h2><p>Al empezar ALPHA KAIZEN WAY llega el herrero y te entrega tu katana. Al tocarla se enciende de un color, y ese color dice qué tipo de trader eres.</p></div>
   <div class="fg-kat rv" id="fgKat" title="Tócala"><svg viewBox="0 0 1000 120"><defs><linearGradient id="fga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset=".45" stop-color="#9aa6b4"/><stop offset=".55" stop-color="#5b6573"/><stop offset="1" stop-color="#cfd7e1"/></linearGradient><linearGradient id="fgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--kc2)"/><stop offset=".5" style="stop-color:var(--kc)"/><stop offset="1" style="stop-color:var(--kc2)"/></linearGradient><clipPath id="fgh"><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z"/></clipPath><pattern id="fgi" width="22" height="26" patternUnits="userSpaceOnUse"><rect width="22" height="26" fill="#120a0a"/><path d="M0 0 L11 13 L0 26 M22 0 L11 13 L22 26" stroke="#7a1626" stroke-width="5"/><circle cx="11" cy="13" r="2.5" fill="#d9b25b"/></pattern></defs><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z" fill="url(#fga)"/><g clip-path="url(#fgh)"><rect class="fg-col" x="300" y="30" width="700" height="50" fill="url(#fgc)"/></g><path d="M310 64 Q340 58 370 64 T430 63 T490 62 T550 61 T610 60 T670 59 T730 58 T790 57 T850 56 T910 56 T960 58" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/><rect x="276" y="44" width="26" height="34" rx="4" fill="#c9a24e"/><ellipse cx="270" cy="61" rx="10" ry="44" fill="#1a1d24" stroke="#c9a24e" stroke-width="3"/><rect x="40" y="46" width="222" height="30" rx="12" fill="url(#fgi)"/><rect x="30" y="44" width="18" height="34" rx="6" fill="#c9a24e"/></svg><span id="fgNom">Toca la hoja</span></div>
   <div class="fg-cols rv" id="fgCols"></div>
@@ -406,15 +435,24 @@ const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.ge
   const nu = ini => ({ x: Math.random() * W, y: ini ? Math.random() * H : H + 10, r: .6 + Math.random() * 2.2, vy: -(.5 + Math.random() * 1.8), vx: (Math.random() - .5) * .8, a: Math.random() * 6, c: ['#ff3b1f', '#ff8a1e', '#ffd25a'][Math.random() * 3 | 0] });
   for (let i = 0; i < 110; i++) P.push(nu(true));
   const an = t => { g.clearRect(0, 0, W, H); g.globalCompositeOperation = 'lighter'; P.forEach((p, i) => { p.x += p.vx + Math.sin(t / 700 + p.a) * .5; p.y += p.vy; const al = Math.max(0, Math.min(1, p.y / H)) * (.55 + Math.sin(t / 120 + p.a) * .35); g.globalAlpha = al; g.fillStyle = p.c; g.shadowColor = p.c; g.shadowBlur = 12; g.beginPath(); g.arc(p.x, p.y, p.r, 0, 7); g.fill(); if (p.y < -10) P[i] = nu(false); }); requestAnimationFrame(an); }; requestAnimationFrame(an);
+  try {
   // hero: capítulos con fundido
   const bg = document.getElementById('epBg'), L = bg.querySelectorAll('i'), caps = document.getElementById('epCaps'); let k = 0, cur = 0; L[0].classList.add('on');
   caps.innerHTML = [1, 2, 3, 4, 5, 6].map(n => `<button type="button" aria-label="Capítulo ${n}" data-k="${n - 1}"></button>`).join('');
   const ir = n => { k = n; const nxt = L[1 - cur]; nxt.style.backgroundImage = `url(img/camino/${n + 1}.jpg)`; nxt.style.animation = 'none'; void nxt.offsetWidth; nxt.style.animation = ''; nxt.classList.add('on'); L[cur].classList.remove('on'); cur = 1 - cur; caps.querySelectorAll('button').forEach((b, j) => b.classList.toggle('on', j === n)); };
   caps.querySelectorAll('button').forEach(b => b.onclick = () => { ir(+b.dataset.k); clearInterval(tm); tm = setInterval(() => ir((k + 1) % 6), 6500); });
   caps.firstChild.classList.add('on'); let tm = setInterval(() => ir((k + 1) % 6), 6500);
+  } catch (_) {}
   // tarjetas con giro 3D al mover el mouse
   document.querySelectorAll('.inc-c,.paso,.plan,.cur-c,.tec div').forEach(c => { c.addEventListener('mousemove', e => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = `perspective(900px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateZ(10px)`; }); c.addEventListener('mouseleave', () => { c.style.transform = ''; }); });
 })();
+</script>
+<script>
+(() => { const T = { log: ['Log trade', 'Detecta tus trades, te pide emociones, motivo y captura, y te dice qué emociones te hacen ganar.'], dash: ['Dashboard', 'Tus números del mes: R, win rate, expectancy, curva y disciplina, sin hacer cuentas.'], cal: ['Calendario', 'Cada día en verde o en rojo, con sus trades. Ves tu mes de un vistazo.'] };
+  const img = document.getElementById('gaImg'); if (!img) return; let tm, k = 0; const ks = Object.keys(T);
+  const ir = g => { document.querySelectorAll('#gaTabs button').forEach(b => b.classList.toggle('on', b.dataset.g === g)); img.classList.add('out'); setTimeout(() => { img.src = 'img/app/' + g + '.jpg'; img.onload = () => img.classList.remove('out'); }, 250); document.getElementById('gaTit').textContent = T[g][0]; document.getElementById('gaCap').textContent = T[g][1]; k = ks.indexOf(g); };
+  document.querySelectorAll('#gaTabs button').forEach(b => b.onclick = () => { ir(b.dataset.g); clearInterval(tm); tm = setInterval(() => ir(ks[(k + 1) % ks.length]), 7000); });
+  tm = setInterval(() => ir(ks[(k + 1) % ks.length]), 7000); })();
 </script>
 </body>
 </html>
