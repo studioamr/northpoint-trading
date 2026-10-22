@@ -116,6 +116,16 @@ nav .lk{display:flex;gap:26px;font-size:14px;color:var(--tx2)} nav .lk a:hover{c
 footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);font-size:12.5px} footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:960px){nav .lk{display:none}.pasos,.planes,.g2{grid-template-columns:1fr}.reglas,.feats{grid-template-columns:1fr 1fr}.gal{grid-template-columns:repeat(3,1fr)}.meses{grid-template-columns:repeat(3,1fr)}.sem{grid-template-columns:1fr 1fr}.ses{grid-template-columns:1fr}.arena{height:240px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.fg{overflow:hidden;--kc:#ff3b2f;--kc2:#ffb199} .fg-bg{position:absolute;inset:0;background:center/cover no-repeat;opacity:.8;transition:background-image 1s;animation:fgZoom 40s ease-in-out infinite alternate} @keyframes fgZoom{to{transform:scale(1.08)}}
+.fg-vel{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(4,7,12,.35) 25%,rgba(4,7,12,.45) 75%,var(--bg) 100%)} #fgCv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none} .fg .w{position:relative}
+.fg-kat{position:relative;max-width:880px;margin:30px auto 0;cursor:pointer;text-align:center} .fg-kat svg{width:100%;display:block;filter:drop-shadow(0 0 14px var(--kc)) drop-shadow(0 0 50px var(--kc));transition:filter .6s;animation:fgFl 5s ease-in-out infinite} @keyframes fgFl{50%{transform:translateY(-8px)}}
+.fg-col{transform-box:view-box;transform-origin:300px 50%;transform:scaleX(1);transition:transform 1.4s cubic-bezier(.6,0,.2,1)} .fg-kat.sw .fg-col{transform:scaleX(0);transition:none}
+.fg-kat span{display:block;margin-top:14px;font:900 12px var(--mono);letter-spacing:.4em;color:var(--kc2);text-transform:uppercase;text-shadow:0 0 18px var(--kc)}
+.fg-cols{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:22px} .fg-cols button{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.18);background:var(--c);cursor:pointer;box-shadow:0 0 14px var(--c);transition:transform .2s} .fg-cols button:hover,.fg-cols button.on{transform:scale(1.25);border-color:#fff}
+.fg-tres{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px} .fg-tres div{padding:22px;border-radius:16px;border:1px solid var(--line);background:rgba(11,20,32,.75);backdrop-filter:blur(6px)} .fg-tres b{display:block;font-size:17px;margin-bottom:6px} .fg-tres span{color:var(--tx2);font-size:14px;line-height:1.55}
+.fg-caps{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:22px} .fg-caps button{position:relative;aspect-ratio:16/10;border-radius:10px;border:1px solid var(--line);background:center/cover;cursor:pointer;overflow:hidden;opacity:.6;transition:opacity .3s,transform .3s} .fg-caps button:hover,.fg-caps button.on{opacity:1;transform:translateY(-3px);border-color:var(--kc)} .fg-caps em{position:absolute;left:6px;bottom:5px;font:800 9px var(--mono);letter-spacing:.12em;color:#fff;text-shadow:0 1px 4px #000;font-style:normal}
+@media(max-width:800px){.fg-tres{grid-template-columns:1fr}.fg-caps{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
@@ -174,6 +184,17 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);fon
   <div class="meses rv" id="meses"></div>
   <div class="riel rv"><i></i><span style="left:6.67%"><b></b><em>$1,000</em></span><span style="left:33.3%"><b></b><em>$5,000</em></span><span style="left:66.7%"><b></b><em>$10,000</em></span><span style="left:100%"><b></b><em>$15,000</em></span></div>
 </div></section>
+<section class="s fg" id="forja"><div class="fg-bg" id="fgBg"></div><div class="fg-vel"></div><canvas id="fgCv"></canvas><div class="w">
+  <div class="cab rv"><span class="k">La forja · El camino</span><h2>Tu reto tiene historia.</h2><p>Al empezar ALPHA KAIZEN WAY llega el herrero y te entrega tu katana. Al tocarla se enciende de un color, y ese color dice qué tipo de trader eres.</p></div>
+  <div class="fg-kat rv" id="fgKat" title="Tócala"><svg viewBox="0 0 1000 120"><defs><linearGradient id="fga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset=".45" stop-color="#9aa6b4"/><stop offset=".55" stop-color="#5b6573"/><stop offset="1" stop-color="#cfd7e1"/></linearGradient><linearGradient id="fgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--kc2)"/><stop offset=".5" style="stop-color:var(--kc)"/><stop offset="1" style="stop-color:var(--kc2)"/></linearGradient><clipPath id="fgh"><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z"/></clipPath><pattern id="fgi" width="22" height="26" patternUnits="userSpaceOnUse"><rect width="22" height="26" fill="#120a0a"/><path d="M0 0 L11 13 L0 26 M22 0 L11 13 L22 26" stroke="#7a1626" stroke-width="5"/><circle cx="11" cy="13" r="2.5" fill="#d9b25b"/></pattern></defs><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z" fill="url(#fga)"/><g clip-path="url(#fgh)"><rect class="fg-col" x="300" y="30" width="700" height="50" fill="url(#fgc)"/></g><path d="M310 64 Q340 58 370 64 T430 63 T490 62 T550 61 T610 60 T670 59 T730 58 T790 57 T850 56 T910 56 T960 58" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/><rect x="276" y="44" width="26" height="34" rx="4" fill="#c9a24e"/><ellipse cx="270" cy="61" rx="10" ry="44" fill="#1a1d24" stroke="#c9a24e" stroke-width="3"/><rect x="40" y="46" width="222" height="30" rx="12" fill="url(#fgi)"/><rect x="30" y="44" width="18" height="34" rx="6" fill="#c9a24e"/></svg><span id="fgNom">Toca la hoja</span></div>
+  <div class="fg-cols rv" id="fgCols"></div>
+  <div class="fg-tres rv">
+    <div><b>8 colores</b><span>Del Carmesí del fuego a la Negra legendaria: 4% de probabilidad.</span></div>
+    <div><b>10 formas de respiración</b><span>Se despiertan con tu saldo, de $100 a $15,000. Cada una enseña una regla, y la hoja arde más fuerte.</span></div>
+    <div><b>6 capítulos animados</b><span>El fondo de la app cuenta tu historia: del bosque de demonios al amanecer en la cima.</span></div>
+  </div>
+  <div class="fg-caps rv" id="fgCaps"></div>
+</div></section>
 <section class="s" id="cartas"><div class="w">
   <div class="cab rv"><span class="k">Premios</span><h2>La disciplina se colecciona.</h2><p>Dentro de los retos, cada objetivo cumplido te da una carta. 30 en 4 rarezas.</p></div>
   <div class="gal" id="gal"></div>
@@ -228,6 +249,27 @@ const nav = document.getElementById('nav'); addEventListener('scroll', () => nav
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
 document.querySelectorAll('.rv').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 80 + 'ms'; io.observe(el); });
 const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.getElementById('dlWin'), b = document.getElementById('dlMac'); a.classList.add('pri'); b.classList.remove('pri'); a.parentNode.prepend(a); }
+</script>
+<script>
+(() => { const K = [['Carmesí', '#ff3b2f', '#ffb199', 'Fuego'], ['Azul marea', '#2f8cff', '#a8d4ff', 'Agua'], ['Ámbar trueno', '#ffc93d', '#fff1b8', 'Trueno'], ['Jade viento', '#2fe08a', '#b6ffd9', 'Viento'], ['Gris piedra', '#a7b4c2', '#eef3f8', 'Piedra'], ['Rosa niebla', '#ff6fd0', '#ffd0f1', 'Niebla'], ['Violeta luna', '#a46bff', '#e2d0ff', 'Luna'], ['Negra', '#16161c', '#ff2b4a', 'Legendaria']];
+  const C = ['La entrada', 'El entrenamiento', 'Las glicinas', 'La batalla', 'La montaña', 'El amanecer'], sec = document.getElementById('forja'), kat = document.getElementById('fgKat'), bg = document.getElementById('fgBg');
+  let i = 0, cap = 0;
+  const pon = n => { i = n; const [nm, c, c2, el] = K[n]; sec.style.setProperty('--kc', c); sec.style.setProperty('--kc2', c2); kat.classList.add('sw'); void kat.offsetWidth; kat.classList.remove('sw'); document.getElementById('fgNom').textContent = 'Katana ' + nm + ' · ' + el; document.querySelectorAll('#fgCols button').forEach((b, k) => b.classList.toggle('on', k === n)); };
+  document.getElementById('fgCols').innerHTML = K.map((k, n) => `<button type="button" style="--c:${k[1]}" title="${k[0]}" data-n="${n}"></button>`).join('');
+  document.querySelectorAll('#fgCols button').forEach(b => b.onclick = () => pon(+b.dataset.n));
+  kat.onclick = () => pon((i + 1) % K.length);
+  const ponCap = n => { cap = n; bg.style.backgroundImage = `url(img/camino/${n + 1}.jpg)`; document.querySelectorAll('#fgCaps button').forEach((b, k) => b.classList.toggle('on', k === n)); };
+  document.getElementById('fgCaps').innerHTML = C.map((c, n) => `<button type="button" style="background-image:url(img/camino/${n + 1}.jpg)" data-c="${n}"><em>${['I', 'II', 'III', 'IV', 'V', 'VI'][n]} · ${c}</em></button>`).join('');
+  document.querySelectorAll('#fgCaps button').forEach(b => b.onclick = () => ponCap(+b.dataset.c));
+  pon(0); ponCap(0); setInterval(() => ponCap((cap + 1) % 6), 6000);
+  const cv = document.getElementById('fgCv'), g = cv.getContext('2d'); let P = [];
+  const tam = () => { cv.width = sec.offsetWidth; cv.height = sec.offsetHeight; }; tam(); addEventListener('resize', tam);
+  const nuevo = ini => ({ x: Math.random() * cv.width, y: ini ? Math.random() * cv.height : cv.height + 10, r: .8 + Math.random() * 2.2, vy: -(.4 + Math.random() * 1.4), vx: (Math.random() - .5) * .6, a: Math.random() * 6 });
+  for (let k = 0; k < 90; k++) P.push(nuevo(true));
+  const anim = t => { g.clearRect(0, 0, cv.width, cv.height); const col = getComputedStyle(sec).getPropertyValue('--kc').trim() || '#ff3b2f'; g.fillStyle = col; g.shadowColor = col; g.shadowBlur = 10;
+    P.forEach((p, k) => { p.x += p.vx + Math.sin(t / 900 + p.a) * .4; p.y += p.vy; g.globalAlpha = Math.max(0, Math.min(1, p.y / cv.height)) * (.5 + Math.sin(t / 150 + p.a) * .3); g.beginPath(); g.arc(p.x, p.y, p.r, 0, 7); g.fill(); if (p.y < -10) P[k] = nuevo(false); });
+    requestAnimationFrame(anim); }; requestAnimationFrame(anim);
+})();
 </script>
 </body>
 </html>
