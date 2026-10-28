@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NORTHPOINT · El journal que registra tus trades por ti</title>
+<meta name="description" content="ALPHA KAIZEN WAY: el reto de 6 meses de NORTHPOINT. De $100 a $15,000 con tu journal, tu comunidad, cursos y sesiones en vivo. No caminas solo.">
+<meta name="theme-color" content="#04070c">
+<meta property="og:title" content="NORTHPOINT · ALPHA KAIZEN WAY">
+<meta property="og:description" content="Journal, comunidad, bias del equipo y mercado en vivo. Mejorar un poco cada día.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04070c;--pan:#0b1420;--line:#1a2839;--tx:#e8eef6;--tx2:#9aabbf;--tx3:#5d6e85;--az:#4fc3ff;--ve:#2fe08a;--ro:#ff4d5e;--oro:#ffc93d;--mor:#c06bff;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.w{max-width:1180px;margin:0 auto;padding:0 20px}
+.k{font:800 11px var(--mono);letter-spacing:.32em;text-transform:uppercase;color:var(--az)}
+.arco{background:linear-gradient(90deg,#ff6b9a,#ffd166,#2fe08a,#4fc3ff,#c06bff,#ff6b9a);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:arco 7s linear infinite}
+@keyframes arco{to{background-position:200% 0}}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.s{background:rgba(4,7,12,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font:800 14px var(--mono);letter-spacing:.24em} .logo i{font-style:normal;color:var(--az)}
+nav .lk{display:flex;gap:26px;font-size:14px;color:var(--tx2)} nav .lk a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font:800 13px var(--mono);letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);color:var(--tx);cursor:pointer;transition:transform .2s,box-shadow .2s;background:rgba(255,255,255,.03)}
+.btn:hover{transform:translateY(-2px)}
+.btn.pri{border:0;color:#04130b;background:linear-gradient(135deg,var(--az),var(--ve));box-shadow:0 0 40px -10px rgba(47,224,138,.8)}
+.btn.sm{padding:9px 16px;font-size:11px}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:120px 0 80px}
+.flota{position:absolute;inset:-12% -25%;opacity:.6;display:flex;flex-direction:column;justify-content:center;gap:28px;transform:perspective(1300px) rotateX(20deg) rotateZ(-9deg);pointer-events:none}
+.tira{display:flex;gap:24px;width:max-content;animation:corre 70s linear infinite} .f1 .tira{animation-duration:85s;animation-direction:reverse} .f2 .tira{animation-duration:100s}
+@keyframes corre{to{transform:translateX(-50%)}}
+.cc{position:relative;flex:none;width:170px;aspect-ratio:2/3;border-radius:14px;overflow:hidden;border:2px solid var(--rc);box-shadow:0 0 34px -6px var(--rc),0 24px 40px -20px #000}
+.cc>div{position:absolute;inset:0;background-size:cover;background-position:center}
+.cc>i{position:absolute;inset:0;mix-blend-mode:color-dodge;opacity:.55;background:linear-gradient(115deg,#ff5f6d 0%,#ffc371 14%,#f3f7a1 28%,#7af0c8 42%,#65a8ff 56%,#c58cff 70%,#ff5f6d 84%);background-size:300% 300%;animation:prisma 5s linear infinite}
+@keyframes prisma{to{background-position:300% 300%}}
+.vela{position:absolute;inset:0;background:radial-gradient(60% 58% at 50% 50%,rgba(4,7,12,.94),rgba(4,7,12,.6) 62%,rgba(4,7,12,.25)),linear-gradient(transparent 70%,var(--bg))}
+.hero .w{position:relative}
+.hero h1{font:900 clamp(46px,9vw,128px) var(--mono);letter-spacing:.12em;line-height:1.02;margin:14px 0 10px}
+.hero .meta{display:flex;align-items:center;justify-content:center;gap:20px;font:900 clamp(38px,6vw,80px) var(--mono);margin:6px 0 16px}
+.hero .meta b{background:linear-gradient(180deg,#fff,#9fdcff);-webkit-background-clip:text;background-clip:text;color:transparent} .hero .meta b:last-child{background:linear-gradient(180deg,#d9ffe9,#2fe08a);-webkit-background-clip:text;background-clip:text}
+.hero .meta i{font-style:normal;color:var(--az);font-size:.6em;animation:fl 1.6s ease-in-out infinite} @keyframes fl{50%{transform:translateX(8px)}}
+.hero p.sub{max-width:620px;margin:0 auto 30px;font-size:18px;color:var(--tx2)}
+.ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero .btn.pri{padding:20px 40px;font-size:15px;letter-spacing:.24em;animation:late 2.6s ease-in-out infinite}
+@keyframes late{50%{box-shadow:0 0 90px -6px rgba(47,224,138,1)}}
+.hero small{display:block;margin-top:16px;font:600 12px var(--mono);color:var(--tx3);letter-spacing:.08em}
+.baja{position:absolute;bottom:26px;left:0;right:0;text-align:center;font:700 10px var(--mono);letter-spacing:.3em;color:var(--tx3)}
+.servs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:4px 0 18px;font:800 clamp(14px,1.8vw,20px) var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#cfe3f5} .servs i{font-style:normal;color:var(--az)}
+/* secciones */
+.s{padding:110px 0;position:relative}
+.cab{text-align:center;max-width:760px;margin:0 auto 54px}
+.cab h2{font:900 clamp(30px,4.4vw,56px) Inter,sans-serif;letter-spacing:-.03em;line-height:1.05;margin:12px 0 14px}
+.cab p{color:var(--tx2);font-size:17px}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)} .rv.on{opacity:1;transform:none}
+/* pasos */
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.paso{position:relative;padding:28px;border-radius:22px;border:1px solid var(--line);background:radial-gradient(500px 220px at 50% -30%,rgba(79,195,255,.12),transparent 70%),var(--pan);overflow:hidden}
+.paso .n{font:900 13px var(--mono);letter-spacing:.24em;color:var(--az)} .paso h3{font:900 26px var(--mono);margin:10px 0 4px} .paso .r{font:800 15px var(--mono);color:var(--ve);margin-bottom:14px} .paso p{color:var(--tx2);font-size:14.5px}
+.paso ul{list-style:none;margin-top:14px;display:grid;gap:7px;font-size:13.5px;color:var(--tx2)} .paso li:before{content:"◆ ";color:var(--az);font-size:10px}
+.paso.lock{opacity:.85} .paso.lock .n{color:var(--oro)}
+.sem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+.sem div{padding:18px;border-radius:16px;border:1px solid var(--line);background:#09111c;text-align:center} .sem b{display:block;font:900 22px var(--mono)} .sem span{font:700 10.5px var(--mono);letter-spacing:.18em;color:var(--tx3)} .sem div:first-child{border-color:var(--az);box-shadow:0 0 30px -10px var(--az)}
+/* bias */
+.arena{position:relative;height:340px;border-radius:24px;border:1px solid var(--line);overflow:hidden;background:radial-gradient(120% 90% at 50% 110%,#0d1a2a,#04080e 70%)}
+.arena .g{position:absolute;top:0;bottom:0;width:60%} .arena .g.a{left:0;background:radial-gradient(70% 80% at 20% 70%,rgba(47,224,138,.4),transparent 70%)} .arena .g.b{right:0;background:radial-gradient(70% 80% at 80% 70%,rgba(255,77,94,.4),transparent 70%)}
+.arena .an{position:absolute;bottom:10px;width:min(52%,520px);aspect-ratio:1100/614;background-size:contain;background-repeat:no-repeat;mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 55%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 55%,#000 55%,transparent 100%)}
+.arena .an.t{left:2%;background-image:url(img/brief/toro.jpg);animation:em 1.4s ease-in-out infinite} .arena .an.o{right:2%;background-image:url(img/brief/oso.jpg);transform:scaleX(-1);animation:emo 1.4s ease-in-out infinite}
+@keyframes em{50%{transform:translateX(8px)}} @keyframes emo{0%,100%{transform:scaleX(-1)}50%{transform:scaleX(-1) translateX(8px)}}
+.arena .v{position:absolute;top:22px;left:0;right:0;text-align:center} .arena .v b{font:900 clamp(22px,3.4vw,40px) Inter,sans-serif;letter-spacing:.14em;text-shadow:0 2px 14px rgba(0,0,0,.9)} .arena .v span{display:block;font:700 11px var(--mono);letter-spacing:.24em;color:var(--tx2);margin-top:4px}
+.ses{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px} .ses div{padding:16px;border-radius:14px;border:1px solid var(--line);background:#09111c;text-align:center} .ses b{display:block;font:900 15px var(--mono);letter-spacing:.2em} .ses span{font-size:12px;color:var(--tx3)}
+.ses .as b{color:var(--ro)} .ses .lo b{color:#4fa3ff} .ses .ny b{color:var(--ve)}
+/* cartas */
+.reglas{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:34px}
+.reglas div{padding:20px;border-radius:18px;border:1px solid var(--line);background:var(--pan)} .reglas b{font:900 13px var(--mono);letter-spacing:.22em;color:var(--az)} .reglas h4{font-size:16px;margin:8px 0 6px} .reglas p{font-size:13.5px;color:var(--tx2)} .reglas em{display:block;margin-top:10px;font:800 11.5px var(--mono);font-style:normal}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;perspective:1100px}
+.gal .cc{width:auto;transition:transform .4s} .gal .cc:hover{transform:translateY(-8px) rotateY(-8deg) scale(1.04)}
+.gal .cc .inf{position:absolute;left:0;right:0;bottom:0;padding:24px 10px 10px;background:linear-gradient(transparent,rgba(0,0,0,.88))} .gal .cc .inf span{font:800 9px var(--mono);letter-spacing:.18em;color:var(--rc);text-transform:uppercase} .gal .cc .inf b{display:block;font:800 13px Inter,sans-serif}
+.ley{display:flex;justify-content:center;gap:18px;margin-top:22px;flex-wrap:wrap} .ley span{display:flex;align-items:center;gap:7px;font:700 12px var(--mono);color:var(--tx2)} .ley i{width:11px;height:11px;border-radius:3px;background:var(--c);box-shadow:0 0 10px var(--c)}
+/* log + journal */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{padding:30px;border-radius:22px;border:1px solid var(--line);background:var(--pan)} .box h3{font:900 24px Inter,sans-serif;letter-spacing:-.02em;margin:10px 0 10px} .box p{color:var(--tx2);font-size:15px}
+.emos{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px} .emos span{padding:8px 12px;border-radius:99px;border:1px solid var(--line);background:#09111c;font-size:12.5px;color:#c6d2e0} .emos .ok{border-color:var(--ve);color:var(--ve);background:rgba(47,224,138,.12)} .emos .mal{border-color:var(--ro);color:var(--ro);background:rgba(255,77,94,.12)}
+.flujo{display:grid;gap:10px;margin-top:18px} .flujo div{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:12px;background:#050a12;border:1px solid var(--line);font-size:14px} .flujo b{font:900 12px var(--mono);color:var(--az);min-width:26px}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px} .feats div{padding:20px;border-radius:16px;border:1px solid var(--line);background:#09111c} .feats b{display:block;font-size:15px;margin-bottom:4px} .feats span{font-size:13px;color:var(--tx2)}
+.shot{margin-top:16px;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 100px -40px rgba(79,195,255,.4)} .shot img{display:block;width:100%}
+/* camino 6 meses */
+.meses{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.meses div{padding:16px;border-radius:16px;border:1px solid var(--line);background:#09111c} .meses b{display:block;font:900 14px var(--mono);margin-bottom:10px} .meses i{display:inline-block;width:22px;height:22px;border-radius:6px;margin:0 4px 4px 0;background:#0a1522;border:1px solid var(--line)}
+.meses div:first-child{border-color:var(--az)} .meses div:first-child i:first-child{outline:2px solid var(--az);outline-offset:2px}
+.riel{position:relative;height:12px;margin:40px 10px 46px;border-radius:99px;background:#050a12;border:1px solid var(--line)} .riel>i{position:absolute;inset:0 auto 0 0;width:3%;border-radius:99px;background:linear-gradient(90deg,var(--az),var(--ve))}
+.riel span{position:absolute;top:50%;transform:translate(-50%,-50%)} .riel span b{display:block;width:16px;height:16px;border-radius:50%;background:var(--pan);border:2px solid #2a3b52} .riel span em{position:absolute;top:22px;left:50%;transform:translateX(-50%);font:700 12px var(--mono);font-style:normal;color:var(--tx2);white-space:nowrap}
+/* planes */
+.planes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.plan{display:flex;flex-direction:column;padding:30px;border-radius:22px;border:1px solid var(--line);background:var(--pan);position:relative}
+.plan.top{border-color:var(--ve);background:radial-gradient(500px 240px at 50% -20%,rgba(47,224,138,.14),transparent 70%),var(--pan);box-shadow:0 30px 80px -30px rgba(47,224,138,.35)}
+.plan .tag{position:absolute;top:-12px;left:30px;padding:4px 12px;border-radius:999px;background:linear-gradient(135deg,var(--az),var(--ve));color:#04130b;font:800 11px var(--mono);letter-spacing:.08em}
+.plan h3{font:900 22px Inter,sans-serif} .plan .para{color:var(--tx2);font-size:14px;margin:6px 0 20px;min-height:42px}
+.precio{display:flex;align-items:baseline;gap:6px} .precio b{font:900 52px var(--mono);letter-spacing:-.04em} .precio span{color:var(--tx3)}
+.plan ul{list-style:none;display:grid;gap:10px;margin:22px 0 26px;font-size:14px;color:var(--tx2)} .plan li:before{content:"✓  ";color:var(--ve);font-weight:800} .plan li.x{color:var(--tx3)} .plan li.x:before{content:"–  ";color:var(--tx3)}
+.plan .btn{margin-top:auto;width:100%}
+.garan{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:26px;color:var(--tx2);font-size:14px} .garan span:before{content:"✓ ";color:var(--ve);font-weight:800}
+/* descarga */
+.dl{position:relative;overflow:hidden;border-radius:28px;border:1px solid var(--line);padding:70px 30px;text-align:center;background:radial-gradient(70% 70% at 50% 40%,#0e2236,#04070c 75%)}
+.dl h2{font:900 clamp(32px,5vw,64px) var(--mono);letter-spacing:.1em;margin:12px 0 12px}
+.dl p{color:var(--tx2);margin-bottom:28px}
+.dl .ctas .btn{min-width:240px;padding:18px 26px}
+.fine{margin-top:16px;font-size:12.5px;color:var(--tx3)}
+/* faq */
+.faq{max-width:820px;margin:0 auto} .faq details{border-top:1px solid var(--line);padding:20px 0} .faq details:last-child{border-bottom:1px solid var(--line)} .faq summary{cursor:pointer;font-size:17px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px} .faq summary::-webkit-details-marker{display:none} .faq summary:after{content:"+";color:var(--az);font-family:var(--mono)} .faq details[open] summary:after{content:"–"} .faq p{color:var(--tx2);margin-top:10px;font-size:15px}
+footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--tx3);font-size:12.5px} footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:960px){nav .lk{display:none}.pasos,.planes,.g2{grid-template-columns:1fr}.reglas,.feats{grid-template-columns:1fr 1fr}.gal{grid-template-columns:repeat(3,1fr)}.meses{grid-template-columns:repeat(3,1fr)}.sem{grid-template-columns:1fr 1fr}.ses{grid-template-columns:1fr}.arena{height:240px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.fg{overflow:hidden;--kc:#ff3b2f;--kc2:#ffb199} .fg-bg{position:absolute;inset:0;background:center/cover no-repeat;opacity:.8;transition:background-image 1s;animation:fgZoom 40s ease-in-out infinite alternate} @keyframes fgZoom{to{transform:scale(1.08)}}
+.fg-vel{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(4,7,12,.35) 25%,rgba(4,7,12,.45) 75%,var(--bg) 100%)} #fgCv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none} .fg .w{position:relative}
+.fg-kat{position:relative;max-width:880px;margin:30px auto 0;cursor:pointer;text-align:center} .fg-kat svg{width:100%;display:block;filter:drop-shadow(0 0 14px var(--kc)) drop-shadow(0 0 50px var(--kc));transition:filter .6s;animation:fgFl 5s ease-in-out infinite} @keyframes fgFl{50%{transform:translateY(-8px)}}
+.fg-col{transform-box:view-box;transform-origin:300px 50%;transform:scaleX(1);transition:transform 1.4s cubic-bezier(.6,0,.2,1)} .fg-kat.sw .fg-col{transform:scaleX(0);transition:none}
+.fg-kat span{display:block;margin-top:14px;font:900 12px var(--mono);letter-spacing:.4em;color:var(--kc2);text-transform:uppercase;text-shadow:0 0 18px var(--kc)}
+.fg-cols{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:22px} .fg-cols button{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.18);background:var(--c);cursor:pointer;box-shadow:0 0 14px var(--c);transition:transform .2s} .fg-cols button:hover,.fg-cols button.on{transform:scale(1.25);border-color:#fff}
+.fg-tres{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px} .fg-tres div{padding:22px;border-radius:16px;border:1px solid var(--line);background:rgba(11,20,32,.75);backdrop-filter:blur(6px)} .fg-tres b{display:block;font-size:17px;margin-bottom:6px} .fg-tres span{color:var(--tx2);font-size:14px;line-height:1.55}
+.fg-caps{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:22px} .fg-caps button{position:relative;aspect-ratio:16/10;border-radius:10px;border:1px solid var(--line);background:center/cover;cursor:pointer;overflow:hidden;opacity:.6;transition:opacity .3s,transform .3s} .fg-caps button:hover,.fg-caps button.on{opacity:1;transform:translateY(-3px);border-color:var(--kc)} .fg-caps em{position:absolute;left:6px;bottom:5px;font:800 9px var(--mono);letter-spacing:.12em;color:#fff;text-shadow:0 1px 4px #000;font-style:normal}
+@media(max-width:800px){.fg-tres{grid-template-columns:1fr}.fg-caps{grid-template-columns:repeat(3,1fr)}}
+
+.mb{max-width:1000px;margin:50px auto 0;position:relative} .mb:after{content:"";position:absolute;left:4%;right:4%;bottom:-34px;height:40px;background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.75),transparent 70%);filter:blur(8px);z-index:-1}
+.mb-tapa{position:relative;margin:0 6.5%;padding:1.1% 1.1% 1.3%;border-radius:2.4% 2.4% 0 0/3.6% 3.6% 0 0;background:#0a0a0c;box-shadow:0 0 0 1.5px #3c3f45,0 0 0 3px #1b1c1f,inset 0 0 0 1px #222;}
+.mb-tapa:before{content:"";position:absolute;inset:-3px;border-radius:inherit;padding:3px;background:linear-gradient(180deg,#8d9198,#3a3d42 20%,#2a2c30 80%,#55585e);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.mb-cam{position:absolute;top:0;left:50%;z-index:3;width:12%;height:2.6%;min-height:14px;transform:translateX(-50%);border-radius:0 0 10px 10px;background:#0a0a0c} .mb-cam:after{content:"";position:absolute;left:50%;top:40%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#2a3a55,#05070a);box-shadow:0 0 0 1px #15171b}
+.mb-pant{position:relative;display:grid;grid-template-columns:1fr 31%;aspect-ratio:16/10;overflow:hidden;background:#0c0f14;border-radius:6px 6px 2px 2px}
+.mb-pant:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.06),transparent 35%);pointer-events:none}
+.mb-base{position:relative;height:auto;aspect-ratio:100/2.4;margin:0;border-radius:0 0 46% 46%/0 0 100% 100%;background:linear-gradient(180deg,#e3e5e8 0%,#c3c6cb 30%,#9a9ea5 75%,#6f737a 100%);box-shadow:inset 0 1px 0 #fff,0 2px 2px rgba(0,0,0,.4)}
+.mb-base:before{content:"";position:absolute;left:0;right:0;top:0;height:28%;background:linear-gradient(180deg,#5c6067,#a8acb2)} .mb-base i{position:absolute;left:50%;top:0;width:15%;height:45%;transform:translateX(-50%);border-radius:0 0 10px 10px;background:linear-gradient(180deg,#9ea2a8,#c6c9ce);box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.mb-graf{position:relative;display:flex;flex-direction:column;background:#131722} .mb-bar{display:flex;gap:16px;align-items:center;padding:8px 12px;border-bottom:1px solid #222736;font:600 11px var(--mono);color:#8a93a6} .mb-bar b{color:#d1d4dc} .mb-bar i{font-style:normal;color:#d1d4dc} #mbCv{flex:1;width:100%;height:100%}
+.mb-np{display:flex;flex-direction:column;gap:10px;padding:14px;border-left:1px solid #1a2839;background:linear-gradient(180deg,#0b1420,#070c14);color:var(--tx);font-size:12px} .mb-np-h{display:flex;justify-content:space-between;align-items:center} .mb-np-h b{font:900 11px var(--mono);letter-spacing:.2em} .mb-np-h span{color:var(--tx3);font:700 10px var(--mono)}
+.mb-st{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:99px;border:1px solid var(--line);font:800 9.5px var(--mono);letter-spacing:.18em;color:var(--tx2)} .mb-st i{width:7px;height:7px;border-radius:50%;background:var(--ve);box-shadow:0 0 0 4px rgba(47,224,138,.15);animation:mbPul 1.4s infinite} @keyframes mbPul{50%{opacity:.3}}
+.mb-vivo{display:none;padding:14px;border-radius:14px;border:1px solid rgba(47,224,138,.55);background:radial-gradient(260px 120px at 100% 0,rgba(47,224,138,.16),transparent),#0c1522;animation:mbIn .5s ease} .mb-np.on .mb-vivo{display:block} @keyframes mbIn{from{opacity:0;transform:translateY(8px)}}
+.mb-dir{font:900 15px Inter,sans-serif;color:var(--ve)} .mb-clk{margin:8px 0 2px;font:900 34px var(--mono);font-variant-numeric:tabular-nums} .mb-pl{font:900 16px var(--mono);color:var(--ve)} .mb-pl.dn{color:var(--ro)}
+.mb-emo{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0 8px} .mb-emo em{font-style:normal;padding:4px 9px;border-radius:99px;border:1px solid var(--line);color:var(--tx2);font-size:10.5px;transition:all .25s} .mb-emo em.on{border-color:var(--ve);color:var(--ve);background:rgba(47,224,138,.12)}
+.mb-nota{min-height:34px;padding:8px 10px;border-radius:8px;background:#050a12;border:1px solid var(--line);color:var(--tx);font-size:11.5px;line-height:1.4} .mb-nota i{font-style:normal;color:var(--az);animation:mbPul 1s infinite}
+.mb-lista{margin-top:auto;display:flex;flex-direction:column;gap:6px} .mb-lista div{display:flex;gap:8px;align-items:center;padding:8px 10px;border-radius:10px;border:1px solid var(--line);font:700 10.5px var(--mono);animation:mbIn .5s ease} .mb-lista span{margin-left:auto;color:var(--ve)} .mb-lista em{font-style:normal;color:var(--tx3)} .mb-lista .up{color:var(--ve)} .mb-lista .dn{color:var(--ro)}
+.tec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px} .tec div{padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--pan)} .tec b{display:block;font-size:16px;margin-bottom:6px} .tec span{color:var(--tx2);font-size:14px;line-height:1.55}
+@media(max-width:800px){.mb-tapa{margin:0 2%}.mb-pant{grid-template-columns:1fr;aspect-ratio:auto}.mb-graf{height:240px}.tec{grid-template-columns:1fr}}
+
+.cur{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px} .cur-c{position:relative;padding:30px;border-radius:22px;border:1px solid var(--line);background:var(--pan);overflow:hidden} .cur-c.vivo{background:radial-gradient(500px 220px at 100% 0,rgba(255,77,94,.12),transparent 70%),var(--pan)}
+.cur-tag{display:inline-flex;align-items:center;gap:8px;font:900 10.5px var(--mono);letter-spacing:.3em;color:var(--az)} .vivo .cur-tag{color:var(--ro)} .cur-tag i{width:8px;height:8px;border-radius:50%;background:var(--ro);box-shadow:0 0 0 5px rgba(255,77,94,.18);animation:curPul 1.2s infinite} @keyframes curPul{50%{opacity:.3}}
+.cur-c h3{margin:12px 0 8px;font-size:24px;letter-spacing:-.02em} .cur-c>p{margin:0 0 20px;color:var(--tx2)}
+.cur-c ol,.cur-c ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:m} .cur-c li{display:flex;flex-direction:column;padding:12px 14px 12px 48px;position:relative;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.2)} .cur-c li b{font-size:14px} .cur-c li span{color:var(--tx2);font-size:13px}
+.cur-c ol li:before{counter-increment:m;content:counter(m,decimal-leading-zero);position:absolute;left:14px;top:13px;font:900 13px var(--mono);color:var(--az)} .cur-c ul li:before{content:"";position:absolute;left:18px;top:18px;width:10px;height:10px;border-radius:50%;border:2px solid var(--ro)}
+.cur-live{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;margin-top:16px} .cur-pant{position:relative;border-radius:12px;border:1px solid var(--line);background:#0c1119;padding:26px 8px 8px} .cur-pant svg{width:100%;height:90px;display:block} .cur-rec{position:absolute;top:8px;left:8px;display:flex;gap:6px;align-items:center;padding:3px 8px;border-radius:6px;background:var(--ro);color:#fff;font:900 9px var(--mono);letter-spacing:.15em} .cur-rec i{width:6px;height:6px;border-radius:50%;background:#fff;animation:curPul 1s infinite}
+.cur-chat{display:flex;flex-direction:column;justify-content:flex-end;gap:5px;height:126px;overflow:hidden;padding:8px;border-radius:12px;border:1px solid var(--line);background:#0c1119} .cur-chat div{font-size:11.5px;color:var(--tx2);animation:curIn .4s ease} .cur-chat b{color:var(--az);margin-right:5px} @keyframes curIn{from{opacity:0;transform:translateY(6px)}}
+@media(max-width:860px){.cur{grid-template-columns:1fr}}
+
+/* ===== ÉPICO (23-oct-2026): fuego, capítulos animados, 3D ===== */
+:root{--fu1:#ff3b1f;--fu2:#ff8a1e;--fu3:#ffd25a}
+body{background:#05050a}
+#epFondo{position:fixed;inset:0;z-index:-2;background:center/cover no-repeat;opacity:.22;transition:background-image 1.2s,opacity 1s;filter:saturate(1.2)} #epFondo:after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 50%,transparent,rgba(5,5,10,.85))}
+#epFuego{position:fixed;inset:0;z-index:-1;pointer-events:none;width:100%;height:100%}
+.ep{min-height:100vh} .ep-bg{position:absolute;inset:0} .ep-bg i{position:absolute;inset:-4%;background:center/cover no-repeat;opacity:0;transition:opacity 1.6s ease;animation:epKB 14s ease-in-out infinite alternate} .ep-bg i.on{opacity:1} @keyframes epKB{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.12) translate(-1.5%,-1%)}}
+.ep-vela{position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 45%,rgba(5,5,10,.15),rgba(5,5,10,.6) 85%),linear-gradient(180deg,rgba(5,5,10,.35),transparent 30%,transparent 75%,#05050a)}
+.ep-humo{position:absolute;left:-10%;right:-10%;bottom:-10%;height:45%;background:radial-gradient(50% 60% at 50% 100%,rgba(255,90,20,.35),transparent 70%);animation:epLat 3s ease-in-out infinite alternate;mix-blend-mode:screen} @keyframes epLat{to{opacity:.6;transform:scaleY(1.15)}}
+.ep-k{color:var(--fu3)!important;text-shadow:0 0 18px var(--fu2)}
+.ep-h1{font:900 clamp(48px,10vw,150px)/.95 Inter,sans-serif!important;letter-spacing:-.03em!important;margin:16px 0 10px!important;perspective:800px}
+.ep-h1 span{display:inline-block;background:linear-gradient(180deg,#fff 0%,#ffe6a8 35%,var(--fu2) 70%,var(--fu1));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px rgba(255,120,30,.55));animation:epLetra 1.2s cubic-bezier(.2,.9,.2,1) both}
+.ep-h1 span:nth-child(2){animation-delay:.15s} .ep-h1 span:nth-child(3){animation-delay:.3s} @keyframes epLetra{from{opacity:0;transform:rotateX(80deg) translateY(40px);filter:blur(10px)}}
+.ep-meta{display:flex;justify-content:center;align-items:center;gap:22px;font:900 clamp(30px,5vw,64px) var(--mono);margin:6px 0 18px;animation:epLetra 1.2s .45s both} .ep-meta b{color:#fff;text-shadow:0 0 30px rgba(255,140,40,.7)} .ep-meta i{font-style:normal;color:var(--fu2);animation:fl 1.4s ease-in-out infinite}
+.ep .sub{max-width:720px;margin:0 auto 26px;padding:12px 20px;border-radius:14px;background:rgba(5,5,10,.55);backdrop-filter:blur(6px);color:#e9ddd0;font-size:clamp(16px,1.6vw,19px);line-height:1.6;text-shadow:0 2px 12px #000} .ep .sub strong{color:var(--fu3)}
+.btn.pri,.btn.fuego{position:relative;overflow:hidden;border:0!important;color:#1a0700!important;background:linear-gradient(90deg,var(--fu1),var(--fu2),var(--fu3),var(--fu2),var(--fu1))!important;background-size:300% 100%!important;animation:epFlu 4s linear infinite;box-shadow:0 0 0 1px rgba(255,210,90,.5),0 10px 40px -6px rgba(255,90,20,.9),0 0 80px -10px rgba(255,140,30,.8)!important;font-weight:900!important}
+@keyframes epFlu{to{background-position:300% 0}} .btn.pri:hover{transform:translateY(-3px) scale(1.04)!important;box-shadow:0 0 0 1px #ffe08a,0 16px 50px -6px rgba(255,90,20,1),0 0 120px -10px rgba(255,160,40,1)!important}
+.btn.pri:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:epBrillo 2.6s ease-in-out infinite} @keyframes epBrillo{0%,60%{left:-60%}100%{left:130%}}
+.btn:not(.pri){border-color:rgba(255,160,60,.45)!important;color:#ffe2bf!important;background:rgba(20,8,4,.4);backdrop-filter:blur(6px)} .btn:not(.pri):hover{border-color:var(--fu3)!important;box-shadow:0 0 30px -6px rgba(255,140,30,.7)}
+.ep-caps{display:flex;justify-content:center;gap:8px;margin-top:34px} .ep-caps button{width:34px;height:6px;border-radius:9px;border:0;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s} .ep-caps button.on{width:60px;background:linear-gradient(90deg,var(--fu1),var(--fu3));box-shadow:0 0 14px var(--fu2)}
+.k{color:var(--fu2)!important;letter-spacing:.32em} .cab h2{background:linear-gradient(180deg,#fff 40%,#ffd9a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s{position:relative}
+.inc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;perspective:1200px}
+.inc-c{position:relative;padding:30px 26px;border-radius:22px;border:1px solid color-mix(in srgb,var(--c) 40%,transparent);background:radial-gradient(300px 160px at 0 0,color-mix(in srgb,var(--c) 22%,transparent),transparent 70%),rgba(12,10,16,.82);backdrop-filter:blur(8px);transform-style:preserve-3d;transition:transform .25s ease,box-shadow .3s;will-change:transform}
+.inc-c:hover{box-shadow:0 30px 60px -20px color-mix(in srgb,var(--c) 70%,transparent),0 0 0 1px var(--c)}
+.inc-i{width:58px;height:58px;display:grid;place-items:center;border-radius:16px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);box-shadow:0 0 30px -6px var(--c);transform:translateZ(40px);margin-bottom:18px} .inc-i svg{width:30px;height:30px}
+.inc-c b{display:block;font-size:20px;margin-bottom:8px;transform:translateZ(30px)} .inc-c span{color:#c9bfb4;line-height:1.55;font-size:14.5px;transform:translateZ(20px);display:block}
+.rv{opacity:0;transform:perspective(1000px) rotateX(18deg) translateY(70px) scale(.94);transform-origin:50% 100%;transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)} .rv.on{opacity:1;transform:none}
+.inc-c.rv{transform:perspective(1000px) rotateY(-35deg) translateX(60px) scale(.9)} .inc-c.rv:nth-child(3n+1){transition-delay:0s} .inc-c.rv:nth-child(3n+2){transition-delay:.12s} .inc-c.rv:nth-child(3n){transition-delay:.24s} .inc-c.rv.on{transform:none}
+.paso,.plan,.cur-c,.tec div,.box,.feats>div{transition:transform .25s ease,box-shadow .3s!important}
+.plan.top{border-color:var(--fu2)!important;background:radial-gradient(500px 240px at 50% -20%,rgba(255,120,30,.22),transparent 70%),var(--pan)!important;box-shadow:0 30px 80px -30px rgba(255,100,30,.6)!important}
+@media(max-width:900px){.inc{grid-template-columns:1fr 1fr}} @media(max-width:600px){.inc{grid-template-columns:1fr}}
+
+/* ===== PRO (23-oct-2026): hero con la app real, sin fondos ilustrados ===== */
+#epFondo,#epFuego{display:none!important}
+.hp{position:relative;overflow:hidden;padding:150px 0 90px} .hp-glow{position:absolute;left:50%;top:-20%;width:1400px;height:900px;transform:translateX(-30%);background:radial-gradient(40% 40% at 60% 40%,rgba(255,120,30,.16),transparent 70%),radial-gradient(35% 35% at 30% 60%,rgba(79,195,255,.10),transparent 70%);pointer-events:none}
+.hp-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;-webkit-mask:radial-gradient(70% 60% at 50% 30%,#000,transparent);mask:radial-gradient(70% 60% at 50% 30%,#000,transparent);pointer-events:none}
+.hp-w{position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;max-width:1280px}
+.hp-k{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:99px;border:1px solid rgba(255,140,40,.35);background:rgba(255,120,30,.08);font:800 11px var(--mono);letter-spacing:.18em;color:#ffb86b} .hp-k i{width:7px;height:7px;border-radius:50%;background:#ff8a1e;box-shadow:0 0 10px #ff8a1e}
+.hp h1{margin:22px 0 18px;font:800 clamp(38px,4.6vw,64px)/1.05 Inter,sans-serif;letter-spacing:-.035em;color:#fff} .hp h1 em{font-style:normal;background:linear-gradient(180deg,#ffe2a8,#ff8a1e);-webkit-background-clip:text;background-clip:text;color:transparent} .hp h1 span{display:block;margin-top:10px;font-size:.48em;font-weight:700;color:#9aabbf;letter-spacing:-.02em}
+.hp-tx>p{margin:0 0 30px;max-width:560px;color:#b6c2d0;font-size:18px;line-height:1.6} .hp .ctas{justify-content:flex-start}
+.hp-ok{display:flex;flex-wrap:wrap;gap:18px;margin:22px 0 0;padding:0;list-style:none;color:#8697ab;font-size:13.5px} .hp-ok li:before{content:"✓";margin-right:7px;color:#2fe08a;font-weight:900}
+.hp-vis{position:relative;perspective:1600px} .hp-win{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#0b111a;box-shadow:0 50px 120px -30px rgba(0,0,0,.9),0 0 0 1px rgba(0,0,0,.5),0 30px 80px -40px rgba(255,120,30,.35);transform:rotateY(-12deg) rotateX(4deg);transform-origin:left center;transition:transform .8s cubic-bezier(.16,1,.3,1)} .hp-vis:hover .hp-win{transform:rotateY(-4deg) rotateX(1deg)}
+.hp-win img{display:block;width:100%} .hp-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#121822;border-bottom:1px solid rgba(255,255,255,.06)} .hp-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57} .hp-bar i:nth-child(2){background:#febc2e} .hp-bar i:nth-child(3){background:#28c840} .hp-bar span{margin-left:12px;font:700 11px var(--mono);letter-spacing:.14em;color:#6f7f93}
+.hp-flo{position:absolute;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.9);animation:hpFlo 6s ease-in-out infinite} .hp-flo img{display:block;width:100%}
+.hp-flo.f1{left:-10%;bottom:-14%;width:62%} .hp-flo.f2{right:-4%;top:-9%;padding:14px 16px;background:rgba(11,17,26,.92);backdrop-filter:blur(10px);animation-delay:-3s} .hp-flo.f2 b{display:block;font:900 22px var(--mono);color:#2fe08a} .hp-flo.f2 span{font-size:11.5px;color:#8697ab} .hp-flo.f2 svg{display:block;width:120px;height:34px;margin-top:6px}
+@keyframes hpFlo{50%{transform:translateY(-10px)}}
+.ga{margin-top:40px} .ga-tabs{display:flex;justify-content:center;gap:6px;margin-bottom:18px} .ga-tabs button{padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:transparent;color:#9aabbf;font:700 13px Inter,sans-serif;cursor:pointer;transition:all .2s} .ga-tabs button.on{border-color:#ff8a1e;color:#fff;background:rgba(255,120,30,.12)}
+.ga-win{max-width:1100px;margin:0 auto;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 50px 120px -40px rgba(0,0,0,.9)} .ga-img{position:relative;aspect-ratio:16/10;background:#0b111a} .ga-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .35s} .ga-img img.out{opacity:0}
+.ga-cap{max-width:640px;margin:18px auto 0;text-align:center;color:#9aabbf}
+@media(max-width:960px){.hp-w{grid-template-columns:1fr}.hp-win{transform:none}.hp-flo.f1{left:2%;bottom:-10%}.hp-flo.f2{right:2%}}
+
+/* ===== NORTHPOINT · blanco y negro, cristal (23-oct-2026) ===== */
+:root{--bg:#000;--pan:rgba(255,255,255,.035);--line:rgba(255,255,255,.12);--tx:#f4f4f2;--tx2:#a9a9a6;--tx3:#6d6d6a;--az:#fff;--ve:#8fd6a8;--ro:#e08a8a;--oro:#fff;--mor:#fff;--serif:'Newsreader',Georgia,'Times New Roman',serif}
+html,body{background:#000!important;color:var(--tx)}
+body:before{content:"";position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:radial-gradient(35% 30% at 20% 20%,rgba(255,255,255,.07),transparent 70%),radial-gradient(30% 28% at 80% 30%,rgba(255,255,255,.05),transparent 70%),radial-gradient(40% 35% at 50% 85%,rgba(255,255,255,.045),transparent 70%);animation:npLuz 22s ease-in-out infinite alternate}
+@keyframes npLuz{to{transform:translate(4%,-3%) rotate(6deg) scale(1.06)}}
+body:after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.cab h2,.hp h1{font-family:var(--serif)!important;font-weight:400!important;letter-spacing:-.02em!important}
+.cab h2{background:none!important;-webkit-text-fill-color:#fff!important;color:#fff!important;font-size:clamp(36px,4.6vw,64px)!important;line-height:1.04!important}
+.k,.hp-k{color:#cfcfcb!important;text-shadow:none!important;font-family:var(--mono)!important}
+.hp-k{border-color:rgba(255,255,255,.22)!important;background:rgba(255,255,255,.05)!important} .hp-k i{background:#fff!important;box-shadow:0 0 12px #fff!important}
+.hp h1{font-size:clamp(46px,5.4vw,82px)!important;line-height:1!important} .hp h1 em{font-style:italic!important;background:linear-gradient(180deg,#fff,#9a9a96)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important} .hp h1 span{font-family:Inter,sans-serif!important;font-weight:500!important;color:#9a9a96!important;font-size:.32em!important;letter-spacing:0!important;line-height:1.4}
+.hp-glow{background:radial-gradient(40% 40% at 60% 40%,rgba(255,255,255,.10),transparent 70%)!important}
+.btn{border-radius:999px!important;font-family:Inter,sans-serif!important;letter-spacing:.02em!important;text-transform:none!important;font-weight:600!important;font-size:14.5px!important}
+.btn.pri,.btn.fuego{background:#fff!important;color:#000!important;animation:none!important;box-shadow:0 0 0 1px rgba(255,255,255,.6),0 10px 40px -10px rgba(255,255,255,.45)!important}
+.btn.pri:after{background:linear-gradient(100deg,transparent,rgba(0,0,0,.18),transparent)!important}
+.btn.pri:hover{box-shadow:0 0 0 1px #fff,0 14px 50px -8px rgba(255,255,255,.7)!important}
+.btn:not(.pri){color:#fff!important;border-color:rgba(255,255,255,.22)!important;background:rgba(255,255,255,.04)!important;backdrop-filter:blur(10px)} .btn:not(.pri):hover{border-color:rgba(255,255,255,.5)!important;box-shadow:none!important}
+.inc-c,.paso,.plan,.cur-c,.tec div,.box,.feats>div,.ses>div,.mb-np,.ga-win,.hp-win{position:relative;overflow:hidden}
+.inc-c,.paso,.plan,.cur-c,.tec div,.box,.feats>div{background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02) 45%,rgba(255,255,255,.04))!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 30px 60px -30px rgba(0,0,0,.9)!important;backdrop-filter:blur(14px)}
+.inc-c:before,.paso:before,.plan:before,.cur-c:before,.tec div:before{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.09),transparent);transform:skewX(-18deg);animation:npSheen 7s ease-in-out infinite;pointer-events:none}
+@keyframes npSheen{0%,55%{left:-80%}100%{left:140%}}
+.inc-c:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 30px 70px -20px rgba(255,255,255,.12),0 0 0 1px rgba(255,255,255,.3)!important}
+.inc-i{color:#fff!important;background:rgba(255,255,255,.07)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)!important} .inc-c b{font-family:var(--serif);font-weight:500;font-size:23px!important}
+.inc-c span,.cab p,.hp-tx>p{color:#a9a9a6!important}
+.plan.top{border-color:rgba(255,255,255,.55)!important;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.03))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 30px 80px -30px rgba(255,255,255,.2)!important}
+.hp-win,.ga-win{border-color:rgba(255,255,255,.16)!important;box-shadow:0 60px 120px -40px rgba(0,0,0,1),0 0 0 1px rgba(255,255,255,.06),0 0 80px -30px rgba(255,255,255,.18)!important}
+.ga-tabs button.on{border-color:#fff!important;background:rgba(255,255,255,.08)!important}
+.cur-tag,.vivo .cur-tag{color:#fff!important} .cur-c.vivo{background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02))!important} .cur-c ol li:before{color:#fff!important} .cur-c ul li:before{border-color:#fff!important}
+nav,nav.s{background:rgba(0,0,0,.7)!important;border-color:rgba(255,255,255,.08)!important} .logo i{color:#8a8a86!important}
+/* cristales del hero */
+.hp-cris{position:absolute;inset:0;pointer-events:none}
+.hp-cris i{position:absolute;display:block;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.25) 35%,rgba(210,215,225,.7) 55%,rgba(255,255,255,.12) 80%,rgba(255,255,255,.6));clip-path:polygon(50% 0,100% 38%,78% 100%,22% 100%,0 38%);filter:drop-shadow(0 0 14px rgba(255,255,255,.35));animation:npCris 9s ease-in-out infinite;opacity:.9;mix-blend-mode:screen}
+.hp-cris i:nth-child(1){width:70px;height:90px;left:6%;top:18%} .hp-cris i:nth-child(2){width:38px;height:50px;left:44%;top:12%;animation-delay:-3s;opacity:.4} .hp-cris i:nth-child(3){width:54px;height:70px;right:4%;bottom:12%;animation-delay:-6s} .hp-cris i:nth-child(4){width:26px;height:34px;left:38%;bottom:16%;animation-delay:-1.5s;opacity:.35} .hp-cris i:nth-child(5){width:44px;height:58px;right:30%;top:6%;animation-delay:-4.5s;opacity:.3}
+@keyframes npCris{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(14deg)}}
+
+/* ===== versión BLANCA (23-oct-2026) ===== */
+:root{--bg:#fff;--pan:#fff;--line:rgba(0,0,0,.1);--tx:#0b0b0c;--tx2:#55555a;--tx3:#8a8a90}
+html,body{background:#fff!important;color:#0b0b0c!important}
+body:before{background:radial-gradient(35% 30% at 20% 15%,rgba(0,0,0,.035),transparent 70%),radial-gradient(30% 28% at 85% 25%,rgba(120,140,170,.06),transparent 70%)!important}
+body:after{opacity:.05!important;mix-blend-mode:multiply!important}
+h1,h2,h3,b,strong,.cab h2,.hp h1{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
+.hp h1{font-size:clamp(54px,6.4vw,104px)!important} .hp h1 em{background:none!important;-webkit-text-fill-color:#0b0b0c!important;color:#0b0b0c!important;font-style:italic!important}
+.hp-tx>p{font-size:20px!important;color:#55555a!important;margin-bottom:34px!important}
+p,span,li,.inc-c span,.cab p,.hp-tx>p,.tec span,.cur-c li span,.cur-c>p,.ga-cap,.hp-ok{color:#55555a!important}
+.k,.hp-k{color:#55555a!important} .hp-k{border-color:rgba(0,0,0,.14)!important;background:rgba(0,0,0,.03)!important} .hp-k i{background:#0b0b0c!important;box-shadow:none!important}
+.hp-glow{background:radial-gradient(40% 40% at 60% 40%,rgba(120,140,170,.14),transparent 70%)!important} .hp-grid{background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px)!important}
+.hp-cris i{mix-blend-mode:normal!important;opacity:.8!important;background:linear-gradient(135deg,#fff,rgba(220,228,240,.9) 35%,rgba(150,165,190,.55) 60%,#fff)!important;filter:drop-shadow(0 8px 18px rgba(30,40,60,.18))!important}
+.btn.pri,.btn.fuego{background:#0b0b0c!important;color:#fff!important;-webkit-text-fill-color:#fff!important;box-shadow:0 12px 30px -12px rgba(0,0,0,.5)!important} .btn.pri *{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.btn.pri:after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent)!important}
+.btn:not(.pri){color:#0b0b0c!important;border-color:rgba(0,0,0,.18)!important;background:rgba(255,255,255,.7)!important} .btn:not(.pri):hover{border-color:#0b0b0c!important}
+.inc-c,.paso,.plan,.cur-c,.tec div,.box,.feats>div,.cur-c.vivo{background:linear-gradient(160deg,rgba(255,255,255,.95),rgba(245,246,248,.8))!important;border:1px solid rgba(0,0,0,.08)!important;box-shadow:inset 0 1px 0 #fff,0 20px 50px -25px rgba(20,30,50,.25)!important}
+.inc-c:before,.paso:before,.plan:before,.cur-c:before,.tec div:before{background:linear-gradient(100deg,transparent,rgba(255,255,255,.9),transparent)!important}
+.inc-i{color:#0b0b0c!important;background:rgba(0,0,0,.05)!important;box-shadow:none!important}
+.plan.top{border-color:#0b0b0c!important;background:#fff!important;box-shadow:0 30px 70px -30px rgba(0,0,0,.35)!important}
+.cur-c li,.cur-chat,.cur-pant{background:rgba(0,0,0,.025)!important;border-color:rgba(0,0,0,.08)!important} .cur-c ol li:before{color:#0b0b0c!important} .cur-c ul li:before{border-color:#0b0b0c!important}
+.ga-tabs button{color:#55555a!important;border-color:rgba(0,0,0,.12)!important} .ga-tabs button.on{border-color:#0b0b0c!important;background:#0b0b0c!important;color:#fff!important}
+nav,nav.s{background:rgba(255,255,255,.8)!important;border-color:rgba(0,0,0,.06)!important;backdrop-filter:blur(14px)} nav a,.logo{color:#0b0b0c!important} .logo i{color:#8a8a90!important}
+.hp-win,.ga-win{box-shadow:0 50px 100px -40px rgba(10,20,40,.45),0 0 0 1px rgba(0,0,0,.08)!important}
+.hp-flo.f2{background:#fff!important;border-color:rgba(0,0,0,.08)!important;box-shadow:0 20px 50px -20px rgba(0,0,0,.25)!important} .hp-flo.f2 b{color:#1f9d5c!important;-webkit-text-fill-color:#1f9d5c!important}
+.fg,.fg .w,#forja{background:#0b0b0c} #forja h2,#forja .cab p{color:#fff!important;-webkit-text-fill-color:#fff!important} #forja .cab p{color:#bbb!important}
+.mb-np *,.mb-graf *,.hp-win *,.ga-win *{-webkit-text-fill-color:initial}
+.mb-np b,.mb-np span,.mb-np em,.mb-bar b,.mb-bar span,.mb-clk,.mb-dir,.mb-nota,.mb-lista *{-webkit-text-fill-color:currentColor!important}
+.mb-np span,.mb-np em{color:inherit!important} .mb-np b,.mb-clk{color:#e8eef6!important}
+footer{color:#8a8a90!important;border-color:rgba(0,0,0,.08)!important}
+.faq details{border-color:rgba(0,0,0,.08)!important}
+
+/* blanca: componentes que seguían oscuros */
+.sem div,.meses div,.ses div,.flujo div,.emos span{background:#fff!important;border:1px solid rgba(0,0,0,.09)!important;color:#0b0b0c!important;box-shadow:0 10px 30px -18px rgba(20,30,50,.25)!important}
+.sem b,.meses b,.ses b,.flujo b{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important} .sem span,.flujo div{color:#55555a!important}
+.emos span.ok{color:#1f9d5c!important;border-color:rgba(31,157,92,.35)!important;background:rgba(31,157,92,.06)!important} .emos span.mal{color:#c23b3b!important;border-color:rgba(194,59,59,.3)!important;background:rgba(194,59,59,.05)!important}
+.meses i{background:rgba(0,0,0,.08)!important} .meses div:first-child{border-color:#0b0b0c!important} .meses div:first-child i:first-child{outline-color:#0b0b0c!important;background:#0b0b0c!important}
+.riel{background:rgba(0,0,0,.06)!important;border-color:rgba(0,0,0,.08)!important} .riel>i{background:#0b0b0c!important;box-shadow:none!important} .riel span b{background:#fff!important;border-color:#0b0b0c!important} .riel span em{color:#55555a!important}
+.ses .as b{color:#c23b3b!important;-webkit-text-fill-color:#c23b3b!important} .ses .lo b{color:#2f6fd6!important;-webkit-text-fill-color:#2f6fd6!important} .ses .ny b{color:#1f9d5c!important;-webkit-text-fill-color:#1f9d5c!important}
+.arena *{-webkit-text-fill-color:currentColor!important} .arena b,.arena h3,.arena span{color:#fff!important}
+.dl{background:#fff!important;border:1px solid rgba(0,0,0,.08)!important;box-shadow:0 40px 90px -40px rgba(20,30,50,.35)!important} .dl h2{font-family:var(--serif)!important;font-weight:400!important;letter-spacing:-.02em!important} .dl p,.dl .fine{color:#55555a!important}
+#forja,.fg,.fg .w{background:#fff!important} #forja h2{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important} #forja .cab p{color:#55555a!important} .fg-vel,#fgCv{display:none!important}
+.fg-kat svg{filter:drop-shadow(0 18px 24px rgba(0,0,0,.25)) drop-shadow(0 0 30px var(--kc))!important} .fg-kat span{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important;text-shadow:none!important}
+.mb-np em{color:#a9b4c2!important} .mb-emo em.on{color:#2fe08a!important} .mb-nota{color:#e8eef6!important} .mb-lista span{color:#2fe08a!important} .mb-lista .dn{color:#ff6b6b!important} .mb-lista .up{color:#2fe08a!important} .mb-bar span,.mb-bar i{color:#d1d4dc!important}
+.mb-dir{color:#2fe08a!important} .mb-pl{color:#2fe08a!important} .mb-pl.dn{color:#ff6b6b!important} .mb-st{color:#a9b4c2!important} .mb-np-h span{color:#6f7f93!important}
+.cur-rec,.cur-rec *{color:#fff!important}
+.paso .r{color:#0b0b0c!important;-webkit-text-fill-color:#0b0b0c!important}
+.ley span{color:#55555a!important}
+
+/* escuela (estilo zerospoker) */
+.cab h2 b{font-weight:600;font-style:italic}
+.esc-dest{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:center;margin-top:44px;padding:36px;border-radius:26px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 30px 70px -40px rgba(20,30,50,.35)}
+.esc-tx h3{margin:10px 0 12px;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.08;color:#0b0b0c} .esc-tx h3 b{display:block;font-weight:600;font-style:italic;font-size:.62em;margin-top:8px;color:#55555a!important;-webkit-text-fill-color:#55555a!important}
+.esc-tx p{margin:0 0 20px} .esc-num{display:flex;gap:26px;margin-bottom:24px} .esc-num b{display:block;font:500 34px var(--serif)} .esc-num span{font-size:12.5px}
+.esc-mini{position:relative;aspect-ratio:16/10;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;background:radial-gradient(80% 80% at 70% 20%,#2a2f3a,#0b0b0c 70%);overflow:hidden}
+.esc-mini span{font:800 10px var(--mono);letter-spacing:.24em;color:#a9a9a6!important} .esc-mini b{font:400 24px var(--serif);color:#fff!important;-webkit-text-fill-color:#fff!important} .esc-mini em{font-style:normal;font-size:12.5px;color:#a9a9a6!important}
+.esc-play{position:absolute;left:50%;top:42%;width:66px;height:66px;margin:-33px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);display:grid;place-items:center;border:1px solid rgba(255,255,255,.3)} .esc-play i{width:0;height:0;margin-left:5px;border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.esc-plan{margin-top:26px} .esc-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px} .esc-tabs button{padding:10px 18px;border-radius:99px;border:1px solid rgba(0,0,0,.12);background:#fff;color:#55555a;font:600 13.5px Inter,sans-serif;cursor:pointer} .esc-tabs button.on{background:#0b0b0c;color:#fff;border-color:#0b0b0c}
+.esc-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px} .esc-lista div{padding:18px 20px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s;animation:mbIn .35s ease} .esc-lista div:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(20,30,50,.4)}
+.esc-lista span{font:800 10px var(--mono);letter-spacing:.2em} .esc-lista b{display:block;margin:6px 0 4px;font:500 19px var(--serif)} .esc-lista em{font-style:normal;font-size:12.5px;color:#8a8a90!important}
+@media(max-width:860px){.esc-dest{grid-template-columns:1fr}}
+.cur-tag,.vivo .cur-tag{color:#c23b3b!important;-webkit-text-fill-color:#c23b3b!important}.gal{grid-template-columns:repeat(4,1fr)!important;gap:14px!important} .cc.nf{border-radius:18px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 24px 50px -24px rgba(20,30,50,.45);transition:transform .3s} .cc.nf:hover{transform:translateY(-6px) rotate(-1deg)} .cc.nf>div{width:100%;height:100%;background:center/cover} @media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr)!important}}.npl{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:rgba(10,10,12,.35);backdrop-filter:blur(8px)} .npl[hidden]{display:none} .npl-c{position:relative;width:min(440px,92vw);padding:34px;border-radius:24px;background:#fff;box-shadow:0 40px 100px -30px rgba(0,0,0,.45)}
+.npl-c h3{margin:8px 0 6px;font:400 34px var(--serif);color:#0b0b0c} .npl-c input{width:100%;box-sizing:border-box;margin:16px 0 12px;padding:14px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.15);font:700 16px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#0b0b0c;background:#fafafa} .npl-c .btn{width:100%}
+.npl-x{position:absolute;top:14px;right:16px;border:0;background:none;font-size:24px;color:#8a8a90;cursor:pointer} .npl-err{color:#c23b3b!important;min-height:1em;font-size:13px} .npl-dl{display:flex;flex-direction:column;gap:10px;margin:18px 0} .npl-out{border:0;background:none;color:#8a8a90;text-decoration:underline;cursor:pointer;font-size:13px}
+.cc.nf{position:relative;box-shadow:0 0 0 1.5px var(--rc),0 24px 50px -24px rgba(20,30,50,.45),0 0 30px -8px var(--rc)!important}
+.nf-holo{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 20%,rgba(255,80,200,.35) 35%,rgba(80,200,255,.35) 45%,rgba(255,230,90,.35) 55%,rgba(120,255,180,.3) 65%,transparent 80%);background-size:250% 250%;mix-blend-mode:color-dodge;animation:nfHolo 6s ease-in-out infinite;opacity:.7}
+.cc.nf:hover .nf-holo{opacity:1;animation-duration:2.5s} @keyframes nfHolo{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="w"><a href="#" class="logo">NORTH<i>POINT</i></a><div class="lk"><a href="#app">La app</a><a href="#incluye">Funciones</a><a href="#comunidad">Comunidad</a><a href="#cursos">Cursos</a><a href="#reto">El reto</a><a href="#planes">Planes</a></div><a href="#" class="btn sm" id="npEntrar">Iniciar sesión</a><a href="#descargar" class="btn sm pri">Descargar</a></div></nav>
+
+<header class="hp">
+  <div class="hp-glow"></div><div class="hp-grid"></div>
+  <div class="w hp-w">
+    <div class="hp-tx">
+      <span class="hp-k"><i></i>NORTHPOINT · Smart Trading Journal</span>
+      <h1>Tú operas.<br><em>NORTHPOINT</em> registra.</h1>
+      <p>El journal que anota tus trades solo.</p>
+      <div class="ctas"><a href="#descargar" class="btn pri">Pruébala gratis</a><a href="#app" class="btn">Ver la app</a></div>
+      <ul class="hp-ok"><li>7 días gratis</li><li>Mac y Windows</li><li>Cancela cuando quieras</li></ul>
+    </div>
+    <div class="hp-vis">
+      <div class="hp-win"><div class="hp-bar"><i></i><i></i><i></i><span>NORTHPOINT</span></div><img src="img/app/log.jpg" alt="NORTHPOINT · Log trade" loading="eager"></div>
+      <div class="hp-flo f1"><img src="img/app/katana.jpg" alt="Tu katana y tus formas"></div>
+      <div class="hp-flo f2"><b>+17.86R</b><span>Octubre · 20 trades</span><svg viewBox="0 0 120 34"><polyline points="0,30 15,26 30,28 45,20 60,22 75,14 90,16 105,8 120,4" fill="none" stroke="#2fe08a" stroke-width="2.5"/></svg></div>
+    </div>
+  </div>
+</header>
+<section class="s" id="app"><div class="w">
+  <div class="cab rv"><span class="k">La app</span><h2>Así se ve por dentro.</h2><p>Todo tu reto en una sola app: el registro de cada trade, tus números, tu calendario y tu avance.</p></div>
+  <div class="ga rv"><div class="ga-tabs" id="gaTabs"><button type="button" class="on" data-g="log">Log trade</button><button type="button" data-g="dash">Dashboard</button><button type="button" data-g="cal">Calendario</button></div>
+    <div class="ga-win"><div class="hp-bar"><i></i><i></i><i></i><span id="gaTit">Log trade</span></div><div class="ga-img"><img id="gaImg" src="img/app/log.jpg" alt="NORTHPOINT"></div></div>
+    <div class="ga-cap" id="gaCap">Detecta tus trades, te pide emociones, motivo y captura, y te dice qué emociones te hacen ganar.</div></div>
+</div></section>
+<section class="s" id="incluye"><div class="w">
+  <div class="cab rv"><span class="k">Todo en una app</span><h2>Lo que necesitas para<br>operar mejor cada día.</h2><p>Registro automático, tus estadísticas, la comunidad y el entrenamiento, en el mismo lugar.</p></div>
+  <div class="inc">
+    <div class="inc-c rv" style="--c:#4fc3ff"><div class="inc-i"><svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="4" stroke="currentColor" stroke-width="3" fill="none"/><path d="M15 16h18M15 24h18M15 32h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><b>Journal automático</b><span>Detecta tus trades y te pide emociones, motivo y captura. Tú solo operas.</span></div>
+    <div class="inc-c rv" style="--c:#2fe08a"><div class="inc-i"><svg viewBox="0 0 48 48"><circle cx="16" cy="18" r="6" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="32" cy="18" r="6" stroke="currentColor" stroke-width="3" fill="none"/><path d="M6 40c2-8 8-10 10-10s8 2 10 10M22 40c2-8 8-10 10-10s8 2 10 10" stroke="currentColor" stroke-width="3" fill="none"/></svg></div><b>Comunidad</b><span>Discord, ranking por balance real y el bias del equipo en cada sesión.</span></div>
+    <div class="inc-c rv" style="--c:#c06bff"><div class="inc-i"><svg viewBox="0 0 48 48"><path d="M6 14l18-8 18 8-18 8z" stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M14 18v12c0 3 4 6 10 6s10-3 10-6V18" stroke="currentColor" stroke-width="3" fill="none"/></svg></div><b>Cursos</b><span>Módulos en video: fundamentos, riesgo, psicología y fondeo.</span></div>
+    <div class="inc-c rv" style="--c:#ff4d5e"><div class="inc-i"><svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="24" rx="4" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="24" cy="22" r="5" fill="currentColor"/><path d="M16 42h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><b>Sesiones en vivo</b><span>Ves el mercado con el equipo, preguntas en el momento y revisas tus trades.</span></div>
+    <div class="inc-c rv" style="--c:#ff3b2f"><div class="inc-i"><svg viewBox="0 0 48 48"><path d="M8 40 L34 14 M30 10l8 8M6 42l4-4" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="38" cy="10" r="3" fill="currentColor"/></svg></div><b>Reto incluido</b><span>ALPHA KAIZEN WAY: un reto de 6 meses con una meta para cada día, dentro de la app.</span></div>
+    <div class="inc-c rv" style="--c:#ffc93d"><div class="inc-i"><svg viewBox="0 0 48 48"><path d="M6 30 Q24 4 42 30" stroke="currentColor" stroke-width="3" fill="none"/><path d="M14 34h20M18 40h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><b>Tu katana</b><span>Te la entrega el herrero. Despierta 10 formas de respiración conforme avanzas.</span></div>
+  </div>
+</div></section>
+
+
+
+
+
+
+
+
+<section class="s" id="journal"><div class="w">
+  <div class="cab rv"><span class="k">Smart Trading Journal</span><h2>Cada trade, registrado<br>con la cabeza fría.</h2><p>La app detecta tus trades de Exness. Al entrar y al salir te pide lo que importa: cómo te sientes, por qué entraste y la captura.</p></div>
+  <div class="g2">
+    <div class="box rv"><span class="k">Log trade</span><h3>Entrada y salida, en segundos.</h3><p>Emociones de riesgo en rojo, para que veas cuándo operas desde el FOMO o la prisa.</p>
+      <div class="emos"><span class="ok">Tranquilo</span><span class="ok">Enfocado</span><span>Confiado</span><span class="mal">Con FOMO</span><span class="mal">Ansioso</span><span>Cansado</span><span class="mal">Con prisa</span></div>
+      <div class="flujo"><div><b>01</b>Se detecta la entrada → emociones, por qué y captura</div><div><b>02</b>Se detecta la salida → ¿respetaste tu plan? y captura final</div><div><b>03</b>Todo queda en tu journal, con tu R y tu P&amp;L</div></div></div>
+    <div class="box rv"><span class="k">Todo en un lugar</span><h3>Tu trading, con números honestos.</h3><p>Dashboard, calendario, estadísticas por estrategia y la comunidad del equipo con ranking.</p>
+      <div class="shot"><img src="img/dash.jpg" alt="Dashboard de NORTHPOINT" loading="lazy"></div></div>
+  </div>
+  <div class="feats rv"><div><b>Exness en vivo</b><span>Tus cuentas y trades entran solos</span></div><div><b>Mercado</b><span>Calendario económico y volatilidad por hora</span></div><div><b>Comunidad</b><span>Ranking y trades del equipo</span></div><div><b>100% local</b><span>Tus datos en tu computadora</span></div></div>
+</div></section>
+<section class="s" id="enaccion"><div class="w">
+  <div class="cab rv"><span class="k">En acción</span><h2>Operas en tu gráfica.<br>NORTHPOINT anota por ti.</h2><p>Entras al trade y el journal se abre solo: reloj, P&L en vivo y tu registro. Cierras y queda guardado con tus emociones y tu captura.</p></div>
+  <div class="mb rv"><div class="mb-tapa"><div class="mb-cam"></div><div class="mb-pant">
+    <div class="mb-graf"><div class="mb-bar"><b>NQ1! · 1m</b><span>O <i id="mbO">0</i></span><span>C <i id="mbC">0</i></span></div><canvas id="mbCv"></canvas></div>
+    <div class="mb-np" id="mbNp"><div class="mb-np-h"><b>NORTHPOINT</b><span>Log trade</span></div>
+      <div class="mb-st" id="mbSt"><i></i>VIGILANDO</div>
+      <div class="mb-vivo" id="mbVivo"><span class="mb-dir">▲ LONG NASDAQ</span><div class="mb-clk" id="mbClk">00:00</div><div class="mb-pl" id="mbPl">+$0</div>
+        <div class="mb-emo" id="mbEmo"><em>Tranquilo</em><em>Enfocado</em><em>Confiado</em><em class="mal">Ansioso</em></div><div class="mb-nota"><span id="mbNota"></span><i>|</i></div></div>
+      <div class="mb-lista" id="mbLista"><div><b class="up">▲ NASDAQ</b><span>+1.4R</span><em>✓ plan</em></div><div><b class="dn">▼ S&P 500</b><span class="dn">−1.0R</span><em>✓ plan</em></div></div></div>
+  </div></div><div class="mb-base"><i></i></div></div>
+</div></section>
+<section class="s" id="tecnico" style="padding-top:30px"><div class="w">
+  <div class="cab rv"><span class="k">Lo técnico</span><h2>Hecha para tu escritorio.</h2></div>
+  <div class="tec rv">
+    <div><b>Mac y Windows</b><span>App nativa. Se instala en un minuto y se actualiza sola.</span></div>
+    <div><b>Detección automática</b><span>Conecta tu cuenta de Exness y tus entradas y salidas se registran solas.</span></div>
+    <div><b>Tus datos son tuyos</b><span>Tus trades y capturas se guardan en tu computadora, no en un servidor ajeno.</span></div>
+    <div><b>Capturas en un pegado</b><span>⌘V o Ctrl+V y tu gráfica queda dentro del trade.</span></div>
+    <div><b>Ligera</b><span>Corre fluida aunque tengas tu plataforma abierta al mismo tiempo.</span></div>
+    <div><b>Español e inglés</b><span>Cambias de idioma desde Configuración.</span></div>
+  </div>
+</div></section>
+<section class="s" id="bias"><div class="w">
+  <div class="cab rv"><span class="k">Bias</span><h2>Toros contra osos.<br>Opera con la mesa.</h2><p>Antes de cada sesión, el equipo sube su bias: captura, dirección y análisis. Ves en vivo hacia dónde se inclina la mesa y qué espera cada quien.</p></div>
+  <div class="arena rv"><div class="g a"></div><div class="g b"></div><div class="an t"></div><div class="an o"></div><div class="v"><b>LONGS ONLY</b><span>3 TOROS · 0 OSOS</span></div></div>
+  <div class="ses rv"><div class="as"><b>ASIA</b><span>18:00 NY · su propia mesa</span></div><div class="lo"><b>LONDRES</b><span>3:00 NY · su propia mesa</span></div><div class="ny"><b>NEW YORK</b><span>9:30 NY · su propia mesa</span></div></div>
+</div></section>
+<section class="s" id="comunidad"><div class="w">
+  <div class="cab rv"><span class="k">Comunidad</span><h2>No operes solo.</h2><p>Tu equipo en la app y en Discord: ranking por balance real, trades compartidos y análisis diario de la mesa.</p></div>
+  <div class="feats rv" style="grid-template-columns:repeat(3,1fr)"><div><b>Ranking</b><span>Por balance real de Exness, sin inventos</span></div><div><b>Discord NORTHPOINT</b><span>Análisis, anuncios, lives y trades del equipo</span></div><div><b>Análisis a la mesa</b><span>Lo que el equipo publica en Discord aparece en el Bias</span></div></div>
+  <div class="feats rv" style="grid-template-columns:repeat(3,1fr)"><div><b>Mercado en vivo</b><span>Calendario económico, noticias y lives</span></div><div><b>Volatilidad por hora</b><span>Cuándo se mueve el NQ y el ES</span></div><div><b>Revisión del día</b><span>Lo que dijo cada uno contra lo que operó</span></div></div>
+</div></section>
+
+<section class="s" id="cartas"><div class="w">
+  <div class="cab rv"><span class="k">Premios</span><h2>La disciplina se colecciona.</h2><p>Cada objetivo cumplido del reto te da una carta.</p></div>
+  <div class="gal" id="gal"></div>
+  
+</div></section>
+<section class="s" id="cursos"><div class="w">
+  <div class="cab rv"><span class="k">La escuela NORTHPOINT</span><h2>Aprende a operar.<br><b>Aprende a cobrar.</b></h2><p>Un curso completo en video, sesiones en vivo con el equipo y la app para practicar lo que aprendes el mismo día.</p></div>
+  <div class="esc-dest rv"><div class="esc-tx"><span class="k">EL CURSO</span><h3>De Cero a Payout.<br><b>De tu primera operación a tu primer retiro.</b></h3><p>9 módulos en video, de la mentalidad y la rutina hasta pasar una evaluación de fondeo y convertir tus payouts en patrimonio.</p>
+      <div class="esc-num"><div><b>9</b><span>módulos</span></div><div><b>27</b><span>lecciones</span></div><div><b>8–15</b><span>min por lección</span></div></div>
+      <a href="#planes" class="btn pri">Ver planes</a></div>
+    <div class="esc-mini"><div class="esc-play"><i></i></div><span>MÓDULO 0</span><b>Bienvenida y mentalidad</b><em>3 lecciones</em></div></div>
+  <div class="esc-plan rv"><div class="esc-tabs" id="escTabs"><button type="button" class="on" data-t="0">Fundamentos</button><button type="button" data-t="1">Cómo operar</button><button type="button" data-t="2">Riesgo y fondeo</button><button type="button" data-t="3">Mente y patrimonio</button></div><div class="esc-lista" id="escLista"></div></div>
+  <div class="cur rv" style="grid-template-columns:1fr"><div class="cur-c vivo"><span class="cur-tag"><i></i>EN VIVO</span><h3>Sesiones con el equipo</h3><p>Entras a la sala, ves el mercado con nosotros y preguntas en el momento.</p>
+      <ul><li><b>Antes de la apertura</b><span>Qué vigilar en la sesión</span></li><li><b>Mercado en vivo</b><span>Lectura en tiempo real, con chat</span></li><li><b>Revisión</b><span>Repasamos trades del día, con sus registros</span></li><li><b>Preguntas</b><span>Resuelve tus dudas directo con el equipo</span></li></ul>
+      <div class="cur-live"><div class="cur-pant"><span class="cur-rec"><i></i>LIVE</span><svg viewBox="0 0 300 120" preserveAspectRatio="none"><polyline points="0,90 20,84 40,88 60,70 80,74 100,58 120,62 140,40 160,48 180,34 200,42 220,26 240,30 260,18 280,24 300,12" fill="none" stroke="#2fe08a" stroke-width="2"/></svg></div><div class="cur-chat" id="curChat"></div></div></div></div>
+</div></section>
+<section class="s" id="reto"><div class="w">
+  <div class="cab rv"><span class="k">Incluido · ALPHA KAIZEN WAY</span><h2>Y si quieres un reto,<br>la app te lo lleva.</h2><p>Kaizen es mejorar un poco cada día. Aquí se mide: cada día tiene un objetivo, cada semana una meta y cada mes un hito.</p></div>
+  <div class="pasos">
+    <div class="paso rv"><span class="n">PASO 1</span><h3>Doblar cada semana</h3><div class="r">$100 → $1,000</div><p>Cuatro semanas con una meta clara cada semana y un objetivo para cada día.</p><ul><li>Objetivo del día, siempre a la vista</li><li>Tu avance semana por semana</li><li>Cartas al cumplir</li></ul></div>
+    <div class="paso rv"><span class="n">PASO 2</span><h3>Construir la cuenta</h3><div class="r">$1,000 → $15,000</div><p>Se desbloquea al llegar a $1,000. Reglas fijas que la app te recuerda en cada trade.</p><ul><li>Riesgo calculado por la app</li><li>Tus reglas en cada registro</li><li>Hitos rumbo a $15,000</li></ul></div>
+    <div class="paso lock rv"><span class="n">LA META</span><h3>Cuenta live</h3><div class="r">$15,000</div><p>Seis meses de semanas limpias. La app lleva el camino semana por semana para que nunca pierdas de vista dónde vas.</p><ul><li>26 semanas, mes por mes</li><li>Hitos en $1k, $5k, $10k y $15k</li><li>Fecha meta desde el día que empiezas</li></ul></div>
+  </div>
+  <div class="sem rv"><div><span>SEMANA 1</span><b>$100 → $200</b></div><div><span>SEMANA 2</span><b>$200 → $400</b></div><div><span>SEMANA 3</span><b>$400 → $800</b></div><div><span>SEMANA 4</span><b>$800 → $1,000</b></div></div>
+</div></section>
+<section class="s" style="padding-top:20px"><div class="w">
+  <div class="cab rv"><span class="k">6 meses</span><h2>El camino, semana por semana.</h2><p>Eliges el día en que empiezas y la app arma tus 26 semanas. Siempre sabes en qué semana del mes vas.</p></div>
+  <div class="meses rv" id="meses"></div>
+  <div class="riel rv"><i></i><span style="left:6.67%"><b></b><em>$1,000</em></span><span style="left:33.3%"><b></b><em>$5,000</em></span><span style="left:66.7%"><b></b><em>$10,000</em></span><span style="left:100%"><b></b><em>$15,000</em></span></div>
+</div></section>
+<section class="s fg" id="forja"><div class="fg-bg" id="fgBg" style="display:none"></div><div class="fg-vel"></div><canvas id="fgCv"></canvas><div class="w">
+  <div class="cab rv"><span class="k">La forja · El camino</span><h2>Tu reto tiene historia.</h2><p>Al empezar ALPHA KAIZEN WAY llega el herrero y te entrega tu katana. Al tocarla se enciende de un color, y ese color dice qué tipo de trader eres.</p></div>
+  <div class="fg-kat rv" id="fgKat" title="Tócala"><svg viewBox="0 0 1000 120"><defs><linearGradient id="fga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset=".45" stop-color="#9aa6b4"/><stop offset=".55" stop-color="#5b6573"/><stop offset="1" stop-color="#cfd7e1"/></linearGradient><linearGradient id="fgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--kc2)"/><stop offset=".5" style="stop-color:var(--kc)"/><stop offset="1" style="stop-color:var(--kc2)"/></linearGradient><clipPath id="fgh"><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z"/></clipPath><pattern id="fgi" width="22" height="26" patternUnits="userSpaceOnUse"><rect width="22" height="26" fill="#120a0a"/><path d="M0 0 L11 13 L0 26 M22 0 L11 13 L22 26" stroke="#7a1626" stroke-width="5"/><circle cx="11" cy="13" r="2.5" fill="#d9b25b"/></pattern></defs><path d="M300 52 L930 40 Q975 42 992 58 Q960 66 930 66 L300 70Z" fill="url(#fga)"/><g clip-path="url(#fgh)"><rect class="fg-col" x="300" y="30" width="700" height="50" fill="url(#fgc)"/></g><path d="M310 64 Q340 58 370 64 T430 63 T490 62 T550 61 T610 60 T670 59 T730 58 T790 57 T850 56 T910 56 T960 58" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" fill="none"/><rect x="276" y="44" width="26" height="34" rx="4" fill="#c9a24e"/><ellipse cx="270" cy="61" rx="10" ry="44" fill="#1a1d24" stroke="#c9a24e" stroke-width="3"/><rect x="40" y="46" width="222" height="30" rx="12" fill="url(#fgi)"/><rect x="30" y="44" width="18" height="34" rx="6" fill="#c9a24e"/></svg><span id="fgNom">Toca la hoja</span></div>
+  <div class="fg-cols rv" id="fgCols"></div>
+</div></section>
+<section class="s" id="planes"><div class="w">
+  <div class="cab rv"><span class="k">Planes</span><h2>Elige tu plan.</h2><p>7 días gratis en la app. Después, un pago mensual. Cancelas cuando quieras.</p></div>
+  <div class="planes">
+    <div class="plan rv"><h3>Starter</h3><p class="para">Tu journal, ordenado y con números.</p><div class="precio"><b>$9</b><span>USD / mes</span></div>
+      <ul><li>Journal y Log trade ilimitados</li><li>Dashboard y calendario</li><li>1 cuenta conectada</li><li>Mercado en vivo</li><li class="x">Bias y comunidad</li><li class="x">Retos ALPHA KAIZEN WAY</li></ul><button type="button" class="btn" data-plan="starter">Elegir Starter</button></div>
+    <div class="plan top rv"><span class="tag">RECOMENDADO</span><h3>Pro</h3><p class="para">Todo NORTHPOINT: journal, comunidad, bias y retos.</p><div class="precio"><b>$19</b><span>USD / mes</span></div>
+      <ul><li>Todo lo de Starter</li><li>Todas tus cuentas conectadas</li><li>Bias por sesión: Asia, Londres y NY</li><li>Comunidad y Discord NORTHPOINT</li><li>Ranking del equipo</li><li>Retos ALPHA KAIZEN WAY</li></ul><button type="button" class="btn pri" data-plan="pro">Elegir Pro</button></div>
+    <div class="plan rv"><h3>Mesa</h3><p class="para">Para oficinas y equipos de trading.</p><div class="precio"><b>$49</b><span>USD / mes</span></div>
+      <ul><li>Todo lo de Alpha</li><li>Hasta 5 traders</li><li>Mesa privada con ranking</li><li>Soporte directo</li></ul><button type="button" class="btn" data-plan="mesa">Elegir Mesa</button></div>
+  </div>
+  <div class="garan rv"><span>7 días gratis</span><span>Cancelas en un clic</span><span>Tus datos se quedan en tu computadora</span></div>
+</div></section>
+
+<section class="s" id="descargar" style="padding-top:30px"><div class="w">
+  <div class="dl rv"><span class="k">ALPHA KAIZEN WAY</span><h2 class="arco">NORTHPOINT</h2><p>Instala la app y empieza tus 7 días gratis.</p>
+    <div class="ctas"><a class="btn pri" id="dlMac" href="descargas/NORTHPOINT-Mac.dmg"> Descargar para Mac</a><a class="btn" id="dlWin" href="https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Instalador.exe">⊞ Descargar para Windows</a></div>
+    <p class="fine">Mac: si dice que no se puede abrir, clic derecho → Abrir. Windows: si aparece el aviso azul, "Más información" → "Ejecutar de todas formas".</p></div>
+</div></section>
+
+<section class="s" style="padding-top:20px"><div class="w faq">
+  <div class="cab rv" style="margin-bottom:30px"><span class="k">Preguntas</span><h2>Lo que más nos preguntan.</h2></div>
+  <details><summary>¿Qué incluye NORTHPOINT?</summary><p>Journal con detección automática de trades, Log trade con emociones y capturas, Bias del equipo por sesión, comunidad con ranking, mercado en vivo y los retos ALPHA KAIZEN WAY.</p></details>
+  <details><summary>¿Los retos garantizan resultados?</summary><p>No. Son retos de disciplina con objetivos medibles. El resultado depende de cómo operes; la app te ayuda a medir y a respetar tus reglas.</p></details>
+  <details><summary>¿Con qué broker funciona?</summary><p>Exness entra en vivo: cuentas, saldo y trades. También puedes registrar cualquier trade a mano con Log trade.</p></details>
+  <details><summary>¿Cómo se ganan las cartas?</summary><p>Cumpliendo objetivos: el del día, la semana doblada, el mes completo y los hitos de tu cuenta. La rareza depende del objetivo.</p></details>
+  <details><summary>¿Dónde quedan mis datos?</summary><p>En tu computadora. Solo lo que decides compartir con la comunidad (tu bias y tus resultados) viaja al equipo.</p></details>
+  <details><summary>¿Cómo cancelo?</summary><p>Desde el correo de tu suscripción, en un clic. La app sigue funcionando hasta el final del periodo pagado.</p></details>
+</div></section>
+
+<footer><div class="w"><span>© <span id="anio">2026</span> NORTHPOINT</span><span>NORTHPOINT es una herramienta de registro y análisis. No es asesoría financiera. Operar futuros, forex y CFDs conlleva un riesgo alto de pérdida.</span></div></footer>
+
+<script>
+/* ===== Links de pago (Lemon Squeezy): pega aquí el checkout de cada plan ===== */
+const NP_PAGOS = { starter: 'https://whop.com/northpoint/northpoint-starter', pro: 'https://whop.com/northpoint/northpoint-pro', mesa: 'https://whop.com/northpoint/northpoint-mesa' };
+const CARTAS = [['bamboo','comun'],['blossom-rest','comun'],['footprints','comun'],['green-silence','comun'],['meadow','comun'],['pink-field','comun'],['spring-dream','comun'],['stillness','comun'],['the-ground','comun'],['white-earth','comun'],['sakura-rain','rara'],['first-light','rara'],['winter-wind','rara'],['the-circle','rara'],['wanderer','rara'],['cedar-path','rara'],['mist-path','rara'],['river-stone','rara'],['summit','epica'],['the-duel','epica'],['cosmos-walk','epica'],['above-clouds','epica'],['seventh-fall','epica'],['spec-pride','legendaria'],['spec-greed','legendaria'],['spec-wrath','legendaria'],['spec-envy','legendaria'],['spec-lust','legendaria'],['spec-gluttony','legendaria'],['spec-sloth','legendaria']];
+const RC = { comun: ['Común', '#9fb3c8'], rara: ['Rara', '#4fa3ff'], epica: ['Épica', '#c06bff'], legendaria: ['Legendaria', '#ffc93d'] };
+const NOM = { 'spec-pride': 'Orgullo', 'spec-greed': 'Codicia', 'spec-wrath': 'Ira', 'spec-envy': 'Envidia', 'spec-lust': 'Deseo', 'spec-gluttony': 'Exceso', 'spec-sloth': 'Pereza' };
+const nom = k => NOM[k] || k.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+const carta = ([k, r], inf) => `<div class="cc" style="--rc:${RC[r][1]}"><div style="background-image:url(img/cartas/${k}.jpg)"></div><i></i>${inf ? `<div class="inf"><span>${RC[r][0]}</span><b>${nom(k)}</b></div>` : ''}</div>`;
+if (document.getElementById('flota')) document.getElementById('flota').innerHTML = [0, 1, 2].map(f => { const L = CARTAS.slice(f * 10, f * 10 + 10).map(c => carta(c)).join(''); return `<div class="f${f}"><div class="tira">${L}${L}</div></div>`; }).join('');
+const destacadas = ['spec-wrath', 'summit', 'sakura-rain', 'spec-pride', 'the-duel', 'first-light', 'cosmos-walk', 'spec-envy', 'wanderer', 'above-clouds', 'spec-greed', 'seventh-fall'];
+document.getElementById('gal').innerHTML = ['mist-path', 'summit', 'sakura-rain', 'first-light', 'river-stone', 'winter-wind', 'wanderer', 'cosmos-walk'].map((k, i) => `<div class="cc nf" style="--rc:${['#ff4fd8','#4fc3ff','#ffc93d','#7dffb2'][i % 4]}"><div style="background-image:url(img/nft/${k}.webp)"></div><i class="nf-holo"></i></div>`).join('');   // 23-oct-2026: 8 cartas, sin títulos ni rareza
+document.getElementById('meses').innerHTML = ['MES 1', 'MES 2', 'MES 3', 'MES 4', 'MES 5', 'MES 6'].map(m => `<div><b>${m}</b>${'<i></i>'.repeat(4)}</div>`).join('');
+document.getElementById('anio').textContent = new Date().getFullYear();
+document.querySelectorAll('[data-plan]').forEach(b => { const u = NP_PAGOS[b.dataset.plan]; b.onclick = () => { if (u) location.href = u; else document.getElementById('descargar').scrollIntoView(); }; b.textContent = u ? 'Suscribirme' : 'Prueba 7 días gratis'; });
+const nav = document.getElementById('nav'); addEventListener('scroll', () => nav.classList.toggle('s', scrollY > 40), { passive: true });
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.rv').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 80 + 'ms'; io.observe(el); });
+const ua = navigator.userAgent; if (/Windows/i.test(ua)) { const a = document.getElementById('dlWin'), b = document.getElementById('dlMac'); a.classList.add('pri'); b.classList.remove('pri'); a.parentNode.prepend(a); }
+</script>
+<script>
+(() => { const K = [['Carmesí', '#ff3b2f', '#ffb199', 'Fuego'], ['Azul marea', '#2f8cff', '#a8d4ff', 'Agua'], ['Ámbar trueno', '#ffc93d', '#fff1b8', 'Trueno'], ['Jade viento', '#2fe08a', '#b6ffd9', 'Viento'], ['Gris piedra', '#a7b4c2', '#eef3f8', 'Piedra'], ['Rosa niebla', '#ff6fd0', '#ffd0f1', 'Niebla'], ['Violeta luna', '#a46bff', '#e2d0ff', 'Luna'], ['Negra', '#16161c', '#ff2b4a', 'Legendaria']];
+  const C = ['La entrada', 'El entrenamiento', 'Las glicinas', 'La batalla', 'La montaña', 'El amanecer'], sec = document.getElementById('forja'), kat = document.getElementById('fgKat'), bg = document.getElementById('fgBg');
+  let i = 0, cap = 0;
+  const pon = n => { i = n; const [nm, c, c2, el] = K[n]; sec.style.setProperty('--kc', c); sec.style.setProperty('--kc2', c2); kat.classList.add('sw'); void kat.offsetWidth; kat.classList.remove('sw'); document.getElementById('fgNom').textContent = 'Katana ' + nm + ' · ' + el; document.querySelectorAll('#fgCols button').forEach((b, k) => b.classList.toggle('on', k === n)); };
+  document.getElementById('fgCols').innerHTML = K.map((k, n) => `<button type="button" style="--c:${k[1]}" title="${k[0]}" data-n="${n}"></button>`).join('');
+  document.querySelectorAll('#fgCols button').forEach(b => b.onclick = () => pon(+b.dataset.n));
+  kat.onclick = () => pon((i + 1) % K.length);
+  const ponCap = n => { cap = n; bg.style.backgroundImage = `url(img/camino/${n + 1}.jpg)`; document.querySelectorAll('#fgCaps button').forEach((b, k) => b.classList.toggle('on', k === n)); };
+  if (document.getElementById('fgCaps')) document.getElementById('fgCaps').innerHTML = C.map((c, n) => `<button type="button" style="background-image:url(img/camino/${n + 1}.jpg)" data-c="${n}"><em>${['I', 'II', 'III', 'IV', 'V', 'VI'][n]} · ${c}</em></button>`).join('');
+  document.querySelectorAll('#fgCaps button').forEach(b => b.onclick = () => ponCap(+b.dataset.c));
+  pon(0);
+  const cv = document.getElementById('fgCv'), g = cv.getContext('2d'); let P = [];
+  const tam = () => { cv.width = sec.offsetWidth; cv.height = sec.offsetHeight; }; tam(); addEventListener('resize', tam);
+  const nuevo = ini => ({ x: Math.random() * cv.width, y: ini ? Math.random() * cv.height : cv.height + 10, r: .8 + Math.random() * 2.2, vy: -(.4 + Math.random() * 1.4), vx: (Math.random() - .5) * .6, a: Math.random() * 6 });
+  for (let k = 0; k < 90; k++) P.push(nuevo(true));
+  const anim = t => { if (sec.getBoundingClientRect().bottom < 0 || sec.getBoundingClientRect().top > innerHeight) return requestAnimationFrame(anim); g.clearRect(0, 0, cv.width, cv.height); const col = getComputedStyle(sec).getPropertyValue('--kc').trim() || '#ff3b2f'; g.fillStyle = col; g.shadowColor = col; g.shadowBlur = 10;
+    P.forEach((p, k) => { p.x += p.vx + Math.sin(t / 900 + p.a) * .4; p.y += p.vy; g.globalAlpha = Math.max(0, Math.min(1, p.y / cv.height)) * (.5 + Math.sin(t / 150 + p.a) * .3); g.beginPath(); g.arc(p.x, p.y, p.r, 0, 7); g.fill(); if (p.y < -10) P[k] = nuevo(false); });
+    requestAnimationFrame(anim); }; requestAnimationFrame(anim);
+})();
+</script>
+<script>
+(() => { const cv = document.getElementById('mbCv'); if (!cv) return; const g = cv.getContext('2d'), np = document.getElementById('mbNp');
+  let W, H, V = [], p = 21480, ent = null, t0 = 0, fase = 0;
+  const tam = () => { const r = cv.getBoundingClientRect(); W = cv.width = r.width * devicePixelRatio; H = cv.height = r.height * devicePixelRatio; }; tam(); addEventListener('resize', tam);
+  for (let i = 0; i < 70; i++) { const o = p; p += (Math.random() - .5) * 8; V.push({ o, c: p, h: Math.max(o, p) + Math.random() * 4, l: Math.min(o, p) - Math.random() * 4 }); }
+  const dibuja = () => { g.clearRect(0, 0, W, H); const L = V.slice(-60), mx = Math.max(...L.map(v => v.h)) + 6, mn = Math.min(...L.map(v => v.l)) - 6, y = v => (mx - v) / (mx - mn) * H * .9 + H * .05, w = W / 62;
+    g.strokeStyle = '#1e2433'; g.lineWidth = 1; for (let k = 1; k < 6; k++) { g.beginPath(); g.moveTo(0, H * k / 6); g.lineTo(W, H * k / 6); g.stroke(); }
+    L.forEach((v, k) => { const x = k * w + w / 2, up = v.c >= v.o; g.strokeStyle = g.fillStyle = up ? '#26a69a' : '#ef5350'; g.beginPath(); g.moveTo(x, y(v.h)); g.lineTo(x, y(v.l)); g.stroke(); g.fillRect(x - w * .35, Math.min(y(v.o), y(v.c)), w * .7, Math.max(1, Math.abs(y(v.o) - y(v.c)))); });
+    if (ent) { const ye = y(ent); g.setLineDash([6, 6]); g.strokeStyle = '#4fc3ff'; g.beginPath(); g.moveTo(0, ye); g.lineTo(W, ye); g.stroke(); g.setLineDash([]); g.fillStyle = '#4fc3ff'; g.font = `700 ${11 * devicePixelRatio}px JetBrains Mono, monospace`; g.fillText('ENTRY', 8, ye - 6); }
+    const u = V[V.length - 1]; document.getElementById('mbO').textContent = u.o.toFixed(2); document.getElementById('mbC').textContent = u.c.toFixed(2); };
+  const nota = 'Entré con mi plan, sin prisa. Esperé confirmación.'; let ni = 0;
+  setInterval(() => { { const r = cv.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight || document.hidden) return; } const u = V[V.length - 1], dr = fase === 1 ? .9 : 0; u.c += (Math.random() - .5 + dr * .08) * 3; u.h = Math.max(u.h, u.c); u.l = Math.min(u.l, u.c);
+    if (Math.random() < .12) V.push({ o: u.c, c: u.c, h: u.c, l: u.c }); dibuja();
+    if (fase === 1) { const s = Math.floor((Date.now() - t0) / 1000) * 7, pl = (u.c - ent) * 4; document.getElementById('mbClk').textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); const e = document.getElementById('mbPl'); e.textContent = (pl >= 0 ? '+$' : '−$') + Math.abs(Math.round(pl)); e.className = 'mb-pl' + (pl < 0 ? ' dn' : '');
+      if (ni < nota.length && Date.now() - t0 > 2500) document.getElementById('mbNota').textContent = nota.slice(0, ++ni); } }, 120);
+  const ciclo = () => { fase = 0; np.classList.remove('on'); ent = null; document.getElementById('mbSt').lastChild.textContent = 'VIGILANDO'; document.querySelectorAll('#mbEmo em').forEach(e => e.classList.remove('on')); document.getElementById('mbNota').textContent = ''; ni = 0;
+    setTimeout(() => { fase = 1; t0 = Date.now(); ent = V[V.length - 1].c; np.classList.add('on'); document.getElementById('mbSt').lastChild.textContent = 'TRADE DETECTADO';
+      setTimeout(() => document.querySelectorAll('#mbEmo em')[1].classList.add('on'), 1200); setTimeout(() => document.querySelectorAll('#mbEmo em')[0].classList.add('on'), 1900);
+      setTimeout(() => { fase = 2; const r = ((V[V.length - 1].c - ent) / 6).toFixed(1); const d = document.createElement('div'); d.innerHTML = `<b class="up">▲ NASDAQ</b><span class="${r < 0 ? 'dn' : ''}">${r >= 0 ? '+' : ''}${r}R</span><em>✓ plan</em>`; const l = document.getElementById('mbLista'); l.prepend(d); if (l.children.length > 3) l.lastChild.remove(); np.classList.remove('on'); document.getElementById('mbSt').lastChild.textContent = 'GUARDADO EN TU JOURNAL'; setTimeout(ciclo, 2600); }, 9000); }, 2200); };
+  ciclo();
+})();
+</script>
+<script>
+(() => { const ch = document.getElementById('curChat'); if (!ch) return; const M = [['ana', '¿Qué estás vigilando hoy?'], ['luis', 'Registrado en mi journal ✓'], ['mau', 'Gracias, me quedó clarísimo'], ['sofi', '¿Puedes repetir lo del riesgo?'], ['dani', 'Hoy esperé y no forcé nada'], ['emi', 'Primera semana completa'], ['vale', '¿A qué hora es la revisión?']]; let i = 0;
+  setInterval(() => { const [u, t] = M[i++ % M.length], d = document.createElement('div'); d.innerHTML = `<b>${u}</b>${t}`; ch.appendChild(d); while (ch.children.length > 6) ch.firstChild.remove(); }, 1800); })();
+</script>
+<script>
+(() => {
+  try {
+  // hero: capítulos con fundido
+  const bg = document.getElementById('epBg'), L = bg.querySelectorAll('i'), caps = document.getElementById('epCaps'); let k = 0, cur = 0; L[0].classList.add('on');
+  caps.innerHTML = [1, 2, 3, 4, 5, 6].map(n => `<button type="button" aria-label="Capítulo ${n}" data-k="${n - 1}"></button>`).join('');
+  const ir = n => { k = n; const nxt = L[1 - cur]; nxt.style.backgroundImage = `url(img/camino/${n + 1}.jpg)`; nxt.style.animation = 'none'; void nxt.offsetWidth; nxt.style.animation = ''; nxt.classList.add('on'); L[cur].classList.remove('on'); cur = 1 - cur; caps.querySelectorAll('button').forEach((b, j) => b.classList.toggle('on', j === n)); };
+  caps.querySelectorAll('button').forEach(b => b.onclick = () => { ir(+b.dataset.k); clearInterval(tm); tm = setInterval(() => ir((k + 1) % 6), 6500); });
+  caps.firstChild.classList.add('on'); let tm = setInterval(() => ir((k + 1) % 6), 6500);
+  } catch (_) {}
+  // tarjetas con giro 3D al mover el mouse
+  document.querySelectorAll('.inc-c,.paso,.plan,.cur-c,.tec div').forEach(c => { c.addEventListener('mousemove', e => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = `perspective(900px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateZ(10px)`; }); c.addEventListener('mouseleave', () => { c.style.transform = ''; }); });
+})();
+</script>
+<script>
+(() => { const T = { log: ['Log trade', 'Detecta tus trades, te pide emociones, motivo y captura, y te dice qué emociones te hacen ganar.'], dash: ['Dashboard', 'Tus números del mes: R, win rate, expectancy, curva y disciplina, sin hacer cuentas.'], cal: ['Calendario', 'Cada día en verde o en rojo, con sus trades. Ves tu mes de un vistazo.'] };
+  const img = document.getElementById('gaImg'); if (!img) return; let tm, k = 0; const ks = Object.keys(T);
+  const ir = g => { document.querySelectorAll('#gaTabs button').forEach(b => b.classList.toggle('on', b.dataset.g === g)); img.classList.add('out'); setTimeout(() => { img.src = 'img/app/' + g + '.jpg'; img.onload = () => img.classList.remove('out'); }, 250); document.getElementById('gaTit').textContent = T[g][0]; document.getElementById('gaCap').textContent = T[g][1]; k = ks.indexOf(g); };
+  document.querySelectorAll('#gaTabs button').forEach(b => b.onclick = () => { ir(b.dataset.g); clearInterval(tm); tm = setInterval(() => ir(ks[(k + 1) % ks.length]), 7000); });
+  tm = setInterval(() => ir(ks[(k + 1) % ks.length]), 7000); })();
+</script>
+<script>
+(() => { const T = [[['0', 'Bienvenida y mentalidad', 3], ['1', 'La rutina del trader rentable', 3]], [['2', 'Tu estrategia de apertura', 3], ['3', 'Horarios de alta probabilidad', 2], ['4', 'Confluencias que sí importan', 3]], [['5', 'Gestión de riesgo', 3], ['6', 'El embudo: evaluación → payout', 3]], [['7', 'Psicología y disciplina', 3], ['8', 'De payout a patrimonio', 4]]];
+  const L = document.getElementById('escLista'); if (!L) return; const pon = i => { L.innerHTML = T[i].map(([n, t, c]) => `<div><span>MÓDULO ${n}</span><b>${t}</b><em>${c} lecciones en video</em></div>`).join(''); document.querySelectorAll('#escTabs button').forEach(b => b.classList.toggle('on', +b.dataset.t === i)); };
+  document.querySelectorAll('#escTabs button').forEach(b => b.onclick = () => pon(+b.dataset.t)); pon(0); })();
+</script>
+<div class="npl" id="npl" hidden><div class="npl-c"><button type="button" class="npl-x" id="nplX">×</button>
+  <div id="nplForm"><span class="k">MIEMBROS</span><h3>Iniciar sesión</h3><p>Entra con el código de acceso que te dio el equipo.</p>
+    <input id="nplCod" placeholder="NP-XXXX-XXXX" autocomplete="off" spellcheck="false"><button type="button" class="btn pri" id="nplOk">Entrar</button><p class="npl-err" id="nplErr"></p></div>
+  <div id="nplIn" hidden><span class="k">TU ACCESO</span><h3>Hola, <span id="nplNom"></span>.</h3><p>Descarga siempre la versión más reciente: <b id="nplVer">…</b></p>
+    <div class="npl-dl"><a class="btn pri" href="descargas/NORTHPOINT-Mac.dmg">Descargar para Mac</a><a class="btn" href="https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Instalador.exe">Descargar para Windows</a></div>
+    <button type="button" class="npl-out" id="nplOut">Cerrar sesión</button></div></div></div>
+<script>
+(() => { const H = {"a57696e736b81aa19c86ad2314acb6649eeb9f94b3642115446c9b4e48376c7e": "Pablo", "d725f4c2f4d3554b4ed1cb8a80a83bc31e197a298aca9f2287c85cf8c1c57fd6": "Gerardo", "a3fffaee28c45acc97268f4dac140b3f290879ae2e24bacd5a3908dfe1aa8855": "Goyo"};
+  const sha = async t => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)))].map(b => b.toString(16).padStart(2, '0')).join('');
+  const M = document.getElementById('npl'), F = document.getElementById('nplForm'), I = document.getElementById('nplIn'), get = () => { try { return localStorage.getItem('np.miembro'); } catch (_) { return null; } };
+  const pinta = () => { const n = get(); F.hidden = !!n; I.hidden = !n; if (n) document.getElementById('nplNom').textContent = n; document.getElementById('npEntrar').textContent = n ? 'Mi acceso' : 'Iniciar sesión'; };
+  fetch('version.json?' + Date.now()).then(r => r.json()).then(v => { document.getElementById('nplVer').textContent = v.version || v.v || ''; }).catch(() => {});
+  document.getElementById('npEntrar').onclick = e => { e.preventDefault(); pinta(); M.hidden = false; };
+  document.getElementById('nplX').onclick = () => { M.hidden = true; }; M.onclick = e => { if (e.target === M) M.hidden = true; };
+  const ok = async () => { const c = document.getElementById('nplCod').value.trim().toUpperCase(), n = H[await sha(c)]; if (!n) { document.getElementById('nplErr').textContent = 'Ese código no es válido.'; return; } try { localStorage.setItem('np.miembro', n); } catch (_) {} pinta(); };
+  document.getElementById('nplOk').onclick = ok; document.getElementById('nplCod').onkeydown = e => { if (e.key === 'Enter') ok(); };
+  document.getElementById('nplOut').onclick = () => { try { localStorage.removeItem('np.miembro'); } catch (_) {} pinta(); };
+  pinta(); })();
+</script>
+</body>
+</html>
