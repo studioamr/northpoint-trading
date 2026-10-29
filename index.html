@@ -73,9 +73,6 @@ h1 em,.em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#8ec0ff 50%
 .brk{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 26px;margin-top:44px;padding-top:26px;border-top:1px solid var(--line);max-width:760px;margin-left:auto;margin-right:auto}
 .brk span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);width:100%}
 .brk b{font-size:17px;font-weight:700;color:#c7cbd3;letter-spacing:-.01em;opacity:.8}
-.mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;display:none;gap:8px;transform:translateY(140%);transition:transform .4s}
-.mcta.on{transform:none}
-.mcta .btn{flex:1;justify-content:center;height:50px}
 .btn.dis{opacity:.55;pointer-events:none}
 .hc{position:absolute;inset:0;width:100%;height:100%;opacity:.28;pointer-events:none;mask-image:linear-gradient(180deg,transparent,#000 25%,#000 70%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%,#000 70%,transparent)}
 .toasts{position:absolute;right:18px;top:18px;z-index:4;display:grid;gap:10px;width:min(320px,70%);pointer-events:none}
@@ -392,8 +389,6 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
   .pin-in{padding-top:100px}
 }
 @media (max-width:600px){
-  .mcta{display:flex}
-  footer{padding-bottom:100px}
   .zoom{height:150vh}
   .wrap{padding:0 16px}
   .hero{padding-top:150px}
@@ -532,27 +527,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
   </div></div>
 </section>
 
-<section class="sec" id="tuya">
-  <div class="rails"></div>
-  <div class="wrap two">
-    <div>
-      <span class="tag rv">Hazla tuya</span>
-      <h2 class="rv d1">Ocho temas.<br><span class="em">Un clic.</span></h2>
-      <p class="lead rv d2">La app que abres diario tiene que gustarte. Cambia el color de todo en un clic, gráficas incluidas.</p>
-      <div class="sw rv d3" id="sw"></div>
-    </div>
-    <div class="win rv d2"><div class="shot"><video src="assets/l/temas.mp4" poster="assets/l/temas.jpg" muted loop playsinline preload="none" class=on></video></div></div>
-  </div>
-</section>
 
-<section class="sec curva">
-  <div class="wrap center">
-    <span class="tag rv">Tu curva</span>
-    <h2 class="rv d1">Cada trade cuenta.<br>Literal.</h2>
-    <div class="cv rv d2" id="cv"><svg viewBox="0 0 1000 300" preserveAspectRatio="none"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity=".45"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient></defs><path class="ar" d=""/><path class="ln" d=""/></svg><div class="cv-k"></div></div>
-    <p class="cv-n rv d3">Ilustración · tu curva sale de tus propias operaciones</p>
-  </div>
-</section>
 
 <section class="sec light">
   <div class="wrap">
@@ -699,7 +674,6 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
   <div class="copy"><span>© 2026 NORTHPOINT · Todos los derechos reservados</span><span>Hecho en México</span></div>
 </div></footer>
 
-<div class="mcta" id="mcta"><a href="descargar.html" class="btn btn-ac" data-dl>Descargar gratis</a><a href="#comunidad" class="btn btn-dc" data-red="discord">Discord</a></div>
 
 <div class="mv" id="mv"><button aria-label="Cerrar" id="mvX">×</button><video id="mvV" controls playsinline></video></div>
 
@@ -738,7 +712,7 @@ const REDES = {
   { const ua = navigator.userAgent, mac = /Macintosh|Mac OS X/.test(ua) && !/iPhone|iPad/.test(ua), win = /Windows/.test(ua);
     const D = mac ? ['descargas/NORTHPOINT-Mac.dmg', 'Descargar para Mac'] : win ? ['https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Instalador.exe', 'Descargar para Windows'] : null;
     if (D) $$('.hero [data-dl]').forEach(a => { a.href = D[0]; a.firstChild.textContent = D[1] + ' '; }); }
-  { const m = $('#mcta'), h = $('.hero'); addEventListener('scroll', () => m.classList.toggle('on', scrollY > h.offsetHeight && innerHeight + scrollY < document.body.scrollHeight - 300), { passive: true }); }
+
 
   // aparición
   const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target);
@@ -807,16 +781,6 @@ const REDES = {
       C.forEach((k, i) => { const X = i * 14; g.fillStyle = k[3] >= k[0] ? 'rgba(96,165,250,.9)' : 'rgba(148,163,184,.55)'; g.fillRect(X + 6, Y(k[1]), 1, Y(k[2]) - Y(k[1])); g.fillRect(X + 2, Y(Math.max(k[0], k[3])), 9, Math.max(1, Math.abs(Y(k[0]) - Y(k[3])))); });
       if (scrollY < innerHeight * 1.5) requestAnimationFrame(draw); else setTimeout(() => requestAnimationFrame(draw), 500); };
     requestAnimationFrame(draw); }
-  // muestras de los ocho temas, al ritmo del video
-  { const T = ['#ff4d4d', '#ff8a3d', '#e8be5a', '#3ddc97', '#2fd4d0', '#4d8dff', '#a78bfa', '#ff5fa8'], B = ['#0a0405', '#0b0603', '#080705', '#03100b', '#030c0d', '#03060e', '#07050f', '#0d0409'];
-    $('#sw').innerHTML = T.map((c, i) => `<i style="--c:${c};background:${B[i]}"></i>`).join(''); let k = 0; setInterval(() => { k = (k + 1) % 8; $$('#sw i').forEach((x, j) => x.classList.toggle('on', j === k)); }, 950); }
-  // la curva grande: se dibuja al verla
-  { const box = $('#cv'), ln = box.querySelector('.ln'), ar = box.querySelector('.ar'), d = curvaD(1000, 300, 5, 60); ln.setAttribute('d', d); ar.setAttribute('d', d + 'L1000,300L0,300Z');
-    ln.setAttribute('pathLength', '1'); ln.style.strokeDasharray = 1; ln.style.strokeDashoffset = 1; ln.style.transition = 'stroke-dashoffset 2.6s cubic-bezier(.3,.6,.2,1)';
-    const K = [[.18, 'up', '+1.5R · NQ'], [.42, 'dn', '−0.5R · regla rota'], [.63, 'up', '+2.0R · ES'], [.84, 'up', '+15.5R en el mes']];
-    box.querySelector('.cv-k').innerHTML = K.map(([f, c, t]) => `<b class="${c}" style="left:${f * 88 + 2}%;top:${c === 'dn' ? 62 : 14}%">${t}</b>`).join('');
-    const ve = () => { box.classList.add('in'); ln.style.strokeDashoffset = 0; box.querySelectorAll('.cv-k b').forEach((b, i) => setTimeout(() => b.classList.add('on'), 600 + i * 500)); };
-    new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { o.disconnect(); ve(); } }), { threshold: .4 }).observe(box); }
   // casos
   const C = [['Cierras NY y no sabes ni cómo te fue', 'Notas sueltas en el teléfono y un Excel que no tocas desde hace semanas.', 'Tus trades ya están adentro con su R. Le pones el setup y la emoción en dos clics.', 'toasts', ['AUTO', 'registro de cada operación'], [['Captura', 'Automática'], ['Tiempo al día', '2 min'], ['Operaciones perdidas', '0']]],
     ['El revenge trade que no cuenta... hasta fin de mes', 'La revancha después del stop se pierde entre los demás trades.', 'El panel separa las R que haces con tu plan de las que regalas sin él.', 'reglas', ['R', 'el costo de cada regla rota'], [['Reglas medidas', 'Sí'], ['Costo del error', 'En R'], ['Sorpresas', '0']]],
