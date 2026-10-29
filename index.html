@@ -74,6 +74,9 @@ h1 em,.em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#8ec0ff 50%
 .brk span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);width:100%}
 .brk b{font-size:17px;font-weight:700;color:#c7cbd3;letter-spacing:-.01em;opacity:.8}
 .btn.dis{opacity:.55;pointer-events:none}
+.hero-v{position:absolute;left:50%;top:0;width:min(1500px,140vw);height:100%;transform:translateX(-50%);object-fit:cover;object-position:center 30%;opacity:.6;pointer-events:none;mask-image:radial-gradient(ellipse 55% 60% at 50% 42%,#000 40%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse 55% 60% at 50% 42%,#000 40%,transparent 78%)}
+.hero-sh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 45% at 50% 40%,rgba(3,3,3,.55),transparent 75%),linear-gradient(180deg,rgba(3,3,3,.35),transparent 30%,transparent 70%,var(--bg))}
+.hero>.wrap{position:relative;z-index:1}
 .hc{position:absolute;inset:0;width:100%;height:100%;opacity:.28;pointer-events:none;mask-image:linear-gradient(180deg,transparent,#000 25%,#000 70%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%,#000 70%,transparent)}
 .toasts{position:absolute;right:18px;top:18px;z-index:4;display:grid;gap:10px;width:min(320px,70%);pointer-events:none}
 .ts{display:grid;grid-template-columns:10px 1fr;gap:12px;align-items:center;background:rgba(12,14,20,.88);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 20px 40px -14px rgba(0,0,0,.8);opacity:0;transform:translateX(30px);transition:opacity .5s,transform .5s}
@@ -148,7 +151,7 @@ h1 em,.em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#8ec0ff 50%
 .hand{position:absolute;width:24%;bottom:-2%;z-index:2;pointer-events:none;filter:drop-shadow(0 20px 30px rgba(0,0,0,.6))}
 .hand.l{left:-3%}.hand.r{right:-3%;transform:scaleX(-1)}
 /* iPhone */
-.redes-g{display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:center;margin-top:56px}
+.redes-g{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;margin-top:56px}
 .redes-g .soc{margin-top:0;grid-template-columns:repeat(3,1fr)}
 .iph{width:300px;height:610px;border-radius:52px;padding:12px;background:#0f1013;box-shadow:0 0 0 1.5px #34363c,0 40px 100px -30px rgba(59,130,246,.6);margin:0 auto}
 .iph-in{position:relative;height:100%;border-radius:42px;overflow:hidden;background:radial-gradient(ellipse at 30% 10%,#1e3a8a,#0b1220 55%,#05070c);padding:16px 12px}
@@ -395,18 +398,19 @@ h2{font-size:clamp(32px,4.4vw,56px);line-height:1.08;letter-spacing:-.03em;font-
 .fq .a>div{overflow:hidden}
 .fq .a p{padding:0 24px 22px;color:var(--tx2);line-height:1.75;font-size:15.5px}
 /* cierre */
-.final{position:relative;padding:140px 0 0;text-align:center;overflow:hidden}
+.final{position:relative;padding:90px 0 90px;text-align:center;overflow:hidden}
 .final::before{content:'';position:absolute;left:50%;bottom:-200px;width:1300px;max-width:140%;height:700px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(59,130,246,.45),transparent 70%)}
 .final .mock{position:relative;max-width:980px;margin:64px auto 0;border-radius:14px 14px 0 0;overflow:hidden;border:1px solid var(--line2);border-bottom:0;box-shadow:0 -20px 120px -20px rgba(59,130,246,.6)}
 .final .mock video{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top}
-footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;background:var(--bg)}
+footer{border-top:1px solid var(--line);padding:34px 0 28px;position:relative;background:var(--bg)}
 .ft{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
 .ft p{color:var(--tx2);font-size:14px;line-height:1.7;margin:14px 0 22px;max-width:320px}
 .ft h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--tx3);font-weight:500;margin-bottom:16px}
 .ft a.l{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2);padding:6px 0}
 .ft a.l:hover{color:#fff}
 .ft a.l.off{opacity:.45;pointer-events:none}
-.disc{border-top:1px solid var(--line);margin-top:56px;padding-top:26px;color:var(--tx3);font-size:13px;line-height:1.7}
+.ft2{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.ft2 nav{display:flex;gap:22px;flex-wrap:wrap}.ft2 nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2)}.ft2 nav a:hover{color:#fff}
+.disc{border-top:1px solid var(--line);margin-top:22px;padding-top:18px;font-size:12px!important;color:var(--tx3);font-size:13px;line-height:1.7}
 .copy{display:flex;justify-content:space-between;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--tx3);text-transform:uppercase;flex-wrap:wrap;gap:10px}
 .mv{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px}
 .mv.on{display:flex;animation:fadeIn .3s}
@@ -472,7 +476,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 </div></nav>
 
 <header class="hero">
-  <canvas class="hc" id="hc" aria-hidden="true"></canvas>
+  <video class="hero-v" src="assets/l/mundo.mp4" poster="assets/l/mundo.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video><i class="hero-sh"></i>
   <div class="gridbg"></div>
   <div class="wrap">
     <div class="pill rv"><span class="dots"><b>NQ</b><b>ES</b><b>FX</b><b>BTC</b></span>Hecho por traders, para traders</div>
@@ -654,7 +658,6 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
           <div class="nt"><i style="background:#3b82f6">N</i><div><b>NORTHPOINT</b><span>Operación registrada sola · NQ Long · +1.50R</span></div><em>4 min</em></div>
           <div class="nt"><i style="background:#ff0033">Y</i><div><b>YouTube</b><span>Nuevo video: cómo revisamos el día en 5 minutos</span></div><em>1 h</em></div>
         </div></div></div>
-      <div class="soc" id="soc"></div>
     </div>
     <p class="dc-note" style="margin-top:20px">Ilustración</p>
   </div>
@@ -718,17 +721,12 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <span class="tag rv">Empieza hoy</span>
     <h2 class="rv d1">De traders,<br><span class="em">para traders.</span></h2>
     <div class="ctas rv d2"><a href="descargar.html" class="btn btn-ac">Descargar gratis <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#comunidad" class="btn btn-dc" data-red="discord">Únete al Discord <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-    <div class="mock rv d3"><video src="assets/l/kaizen.mp4" poster="assets/l/kaizen.jpg" autoplay muted loop playsinline preload="none"></video></div>
+    
   </div>
 </section>
 
 <footer><div class="wrap">
-  <div class="ft">
-    <div><a href="./" class="logo">NORTHPOINT</a><p>La herramienta inteligente para tu trading y una comunidad que opera contigo. Mac y Windows.</p><a href="descargar.html" class="btn btn-ac">Descargar gratis</a></div>
-    <div><h4>NAVEGACIÓN</h4><a class="l" href="#ventajas">Funciones</a><a class="l" href="#por-que">Por qué</a><a class="l" href="#como">Videos</a><a class="l" href="#faq">Preguntas</a></div>
-    <div><h4>PLANES</h4><a class="l" href="#planes">Starter</a><a class="l" href="#planes">Pro</a><a class="l" href="#planes">Mesa</a><a class="l" href="descargar.html">Descargas</a></div>
-    <div><h4>COMUNIDAD</h4><div id="ftRedes"></div></div>
-  </div>
+  <div class="ft2"><a href="./" class="logo">NORTHPOINT</a><nav><a href="#ventajas">Funciones</a><a href="#comunidad">Comunidad</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="descargar.html">Descargas</a></nav></div>
   <p class="disc">NORTHPOINT es una herramienta de registro y análisis. No da señales ni asesoría financiera o de inversión. Operar futuros, forex, CFDs y criptomonedas conlleva un riesgo alto de pérdida, incluso de todo tu capital. Los resultados pasados, en replay o de ejemplo no garantizan resultados futuros. Las capturas usan datos de ejemplo.</p>
   <div class="copy"><span>© 2026 NORTHPOINT · Todos los derechos reservados</span><span>Hecho en México</span></div>
 </div></footer>
@@ -775,8 +773,8 @@ const REDES = {
     x: 'M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.8 2.3h7l4.8 6.3zm-1.2 17.9h1.9L7 4.2H5z',
     instagram: 'M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-9.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z' };
   const SO = [['discord', 'Discord', '#5865f2', 'Comunidad', 'Plan del día, operaciones, torneos y voz durante la sesión.'], ['youtube', 'YouTube', '#ff0033', 'Videos', 'Recorridos de la app y clips de trading.'], ['tiktok', 'TikTok', '#25f4ee', 'Clips', 'Lo mejor de la semana en un minuto.'], ['kick', 'Kick', '#53fc18', 'En vivo', 'Sesiones en vivo con la comunidad.'], ['x', 'X', '#e7e9ea', 'Al momento', 'Noticias que mueven el mercado y avisos.'], ['instagram', 'Instagram', '#e1306c', 'Día a día', 'Resultados de torneos y la comunidad.']];
-  $('#soc').innerHTML = SO.map(([k, n, c, s, p], i) => { const u = REDES[k]; return `<a class="so rv d${i % 4} ${u ? '' : 'off'}" style="--c:${c}" ${u ? `href="${u}" target="_blank" rel="noopener"` : ''}><svg viewBox="0 0 24 24" fill="currentColor"><path d="${IC[k]}"/></svg><div><b>${n}</b><br><small>${s}</small></div><p>${p}</p><span class="go">${u ? 'Seguir' : 'Muy pronto'}${u ? ' <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' : ''}</span></a>`; }).join('');
-  $('#ftRedes').innerHTML = SO.map(([k, n]) => `<a class="l ${REDES[k] ? '' : 'off'}" ${REDES[k] ? `href="${REDES[k]}" target="_blank" rel="noopener"` : ''}>${n}</a>`).join('');
+  if ($('#soc')) $('#soc').innerHTML = SO.map(([k, n, c, s, p], i) => { const u = REDES[k]; return `<a class="so rv d${i % 4} ${u ? '' : 'off'}" style="--c:${c}" ${u ? `href="${u}" target="_blank" rel="noopener"` : ''}><svg viewBox="0 0 24 24" fill="currentColor"><path d="${IC[k]}"/></svg><div><b>${n}</b><br><small>${s}</small></div><p>${p}</p><span class="go">${u ? 'Seguir' : 'Muy pronto'}${u ? ' <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' : ''}</span></a>`; }).join('');
+  if ($('#ftRedes')) $('#ftRedes').innerHTML = SO.map(([k, n]) => `<a class="l ${REDES[k] ? '' : 'off'}" ${REDES[k] ? `href="${REDES[k]}" target="_blank" rel="noopener"` : ''}>${n}</a>`).join('');
   if (REDES.discord) $$('[data-red=discord]').forEach(a => { a.href = REDES.discord; a.target = '_blank'; a.rel = 'noopener'; });
   else $$('#comunidad [data-red=discord], .final [data-red=discord]').forEach(a => { a.classList.add('dis'); const t = [...a.childNodes].find(n => n.nodeType === 3 && n.textContent.trim()); if (t) t.textContent = 'Discord: enlace muy pronto '; a.removeAttribute('href'); });   // sin enlace vigente, no mandamos a nadie a una invitación caducada
   // descarga directa según el sistema de quien visita
@@ -843,7 +841,7 @@ const REDES = {
   $('#muro').innerHTML = MU.map((m, i) => m[0] === 'q' ? `<figure class="q rv d${i % 3}"><p>${m[1]}</p><small>${m[2]}</small></figure>` : `<figure class="w rv d${i % 3}">${wg(m[0])}</figure>`).join('');
   $$('#muro .rv').forEach(el => io.observe(el));
   // velas del hero
-  { const cv = $('#hc'), g = cv.getContext('2d'); let W, H, C = [], t0 = 0, x = 11; const rnd = () => (x = (x * 16807) % 2147483647) / 2147483647;
+  if ($('#hc')) { const cv = $('#hc'), g = cv.getContext('2d'); let W, H, C = [], t0 = 0, x = 11; const rnd = () => (x = (x * 16807) % 2147483647) / 2147483647;
     const nueva = p => { const o = p, c = o + (rnd() - .48) * 14, h = Math.max(o, c) + rnd() * 6, l = Math.min(o, c) - rnd() * 6; return [o, h, l, c]; };
     const size = () => { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight; C = []; let p = 0; for (let i = 0; i < Math.ceil(W / 14) + 2; i++) { const k = nueva(p); C.push(k); p = k[3]; } };
     size(); addEventListener('resize', size);
@@ -867,8 +865,6 @@ const REDES = {
     ['¿Cómo entro a la comunidad?', 'Desde el botón de Discord en esta página. Ahí está el plan del día, las operaciones de la comunidad, los torneos y la voz durante la sesión de Nueva York.'],
     ['¿Las batallas usan dinero real?', 'No. Son con días reales del mercado en replay o con la sesión en vivo, pero el balance es de práctica.'],
     ['¿Me da señales o me dice qué comprar?', 'No. NORTHPOINT es una herramienta de registro y análisis. No da señales ni asesoría de inversión: te muestra tus propios números para que decidas mejor.'],
-    ['¿Dónde quedan mis datos?', 'Tus operaciones se guardan en tu computadora. Para cambiar de equipo descargas un respaldo y lo importas en la otra.'],
-    ['¿Cómo activo la app después de pagar?', 'Al pagar te llega por correo tu clave. La pegas en la app (pantalla de activación o Configuración, Suscripción) y listo.'],
     ['¿Cómo cancelo?', 'Desde el enlace de tu suscripción que llega en el correo, en un clic. La app sigue funcionando hasta el final del periodo pagado.']];
   $('#faqL').innerHTML = F.map(([q, a], i) => `<div class="fq rv ${i ? '' : 'on'}"><button>${q}<i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>${a}</p></div></div></div>`).join('');
   $$('#faqL .fq').forEach(f => { io.observe(f); f.querySelector('button').onclick = () => f.classList.toggle('on'); });
