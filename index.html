@@ -135,12 +135,59 @@ h1 em,.em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#8ec0ff 50%
 .gal figure.w .wg{position:absolute;inset:0}
 @media (max-width:600px){.toasts{right:8px;top:8px;width:72%}.ts{padding:8px 10px}.ts b{font-size:12px}.cv{height:220px}.wg-whale{grid-template-columns:90px 1fr 52px}}
 
+
+/* MacBook */
+.zframe::before{content:'';position:absolute;top:-8px;left:50%;width:80px;height:6px;transform:translateX(-50%);border-radius:0 0 6px 6px;background:#0f1013;z-index:5}
+.mb-base{display:block;position:relative;height:18px;margin:0 -7%;background:linear-gradient(180deg,#c9ccd2,#8b8f97 60%,#5d6067);border-radius:2px 2px 16px 16px;box-shadow:0 30px 60px -10px rgba(0,0,0,.8)}
+.mb-base::before{content:'';position:absolute;left:50%;top:0;width:16%;height:7px;transform:translateX(-50%);background:linear-gradient(180deg,#7d8188,#a6a9b0);border-radius:0 0 10px 10px}
+/* iPad con manos */
+.ipad-w{position:relative;padding:0 6% 8%;transform:perspective(1400px) rotateX(10deg) rotateY(-6deg);transform-style:preserve-3d}
+.ipad{position:relative;border:16px solid #0e0f12;border-radius:34px;background:#0e0f12;box-shadow:0 0 0 1.5px #2a2c31,0 50px 120px -30px rgba(88,101,242,.65);z-index:1}
+.ipad .cam{position:absolute;top:-10px;left:50%;width:6px;height:6px;border-radius:50%;background:#1d2026;transform:translateX(-50%)}
+.ipad .dcapp{border-radius:18px;border:0;box-shadow:none}
+.hand{position:absolute;width:24%;bottom:-2%;z-index:2;pointer-events:none;filter:drop-shadow(0 20px 30px rgba(0,0,0,.6))}
+.hand.l{left:-3%}.hand.r{right:-3%;transform:scaleX(-1)}
+/* iPhone */
+.redes-g{display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:center;margin-top:56px}
+.redes-g .soc{margin-top:0;grid-template-columns:repeat(3,1fr)}
+.iph{width:300px;height:610px;border-radius:52px;padding:12px;background:#0f1013;box-shadow:0 0 0 1.5px #34363c,0 40px 100px -30px rgba(59,130,246,.6);margin:0 auto}
+.iph-in{position:relative;height:100%;border-radius:42px;overflow:hidden;background:radial-gradient(ellipse at 30% 10%,#1e3a8a,#0b1220 55%,#05070c);padding:16px 12px}
+.island{position:absolute;top:10px;left:50%;width:96px;height:28px;border-radius:20px;background:#000;transform:translateX(-50%)}
+.lock{text-align:center;margin-top:46px;color:#fff}
+.lock small{font-size:13px;opacity:.8}.lock b{display:block;font-size:64px;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.nts{display:grid;gap:8px;margin-top:26px}
+.nt{display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:start;padding:11px 12px;border-radius:18px;background:rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transform:translateY(-14px) scale(.96);transition:opacity .5s,transform .5s}
+.nt.on{opacity:1;transform:none}
+.nt i{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px;color:#fff}
+.nt b{display:block;font-size:12.5px;color:#fff}.nt span{display:block;font-size:12px;color:rgba(255,255,255,.82);line-height:1.35;margin-top:1px}
+.nt em{font-style:normal;font-size:10.5px;color:rgba(255,255,255,.6)}
+/* Polar */
+.polar{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:flex-end;gap:10px;pointer-events:none}
+.polar.off{display:none}
+.pst{pointer-events:auto;width:78px;height:78px;border:0;background:none;cursor:pointer;padding:0;animation:pbob 3.2s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(96,165,250,.7))}
+.pst svg{width:100%;height:100%;overflow:visible}
+.pst .pray{animation:pray 2.4s ease-in-out infinite;transform-origin:60px 60px}
+.pst .eyes{animation:blink 4.5s infinite;transform-origin:60px 60px}
+.pst:hover{animation-play-state:paused;transform:scale(1.08) rotate(-8deg)}
+@keyframes pbob{50%{transform:translateY(-8px) rotate(4deg)}}
+@keyframes pray{50%{opacity:.15;transform:scale(1.12) rotate(22deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.pb{pointer-events:auto;position:relative;max-width:250px;background:rgba(12,14,20,.94);border:1px solid rgba(96,165,250,.45);border-radius:14px 14px 4px 14px;padding:12px 14px 12px;box-shadow:0 20px 50px -14px rgba(0,0,0,.9);margin-bottom:44px;transition:opacity .35s,transform .35s}
+.pb.hide{opacity:0;transform:translateY(8px) scale(.96)}
+.pb b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ac2);text-transform:uppercase}
+.pb span{display:block;font-size:14px;line-height:1.5;color:#e5e7eb;margin-top:4px}
+.pb a{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--ac)}
+.px{position:absolute;top:4px;right:6px;border:0;background:none;color:var(--tx3);font-size:17px;cursor:pointer;line-height:1}
+@media (max-width:960px){.redes-g{grid-template-columns:1fr}.redes-g .soc{grid-template-columns:repeat(3,1fr)}.ipad{border-width:11px;border-radius:24px}.ipad-w{transform:none;padding:0 4% 6%}}
+@media (max-width:600px){.redes-g .soc{grid-template-columns:1fr 1fr}.iph{width:260px;height:530px}.lock b{font-size:52px}.zframe{border-width:6px;border-bottom-width:12px;border-radius:12px 12px 3px 3px}.mb-base{height:10px}
+  .polar{right:10px;bottom:10px}.pst{width:56px;height:56px}.pb{max-width:200px;margin-bottom:34px;padding:10px 12px}.pb span{font-size:13px}.hand{width:22%}}
 /* video que crece al bajar (fijo) */
 .zoom{position:relative;height:200vh}
 .zoom-in{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .zoom .glow{position:absolute;top:10%;bottom:10%;width:26%;background:linear-gradient(180deg,transparent,rgba(59,130,246,.9) 45%,transparent);filter:blur(60px);opacity:.55;pointer-events:none}
 .zoom .glow.l{left:0}.zoom .glow.r{right:0}
-.zframe{position:relative;width:min(1200px,92vw);aspect-ratio:16/10;max-height:84vh;border-radius:18px;overflow:hidden;transform:scale(var(--z,.82));box-shadow:0 40px 140px -30px rgba(59,130,246,.65),0 0 0 1px var(--line2);will-change:transform}
+.zdev{width:min(1100px,88vw);transform:scale(var(--z,.82));will-change:transform;position:relative;z-index:1}
+.zframe{position:relative;width:100%;aspect-ratio:16/10;max-height:78vh;border-radius:20px 20px 4px 4px;border:11px solid #0f1013;border-bottom-width:22px;overflow:hidden;background:#000;box-shadow:0 40px 140px -30px rgba(59,130,246,.65),0 0 0 1px var(--line2);}
 .zframe video{width:100%;height:100%;object-fit:cover}
 .zframe::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,3,3,.25),rgba(3,3,3,.75));opacity:var(--o,1);transition:opacity .2s;pointer-events:none}
 .ztit{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;pointer-events:none;opacity:var(--o,1);transform:translateY(calc((1 - var(--o,1)) * -40px))}
@@ -443,12 +490,12 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 <section class="zoom" id="zoom">
   <div class="zoom-in">
     <i class="glow l"></i><i class="glow r"></i>
-    <div class="zframe" id="zf">
+    <div class="zdev" id="zf"><div class="zframe">
       <video src="assets/l/tour.mp4" poster="assets/l/tour.jpg" autoplay muted loop playsinline preload="metadata"></video>
       <div class="toasts" id="toasts"><div class="ts"><i class="g"></i><div><b>Operación registrada sola</b><span>NQ · Long · +1.50R · 10:05</span></div></div><div class="ts"><i class="r"></i><div><b>Regla rota detectada</b><span>Tercera operación del día · −0.50R</span></div></div><div class="ts"><i class="b"></i><div><b>Nuevo logro</b><span>Tres días limpios seguidos</span></div></div></div>
       <div class="ztit"><span>Bienvenido a</span><b>NORTHPOINT</b></div>
       <button class="play" data-video="assets/l/tour.mp4" aria-label="Ver el recorrido"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
-    </div>
+    </div><i class="mb-base"></i></div>
   </div>
 </section>
 
@@ -509,7 +556,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 
 <div class="sep"></div>
 
-<section class="pin" data-steps="3">
+<section class="pin" id="practica" data-steps="3">
   <div class="rails"></div>
   <div class="pin-in"><div class="wrap two">
     <div class="win"><div class="shot" data-imgs><video src="assets/l/replay.mp4" poster="assets/l/replay.jpg" autoplay muted loop playsinline preload="metadata" class="on"></video><video src="assets/l/grafica.mp4" poster="assets/l/grafica.jpg" muted loop playsinline preload="none"></video><img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Operación abierta en la batalla" loading="lazy"></div>
@@ -529,7 +576,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 
 
 
-<section class="sec light">
+<section class="sec light" id="diferencia">
   <div class="wrap">
     <div class="center"><span class="tag rv">La diferencia</span>
     <h2 class="rv d1">Así operábamos antes.<br>Así operamos ahora.</h2></div>
@@ -574,6 +621,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
       <div class="ctas" style="justify-content:flex-start"><a href="#comunidad" class="btn btn-dc" data-red="discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.5 9.1-.3 13.6.1 18.1a19.9 19.9 0 0 0 6 3l1.3-2a13 13 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.6-13.7zM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4z"/></svg>Entrar al Discord gratis</a></div>
     </div>
     <div>
+      <div class="ipad-w"><svg class="hand l" viewBox="0 0 200 300" aria-hidden="true"><defs><linearGradient id="hgl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2d34"/><stop offset="1" stop-color="#0c0d10"/></linearGradient></defs><path d="M22 300C8 236 16 190 42 160C58 140 70 118 78 94C84 72 102 68 110 84C116 98 112 122 104 142C122 128 142 128 148 142C152 156 142 168 128 178C140 184 142 198 130 208C142 216 140 232 124 238C112 264 102 284 98 300Z" fill="url(#hgl)" stroke="rgba(96,165,250,.35)" stroke-width="1.5"/><path d="M84 100C92 112 96 128 92 146" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/></svg><svg class="hand r" viewBox="0 0 200 300" aria-hidden="true"><defs><linearGradient id="hgr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2d34"/><stop offset="1" stop-color="#0c0d10"/></linearGradient></defs><path d="M22 300C8 236 16 190 42 160C58 140 70 118 78 94C84 72 102 68 110 84C116 98 112 122 104 142C122 128 142 128 148 142C152 156 142 168 128 178C140 184 142 198 130 208C142 216 140 232 124 238C112 264 102 284 98 300Z" fill="url(#hgr)" stroke="rgba(96,165,250,.35)" stroke-width="1.5"/><path d="M84 100C92 112 96 128 92 146" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/></svg><div class="ipad"><i class="cam"></i>
       <div class="dcapp">
         <div class="dc-sv"><i class="on">NP</i><i>+</i></div>
         <div class="dc-ch"><h5>NORTHPOINT</h5><small>Información</small><div>bienvenida</div><div>anuncios</div><small>Trading</small><div class="on">plan-del-día</div><div>operaciones</div><div>batallas</div><div>resultados</div><small>Voz</small><div class="vz live">sesión-ny</div></div>
@@ -586,6 +634,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
           <div class="dm"><i style="background:#16a34a">M</i><div><b>Miembro<span>11:07</span></b><p>Bien ahí. Nos vemos en el en vivo.</p></div></div>
         </div><div class="dc-in">Envía un mensaje a #plan-del-día</div></div>
       </div>
+      </div></div>
       <p class="dc-note">Ilustración de cómo se usa el servidor</p>
     </div>
   </div></div>
@@ -597,7 +646,17 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <div class="center"><span class="tag rv">Síguenos</span>
     <h2 class="rv d1">Estamos donde estás</h2>
     <p class="lead rv d2">Clips, en vivos y lo que pasa en la comunidad.</p></div>
-    <div class="soc" id="soc"></div>
+    <div class="redes-g">
+      <div class="iph rv"><div class="iph-in"><i class="island"></i><div class="lock"><small>martes 29 de octubre</small><b>9:31</b></div>
+        <div class="nts" id="nts">
+          <div class="nt"><i style="background:#5865f2">D</i><div><b>Discord · #plan-del-día</b><span>Torneo de la sesión abierto. Entra desde Batallas.</span></div><em>ahora</em></div>
+          <div class="nt"><i style="background:#53fc18;color:#000">K</i><div><b>Kick</b><span>NORTHPOINT está en vivo: apertura de Nueva York</span></div><em>1 min</em></div>
+          <div class="nt"><i style="background:#3b82f6">N</i><div><b>NORTHPOINT</b><span>Operación registrada sola · NQ Long · +1.50R</span></div><em>4 min</em></div>
+          <div class="nt"><i style="background:#ff0033">Y</i><div><b>YouTube</b><span>Nuevo video: cómo revisamos el día en 5 minutos</span></div><em>1 h</em></div>
+        </div></div></div>
+      <div class="soc" id="soc"></div>
+    </div>
+    <p class="dc-note" style="margin-top:20px">Ilustración</p>
   </div>
 </section>
 
@@ -653,7 +712,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
   </div>
 </section>
 
-<section class="final">
+<section class="final" id="final">
   <div class="gridbg"></div>
   <div class="wrap">
     <span class="tag rv">Empieza hoy</span>
@@ -674,6 +733,18 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
   <div class="copy"><span>© 2026 NORTHPOINT · Todos los derechos reservados</span><span>Hecho en México</span></div>
 </div></footer>
 
+
+<div class="polar" id="polar" aria-live="polite">
+  <div class="pb" id="pbx"><button class="px" id="px" aria-label="Ocultar a Polar">×</button><b>Polar</b><span id="ptx">Hola, soy Polar. Te doy el tour en 30 segundos.</span><a id="pnx" href="#">Siguiente</a></div>
+  <button class="pst" id="pst" aria-label="Polar, tu guía">
+    <svg viewBox="0 0 120 120"><defs><radialGradient id="pg" cx="45%" cy="38%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#bfdbfe"/><stop offset="1" stop-color="#3b82f6"/></radialGradient></defs>
+      <path class="pray" d="M60 2L60 20M60 100L60 118M2 60L20 60M100 60L118 60" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+      <path d="M60 14L71 46L104 47L78 67L88 100L60 81L32 100L42 67L16 47L49 46Z" fill="url(#pg)" stroke="#dbeafe" stroke-width="2" stroke-linejoin="round"/>
+      <g class="eyes"><ellipse cx="51" cy="60" rx="4" ry="5.5" fill="#0b1a33"/><ellipse cx="69" cy="60" rx="4" ry="5.5" fill="#0b1a33"/><circle cx="52.5" cy="58" r="1.4" fill="#fff"/><circle cx="70.5" cy="58" r="1.4" fill="#fff"/></g>
+      <path d="M53 70Q60 76 67 70" fill="none" stroke="#0b1a33" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="44" cy="68" r="3.5" fill="#f9a8d4" opacity=".55"/><circle cx="76" cy="68" r="3.5" fill="#f9a8d4" opacity=".55"/></svg>
+  </button>
+</div>
 
 <div class="mv" id="mv"><button aria-label="Cerrar" id="mvX">×</button><video id="mvV" controls playsinline></video></div>
 
@@ -803,6 +874,20 @@ const REDES = {
   $$('#faqL .fq').forEach(f => { io.observe(f); f.querySelector('button').onclick = () => f.classList.toggle('on'); });
 
   vigila();
+
+  // notificaciones del iPhone
+  new IntersectionObserver((es, o) => es.forEach(e => { if (!e.isIntersecting) return; o.disconnect(); $$('#nts .nt').forEach((n, i) => setTimeout(() => n.classList.add('on'), 300 + i * 650)); }), { threshold: .35 }).observe($('#nts'));
+  // Polar: la estrella que te guía por la página
+  { const G = [['top', 'Hola, soy Polar. Te doy el tour rápido. Baja conmigo.'], ['zoom', 'Esto es NORTHPOINT por dentro. Sigue bajando y crece.'], ['ventajas', 'Lo que usamos diario. Baja despacio, van una por una.'], ['por-que', '¿Te suena? A nosotros también nos pasó.'], ['practica', 'Aquí practicas tu setup sin tocar tu cuenta.'], ['diferencia', 'Antes y ahora. Fíjate en el lado gris.'], ['como', 'Toca cualquier video para verlo en grande.'], ['comunidad', 'Lo mejor: aquí no operas solo. Únete al Discord.'], ['redes', 'Clips y en vivos todos los días.'], ['casos', 'Tres momentos que cualquier trader conoce.'], ['planes', '7 días gratis. Pruébala completa antes de pagar.'], ['faq', '¿Dudas? Aquí están las respuestas.'], ['final', '¿Listo? Descárgala gratis. Nos vemos adentro.']];
+    const P = $('#polar'), box = $('#pbx'), tx = $('#ptx'), nx = $('#pnx'); let cur = -1;
+    try { if (sessionStorage.getItem('np.polar') === 'off') P.classList.add('off'); } catch (_) {}
+    const el = k => k === 'top' ? document.body : document.getElementById(k);
+    const di = i => { if (i === cur) return; cur = i; box.classList.add('hide'); setTimeout(() => { tx.textContent = G[i][1]; nx.textContent = i < G.length - 1 ? 'Siguiente' : 'Descargar'; nx.href = i < G.length - 1 ? '#' + G[i + 1][0] : 'descargar.html'; box.classList.remove('hide'); clearTimeout(P._t); if (innerWidth < 700) P._t = setTimeout(() => box.classList.add('hide'), 3800); }, 250); };
+    const mira = () => { const y = innerHeight * .45; let k = 0; G.forEach(([id], i) => { const e = el(id); if (e && i && e.getBoundingClientRect().top < y) k = i; }); di(k); };
+    addEventListener('scroll', mira, { passive: true }); mira();
+    nx.onclick = e => { if (cur >= G.length - 1) return; e.preventDefault(); const t = el(G[cur + 1][0]); if (t) scrollTo({ top: t.getBoundingClientRect().top + scrollY - 20, behavior: 'smooth' }); };
+    $('#pst').onclick = () => box.classList.toggle('hide');
+    $('#px').onclick = () => { P.classList.add('off'); try { sessionStorage.setItem('np.polar', 'off'); } catch (_) {} }; }
   // video en grande
   const mv = $('#mv'), mvV = $('#mvV');
   document.addEventListener('click', e => { const t = e.target.closest('[data-video]'); if (!t) return; e.preventDefault(); mvV.src = t.dataset.video; mv.classList.add('on'); mvV.play().catch(() => {}); });
