@@ -77,6 +77,67 @@ h1 em,.em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#8ec0ff 50%
 .mcta.on{transform:none}
 .mcta .btn{flex:1;justify-content:center;height:50px}
 .btn.dis{opacity:.55;pointer-events:none}
+.hc{position:absolute;inset:0;width:100%;height:100%;opacity:.28;pointer-events:none;mask-image:linear-gradient(180deg,transparent,#000 25%,#000 70%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%,#000 70%,transparent)}
+.toasts{position:absolute;right:18px;top:18px;z-index:4;display:grid;gap:10px;width:min(320px,70%);pointer-events:none}
+.ts{display:grid;grid-template-columns:10px 1fr;gap:12px;align-items:center;background:rgba(12,14,20,.88);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 20px 40px -14px rgba(0,0,0,.8);opacity:0;transform:translateX(30px);transition:opacity .5s,transform .5s}
+.ts.on{opacity:1;transform:none}
+.ts i{width:10px;height:10px;border-radius:50%}.ts i.g{background:#22c55e;box-shadow:0 0 10px #22c55e}.ts i.r{background:#ef4444;box-shadow:0 0 10px #ef4444}.ts i.b{background:var(--ac);box-shadow:0 0 10px var(--ac)}
+.ts b{display:block;font-size:13.5px;font-weight:600}.ts span{display:block;font-family:var(--mono);font-size:11px;color:var(--tx2);margin-top:2px}
+.sw{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+.sw i{width:44px;height:44px;border-radius:10px;border:1px solid var(--line2);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.sw i::after{content:'';position:absolute;left:8px;right:8px;bottom:8px;height:4px;border-radius:2px;background:var(--c)}
+.sw i.on{transform:translateY(-6px);border-color:var(--c);box-shadow:0 10px 30px -8px var(--c)}
+.curva{overflow:hidden}
+.cv{position:relative;margin:56px auto 0;max-width:1000px;height:300px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(59,130,246,.05),transparent);overflow:hidden}
+.cv svg{position:absolute;left:20px;top:20px;width:calc(100% - 40px);height:calc(100% - 50px);overflow:visible}
+.cv .ln{fill:none;stroke:#60a5fa;stroke-width:3;stroke-linejoin:round;filter:drop-shadow(0 0 8px rgba(59,130,246,.8))}
+.cv .ar{fill:url(#cg);opacity:0;transition:opacity 1.2s .8s}
+.cv.in .ar{opacity:1}
+.cv-k{position:absolute;inset:0;pointer-events:none}
+.cv-k b{position:absolute;font-family:var(--mono);font-size:11.5px;padding:4px 8px;border-radius:4px;background:rgba(10,12,18,.92);border:1px solid var(--line2);opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s;white-space:nowrap}
+.cv-k b.on{opacity:1;transform:none}
+.cv-k b.up{color:#4ade80}.cv-k b.dn{color:#f87171}
+.cv-n{margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--tx3);text-transform:uppercase}
+.wg{position:relative;width:100%;height:100%;background:radial-gradient(ellipse at 30% 0%,rgba(59,130,246,.18),transparent 60%),#07090e;padding:18px;display:flex;flex-direction:column;gap:10px;overflow:hidden;color:var(--tx)}
+.wg h6{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--tx3);font-weight:500;text-transform:uppercase;display:flex;justify-content:space-between;gap:10px}
+.wg h6 em{font-style:normal;color:#4ade80}
+.wg-heat{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;flex:1}
+.wg-heat i{border-radius:4px;background:rgba(255,255,255,.05);transform:scale(.6);opacity:0;transition:transform .4s,opacity .4s}
+.wg.go .wg-heat i{transform:none;opacity:1}
+.wg-heat i.u{background:rgba(34,197,94,.5)}.wg-heat i.u2{background:rgba(34,197,94,.9)}.wg-heat i.d{background:rgba(239,68,68,.6)}
+.wg-row{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center;font-size:13px}
+.wg-row i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;font-style:normal;color:#fff}
+.wg-bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:4px}
+.wg-bar b{display:block;height:100%;width:0;border-radius:3px;background:var(--ac);transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.wg-row span{font-family:var(--mono);font-size:12px}
+.wg-whale{display:grid;grid-template-columns:110px 1fr 58px;gap:10px;align-items:center;font-size:12.5px;color:var(--tx2)}
+.wg-whale .t{height:8px;border-radius:4px;background:rgba(255,255,255,.06);position:relative}
+.wg-whale .t b{position:absolute;top:0;bottom:0;border-radius:4px;transition:width 1.2s cubic-bezier(.2,.7,.2,1);width:0}
+.wg-whale .t b.l{left:50%;background:#22c55e}.wg-whale .t b.s{right:50%;background:#ef4444}
+.wg-whale span{font-family:var(--mono);font-size:11px;text-align:right}
+.wg-cost{display:flex;gap:18px;align-items:flex-end;flex:1;padding:0 10px;min-height:120px}
+.wg-cost div{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end}
+.wg-cost b{width:100%;border-radius:6px 6px 0 0;height:0;transition:height 1.2s cubic-bezier(.2,.7,.2,1)}
+.wg-cost small{font-family:var(--mono);font-size:10.5px;color:var(--tx2);text-align:center}
+.wg-cost strong{font-family:var(--mono);font-size:15px}
+.wg-cards{display:flex;gap:8px;flex:1;align-items:center;justify-content:center;perspective:600px}
+.wg-cards i{width:15%;aspect-ratio:2/3;border-radius:6px;background:linear-gradient(160deg,#1e293b,#0b1220);border:1px solid var(--line2);transform:rotateY(90deg);transition:transform .6s}
+.wg.go .wg-cards i{transform:none}
+.wg-cards i.ok{background:linear-gradient(160deg,#2563eb,#60a5fa 60%,#0b1220);box-shadow:0 0 18px rgba(59,130,246,.5)}
+.wg-toast{display:grid;grid-template-columns:8px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:12.5px;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
+.wg.go .wg-toast{opacity:1;transform:none}
+.wg-toast i{width:8px;height:8px;border-radius:50%;background:#22c55e}
+.wg-toast span{font-family:var(--mono);font-size:11.5px;color:#4ade80}
+.wg-toast.r i{background:#ef4444}.wg-toast.r span{color:#f87171}
+.wg-big{font-size:36px;font-weight:600;letter-spacing:-.03em}
+.wg-big small{font-size:14px;color:var(--tx3);font-weight:400;margin-left:6px}
+.vc .th .wg{position:absolute;inset:0;padding-bottom:70px}
+.wg-box{flex:1;min-height:300px;position:relative}
+.wg-box .wg{position:absolute;inset:0}
+.gal figure.w{aspect-ratio:4/3;position:relative}
+.gal figure.w .wg{position:absolute;inset:0}
+@media (max-width:600px){.toasts{right:8px;top:8px;width:72%}.ts{padding:8px 10px}.ts b{font-size:12px}.cv{height:220px}.wg-whale{grid-template-columns:90px 1fr 52px}}
+
 /* video que crece al bajar (fijo) */
 .zoom{position:relative;height:200vh}
 .zoom-in{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -369,6 +430,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 </div></nav>
 
 <header class="hero">
+  <canvas class="hc" id="hc" aria-hidden="true"></canvas>
   <div class="gridbg"></div>
   <div class="wrap">
     <div class="pill rv"><span class="dots"><b>NQ</b><b>ES</b><b>FX</b><b>BTC</b></span>Para traders de futuros, forex, índices y cripto</div>
@@ -388,6 +450,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <i class="glow l"></i><i class="glow r"></i>
     <div class="zframe" id="zf">
       <video src="assets/l/tour.mp4" poster="assets/l/tour.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="toasts" id="toasts"><div class="ts"><i class="g"></i><div><b>Operación registrada sola</b><span>NQ · Long · +1.50R · 10:05</span></div></div><div class="ts"><i class="r"></i><div><b>Regla rota detectada</b><span>Tercera operación del día · −0.50R</span></div></div><div class="ts"><i class="b"></i><div><b>Nuevo logro</b><span>Tres días limpios seguidos</span></div></div></div>
       <div class="ztit"><span>Bienvenido a</span><b>NORTHPOINT</b></div>
       <button class="play" data-video="assets/l/tour.mp4" aria-label="Ver el recorrido"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
     </div>
@@ -412,11 +475,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <h2>Cinco ventajas que no tienes<br>en una hoja de Excel</h2></div>
     <div class="adv">
       <div class="adv-img" data-imgs>
-        <img width="1600" height="1000" src="assets/l/s-operaciones.jpg" alt="Operaciones registradas solas" class="on">
+        <video src="assets/l/operaciones.mp4" poster="assets/l/operaciones.jpg" muted loop playsinline preload="none" class=on></video>
         <img width="1600" height="1000" src="assets/l/s-panel.jpg" alt="Panel con la curva del mes" loading="lazy">
-        <img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Batalla en replay" loading="lazy">
-        <img width="1600" height="1000" src="assets/l/s-ballenas.jpg" alt="Ballenas del mercado" loading="lazy">
-        <img width="1600" height="1000" src="assets/l/s-kaizen.jpg" alt="Kaizen Way" loading="lazy">
+        <video src="assets/l/crear.mp4" poster="assets/l/crear.jpg" muted loop playsinline preload="none"></video>
+        <video src="assets/l/ballenas.mp4" poster="assets/l/ballenas.jpg" muted loop playsinline preload="none"></video>
+        <video src="assets/l/logros.mp4" poster="assets/l/logros.jpg" muted loop playsinline preload="none"></video>
       </div>
       <div class="acc" data-items>
         <div class="acc-i on"><div class="acc-h"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg></i>Tu diario se llena solo</div><div class="acc-b"><div><p>Conecta Exness, Tradovate, MetaTrader o NinjaTrader y cada operación entra con hora, resultado y duración. Tú solo completas la estrategia, la nota y cómo te sentiste.</p></div></div><i class="acc-p"></i></div>
@@ -444,7 +507,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
       </div>
       <div class="steps" data-bars><i><b></b></i><i><b></b></i><i><b></b></i></div>
     </div>
-    <div class="win"><div class="shot" data-imgs><img width="1600" height="1000" src="assets/l/s-dia.jpg" alt="Detalle de un día" class="on"><img width="1600" height="1000" src="assets/l/s-panel.jpg" alt="Panel" loading="lazy"><img width="1600" height="1000" src="assets/l/s-batallas.jpg" alt="Batallas" loading="lazy"></div>
+    <div class="win"><div class="shot" data-imgs><img width="1600" height="1000" src="assets/l/s-dia.jpg" alt="Detalle de un día" class="on"><video src="assets/l/calendario.mp4" poster="assets/l/calendario.jpg" muted loop playsinline preload="none"></video><img width="1600" height="1000" src="assets/l/s-registro.jpg" alt="Registro del día" loading="lazy"></div>
       <div class="float l"><small><i></i>Día · miércoles</small><b>+1.00R</b><div><span>2 operaciones</span><span>50%</span></div></div></div>
   </div></div>
 </section>
@@ -454,7 +517,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 <section class="pin" data-steps="3">
   <div class="rails"></div>
   <div class="pin-in"><div class="wrap two">
-    <div class="win"><div class="shot" data-imgs><video src="assets/l/replay.mp4" poster="assets/l/replay.jpg" autoplay muted loop playsinline preload="metadata" class="on"></video><img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Gráfica de la batalla" loading="lazy"><video src="assets/l/ballenas.mp4" poster="assets/l/ballenas.jpg" muted loop playsinline preload="none"></video></div>
+    <div class="win"><div class="shot" data-imgs><video src="assets/l/replay.mp4" poster="assets/l/replay.jpg" autoplay muted loop playsinline preload="metadata" class="on"></video><video src="assets/l/grafica.mp4" poster="assets/l/grafica.jpg" muted loop playsinline preload="none"></video><img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Operación abierta en la batalla" loading="lazy"></div>
       <div class="float"><small><i></i>Práctica · USTEC</small><b>+$14.00</b><div><span>Long 0.10</span><span>5m</span></div><div><span>Replay</span><span>10x</span></div></div></div>
     <div>
       <span class="tag">Por qué ahora</span>
@@ -462,11 +525,33 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
       <div class="nlist" data-items>
         <div class="nl on"><b>1</b><div><h3>Días reales, no simulaciones</h3><p>El replay usa velas reales del Nasdaq y del S&amp;P. El mismo día para todos: gana quien opera mejor, no quien tiene suerte.</p></div></div>
         <div class="nl"><b>2</b><div><h3>Una gráfica que ya conoces</h3><p>1, 5, 15 minutos y 1 hora; arrastra, haz zoom y raya como en TradingView, con el ORB de Nueva York marcado.</p></div></div>
-        <div class="nl"><b>3</b><div><h3>Sabes de qué lado está el dinero grande</h3><p>Las posiciones de hedge funds y bancos, con su zona de entrada estimada, antes de abrir tu primera operación.</p></div></div>
+        <div class="nl"><b>3</b><div><h3>A tu ritmo, con tus lotes</h3><p>Pausa, 1x a 10x, lotes desde 0.01 y stop en puntos como en tu bróker. Tu equity se mueve vela por vela.</p></div></div>
       </div>
       <div class="steps" data-bars><i><b></b></i><i><b></b></i><i><b></b></i></div>
     </div>
   </div></div>
+</section>
+
+<section class="sec" id="tuya">
+  <div class="rails"></div>
+  <div class="wrap two">
+    <div>
+      <span class="tag rv">Hazla tuya</span>
+      <h2 class="rv d1">Ocho temas.<br><span class="em">Un clic.</span></h2>
+      <p class="lead rv d2">Carmesí, Ámbar, Oro, Jade, Turquesa, Zafiro, Violeta y Rosa. Cambia todo el color de la app, gráficas incluidas, mientras la usas. Y fondos animados si los quieres.</p>
+      <div class="sw rv d3" id="sw"></div>
+    </div>
+    <div class="win rv d2"><div class="shot"><video src="assets/l/temas.mp4" poster="assets/l/temas.jpg" muted loop playsinline preload="none" class=on></video></div></div>
+  </div>
+</section>
+
+<section class="sec curva">
+  <div class="wrap center">
+    <span class="tag rv">Tu curva</span>
+    <h2 class="rv d1">Cada operación suma a una línea<br>que ya no puedes ignorar</h2>
+    <div class="cv rv d2" id="cv"><svg viewBox="0 0 1000 300" preserveAspectRatio="none"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity=".45"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient></defs><path class="ar" d=""/><path class="ln" d=""/></svg><div class="cv-k"></div></div>
+    <p class="cv-n rv d3">Ilustración · tu curva sale de tus propias operaciones</p>
+  </div>
 </section>
 
 <section class="sec light">
@@ -576,20 +661,10 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 <section class="sec">
   <div class="rails"></div>
   <div class="wrap">
-    <div class="center"><span class="tag rv">Por dentro</span>
-    <h2 class="rv d1">Así se ve la app</h2>
-    <p class="lead rv d2">Pantallas tal cual salen de NORTHPOINT, con datos de ejemplo.</p></div>
-    <div class="gal">
-      <figure class="rv"><img width="1600" height="1000" src="assets/l/s-panel.jpg" alt="Panel" loading="lazy"><figcaption><b>Panel</b><span>La curva de tu mes, R, acierto, expectancy, drawdown y profit factor.</span><em>Panel</em></figcaption></figure>
-      <figure class="rv d1 q"><p>Cada operación entra sola desde tu bróker. Tú solo le pones la estrategia y cómo te sentiste.</p><small>Registro automático</small></figure>
-      <figure class="rv d2"><img width="1600" height="1000" src="assets/l/s-ballenas.jpg" alt="Ballenas" loading="lazy"><figcaption><b>Ballenas</b><span>Hedge funds, bancos e institucionales: quién está largo y quién corto.</span><em>Mercado</em></figcaption></figure>
-      <figure class="rv"><img width="1600" height="1000" src="assets/l/s-calendario.jpg" alt="Calendario" loading="lazy"><figcaption><b>Calendario</b><span>Cada día pintado por su resultado. Toca uno y ves sus operaciones.</span><em>Diario</em></figcaption></figure>
-      <figure class="rv d1"><img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Batalla" loading="lazy"><figcaption><b>Batallas</b><span>Replay del Nasdaq con ORB y liquidez, lotes y stop como en tu bróker.</span><em>Práctica</em></figcaption></figure>
-      <figure class="rv d2 q"><p>El mismo día del mercado para todos. Gana quien opera mejor, no quien tiene suerte.</p><small>Batallas</small></figure>
-      <figure class="rv"><img width="1600" height="1000" src="assets/l/s-logros.jpg" alt="Logros" loading="lazy"><figcaption><b>Logros</b><span>Hitos de cuenta y rachas que salen de tus datos.</span><em>Disciplina</em></figcaption></figure>
-      <figure class="rv d1"><img width="1600" height="1000" src="assets/l/s-operaciones.jpg" alt="Operaciones" loading="lazy"><figcaption><b>Operaciones</b><span>Cada trade con hora, estrategia, duración y resultado.</span><em>Diario</em></figcaption></figure>
-      <figure class="rv d2"><img width="1600" height="1000" src="assets/l/s-kaizen.jpg" alt="Kaizen Way" loading="lazy"><figcaption><b>Kaizen Way</b><span>Tu camino de cuenta pequeña a cuenta grande, carta por carta.</span><em>Progreso</em></figcaption></figure>
-    </div>
+    <div class="center"><span class="tag rv">Todo lo que mide por ti</span>
+    <h2 class="rv d1">Tu trading, en números que se mueven</h2>
+    <p class="lead rv d2">Lo que NORTHPOINT calcula solo con cada operación que entra.</p></div>
+    <div class="gal" id="muro"></div>
   </div>
 </section>
 
@@ -678,7 +753,7 @@ const REDES = {
   const zf = $('#zf'), zs = $('#zoom');
   const tick = () => {
     const vh = innerHeight;
-    { const r = zs.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (r.height - vh))); zf.style.setProperty('--z', (.82 + .18 * Math.min(1, p * 1.6)).toFixed(3)); zf.style.setProperty('--o', Math.max(0, 1 - p * 2.2).toFixed(3)); }
+    { const r = zs.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (r.height - vh))); zf.style.setProperty('--z', (.82 + .18 * Math.min(1, p * 1.6)).toFixed(3)); zf.style.setProperty('--o', Math.max(0, 1 - p * 2.2).toFixed(3)); $$('#toasts .ts').forEach((x, k) => x.classList.toggle('on', p > .35 + k * .17)); }
     PINS.forEach(P => { const r = P.s.getBoundingClientRect(), span = r.height - vh, p = Math.min(.9999, Math.max(0, -r.top / span)), f = p * P.n, i = Math.floor(f), fr = f - i;
       if (P.items[0]?.classList.contains('dm')) P.items.forEach((x, k) => x.classList.toggle('on', k < Math.ceil(f + .01) || p > .98));   // chat: los mensajes van llegando
       else if (i !== P.last) { P.items.forEach((x, k) => x.classList.toggle('on', k === i)); P.imgs.forEach((x, k) => { x.classList.toggle('on', k === Math.min(i, P.imgs.length - 1)); if (x.tagName === 'VIDEO') { if (k === i) x.play().catch(() => {}); else x.pause(); } }); }
@@ -694,19 +769,59 @@ const REDES = {
   PINS.forEach(P => P.items.forEach((x, k) => x.addEventListener('click', () => { const top = P.s.getBoundingClientRect().top + scrollY, span = P.s.offsetHeight - innerHeight; scrollTo({ top: top + span * (k + .3) / P.n, behavior: 'smooth' }); })));
 
   // carrusel de videos
-  const V = [['tour', 'Recorrido', 'Toda la <em>app</em>', 'Un minuto por toda la app', 'Panel, calendario, operaciones, ballenas y Kaizen Way, en el orden en que los usas.'],
-    ['replay', 'Batallas', 'Nasdaq <em>a 10x</em>', 'Un día real del Nasdaq vela por vela', 'Abres un long, el replay corre y tu equity se mueve en vivo.'],
-    ['ballenas', 'Ballenas', 'El dinero <em>grande</em>', 'Quién compra y quién vende', 'Hedge funds, bancos y fondos en el Nasdaq, el S&P, el oro y el bitcoin.'],
-    ['calendario', 'Calendario', 'Tu mes <em>en un vistazo</em>', 'Toca un día y ve qué pasó', 'Resultado, curva del día y cada operación con su estrategia.'],
-    ['kaizen', 'Kaizen Way', '$100 a <em>$15,000</em>', 'El camino, carta por carta', 'Tu constancia se convierte en un camino que se ve.']];
-  const card = ([v, t, tt, h, p]) => `<div class="vc" data-video="assets/l/${v}.mp4"><div class="th"><img width="1600" height="1000" src="assets/l/${v}.jpg" alt="" loading="lazy"><span>${t}</span><i class="pl"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><div class="tt">${tt}</div></div><div class="tx"><h3>${h}</h3><p>${p}</p></div></div>`;
-  $('#car').innerHTML = [...V, ...V, ...V].map(card).join('');
+  const V = [['tour', 'Recorrido', 'Toda la <em>app</em>', 'Un minuto por toda la app', 'Panel, calendario, operaciones, ballenas y Kaizen Way, en el orden en que los usas.', 'curva'],
+    ['calendario', 'Calendario', 'Tu mes <em>en un vistazo</em>', 'Cada día pintado por su resultado', 'Verde, rojo y la intensidad de cada día. Toca uno y ves sus operaciones.', 'calor'],
+    ['crear', 'Torneos', 'Arma tu <em>torneo</em>', 'Crea una batalla en segundos', 'Balance desde $10, sesión de Asia, Londres o Nueva York e invita a quien quieras.', 'tabla'],
+    ['ballenas', 'Ballenas', 'El dinero <em>grande</em>', 'Quién compra y quién vende', 'Hedge funds, bancos y fondos en el Nasdaq, el S&P, el oro y el bitcoin.', 'ballenas'],
+    ['operaciones', 'Disciplina', 'Lo que <em>cuesta</em>', 'Con reglas contra sin reglas', 'Cuánto ganas cuando las respetas y cuánto pierdes cuando no.', 'reglas'],
+    ['kaizen', 'Kaizen Way', '$100 a <em>$15,000</em>', 'El camino, carta por carta', 'Tu constancia se convierte en cartas que se ganan.', 'racha']];
+  const card = ([v, t, tt, h, p, w]) => `<div class="vc" data-video="assets/l/${v}.mp4"><div class="th">${wg(w)}<span>${t}</span><i class="pl"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><div class="tt">${tt}</div></div><div class="tx"><h3>${h}</h3><p>${p}</p></div></div>`;
+  $('#car').innerHTML = [...V, ...V].map(card).join('');
 
+  // ── elementos visuales hechos en código (datos de ilustración) ──
+  function curvaD(w, h, seed, n = 40) { let x = seed, v = 0; const P = []; for (let i = 0; i < n; i++) { x = (x * 16807) % 2147483647; v += (x / 2147483647 - .38) * 1.6; P.push(v); } const mn = Math.min(...P), mx = Math.max(...P); return P.map((y, i) => `${i ? 'L' : 'M'}${(i / (n - 1) * w).toFixed(1)},${(h - 6 - (y - mn) / (mx - mn || 1) * (h - 12)).toFixed(1)}`).join(''); }
+  function wg(k) {
+    if (k === 'calor') { const c = [0,0,1,2,1,0,0, 0,3,1,2,0,0,0, 0,1,2,1,3,0,0, 0,2,0,1,2,0,0, 0,1,0,0,0,0,0].map(v => ['', 'u', 'u2', 'd'][v]); return `<div class="wg"><h6>Octubre <em>+15.5R</em></h6><div class="wg-heat">${c.map((x, i) => `<i class="${x}" style="transition-delay:${i * 30}ms"></i>`).join('')}</div></div>`; }
+    if (k === 'tabla') { const T = [['A', '#3b82f6', 92, '+$184'], ['M', '#16a34a', 74, '+$121'], ['R', '#ea580c', 51, '+$64'], ['J', '#9333ea', 30, '−$22']]; return `<div class="wg"><h6>Torneo · Nueva York <em>en vivo</em></h6>${T.map(([n, c, w, v], i) => `<div class="wg-row"><i style="background:${c}">${i + 1}</i><div>Trader ${n}<div class="wg-bar"><b data-w="${w}"></b></div></div><span style="color:${v[0] === '−' ? '#f87171' : '#4ade80'}">${v}</span></div>`).join('')}</div>`; }
+    if (k === 'ballenas') { const B = [['Hedge funds', 'l', 38, 'LARGO'], ['Bancos', 's', 30, 'CORTO'], ['Institucionales', 'l', 44, 'LARGO'], ['Traders chicos', 's', 14, 'CORTO']]; return `<div class="wg"><h6>Nasdaq 100 · CFTC <em>semanal</em></h6>${B.map(([n, d, w, t]) => `<div class="wg-whale"><span style="text-align:left">${n}</span><div class="t"><b class="${d}" data-w="${w}"></b></div><span style="color:${d === 'l' ? '#4ade80' : '#f87171'}">${t}</span></div>`).join('')}</div>`; }
+    if (k === 'reglas') return `<div class="wg"><h6>Disciplina · este mes</h6><div class="wg-cost"><div><strong style="color:#4ade80">+8.5R</strong><b data-h="88" style="background:linear-gradient(180deg,#22c55e,rgba(34,197,94,.2))"></b><small>Con reglas</small></div><div><strong style="color:#f87171">−7.0R</strong><b data-h="72" style="background:linear-gradient(180deg,#ef4444,rgba(239,68,68,.2))"></b><small>Reglas rotas</small></div></div></div>`;
+    if (k === 'racha') return `<div class="wg"><h6>Kaizen Way <em>6 de 9</em></h6><div class="wg-cards">${[1, 1, 1, 1, 1, 1, 0, 0, 0].map((o, i) => `<i class="${o ? 'ok' : ''}" style="transition-delay:${i * 120}ms"></i>`).join('')}</div><div class="wg-big">6 días<small>de racha limpia</small></div></div>`;
+    if (k === 'toasts') return `<div class="wg"><h6>Hoy · registro automático</h6>${[['NQ · Long · 10:05', '+1.50R', ''], ['ES · Short · 10:40', '−0.50R', 'r'], ['NQ · Long · 11:12', '+2.00R', '']].map(([a, b, c], i) => `<div class="wg-toast ${c}" style="transition-delay:${i * 350}ms"><i></i>${a}<span>${b}</span></div>`).join('')}<div class="wg-big" style="margin-top:auto">+3.00R<small>sin capturar nada</small></div></div>`;
+    if (k === 'curva') return `<div class="wg"><h6>Equity del mes <em>+$1,945</em></h6><svg viewBox="0 0 200 80" preserveAspectRatio="none" style="flex:1;width:100%"><path d="${curvaD(200, 80, 7)}" fill="none" stroke="#60a5fa" stroke-width="2" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="transition:stroke-dashoffset 1.8s ease-out"/></svg></div>`;
+    return '';
+  }
+  const wio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const w = e.target; wio.unobserve(w); w.classList.add('go');
+    w.querySelectorAll('[data-w]').forEach(b => b.style.width = b.dataset.w + '%'); w.querySelectorAll('[data-h]').forEach(b => b.style.height = b.dataset.h + '%'); w.querySelectorAll('path[stroke-dasharray]').forEach(p => p.style.strokeDashoffset = 0); }), { threshold: .3 });
+  const vigila = () => $$('.wg:not(.go)').forEach(w => wio.observe(w));
+  // muro
+  const MU = [['calor'], ['q', 'Tus operaciones entran solas desde tu bróker. Tú solo les pones la estrategia y cómo te sentiste.', 'Registro automático'], ['ballenas'], ['reglas'], ['q', 'El mismo día del mercado para todos. Gana quien opera mejor, no quien tiene suerte.', 'Batallas'], ['tabla'], ['racha'], ['toasts'], ['q', 'Ocho temas y fondos animados. La herramienta que abres todos los días tiene que gustarte.', 'Hazla tuya'], ['curva']];
+  $('#muro').innerHTML = MU.map((m, i) => m[0] === 'q' ? `<figure class="q rv d${i % 3}"><p>${m[1]}</p><small>${m[2]}</small></figure>` : `<figure class="w rv d${i % 3}">${wg(m[0])}</figure>`).join('');
+  $$('#muro .rv').forEach(el => io.observe(el));
+  // velas del hero
+  { const cv = $('#hc'), g = cv.getContext('2d'); let W, H, C = [], t0 = 0, x = 11; const rnd = () => (x = (x * 16807) % 2147483647) / 2147483647;
+    const nueva = p => { const o = p, c = o + (rnd() - .48) * 14, h = Math.max(o, c) + rnd() * 6, l = Math.min(o, c) - rnd() * 6; return [o, h, l, c]; };
+    const size = () => { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight; C = []; let p = 0; for (let i = 0; i < Math.ceil(W / 14) + 2; i++) { const k = nueva(p); C.push(k); p = k[3]; } };
+    size(); addEventListener('resize', size);
+    const draw = t => { if (t - t0 > 900) { t0 = t; C.shift(); C.push(nueva(C[C.length - 1][3])); }
+      const mn = Math.min(...C.map(k => k[2])), mx = Math.max(...C.map(k => k[1])), Y = v => H * .15 + (mx - v) / (mx - mn || 1) * H * .7; g.clearRect(0, 0, W, H);
+      C.forEach((k, i) => { const X = i * 14; g.fillStyle = k[3] >= k[0] ? 'rgba(96,165,250,.9)' : 'rgba(148,163,184,.55)'; g.fillRect(X + 6, Y(k[1]), 1, Y(k[2]) - Y(k[1])); g.fillRect(X + 2, Y(Math.max(k[0], k[3])), 9, Math.max(1, Math.abs(Y(k[0]) - Y(k[3])))); });
+      if (scrollY < innerHeight * 1.5) requestAnimationFrame(draw); else setTimeout(() => requestAnimationFrame(draw), 500); };
+    requestAnimationFrame(draw); }
+  // muestras de los ocho temas, al ritmo del video
+  { const T = ['#ff4d4d', '#ff8a3d', '#e8be5a', '#3ddc97', '#2fd4d0', '#4d8dff', '#a78bfa', '#ff5fa8'], B = ['#0a0405', '#0b0603', '#080705', '#03100b', '#030c0d', '#03060e', '#07050f', '#0d0409'];
+    $('#sw').innerHTML = T.map((c, i) => `<i style="--c:${c};background:${B[i]}"></i>`).join(''); let k = 0; setInterval(() => { k = (k + 1) % 8; $$('#sw i').forEach((x, j) => x.classList.toggle('on', j === k)); }, 950); }
+  // la curva grande: se dibuja al verla
+  { const box = $('#cv'), ln = box.querySelector('.ln'), ar = box.querySelector('.ar'), d = curvaD(1000, 300, 5, 60); ln.setAttribute('d', d); ar.setAttribute('d', d + 'L1000,300L0,300Z');
+    ln.setAttribute('pathLength', '1'); ln.style.strokeDasharray = 1; ln.style.strokeDashoffset = 1; ln.style.transition = 'stroke-dashoffset 2.6s cubic-bezier(.3,.6,.2,1)';
+    const K = [[.18, 'up', '+1.5R · NQ'], [.42, 'dn', '−0.5R · regla rota'], [.63, 'up', '+2.0R · ES'], [.84, 'up', '+15.5R en el mes']];
+    box.querySelector('.cv-k').innerHTML = K.map(([f, c, t]) => `<b class="${c}" style="left:${f * 88 + 2}%;top:${c === 'dn' ? 62 : 14}%">${t}</b>`).join('');
+    const ve = () => { box.classList.add('in'); ln.style.strokeDashoffset = 0; box.querySelectorAll('.cv-k b').forEach((b, i) => setTimeout(() => b.classList.add('on'), 600 + i * 500)); };
+    new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { o.disconnect(); ve(); } }), { threshold: .4 }).observe(box); }
   // casos
-  const C = [['Cierras el día y no sabes qué hiciste bien', 'Notas sueltas en el teléfono y una hoja que nunca se actualiza.', 'Las operaciones entraron solas; completas estrategia y emoción en dos clics.', 's-operaciones', ['AUTO', 'registro de cada operación'], [['Captura', 'Automática'], ['Tiempo al día', '2 min'], ['Operaciones perdidas', '0']]],
-    ['Rompes una regla y no te cuesta nada... hasta fin de mes', 'Sin registro, la revancha después de una pérdida pasa desapercibida.', 'El panel separa lo que ganas con reglas contra lo que pierdes sin ellas, en R.', 's-panel', ['R', 'el costo de cada regla rota'], [['Reglas medidas', 'Sí'], ['Costo del error', 'En R'], ['Sorpresas', '0']]],
-    ['Practicas sin presión y sin contexto', 'Una cuenta demo vacía, sin rivales ni niveles marcados.', 'Batallas en días reales con ORB, liquidez de Asia y Londres y un rival en la tabla.', 's-batalla', ['$0', 'de riesgo para practicar'], [['Datos', 'Reales'], ['Rivales', '1v1 o torneo'], ['Desde', '$10 de balance']]]];
-  $('#cases').innerHTML = C.map(([q, a, d, img, big, k], i) => `<div class="case ${i ? '' : 'on'}"><div class="case-l"><q>${q}</q><div class="ba"><div><small>ANTES</small><p>${a}</p></div><div><small>CON NORTHPOINT</small><p>${d}</p></div></div><div class="case-who"><span>Caso de uso ${i + 1} de ${C.length}</span><span>Ejemplo, no testimonio</span></div></div><div class="case-r"><img width="1600" height="1000" src="assets/l/${img}.jpg" alt="" loading="lazy"><div class="case-big"><b>${big[0].replace(/^(\$?)(.*)$/, '<span>$1</span>$2')}</b><p>${big[1]}</p></div><div class="case-k">${k.map(([a2, b]) => `<div><span>${a2}</span><b>${b}</b></div>`).join('')}</div></div></div>`).join('');
+  const C = [['Cierras el día y no sabes qué hiciste bien', 'Notas sueltas en el teléfono y una hoja que nunca se actualiza.', 'Las operaciones entraron solas; completas estrategia y emoción en dos clics.', 'toasts', ['AUTO', 'registro de cada operación'], [['Captura', 'Automática'], ['Tiempo al día', '2 min'], ['Operaciones perdidas', '0']]],
+    ['Rompes una regla y no te cuesta nada... hasta fin de mes', 'Sin registro, la revancha después de una pérdida pasa desapercibida.', 'El panel separa lo que ganas con reglas contra lo que pierdes sin ellas, en R.', 'reglas', ['R', 'el costo de cada regla rota'], [['Reglas medidas', 'Sí'], ['Costo del error', 'En R'], ['Sorpresas', '0']]],
+    ['Practicas sin presión y sin contexto', 'Una cuenta demo vacía, sin rivales ni niveles marcados.', 'Batallas en días reales con ORB, liquidez de Asia y Londres y un rival en la tabla.', 'tabla', ['$0', 'de riesgo para practicar'], [['Datos', 'Reales'], ['Rivales', '1v1 o torneo'], ['Desde', '$10 de balance']]]];
+  $('#cases').innerHTML = C.map(([q, a, d, img, big, k], i) => `<div class="case ${i ? '' : 'on'}"><div class="case-l"><q>${q}</q><div class="ba"><div><small>ANTES</small><p>${a}</p></div><div><small>CON NORTHPOINT</small><p>${d}</p></div></div><div class="case-who"><span>Caso de uso ${i + 1} de ${C.length}</span><span>Ejemplo, no testimonio</span></div></div><div class="case-r"><div class="wg-box">${wg(img)}</div><div class="case-big"><b>${big[0].replace(/^(\$?)(.*)$/, '<span>$1</span>$2')}</b><p>${big[1]}</p></div><div class="case-k">${k.map(([a2, b]) => `<div><span>${a2}</span><b>${b}</b></div>`).join('')}</div></div></div>`).join('');
   $('#cDots').innerHTML = C.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('');
   let ci = 0; const caso = i => { ci = (i + C.length) % C.length; $$('#cases .case').forEach((x, k) => x.classList.toggle('on', k === ci)); $$('#cDots i').forEach((x, k) => x.classList.toggle('on', k === ci)); };
   $('#cPrev').onclick = () => caso(ci - 1); $('#cNext').onclick = () => caso(ci + 1);
@@ -723,6 +838,7 @@ const REDES = {
   $('#faqL').innerHTML = F.map(([q, a], i) => `<div class="fq rv ${i ? '' : 'on'}"><button>${q}<i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>${a}</p></div></div></div>`).join('');
   $$('#faqL .fq').forEach(f => { io.observe(f); f.querySelector('button').onclick = () => f.classList.toggle('on'); });
 
+  vigila();
   // video en grande
   const mv = $('#mv'), mvV = $('#mvV');
   document.addEventListener('click', e => { const t = e.target.closest('[data-video]'); if (!t) return; e.preventDefault(); mvV.src = t.dataset.video; mv.classList.add('on'); mvV.play().catch(() => {}); });
