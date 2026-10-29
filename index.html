@@ -8,6 +8,11 @@
 <meta property="og:title" content="NORTHPOINT · Herramienta de trading inteligente y comunidad">
 <meta property="og:description" content="Tu diario se llena solo, ves tus números reales y practicas con días reales del mercado. Con comunidad en Discord. Mac y Windows.">
 <meta property="og:image" content="https://studioamr.github.io/northpoint-trading/assets/l/s-panel.jpg">
+<link rel="canonical" href="https://studioamr.github.io/northpoint-trading/">
+<meta name="theme-color" content="#030303">
+<meta property="og:type" content="website"><meta property="og:url" content="https://studioamr.github.io/northpoint-trading/">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://studioamr.github.io/northpoint-trading/assets/l/s-panel.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%233b82f6%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-weight=%22900%22 font-size=%2215%22 text-anchor=%22middle%22 fill=%22white%22%3ENP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&family=Saira+Condensed:ital,wght@1,800&display=swap" rel="stylesheet">
 <style>
@@ -63,6 +68,15 @@ h1 em,.em{font-style:normal;background:linear-gradient(90deg,#3b82f6,#8ec0ff 50%
 .chip.w{border-color:var(--line2);background:rgba(255,255,255,.06);color:#fff}
 .chip svg{width:12px;height:12px}
 .ctas{display:flex;gap:12px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.micro{margin-top:16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--tx3);text-transform:uppercase}
+.micro a{color:var(--tx2);text-decoration:underline;text-underline-offset:3px}
+.brk{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 26px;margin-top:44px;padding-top:26px;border-top:1px solid var(--line);max-width:760px;margin-left:auto;margin-right:auto}
+.brk span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);width:100%}
+.brk b{font-size:17px;font-weight:700;color:#c7cbd3;letter-spacing:-.01em;opacity:.8}
+.mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;display:none;gap:8px;transform:translateY(140%);transition:transform .4s}
+.mcta.on{transform:none}
+.mcta .btn{flex:1;justify-content:center;height:50px}
+.btn.dis{opacity:.55;pointer-events:none}
 /* video que crece al bajar (fijo) */
 .zoom{position:relative;height:200vh}
 .zoom-in{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -298,7 +312,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 .rv.in{opacity:1;transform:none;filter:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}}
-@media (max-width:1080px){.links a:nth-child(n+5){display:none}.soc{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:1080px){.links a:nth-child(2),.links a:nth-child(4){display:none}.soc{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:960px){
   .links{display:none}.navr .btn-wh{display:none}.burger{display:grid;place-items:center}
   .links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(3,3,3,.97);padding:12px 16px;border-bottom:1px solid var(--line)}
@@ -317,6 +331,9 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
   .pin-in{padding-top:100px}
 }
 @media (max-width:600px){
+  .mcta{display:flex}
+  footer{padding-bottom:100px}
+  .zoom{height:150vh}
   .wrap{padding:0 16px}
   .hero{padding-top:150px}
   .sub{font-size:16px}
@@ -342,7 +359,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 <div class="marq" aria-hidden="true"><div class="marq-t" id="marq"></div></div>
 
 <nav class="nav" id="nav"><div class="wrap">
-  <a href="./" class="logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 2l3 7h-6l3-7zM12 22V9M5 16l7-7 7 7"/></svg>NORTHPOINT</a>
+  <a href="./" class="logo">NORTHPOINT</a>
   <div class="links" id="links"><a href="#ventajas">Funciones</a><a href="#por-que">Por qué</a><a href="#comunidad">Comunidad</a><a href="#como">Videos</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a></div>
   <div class="navr">
     <a href="#comunidad" class="btn btn-dc sm" data-red="discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.5 9.1-.3 13.6.1 18.1a19.9 19.9 0 0 0 6 3l1.3-2a13 13 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.6-13.7zM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4z"/></svg>Discord</a>
@@ -358,9 +375,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <h1 class="rv d1">La herramienta inteligente<br><em>para tu trading</em></h1>
     <p class="sub rv d2">Un <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 6h16M4 12h10M4 18h7"/></svg>diario que se llena solo</span>, tus números reales y una <span class="chip w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-3-5"/></svg>comunidad</span> que opera contigo. Para quien empieza, para quien va por su cuenta fondeada y para quien ya vive del mercado.</p>
     <div class="ctas rv d3">
-      <a href="descargar.html" class="btn btn-ac">Descargar gratis <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="descargar.html" class="btn btn-ac" data-dl>Descargar gratis <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="#comunidad" class="btn btn-ol" data-red="discord">Únete al Discord <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
+    <p class="micro rv d3">7 días gratis · Mac y Windows · Cancelas en un clic · <a href="descargar.html">Otras descargas</a></p>
+    <div class="brk rv d4"><span>Se conecta con</span><b>Exness</b><b>Tradovate</b><b>MetaTrader 5</b><b>NinjaTrader</b><b>Archivo CSV</b></div>
   </div>
 </header>
 
@@ -380,7 +399,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <div class="stat rv"><b><span>#</span><em data-n="13">0</em></b><p>Herramientas en una sola app: diario, panel, calendario, mercado, batallas y más</p></div>
     <div class="stat rv d1"><b><em data-n="7">0</em><span> días</span></b><p>Gratis para probarla completa</p></div>
     <div class="stat rv d2"><b><em data-n="3">0</em><span>+</span></b><p>Sesiones con su liquidez marcada: Asia, Londres y Nueva York</p></div>
-    <div class="stat rv d3"><b><em data-n="24">0</em><span>/7</span></b><p>Comunidad en Discord y transmisiones en vivo</p></div>
+    <div class="stat rv d3"><b><em data-n="4">0</em><span>+</span></b><p>Brókers que se conectan solos: Exness, Tradovate, MetaTrader 5 y NinjaTrader</p></div>
   </div>
 </div>
 
@@ -393,11 +412,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <h2>Cinco ventajas que no tienes<br>en una hoja de Excel</h2></div>
     <div class="adv">
       <div class="adv-img" data-imgs>
-        <img src="assets/l/s-operaciones.jpg" alt="Operaciones registradas solas" class="on">
-        <img src="assets/l/s-panel.jpg" alt="Panel con la curva del mes" loading="lazy">
-        <img src="assets/l/s-batalla.jpg" alt="Batalla en replay" loading="lazy">
-        <img src="assets/l/s-ballenas.jpg" alt="Ballenas del mercado" loading="lazy">
-        <img src="assets/l/s-kaizen.jpg" alt="Kaizen Way" loading="lazy">
+        <img width="1600" height="1000" src="assets/l/s-operaciones.jpg" alt="Operaciones registradas solas" class="on">
+        <img width="1600" height="1000" src="assets/l/s-panel.jpg" alt="Panel con la curva del mes" loading="lazy">
+        <img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Batalla en replay" loading="lazy">
+        <img width="1600" height="1000" src="assets/l/s-ballenas.jpg" alt="Ballenas del mercado" loading="lazy">
+        <img width="1600" height="1000" src="assets/l/s-kaizen.jpg" alt="Kaizen Way" loading="lazy">
       </div>
       <div class="acc" data-items>
         <div class="acc-i on"><div class="acc-h"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg></i>Tu diario se llena solo</div><div class="acc-b"><div><p>Conecta Exness, Tradovate, MetaTrader o NinjaTrader y cada operación entra con hora, resultado y duración. Tú solo completas la estrategia, la nota y cómo te sentiste.</p></div></div><i class="acc-p"></i></div>
@@ -425,7 +444,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
       </div>
       <div class="steps" data-bars><i><b></b></i><i><b></b></i><i><b></b></i></div>
     </div>
-    <div class="win"><div class="shot" data-imgs><img src="assets/l/s-dia.jpg" alt="Detalle de un día" class="on"><img src="assets/l/s-panel.jpg" alt="Panel" loading="lazy"><img src="assets/l/s-batallas.jpg" alt="Batallas" loading="lazy"></div>
+    <div class="win"><div class="shot" data-imgs><img width="1600" height="1000" src="assets/l/s-dia.jpg" alt="Detalle de un día" class="on"><img width="1600" height="1000" src="assets/l/s-panel.jpg" alt="Panel" loading="lazy"><img width="1600" height="1000" src="assets/l/s-batallas.jpg" alt="Batallas" loading="lazy"></div>
       <div class="float l"><small><i></i>Día · miércoles</small><b>+1.00R</b><div><span>2 operaciones</span><span>50%</span></div></div></div>
   </div></div>
 </section>
@@ -435,7 +454,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 <section class="pin" data-steps="3">
   <div class="rails"></div>
   <div class="pin-in"><div class="wrap two">
-    <div class="win"><div class="shot" data-imgs><video src="assets/l/replay.mp4" poster="assets/l/replay.jpg" autoplay muted loop playsinline preload="metadata" class="on"></video><img src="assets/l/s-batalla.jpg" alt="Gráfica de la batalla" loading="lazy"><video src="assets/l/ballenas.mp4" poster="assets/l/ballenas.jpg" muted loop playsinline preload="none"></video></div>
+    <div class="win"><div class="shot" data-imgs><video src="assets/l/replay.mp4" poster="assets/l/replay.jpg" autoplay muted loop playsinline preload="metadata" class="on"></video><img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Gráfica de la batalla" loading="lazy"><video src="assets/l/ballenas.mp4" poster="assets/l/ballenas.jpg" muted loop playsinline preload="none"></video></div>
       <div class="float"><small><i></i>Práctica · USTEC</small><b>+$14.00</b><div><span>Long 0.10</span><span>5m</span></div><div><span>Replay</span><span>10x</span></div></div></div>
     <div>
       <span class="tag">Por qué ahora</span>
@@ -561,15 +580,15 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
     <h2 class="rv d1">Así se ve la app</h2>
     <p class="lead rv d2">Pantallas tal cual salen de NORTHPOINT, con datos de ejemplo.</p></div>
     <div class="gal">
-      <figure class="rv"><img src="assets/l/s-panel.jpg" alt="Panel" loading="lazy"><figcaption><b>Panel</b><span>La curva de tu mes, R, acierto, expectancy, drawdown y profit factor.</span><em>Panel</em></figcaption></figure>
+      <figure class="rv"><img width="1600" height="1000" src="assets/l/s-panel.jpg" alt="Panel" loading="lazy"><figcaption><b>Panel</b><span>La curva de tu mes, R, acierto, expectancy, drawdown y profit factor.</span><em>Panel</em></figcaption></figure>
       <figure class="rv d1 q"><p>Cada operación entra sola desde tu bróker. Tú solo le pones la estrategia y cómo te sentiste.</p><small>Registro automático</small></figure>
-      <figure class="rv d2"><img src="assets/l/s-ballenas.jpg" alt="Ballenas" loading="lazy"><figcaption><b>Ballenas</b><span>Hedge funds, bancos e institucionales: quién está largo y quién corto.</span><em>Mercado</em></figcaption></figure>
-      <figure class="rv"><img src="assets/l/s-calendario.jpg" alt="Calendario" loading="lazy"><figcaption><b>Calendario</b><span>Cada día pintado por su resultado. Toca uno y ves sus operaciones.</span><em>Diario</em></figcaption></figure>
-      <figure class="rv d1"><img src="assets/l/s-batalla.jpg" alt="Batalla" loading="lazy"><figcaption><b>Batallas</b><span>Replay del Nasdaq con ORB y liquidez, lotes y stop como en tu bróker.</span><em>Práctica</em></figcaption></figure>
+      <figure class="rv d2"><img width="1600" height="1000" src="assets/l/s-ballenas.jpg" alt="Ballenas" loading="lazy"><figcaption><b>Ballenas</b><span>Hedge funds, bancos e institucionales: quién está largo y quién corto.</span><em>Mercado</em></figcaption></figure>
+      <figure class="rv"><img width="1600" height="1000" src="assets/l/s-calendario.jpg" alt="Calendario" loading="lazy"><figcaption><b>Calendario</b><span>Cada día pintado por su resultado. Toca uno y ves sus operaciones.</span><em>Diario</em></figcaption></figure>
+      <figure class="rv d1"><img width="1600" height="1000" src="assets/l/s-batalla.jpg" alt="Batalla" loading="lazy"><figcaption><b>Batallas</b><span>Replay del Nasdaq con ORB y liquidez, lotes y stop como en tu bróker.</span><em>Práctica</em></figcaption></figure>
       <figure class="rv d2 q"><p>El mismo día del mercado para todos. Gana quien opera mejor, no quien tiene suerte.</p><small>Batallas</small></figure>
-      <figure class="rv"><img src="assets/l/s-logros.jpg" alt="Logros" loading="lazy"><figcaption><b>Logros</b><span>Hitos de cuenta y rachas que salen de tus datos.</span><em>Disciplina</em></figcaption></figure>
-      <figure class="rv d1"><img src="assets/l/s-operaciones.jpg" alt="Operaciones" loading="lazy"><figcaption><b>Operaciones</b><span>Cada trade con hora, estrategia, duración y resultado.</span><em>Diario</em></figcaption></figure>
-      <figure class="rv d2"><img src="assets/l/s-kaizen.jpg" alt="Kaizen Way" loading="lazy"><figcaption><b>Kaizen Way</b><span>Tu camino de cuenta pequeña a cuenta grande, carta por carta.</span><em>Progreso</em></figcaption></figure>
+      <figure class="rv"><img width="1600" height="1000" src="assets/l/s-logros.jpg" alt="Logros" loading="lazy"><figcaption><b>Logros</b><span>Hitos de cuenta y rachas que salen de tus datos.</span><em>Disciplina</em></figcaption></figure>
+      <figure class="rv d1"><img width="1600" height="1000" src="assets/l/s-operaciones.jpg" alt="Operaciones" loading="lazy"><figcaption><b>Operaciones</b><span>Cada trade con hora, estrategia, duración y resultado.</span><em>Diario</em></figcaption></figure>
+      <figure class="rv d2"><img width="1600" height="1000" src="assets/l/s-kaizen.jpg" alt="Kaizen Way" loading="lazy"><figcaption><b>Kaizen Way</b><span>Tu camino de cuenta pequeña a cuenta grande, carta por carta.</span><em>Progreso</em></figcaption></figure>
     </div>
   </div>
 </section>
@@ -596,7 +615,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
 
 <footer><div class="wrap">
   <div class="ft">
-    <div><a href="./" class="logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 2l3 7h-6l3-7zM12 22V9M5 16l7-7 7 7"/></svg>NORTHPOINT</a><p>La herramienta inteligente para tu trading y una comunidad que opera contigo. Mac y Windows.</p><a href="descargar.html" class="btn btn-ac">Descargar gratis</a></div>
+    <div><a href="./" class="logo">NORTHPOINT</a><p>La herramienta inteligente para tu trading y una comunidad que opera contigo. Mac y Windows.</p><a href="descargar.html" class="btn btn-ac">Descargar gratis</a></div>
     <div><h4>NAVEGACIÓN</h4><a class="l" href="#ventajas">Funciones</a><a class="l" href="#por-que">Por qué</a><a class="l" href="#como">Videos</a><a class="l" href="#faq">Preguntas</a></div>
     <div><h4>PLANES</h4><a class="l" href="#planes">Starter</a><a class="l" href="#planes">Pro</a><a class="l" href="#planes">Mesa</a><a class="l" href="descargar.html">Descargas</a></div>
     <div><h4>COMUNIDAD</h4><div id="ftRedes"></div></div>
@@ -604,6 +623,8 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ba
   <p class="disc">NORTHPOINT es una herramienta de registro y análisis. No da señales ni asesoría financiera o de inversión. Operar futuros, forex, CFDs y criptomonedas conlleva un riesgo alto de pérdida, incluso de todo tu capital. Los resultados pasados, en replay o de ejemplo no garantizan resultados futuros. Las capturas usan datos de ejemplo.</p>
   <div class="copy"><span>© 2026 NORTHPOINT · Todos los derechos reservados</span><span>Hecho en México</span></div>
 </div></footer>
+
+<div class="mcta" id="mcta"><a href="descargar.html" class="btn btn-ac" data-dl>Descargar gratis</a><a href="#comunidad" class="btn btn-dc" data-red="discord">Discord</a></div>
 
 <div class="mv" id="mv"><button aria-label="Cerrar" id="mvX">×</button><video id="mvV" controls playsinline></video></div>
 
@@ -620,7 +641,7 @@ const REDES = {
 };
 (() => {
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-  const M = ['7 días gratis', 'Comunidad en Discord', 'Tu diario se llena solo', 'Mac y Windows', 'Batallas con días reales del mercado', 'En vivo en Kick y YouTube'];
+  const M = ['7 días gratis', 'Comunidad en Discord', 'Tu diario se llena solo', 'Mac y Windows', 'Batallas con días reales del mercado', 'Exness · Tradovate · MT5 · NinjaTrader'];
   $('#marq').innerHTML = Array(6).fill(M.map(t => `<span>${t}</span>`).join('')).join('');
   const nav = $('#nav'); addEventListener('scroll', () => nav.classList.toggle('sc', scrollY > 30), { passive: true });
   $('#burger').onclick = () => $('#links').classList.toggle('open');
@@ -633,10 +654,16 @@ const REDES = {
     kick: 'M3 2h5v6h2V5h2V2h7v7h-2v2h-2v2h2v2h2v7h-7v-3h-2v-3H8v6H3z',
     x: 'M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.8 2.3h7l4.8 6.3zm-1.2 17.9h1.9L7 4.2H5z',
     instagram: 'M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-9.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z' };
-  const SO = [['discord', 'Discord', '#5865f2', 'Comunidad', 'Plan del día, operaciones, torneos y voz durante la sesión.'], ['youtube', 'YouTube', '#ff0033', 'Videos', 'Recorridos de la app y repeticiones de las sesiones.'], ['tiktok', 'TikTok', '#25f4ee', 'Clips', 'Lo mejor de la semana en un minuto.'], ['kick', 'Kick', '#53fc18', 'En vivo', 'Operamos en vivo la sesión de Nueva York.'], ['x', 'X', '#e7e9ea', 'Al momento', 'Noticias que mueven el mercado y avisos.'], ['instagram', 'Instagram', '#e1306c', 'Día a día', 'Resultados de torneos y la comunidad.']];
+  const SO = [['discord', 'Discord', '#5865f2', 'Comunidad', 'Plan del día, operaciones, torneos y voz durante la sesión.'], ['youtube', 'YouTube', '#ff0033', 'Videos', 'Recorridos de la app y clips de trading.'], ['tiktok', 'TikTok', '#25f4ee', 'Clips', 'Lo mejor de la semana en un minuto.'], ['kick', 'Kick', '#53fc18', 'En vivo', 'Sesiones en vivo con la comunidad.'], ['x', 'X', '#e7e9ea', 'Al momento', 'Noticias que mueven el mercado y avisos.'], ['instagram', 'Instagram', '#e1306c', 'Día a día', 'Resultados de torneos y la comunidad.']];
   $('#soc').innerHTML = SO.map(([k, n, c, s, p], i) => { const u = REDES[k]; return `<a class="so rv d${i % 4} ${u ? '' : 'off'}" style="--c:${c}" ${u ? `href="${u}" target="_blank" rel="noopener"` : ''}><svg viewBox="0 0 24 24" fill="currentColor"><path d="${IC[k]}"/></svg><div><b>${n}</b><br><small>${s}</small></div><p>${p}</p><span class="go">${u ? 'Seguir' : 'Muy pronto'}${u ? ' <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' : ''}</span></a>`; }).join('');
   $('#ftRedes').innerHTML = SO.map(([k, n]) => `<a class="l ${REDES[k] ? '' : 'off'}" ${REDES[k] ? `href="${REDES[k]}" target="_blank" rel="noopener"` : ''}>${n}</a>`).join('');
   if (REDES.discord) $$('[data-red=discord]').forEach(a => { a.href = REDES.discord; a.target = '_blank'; a.rel = 'noopener'; });
+  else $$('#comunidad [data-red=discord], .final [data-red=discord]').forEach(a => { a.classList.add('dis'); const t = [...a.childNodes].find(n => n.nodeType === 3 && n.textContent.trim()); if (t) t.textContent = 'Discord: enlace muy pronto '; a.removeAttribute('href'); });   // sin enlace vigente, no mandamos a nadie a una invitación caducada
+  // descarga directa según el sistema de quien visita
+  { const ua = navigator.userAgent, mac = /Macintosh|Mac OS X/.test(ua) && !/iPhone|iPad/.test(ua), win = /Windows/.test(ua);
+    const D = mac ? ['descargas/NORTHPOINT-Mac.dmg', 'Descargar para Mac'] : win ? ['https://github.com/studioamr/northpoint-trading/releases/latest/download/NORTHPOINT-Windows-Instalador.exe', 'Descargar para Windows'] : null;
+    if (D) $$('.hero [data-dl]').forEach(a => { a.href = D[0]; a.firstChild.textContent = D[1] + ' '; }); }
+  { const m = $('#mcta'), h = $('.hero'); addEventListener('scroll', () => m.classList.toggle('on', scrollY > h.offsetHeight && innerHeight + scrollY < document.body.scrollHeight - 300), { passive: true }); }
 
   // aparición
   const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target);
@@ -672,14 +699,14 @@ const REDES = {
     ['ballenas', 'Ballenas', 'El dinero <em>grande</em>', 'Quién compra y quién vende', 'Hedge funds, bancos y fondos en el Nasdaq, el S&P, el oro y el bitcoin.'],
     ['calendario', 'Calendario', 'Tu mes <em>en un vistazo</em>', 'Toca un día y ve qué pasó', 'Resultado, curva del día y cada operación con su estrategia.'],
     ['kaizen', 'Kaizen Way', '$100 a <em>$15,000</em>', 'El camino, carta por carta', 'Tu constancia se convierte en un camino que se ve.']];
-  const card = ([v, t, tt, h, p]) => `<div class="vc" data-video="assets/l/${v}.mp4"><div class="th"><img src="assets/l/${v}.jpg" alt="" loading="lazy"><span>${t}</span><i class="pl"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><div class="tt">${tt}</div></div><div class="tx"><h3>${h}</h3><p>${p}</p></div></div>`;
+  const card = ([v, t, tt, h, p]) => `<div class="vc" data-video="assets/l/${v}.mp4"><div class="th"><img width="1600" height="1000" src="assets/l/${v}.jpg" alt="" loading="lazy"><span>${t}</span><i class="pl"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i><div class="tt">${tt}</div></div><div class="tx"><h3>${h}</h3><p>${p}</p></div></div>`;
   $('#car').innerHTML = [...V, ...V, ...V].map(card).join('');
 
   // casos
   const C = [['Cierras el día y no sabes qué hiciste bien', 'Notas sueltas en el teléfono y una hoja que nunca se actualiza.', 'Las operaciones entraron solas; completas estrategia y emoción en dos clics.', 's-operaciones', ['AUTO', 'registro de cada operación'], [['Captura', 'Automática'], ['Tiempo al día', '2 min'], ['Operaciones perdidas', '0']]],
     ['Rompes una regla y no te cuesta nada... hasta fin de mes', 'Sin registro, la revancha después de una pérdida pasa desapercibida.', 'El panel separa lo que ganas con reglas contra lo que pierdes sin ellas, en R.', 's-panel', ['R', 'el costo de cada regla rota'], [['Reglas medidas', 'Sí'], ['Costo del error', 'En R'], ['Sorpresas', '0']]],
     ['Practicas sin presión y sin contexto', 'Una cuenta demo vacía, sin rivales ni niveles marcados.', 'Batallas en días reales con ORB, liquidez de Asia y Londres y un rival en la tabla.', 's-batalla', ['$0', 'de riesgo para practicar'], [['Datos', 'Reales'], ['Rivales', '1v1 o torneo'], ['Desde', '$10 de balance']]]];
-  $('#cases').innerHTML = C.map(([q, a, d, img, big, k], i) => `<div class="case ${i ? '' : 'on'}"><div class="case-l"><q>${q}</q><div class="ba"><div><small>ANTES</small><p>${a}</p></div><div><small>CON NORTHPOINT</small><p>${d}</p></div></div><div class="case-who"><span>Caso de uso ${i + 1} de ${C.length}</span><span>Ejemplo, no testimonio</span></div></div><div class="case-r"><img src="assets/l/${img}.jpg" alt="" loading="lazy"><div class="case-big"><b>${big[0].replace(/^(\$?)(.*)$/, '<span>$1</span>$2')}</b><p>${big[1]}</p></div><div class="case-k">${k.map(([a2, b]) => `<div><span>${a2}</span><b>${b}</b></div>`).join('')}</div></div></div>`).join('');
+  $('#cases').innerHTML = C.map(([q, a, d, img, big, k], i) => `<div class="case ${i ? '' : 'on'}"><div class="case-l"><q>${q}</q><div class="ba"><div><small>ANTES</small><p>${a}</p></div><div><small>CON NORTHPOINT</small><p>${d}</p></div></div><div class="case-who"><span>Caso de uso ${i + 1} de ${C.length}</span><span>Ejemplo, no testimonio</span></div></div><div class="case-r"><img width="1600" height="1000" src="assets/l/${img}.jpg" alt="" loading="lazy"><div class="case-big"><b>${big[0].replace(/^(\$?)(.*)$/, '<span>$1</span>$2')}</b><p>${big[1]}</p></div><div class="case-k">${k.map(([a2, b]) => `<div><span>${a2}</span><b>${b}</b></div>`).join('')}</div></div></div>`).join('');
   $('#cDots').innerHTML = C.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('');
   let ci = 0; const caso = i => { ci = (i + C.length) % C.length; $$('#cases .case').forEach((x, k) => x.classList.toggle('on', k === ci)); $$('#cDots i').forEach((x, k) => x.classList.toggle('on', k === ci)); };
   $('#cPrev').onclick = () => caso(ci - 1); $('#cNext').onclick = () => caso(ci + 1);
